@@ -26,18 +26,18 @@ class HomePage extends React.Component {
         <NextSeo
           openGraph={{
             type: 'website',
-            url: 'https://www.thePandaRiot.com/gigs',
-            title: 'FUCK OFF TITLE',
-            description: 'Open Graph Description',
+            url: 'https://www.thePandaRiot.com',
+            title: 'Yay this is a title',
+            description: 'London\'s freshest Open Mic Comedy webapp!',
             images: [
               {
-                url: 'https://www.example.ie/og-image.jpg',
+                url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt'
               },
               {
-                url: 'https://www.example.ie/og-image-2.jpg',
+                url: 'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt 2'
