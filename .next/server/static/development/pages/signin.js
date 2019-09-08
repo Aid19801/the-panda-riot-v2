@@ -93,10 +93,10 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./components/Input/index.js":
+/*!***********************************!*\
+  !*** ./components/Input/index.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -104,60 +104,120 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-seo */ "next-seo");
-/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _redux_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/actions */ "./redux/actions/index.js");
-var _jsxFileName = "/home/adrianthompson/Documents/with-redux-app/pages/index.js";
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ "./components/Input/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/home/adrianthompson/Documents/with-redux-app/components/Input/index.js";
+
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+const Input = ({
+  title,
+  placeholder,
+  onChange
+}) => {
+  return __jsx("div", {
+    className: "input__input-container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, __jsx("h4", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: undefined
+  }, title), __jsx("input", {
+    className: "input__input",
+    placeholder: placeholder,
+    onChange: onChange,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Input);
+
+/***/ }),
+
+/***/ "./components/Input/styles.css":
+/*!*************************************!*\
+  !*** ./components/Input/styles.css ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./pages/signin.js":
+/*!*************************!*\
+  !*** ./pages/signin.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-seo */ "next-seo");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _redux_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/actions */ "./redux/actions/index.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Input */ "./components/Input/index.js");
+var _jsxFileName = "/home/adrianthompson/Documents/with-redux-app/pages/signin.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import fetch from 'isomorphic-unfetch';
 
 
 
 
-class HomePage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  static async getInitialProps({
-    req
-  }) {
-    // const isServer = !!req
-    const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default()('https://jsonplaceholder.typicode.com/users');
-    const json = await res.json();
-    return {
-      users: json
-    };
-  }
 
+
+class SignInPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  //   static async getInitialProps({ req }) {
+  //     // const isServer = !!req
+  //     const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  //     const json = await res.json();
+  //     return {
+  //       users: json
+  //     };
+  //   }
   componentDidMount() {
     const {
-      updateStateStartApp
+      pageLoading
     } = this.props;
-    updateStateStartApp();
+    pageLoading();
   }
 
   render() {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 30
       },
       __self: this
-    }, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_2__["NextSeo"], {
+    }, __jsx(next_seo__WEBPACK_IMPORTED_MODULE_1__["NextSeo"], {
       openGraph: {
         type: 'website',
         url: 'https://www.thePandaRiot.com/gigs',
-        title: 'FUCK OFF TITLE',
-        description: 'Open Graph Description',
+        title: 'Sign In',
+        description: 'Sign in to the panda riot open mic comedy webapp!',
         images: [{
-          url: 'https://www.example.ie/og-image.jpg',
+          url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
           width: 800,
           height: 600,
           alt: 'Og Image Alt'
         }, {
-          url: 'https://www.example.ie/og-image-2.jpg',
+          url: 'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',
           width: 800,
           height: 600,
           alt: 'Og Image Alt 2'
@@ -165,25 +225,50 @@ class HomePage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 31
       },
       __self: this
     }), __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 54
       },
       __self: this
-    }, "users: ", this.props.users && this.props.users.length), ";");
+    }, "Sign In: "), ";", __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      title: "email",
+      onChange: e => console.log(e),
+      placeholder: "abc@abc.com",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      title: "password",
+      onChange: e => console.log(e),
+      placeholder: "password here",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }));
   }
 
 }
 
-const mapDispatchToProps = dispatch => ({
-  updateStateStartApp: () => dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_4__["startApp"])())
+const mapStateToProps = state => ({
+  loading: state.signIn.loading,
+  error: state.signIn.error
 });
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(null, mapDispatchToProps)(HomePage));
+const mapDispatchToProps = dispatch => ({
+  pageLoading: () => dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_3__["signInPageLoading"])()),
+  pageLoaded: () => dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_3__["signInPageLoaded"])()),
+  pageFailed: () => dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_3__["signInPageFailed"])())
+});
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(SignInPage));
 
 /***/ }),
 
@@ -253,25 +338,14 @@ const SIGNIN_PAGE_FAILED = 'SIGNIN_PAGE_FAILED';
 /***/ }),
 
 /***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/*!*******************************!*\
+  !*** multi ./pages/signin.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/adrianthompson/Documents/with-redux-app/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/adrianthompson/Documents/with-redux-app/pages/signin.js */"./pages/signin.js");
 
-
-/***/ }),
-
-/***/ "isomorphic-unfetch":
-/*!*************************************!*\
-  !*** external "isomorphic-unfetch" ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 
@@ -309,4 +383,4 @@ module.exports = require("react-redux");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=signin.js.map

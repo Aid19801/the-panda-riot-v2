@@ -7,6 +7,7 @@ import {
   signInPageLoaded,
   signInPageFailed
 } from '../redux/actions';
+import Input from '../components/Input';
 
 class SignInPage extends React.Component {
   //   static async getInitialProps({ req }) {
@@ -31,17 +32,18 @@ class SignInPage extends React.Component {
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com/gigs',
-            title: 'FUCK OFF TITLE',
-            description: 'Open Graph Description',
+            title: 'Sign In',
+            description: 'Sign in to the panda riot open mic comedy webapp!',
             images: [
               {
-                url: 'https://www.example.ie/og-image.jpg',
+                url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt'
               },
               {
-                url: 'https://www.example.ie/og-image-2.jpg',
+                url:
+                  'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt 2'
@@ -49,7 +51,18 @@ class SignInPage extends React.Component {
             ]
           }}
         />
-        <h1>users: {this.props.users && this.props.users.length}</h1>;
+        <h1>Sign In: </h1>;
+        <Input
+          title="email"
+          onChange={e => console.log(e)}
+          placeholder="abc@abc.com"
+        />
+        <Input
+          title="password"
+          onChange={e => console.log(e)}
+          placeholder="password here"
+        />
+        
       </div>
     );
   }

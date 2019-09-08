@@ -1,0 +1,14 @@
+.input__input-container {
+    border: 1px solid red;
+    width: 300px;
+}
+
+.input__input {
+    width: 300px;
+    border-radius: 12px;
+    background: white;
+    color: orange;
+    border: 0px 0px 0px 0px;
+}
+
+/*# sourceMappingURL=styles.chunk.css.map*/

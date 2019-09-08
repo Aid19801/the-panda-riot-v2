@@ -1,4 +1,4 @@
-// const withCSS = require('@zeit/next-css');
+const withCSS = require('@zeit/next-css');
 // const withSass = require('@zeit/next-sass');
 
 const { parsed: localEnv } = require('dotenv').config();
@@ -6,24 +6,24 @@ const webpack = require('webpack');
 
 // TO-DO look into what this is and why it works. 
 // https://github.com/zeit/next-plugins/issues/392
-// function HACK_removeMinimizeOptionFromCssLoaders(config) {
-//   console.warn(
-//     'HACK: Removing `minimize` option from `css-loader` entries in Webpack config',
-//   );
-//   config.module.rules.forEach(rule => {
-//     if (Array.isArray(rule.use)) {
-//       rule.use.forEach(u => {
-//         if (u.loader === 'css-loader' && u.options) {
-//           delete u.options.minimize;
-//         }
-//       });
-//     }
-//   });
-// }
+function HACK_removeMinimizeOptionFromCssLoaders(config) {
+  console.warn(
+    'HACK: Removing `minimize` option from `css-loader` entries in Webpack config',
+  );
+  config.module.rules.forEach(rule => {
+    if (Array.isArray(rule.use)) {
+      rule.use.forEach(u => {
+        if (u.loader === 'css-loader' && u.options) {
+          delete u.options.minimize;
+        }
+      });
+    }
+  });
+}
 
 // module.exports = withSass()
 
-module.exports = {
+module.exports = withCSS({
   webpack(config) {
 
     config.node = { fs: 'empty' };
@@ -59,7 +59,7 @@ module.exports = {
       'process.env.REACT_APP_YOUTUBE_KEY': JSON.stringify(process.env.REACT_APP_YOUTUBE_KEY),
     }));
     
-    // HACK_removeMinimizeOptionFromCssLoaders(config);
+    HACK_removeMinimizeOptionFromCssLoaders(config);
     return config;
   }
-};
+});
