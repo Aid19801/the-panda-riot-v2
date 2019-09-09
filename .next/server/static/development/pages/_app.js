@@ -1071,7 +1071,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
 /*!**********************************!*\
   !*** ./redux/constants/index.js ***!
   \**********************************/
-/*! exports provided: APP_LOADING, APP_LOADED, APP_FAILED, SIGNIN_PAGE_LOADING, SIGNIN_PAGE_LOADED, SIGNIN_PAGE_FAILED */
+/*! exports provided: APP_LOADING, APP_LOADED, APP_FAILED, SIGNIN_PAGE_LOADING, SIGNIN_PAGE_LOADED, SIGNIN_PAGE_FAILED, SAVE_UID, HOME_PAGE_LOADING, HOME_PAGE_LOADED, HOME_PAGE_FAILED */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1082,6 +1082,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNIN_PAGE_LOADING", function() { return SIGNIN_PAGE_LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNIN_PAGE_LOADED", function() { return SIGNIN_PAGE_LOADED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNIN_PAGE_FAILED", function() { return SIGNIN_PAGE_FAILED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAVE_UID", function() { return SAVE_UID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_LOADING", function() { return HOME_PAGE_LOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_LOADED", function() { return HOME_PAGE_LOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_FAILED", function() { return HOME_PAGE_FAILED; });
 // app state
 const APP_LOADING = 'APP_LOADING';
 const APP_LOADED = 'APP_LOADED';
@@ -1090,6 +1094,11 @@ const APP_FAILED = 'APP_FAILED'; // sign in
 const SIGNIN_PAGE_LOADING = 'SIGNIN_PAGE_LOADING';
 const SIGNIN_PAGE_LOADED = 'SIGNIN_PAGE_LOADED';
 const SIGNIN_PAGE_FAILED = 'SIGNIN_PAGE_FAILED';
+const SAVE_UID = 'SAVE_UID'; // home page
+
+const HOME_PAGE_LOADING = 'HOME_PAGE_LOADING';
+const HOME_PAGE_LOADED = 'HOME_PAGE_LOADED';
+const HOME_PAGE_FAILED = 'HOME_PAGE_FAILED';
 
 /***/ }),
 
@@ -1138,6 +1147,56 @@ const appStateReducer = (state = initialState, action) => {
 
 /***/ }),
 
+/***/ "./redux/reducers/home.js":
+/*!********************************!*\
+  !*** ./redux/reducers/home.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "./redux/constants/index.js");
+
+
+const initialState = {
+  loading: false,
+  progressBarStatus: false,
+  error: null
+};
+/* eslint-disable */
+
+const homePageReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["HOME_PAGE_LOADING"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: true
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["HOME_PAGE_LOADED"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: false
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["HOME_PAGE_FAILED"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: false,
+        error: action.error
+      });
+      break;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (homePageReducer);
+
+/***/ }),
+
 /***/ "./redux/reducers/index.js":
 /*!*********************************!*\
   !*** ./redux/reducers/index.js ***!
@@ -1151,12 +1210,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _app_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-state */ "./redux/reducers/app-state.js");
 /* harmony import */ var _sigin_in__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sigin-in */ "./redux/reducers/sigin-in.js");
+/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home */ "./redux/reducers/home.js");
+
 
 
 
 const reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   appState: _app_state__WEBPACK_IMPORTED_MODULE_1__["appStateReducer"],
-  signIn: _sigin_in__WEBPACK_IMPORTED_MODULE_2__["default"]
+  signIn: _sigin_in__WEBPACK_IMPORTED_MODULE_2__["default"],
+  home: _home__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (reducers);
 
@@ -1178,10 +1240,10 @@ __webpack_require__.r(__webpack_exports__);
 const initialState = {
   loading: false,
   progressBarStatus: false,
-  error: null
-  /* eslint-disable */
-
+  error: null,
+  uid: ''
 };
+/* eslint-disable */
 
 const signinPageReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -1201,6 +1263,12 @@ const signinPageReducer = (state = initialState, action) => {
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
         loading: false,
         error: action.error
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["SAVE_UID"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        uid: action.uid
       });
       break;
 

@@ -1,12 +1,15 @@
 .input__input-container {
-    border: 1px solid red;
-    width: 300px;
+    /* border: 1px solid red; */
+    width: 400px;
+    /* margin: 20px; */
 }
 
 .input__input {
-    width: 300px;
+    width: 400px;
+    height: 70px;
+    font-size: 30px;
     border-radius: 12px;
-    background: white;
-    color: orange;
+    background: orange;
+    color: white;
     border: 0px 0px 0px 0px;
 }

@@ -1,14 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Raleway|Rubik);
+.button__button-container {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+    margin: 20px;
+}
 .input__input-container {
-    border: 1px solid red;
-    width: 300px;
+    /* border: 1px solid red; */
+    width: 400px;
+    /* margin: 20px; */
 }
 
 .input__input {
-    width: 300px;
+    width: 400px;
+    height: 70px;
+    font-size: 30px;
     border-radius: 12px;
-    background: white;
-    color: orange;
+    background: orange;
+    color: white;
     border: 0px 0px 0px 0px;
 }
+#page-container {
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.orange {
+  background: orange;
+  color: white;
+}
+
+.grey {
+  background: grey;
+  color: orange;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: 'Courier New', Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-family: 'Raleway';
+  color: lightgrey;
+}
+
+h2 {
+  font-family: monospace;
+  font-weight: 700;
+  text-shadow: 5px 6px 8px black;
+  color: white;
+}
+
+
+.funky-title {
+    background: black;
+    color: orange !important;
+    font-weight: 700;
+    font-size: 7vh;
+    padding: 20px;
+    transform: skewY(-2deg);
+    text-align: center;
+    width: 50%;
+  }
 
 /*# sourceMappingURL=styles.chunk.css.map*/

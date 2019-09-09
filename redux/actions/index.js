@@ -16,3 +16,19 @@ export const signInPageLoaded = () => {
 export const signInPageFailed = () => {
   return { type: actionTypes.SIGNIN_PAGE_FAILED };
 };
+
+export const saveUid = uid => ({ type: actionTypes.SAVE_UID, uid })
+
+// PAGE | Home
+
+export const homePageLoading = () => {
+  return { type: actionTypes.HOME_PAGE_LOADING };
+};
+
+export const homePageLoaded = () => {
+  return { type: actionTypes.HOME_PAGE_LOADED };
+};
+
+export const homePageFailed = () => {
+  return { type: actionTypes.HOME_PAGE_FAILED };
+};

@@ -1,15 +1,31 @@
 import React from 'react';
 // import fetch from 'isomorphic-unfetch';
 import { NextSeo } from 'next-seo';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
+import Router from 'next/router';
 import {
   signInPageLoading,
   signInPageLoaded,
-  signInPageFailed
+  signInPageFailed,
+  saveUid
 } from '../redux/actions';
-import Input from '../components/Input';
+import { Button, Input } from '../components';
+import { withFirebase } from '../HOCs';
+import * as cache from '../lib/cache';
+
+import '../lib/index.css';
 
 class SignInPage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      submitting: false,
+      error: null
+    };
+  }
   //   static async getInitialProps({ req }) {
   //     // const isServer = !!req
   //     const res = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -23,11 +39,41 @@ class SignInPage extends React.Component {
   componentDidMount() {
     const { pageLoading } = this.props;
     pageLoading();
+    console.log('props ', this.props);
   }
 
+  onSubmit = () => {
+    const { email, password } = this.state;
+    const { updateStateSaveUid } = this.props;
+    console.log('email ', email);
+    console.log('password ', password);
+
+    this.setState({
+      submitting: true
+    });
+    this.props.firebase
+      .doSignInWithEmailAndPassword(email, password)
+      .then(res => {
+        const { uid } = res.user;
+        updateStateSaveUid(uid);
+        cache.saveToCache('uid', uid);
+        this.setState({ email: '', password: '' });
+        Router.push('/home');
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
+  };
+
+  onChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
   render() {
+    const { submitting, error } = this.state;
+    console.log('this state ', this.state);
     return (
-      <div>
+      <div id="page-container">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -51,18 +97,23 @@ class SignInPage extends React.Component {
             ]
           }}
         />
-        <h1>Sign In: </h1>;
+        <h1 className="funky-title">Sign In: </h1>
         <Input
+          name="email"
           title="email"
-          onChange={e => console.log(e)}
+          onChange={this.onChange}
           placeholder="abc@abc.com"
         />
         <Input
+          name="password"
           title="password"
-          onChange={e => console.log(e)}
+          onChange={this.onChange}
           placeholder="password here"
         />
-        
+        <Button text="Submit" onClick={this.onSubmit} color="grey" />
+
+        {submitting && <p>Signing In..</p>}
+        {error && <p>{error.message}</p>}
       </div>
     );
   }
@@ -76,10 +127,14 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(signInPageLoading()),
   pageLoaded: () => dispatch(signInPageLoaded()),
-  pageFailed: () => dispatch(signInPageFailed())
+  pageFailed: () => dispatch(signInPageFailed()),
+  updateStateSaveUid: uid => dispatch(saveUid(uid))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default compose(
+  withFirebase,
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(SignInPage);
