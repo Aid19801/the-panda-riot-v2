@@ -1,5 +1,5 @@
 import React from 'react';
-// import fetch from 'isomorphic-unfetch';
+import fetch from 'isomorphic-unfetch';
 import { NextSeo } from 'next-seo';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -8,11 +8,13 @@ import {
   homePageLoading,
   homePageLoaded,
   homePageFailed,
-  fetchGigsFromGist
+  gotGigsFromGist
 } from '../redux/actions';
-// import * as cache from '../lib/cache';
-import '../lib/index.css';
+import * as cache from '../lib/cache';
 import withAuth from '../HOCs/with-auth';
+import mockGigs from '../lib/mock-gigs.json';
+
+import '../lib/index.css';
 
 class HomePage extends React.Component {
   constructor() {
@@ -21,14 +23,45 @@ class HomePage extends React.Component {
   }
 
   static async getInitialProps({ reduxStore, req }) {
-    await reduxStore.dispatch(fetchGigsFromGist())
-    return {};
+
+    let sortedGigs = [];
+    // if we're in dev,  pass in the mocks
+    // if (process.env.NODE_ENV !== 'production') {
+    //   reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
+    //   return;
+    // }
+
+    try {
+      const res = await fetch(
+        `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
+      );
+      const json = await res.json();
+      const rawUrl = json.files.gigs.raw_url;
+
+      const req = await fetch(rawUrl);
+      const reqJson = await req.json();
+
+      sortedGigs = (reqJson.gigs.sort((a, b) => {
+        var textA = a.name;
+        var textB = b.name;
+        return textA < textB ? -1 : textA > textB ? 1 : 0;
+      }));
+
+      cache.saveToCache('gigs', sortedGigs);
+      reduxStore.dispatch(gotGigsFromGist(sortedGigs));
+
+    } catch (error) {
+      console.log('getInitialProps err: ', error);
+    }
+
+    return {
+      gigs: sortedGigs,
+    };
   }
 
   async componentDidMount() {
-    const { pageLoading, pageLoaded, updateStateFetchGigs } = this.props;
+    const { pageLoading, pageLoaded } = this.props;
     pageLoading();
-    updateStateFetchGigs();
     pageLoaded();
   }
 
@@ -82,14 +115,13 @@ const mapStateToProps = state => ({
   loading: state.signIn.loading,
   error: state.signIn.error,
   reduxUserAuth: state.signIn.userAuth,
-  gigs: state.gigs.data,
+  gigs: state.gigs.data
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(homePageLoading()),
   pageLoaded: () => dispatch(homePageLoaded()),
   pageFailed: () => dispatch(homePageFailed()),
-  updateStateFetchGigs: () => dispatch(fetchGigsFromGist())
 });
 
 export default compose(

@@ -5,7 +5,7 @@ import { watcherGigsSaga } from './gigs';
 function* rootSaga() {
     yield all([
         watcherAppStateSaga(),
-        watcherGigsSaga(),
+        // watcherGigsSaga(),
     ])
 }
 

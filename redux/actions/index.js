@@ -38,6 +38,11 @@ export const fetchGigsFromGist = () => {
 }
 
 
+export const gotGigsFromGist = (gigs) => {
+  return { type: actionTypes.FETCH_GIGS_RESP, data: gigs }
+}
+
+
 
 
 // PAGE | Home
