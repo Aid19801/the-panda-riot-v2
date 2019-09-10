@@ -16,10 +16,11 @@ const gigsReducer = (state = initialState, action) => {
       break;
 
     case actions.FETCH_GIGS_RESP:
+      console.log('reducer heard FETCH GIGS RESP ', action)
       return {
         ...state,
         loading: false,
-        data: action.data
+        data: action.data,
       };
       break;
 

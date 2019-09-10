@@ -4,123 +4,100 @@ import { connect } from 'react-redux';
 import { withFirebase } from '.';
 import * as cache from '../lib/cache';
 import Router from 'next/router';
-import hoistNonReactStatic from 'hoist-non-react-statics';
-
 import { saveAuthenticatedUID } from '../redux/actions';
 
-const withAuthentication = PlatformSpecificComponent => {
+export default function withAuth(PlatformSpecificComponent) {
   class withAuthenticationClass extends React.Component {
+    static async getInitialProps(ctx) {
+      // Check if Page has a `getInitialProps`; if so, call it.
+      const pageProps =
+        PlatformSpecificComponent.getInitialProps &&
+        (await PlatformSpecificComponent.getInitialProps(ctx));
+      // Return props.
+      return { ...pageProps };
+    }
+
     constructor(props) {
       super(props);
       this.state = {
-        authUser: null
+        authUser: null,
+        uid: ''
       };
     }
 
     componentDidMount() {
-      // const uid = cache.getFromCache('uid');
-      // if (!uid) {
-      //   return Router.push('/signin');
-      // }
       this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
         authUser
-          ? this.ifAuthSaveToCache(authUser)
+          ? this.checkAuthStatus(authUser.uid)
           : this.ifNotAuthRouteToSignIn();
       });
+
+      this.checkAuthStatus();
     }
 
-    ifNotAuthRouteToSignIn = () => {
-      cache.clearFromCache('userProfile');
-      cache.clearFromCache('uid');
-      this.setState({
-        authUser: null
-      });
-      Router.push('/signin');
-    };
+    // route based on whats in cache
+    checkAuthStatus = async (fbUID) => {
+      const cacheUID = await cache.getFromCache('uid');
 
-    // if the user is authorised (signedin) then grab deets
-    // for local state, redux and cacheing.
-    ifAuthSaveToCache = async authUser => {
-      // USER AUTH save authUser to local state, redux and cache.
-      this.setState({ authUser });
-      this.props.updateStateWithUID(authUser.uid);
-      cache.saveToCache('uid', authUser.uid);
+      // if theres no uid in cache, save one.
+      if (!cacheUID) {
+        cache.saveToCache('uid', fbUID);
+      }
+
+      // if user has no DB profile, route to `/me`
 
       // DATABASE / USER PROFILE
       // get userProfile from cache (this is just a string bool)
-      let userProfile = await cache.getFromCache('userProfile');
-      // console.log('userProfileStatus string ', userProfileStatus)
-      // switch to a real bool
-      let userProfileStatus = userProfile === 'true' ? true : false;
+      let hasProfileCacheString = await cache.getFromCache('userProfile');
+      // transform to a real bool
+      let hasProfile = hasProfileCacheString === 'true' ? true : false;
       // console.log('userProfileStatus bool ', userProfileStatus)
       // if its false, check the FB database, if it includes faveGig
       // set to true.
       // so first time it renders after signup, it will check if you
       // entered a faveGig minimum for your profile, and if not,
       // `userProfile` cache stays false.
-      if (!userProfileStatus) {
+      if (!hasProfile) {
         // console.log('user prof status is false =>' , userProfileStatus, typeof userProfileStatus)
-        this.props.firebase.user(authUser.uid).on('value', snapshot => {
-          // console.log('on value fired')
+        this.props.firebase.user(cacheUID)
+        .on('value', snapshot => {
+          console.log('on value fired');
           let fbuserProfile = snapshot.val();
-          // console.log('fbUserProfile snapshot val ', fbuserProfile)
+          console.log('user has firestore profile: ', fbuserProfile);
           // get FB profile, check if faveGig exists
-          if (fbuserProfile && fbuserProfile.faveGig === '') {
+          if ((fbuserProfile && fbuserProfile.faveGig === '') || fbuserProfile && !fbuserProfile["faveGig"]) {
             // if profile exists but faveGig empty, set cache to false (user hasnt completed db profile)
             // console.log('fave gig doesnt exist, userProfile cache should be false');
             cache.saveToCache('userProfile', 'false');
+            return Router.push('/me');
           }
           // if it exists and it's not empty, set cache to true (user has completed db profile)
           if (fbuserProfile && fbuserProfile.faveGig !== '') {
             // console.log('fave gig DOES exist, userProfile cache should be true');
-            cache.saveToCache('userProfile', 'true');
+            return cache.saveToCache('userProfile', 'true');
           }
         });
         return;
       }
-
-      return Router.push('/home');
-      //   return cache.saveToCache('uid', authUser.uid);
+      // return Router.push('/home')
     };
-
-    componentWillUnmount() {
-      this.listener();
-    }
 
     signOut = () => {
       cache.clearFromCache('uid', '');
-      cache.clearFromCache('userProfile', false);
+      cache.clearFromCache('userProfile', 'false');
       this.props.firebase.doSignOut();
       Router.push('/signin');
     };
 
-    signIn = (email, password) => {
-      // this is done at page level. wrapping '/signin' with `withAuthentication`
-      // would make it only visible to users who are signed in === Endless loop.
-    };
-
     render() {
       const { authUser } = this.state;
-      return (
-        <PlatformSpecificComponent
-          {...this.props}
-          authUser={authUser}
-          signOut={this.signOut}
-        />
-      );
+      return <PlatformSpecificComponent {...this.props} signOut={this.signOut} />;
     }
   }
 
   const mapDispatchToProps = dispatch => ({
     updateStateWithUID: id => dispatch(saveAuthenticatedUID(id))
   });
-
-  
-  hoistNonReactStatic(withAuthenticationClass, PlatformSpecificComponent);
-  
-  if (withAuthenticationClass.getInitialProps) {
-    withAuthenticationClass.getInitialProps()
-  }
 
   return compose(
     withFirebase,
@@ -129,6 +106,4 @@ const withAuthentication = PlatformSpecificComponent => {
       mapDispatchToProps
     )
   )(withAuthenticationClass);
-};
-
-export default withAuthentication;
+}

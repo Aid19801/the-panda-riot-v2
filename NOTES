@@ -1,0 +1,82 @@
+1 we are adding in static method handlers to all HOCs
+otherwise they stop fucking firing.
+
+
+
+componentDidMount() {
+      this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
+        authUser
+          ? this.ifAuthSaveToCache(authUser)
+          : this.ifNotAuthRouteToSignIn();
+      });
+    }
+
+    ifNotAuthRouteToSignIn = () => {
+      cache.clearFromCache('userProfile');
+      cache.clearFromCache('uid');
+      this.setState({
+        authUser: null
+      });
+      Router.push('/signin');
+    };
+
+    // if the user is authorised (signedin) then grab deets
+    // for local state, redux and cacheing.
+    ifAuthSaveToCache = async authUser => {
+      // USER AUTH save authUser to local state, redux and cache.
+      this.setState({ authUser });
+      this.props.updateStateWithUID(authUser.uid);
+      cache.saveToCache('uid', authUser.uid);
+
+      // DATABASE / USER PROFILE
+      // get userProfile from cache (this is just a string bool)
+      let userProfile = await cache.getFromCache('userProfile');
+      // console.log('userProfileStatus string ', userProfileStatus)
+      // switch to a real bool
+      let userProfileStatus = userProfile === 'true' ? true : false;
+      // console.log('userProfileStatus bool ', userProfileStatus)
+      // if its false, check the FB database, if it includes faveGig
+      // set to true.
+      // so first time it renders after signup, it will check if you
+      // entered a faveGig minimum for your profile, and if not,
+      // `userProfile` cache stays false.
+      if (!userProfileStatus) {
+        // console.log('user prof status is false =>' , userProfileStatus, typeof userProfileStatus)
+        this.props.firebase.user(authUser.uid).on('value', snapshot => {
+          // console.log('on value fired')
+          let fbuserProfile = snapshot.val();
+          // console.log('fbUserProfile snapshot val ', fbuserProfile)
+          // get FB profile, check if faveGig exists
+          if (fbuserProfile && fbuserProfile.faveGig === '') {
+            // if profile exists but faveGig empty, set cache to false (user hasnt completed db profile)
+            // console.log('fave gig doesnt exist, userProfile cache should be false');
+            cache.saveToCache('userProfile', 'false');
+          }
+          // if it exists and it's not empty, set cache to true (user has completed db profile)
+          if (fbuserProfile && fbuserProfile.faveGig !== '') {
+            // console.log('fave gig DOES exist, userProfile cache should be true');
+            cache.saveToCache('userProfile', 'true');
+          }
+        });
+        return;
+      }
+
+      return Router.push('/home');
+      //   return cache.saveToCache('uid', authUser.uid);
+    };
+
+    componentWillUnmount() {
+      this.listener();
+    }
+
+    signOut = () => {
+      cache.clearFromCache('uid', '');
+      cache.clearFromCache('userProfile', false);
+      this.props.firebase.doSignOut();
+      Router.push('/signin');
+    };
+
+    signIn = (email, password) => {
+      // this is done at page level. wrapping '/signin' with `withAuthentication`
+      // would make it only visible to users who are signed in === Endless loop.
+    };

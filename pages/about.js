@@ -16,8 +16,6 @@ class AboutPage extends React.Component {
   }
   static async getInitialProps() {
     console.log('==== ABOUT get initial props =====');
-
-    // const isServer = !!req
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const json = await res.json();
     console.log('==== json =====', json.length);
@@ -34,7 +32,6 @@ class AboutPage extends React.Component {
 
   render() {
     if (process.browser) {
-
         console.log(' about props ==> ', this.props);
     }
     return (

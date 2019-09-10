@@ -22,10 +22,11 @@ import '../lib/index.css';
 class SignUpPage extends React.Component {
 
   static async getInitialProps({ req }) {
-    console.log('======== server firing ========')
-    const res = await fetch('https://api.github.com/repos/zeit/next.js')
+    console.log('======== SignUpPage getInitialProps ========')
+    const res = await fetch(`https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`)
     const json = await res.json()
-    return { stars: json.stargazers_count }
+    console.log('json back: ', json);
+    return { poo: true }
   }
 
   constructor() {

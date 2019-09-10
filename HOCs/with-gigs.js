@@ -1,38 +1,27 @@
-// import fetch from 'isomorphic-unfetch';
+import React, { Component } from 'react';
 
-// const withGigs = PlatformSpecificComponent => {
-//   class AuthComponent extends React.Component {
-//     static async getInitialProps(ctx) {
-//       const response = await fetch(`https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`);
-//       const json = await response.json();
-//       console.log("@withGigs resp", response);
-//       console.log("@withGigs json", json);
+export default function withGigs(PlatformSpecificComponent) {
+  class Gigs extends Component {
+    static async getInitialProps(ctx) {
+      // Check if Page has a `getInitialProps`; if so, call it.
+      const pageProps =
+        PlatformSpecificComponent.getInitialProps &&
+        (await PlatformSpecificComponent.getInitialProps(ctx));
+      // Return props.
+      return { ...pageProps };
+    }
 
-//       if (!response) {
-//         redirect(ctx, "/");
-//         return {
-//           gigs: null
-//         };
-//       }
+    constructor(props) {
+      super(props);
+      this.state = {
+        authUser: null
+      };
+    }
 
-//       // Get component’s props
-//       let componentProps = {}
-//       if (PlatformSpecificComponent.getInitialProps) {
-//         componentProps = await PlatformSpecificComponent.getInitialProps(ctx);
-//       }
 
-//       return {
-//         gigs: json,
-//         ...componentProps
-//       };
-//     }
-
-//     render() {
-//       return <PlatformSpecificComponent {...this.props} />;
-//     }
-//   }
-
-//   return AuthComponent;
-// };
-
-// export default withGigs;
+    render() {
+      return <PlatformSpecificComponent {...this.props} />;
+    }
+  }
+  return Gigs;
+}

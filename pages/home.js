@@ -1,41 +1,34 @@
 import React from 'react';
+// import fetch from 'isomorphic-unfetch';
 import { NextSeo } from 'next-seo';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import Router from 'next/router';
+// import Router from 'next/router';
 import {
   homePageLoading,
   homePageLoaded,
-  homePageFailed
+  homePageFailed,
+  fetchGigsFromGist
 } from '../redux/actions';
-import * as cache from '../lib/cache';
+// import * as cache from '../lib/cache';
 import '../lib/index.css';
-import withAuthentication from '../HOCs/with-auth';
+import withAuth from '../HOCs/with-auth';
 
 class HomePage extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
-    static async getInitialProps({ req }) {
-      // const isServer = !!req
-      const res = await fetch('https://jsonplaceholder.typicode.com/users');
-      const json = await res.json();
 
-      return {
-        users: json
-      };
-    }
+  static async getInitialProps({ reduxStore, req }) {
+    await reduxStore.dispatch(fetchGigsFromGist())
+    return {};
+  }
 
   async componentDidMount() {
-    const { pageLoading, pageLoaded } = this.props;
+    const { pageLoading, pageLoaded, updateStateFetchGigs } = this.props;
     pageLoading();
-    // check redux and cache for authenticated user:
-    // const { reduxUserAuth } = this.props;
-    // const cacheAuthUser = cache.getFromCache('authUser');
-    // if (!reduxUserAuth && !cacheAuthUser) {
-    //   Router.push('/signin');
-    // }
+    updateStateFetchGigs();
     pageLoaded();
   }
 
@@ -43,23 +36,21 @@ class HomePage extends React.Component {
     this.props.signOut();
   };
 
-  componentWillReceiveProps = nextProps => {
-    // console.log('nextProps: ', nextProps);
-    const { pageLoaded } = nextProps;
-    if (nextProps.authUser) {
-      pageLoaded();
-    }
+  componentDidUpdate = nextProps => {
+    console.log('nextProps: ', nextProps);
   };
 
   render() {
-    console.log(' homepage props ==> ', this.props)
+    if (process.browser) {
+      console.log('homepage props ==> ', this.props);
+    }
     return (
       <div id="page-container">
         <NextSeo
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com/gigs',
-            title: 'Sign In',
+            title: `${this.props.gigs[0].name}`,
             description: 'Sign in to the panda riot open mic comedy webapp!',
             images: [
               {
@@ -81,6 +72,7 @@ class HomePage extends React.Component {
         <h1 className="funky-title">Home</h1>
         <button onClick={this.signOut}>Sign Out</button>
         <p>you can only see me if youre logged in</p>
+        <p>gigs are back: {this.props.gigs && this.props.gigs.length}</p>
       </div>
     );
   }
@@ -89,17 +81,19 @@ class HomePage extends React.Component {
 const mapStateToProps = state => ({
   loading: state.signIn.loading,
   error: state.signIn.error,
-  reduxUserAuth: state.signIn.userAuth
+  reduxUserAuth: state.signIn.userAuth,
+  gigs: state.gigs.data,
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(homePageLoading()),
   pageLoaded: () => dispatch(homePageLoaded()),
-  pageFailed: () => dispatch(homePageFailed())
+  pageFailed: () => dispatch(homePageFailed()),
+  updateStateFetchGigs: () => dispatch(fetchGigsFromGist())
 });
 
 export default compose(
-  withAuthentication,
+  withAuth,
   connect(
     mapStateToProps,
     mapDispatchToProps
