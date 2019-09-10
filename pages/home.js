@@ -6,57 +6,53 @@ import Router from 'next/router';
 import {
   homePageLoading,
   homePageLoaded,
-  homePageFailed,
+  homePageFailed
 } from '../redux/actions';
 import * as cache from '../lib/cache';
 import '../lib/index.css';
 import withAuthentication from '../HOCs/with-auth';
 
 class HomePage extends React.Component {
-
   constructor() {
     super();
-    this.state = {
-    }
+    this.state = {};
   }
-  //   static async getInitialProps({ req }) {
-  //     // const isServer = !!req
-  //     const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  //     const json = await res.json();
+    static async getInitialProps({ req }) {
+      // const isServer = !!req
+      const res = await fetch('https://jsonplaceholder.typicode.com/users');
+      const json = await res.json();
 
-  //     return {
-  //       users: json
-  //     };
-  //   }
-
-  componentDidMount() {
-    const { pageLoading } = this.props;
-    const { reduxUID } = this.props;
-    const cacheUID = cache.getFromCache('uid');
-    pageLoading();
-    console.log('props ', this.props);
-
-    // NEXT = vv put redux uid and/or cache uid from firebase as condition that bounces it back to signin.
-    if (!reduxUID && !cacheUID) {
-      Router.push('/signin')
+      return {
+        users: json
+      };
     }
+
+  async componentDidMount() {
+    const { pageLoading, pageLoaded } = this.props;
+    pageLoading();
+    // check redux and cache for authenticated user:
+    // const { reduxUserAuth } = this.props;
+    // const cacheAuthUser = cache.getFromCache('authUser');
+    // if (!reduxUserAuth && !cacheAuthUser) {
+    //   Router.push('/signin');
+    // }
+    pageLoaded();
   }
 
   signOut = () => {
     this.props.signOut();
-  }
+  };
 
   componentWillReceiveProps = nextProps => {
-    console.log('nextProps: ', nextProps);
+    // console.log('nextProps: ', nextProps);
     const { pageLoaded } = nextProps;
     if (nextProps.authUser) {
       pageLoaded();
     }
-  }
-
+  };
 
   render() {
-
+    console.log(' homepage props ==> ', this.props)
     return (
       <div id="page-container">
         <NextSeo
@@ -93,7 +89,7 @@ class HomePage extends React.Component {
 const mapStateToProps = state => ({
   loading: state.signIn.loading,
   error: state.signIn.error,
-  reduxUID: state.signIn.uid,
+  reduxUserAuth: state.signIn.userAuth
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -104,5 +100,8 @@ const mapDispatchToProps = dispatch => ({
 
 export default compose(
   withAuthentication,
-  connect(mapStateToProps, mapDispatchToProps),
-)(HomePage)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
+)(HomePage);

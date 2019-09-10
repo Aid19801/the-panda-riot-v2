@@ -4,49 +4,53 @@ import { NextSeo } from 'next-seo';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import Router from 'next/router';
+import Link from 'next/link';
 import {
   signInPageLoading,
   signInPageLoaded,
   signInPageFailed,
-  saveUid
+  saveAuthUser,
+  saveAuthenticatedUID
 } from '../redux/actions';
 import { Button, Input } from '../components';
 import { withFirebase } from '../HOCs';
 import * as cache from '../lib/cache';
 
 import '../lib/index.css';
+import withGigs from '../HOCs/with-gigs';
 
 class SignInPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      password: '',
+      email: 'cultureslutlondon@gmail.com',
+      password: 'London01',
       submitting: false,
       error: null
     };
   }
-  //   static async getInitialProps({ req }) {
-  //     // const isServer = !!req
-  //     const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  //     const json = await res.json();
-
-  //     return {
-  //       users: json
-  //     };
-  //   }
+  static async getInitialProps({ req }) {
+    console.log('getInitialProps fired');
+    // const isServer = !!req
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const json = await res.json();
+    console.log('getInitialProps ', json);
+    return {
+      users: json
+    };
+  }
 
   componentDidMount() {
-    const { pageLoading } = this.props;
+    const { pageLoading, pageLoaded } = this.props;
     pageLoading();
-    console.log('props ', this.props);
+    pageLoaded();
   }
 
   onSubmit = () => {
     const { email, password } = this.state;
-    const { updateStateSaveUid } = this.props;
-    console.log('email ', email);
-    console.log('password ', password);
+    const { updateStateAuthenticatedUID } = this.props;
+    // console.log('email ', email);
+    // console.log('password ', password);
 
     this.setState({
       submitting: true
@@ -54,9 +58,8 @@ class SignInPage extends React.Component {
     this.props.firebase
       .doSignInWithEmailAndPassword(email, password)
       .then(res => {
-        const { uid } = res.user;
-        updateStateSaveUid(uid);
-        cache.saveToCache('uid', uid);
+        updateStateAuthenticatedUID(res.user.uid);
+        cache.saveToCache('uid', res.user.uid);
         this.setState({ email: '', password: '' });
         Router.push('/home');
       })
@@ -71,7 +74,7 @@ class SignInPage extends React.Component {
 
   render() {
     const { submitting, error } = this.state;
-    console.log('this state ', this.state);
+    // console.log('this state ', this.state);
     return (
       <div id="page-container">
         <NextSeo
@@ -112,6 +115,10 @@ class SignInPage extends React.Component {
         />
         <Button text="Submit" onClick={this.onSubmit} color="grey" />
 
+        <Link href="/signup">
+          <a>Sign up</a>
+        </Link>
+
         {submitting && <p>Signing In..</p>}
         {error && <p>{error.message}</p>}
       </div>
@@ -128,10 +135,11 @@ const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(signInPageLoading()),
   pageLoaded: () => dispatch(signInPageLoaded()),
   pageFailed: () => dispatch(signInPageFailed()),
-  updateStateSaveUid: uid => dispatch(saveUid(uid))
+  updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id))
 });
 
 export default compose(
+  // withGigs,
   withFirebase,
   connect(
     mapStateToProps,

@@ -29788,6 +29788,18 @@ module.exports = invariant;
 
 /***/ }),
 
+/***/ "./node_modules/isomorphic-unfetch/browser.js":
+/*!****************************************************!*\
+  !*** ./node_modules/isomorphic-unfetch/browser.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = window.fetch || (window.fetch = __webpack_require__(/*! unfetch */ "./node_modules/unfetch/dist/unfetch.mjs").default || __webpack_require__(/*! unfetch */ "./node_modules/unfetch/dist/unfetch.mjs"));
+
+
+/***/ }),
+
 /***/ "./node_modules/lodash-es/_Symbol.js":
 /*!*******************************************!*\
   !*** ./node_modules/lodash-es/_Symbol.js ***!
@@ -35843,7 +35855,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel, default */
+/*! exports provided: default, CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37898,6 +37910,21 @@ function __importDefault(mod) {
 
 /***/ }),
 
+/***/ "./node_modules/unfetch/dist/unfetch.mjs":
+/*!***********************************************!*\
+  !*** ./node_modules/unfetch/dist/unfetch.mjs ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function(e,n){return n=n||{},new Promise(function(t,r){var s=new XMLHttpRequest,o=[],u=[],i={},a=function(){return{ok:2==(s.status/100|0),statusText:s.statusText,status:s.status,url:s.responseURL,text:function(){return Promise.resolve(s.responseText)},json:function(){return Promise.resolve(JSON.parse(s.responseText))},blob:function(){return Promise.resolve(new Blob([s.response]))},clone:a,headers:{keys:function(){return o},entries:function(){return u},get:function(e){return i[e.toLowerCase()]},has:function(e){return e.toLowerCase()in i}}}};for(var l in s.open(n.method||"get",e,!0),s.onload=function(){s.getAllResponseHeaders().replace(/^(.*?):[^\S\n]*([\s\S]*?)$/gm,function(e,n,t){o.push(n=n.toLowerCase()),u.push([n,t]),i[n]=i[n]?i[n]+","+t:t}),t(a())},s.onerror=r,s.withCredentials="include"==n.credentials,n.headers)s.setRequestHeader(l,n.headers[l]);s.send(n.body||null)})});
+//# sourceMappingURL=unfetch.mjs.map
+
+
+/***/ }),
+
 /***/ "./node_modules/url/url.js":
 /*!*********************************!*\
   !*** ./node_modules/url/url.js ***!
@@ -39338,7 +39365,7 @@ function (_App) {
 /*!**********************************!*\
   !*** ./redux/constants/index.js ***!
   \**********************************/
-/*! exports provided: APP_LOADING, APP_LOADED, APP_FAILED, SIGNIN_PAGE_LOADING, SIGNIN_PAGE_LOADED, SIGNIN_PAGE_FAILED, SAVE_UID, HOME_PAGE_LOADING, HOME_PAGE_LOADED, HOME_PAGE_FAILED */
+/*! exports provided: APP_LOADING, APP_LOADED, APP_FAILED, SIGNIN_PAGE_LOADING, SIGNIN_PAGE_LOADED, SIGNIN_PAGE_FAILED, SAVE_UID, SIGNUP_PAGE_LOADING, SIGNUP_PAGE_LOADED, SIGNUP_PAGE_FAILED, HOME_PAGE_LOADING, HOME_PAGE_LOADED, HOME_PAGE_FAILED, FETCH_GIGS_REQ, FETCH_GIGS_RESP */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39350,9 +39377,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNIN_PAGE_LOADED", function() { return SIGNIN_PAGE_LOADED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNIN_PAGE_FAILED", function() { return SIGNIN_PAGE_FAILED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAVE_UID", function() { return SAVE_UID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNUP_PAGE_LOADING", function() { return SIGNUP_PAGE_LOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNUP_PAGE_LOADED", function() { return SIGNUP_PAGE_LOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNUP_PAGE_FAILED", function() { return SIGNUP_PAGE_FAILED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_LOADING", function() { return HOME_PAGE_LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_LOADED", function() { return HOME_PAGE_LOADED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_FAILED", function() { return HOME_PAGE_FAILED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_GIGS_REQ", function() { return FETCH_GIGS_REQ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_GIGS_RESP", function() { return FETCH_GIGS_RESP; });
 // app state
 var APP_LOADING = 'APP_LOADING';
 var APP_LOADED = 'APP_LOADED';
@@ -39361,11 +39393,18 @@ var APP_FAILED = 'APP_FAILED'; // sign in
 var SIGNIN_PAGE_LOADING = 'SIGNIN_PAGE_LOADING';
 var SIGNIN_PAGE_LOADED = 'SIGNIN_PAGE_LOADED';
 var SIGNIN_PAGE_FAILED = 'SIGNIN_PAGE_FAILED';
-var SAVE_UID = 'SAVE_UID'; // home page
+var SAVE_UID = 'SAVE_UID'; // sign up
+
+var SIGNUP_PAGE_LOADING = 'SIGNUP_PAGE_LOADING';
+var SIGNUP_PAGE_LOADED = 'SIGNUP_PAGE_LOADED';
+var SIGNUP_PAGE_FAILED = 'SIGNUP_PAGE_FAILED'; // home page
 
 var HOME_PAGE_LOADING = 'HOME_PAGE_LOADING';
 var HOME_PAGE_LOADED = 'HOME_PAGE_LOADED';
-var HOME_PAGE_FAILED = 'HOME_PAGE_FAILED';
+var HOME_PAGE_FAILED = 'HOME_PAGE_FAILED'; // gigs
+
+var FETCH_GIGS_REQ = 'FETCH_GIGS_REQ';
+var FETCH_GIGS_RESP = 'FETCH_GIGS_RESP';
 
 /***/ }),
 
@@ -39414,6 +39453,52 @@ var appStateReducer = function appStateReducer() {
       return state;
   }
 };
+
+/***/ }),
+
+/***/ "./redux/reducers/gigs.js":
+/*!********************************!*\
+  !*** ./redux/reducers/gigs.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "./redux/constants/index.js");
+
+
+var initialState = {
+  loading: false,
+  data: null
+};
+/* eslint-disable */
+
+var gigsReducer = function gigsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_GIGS_REQ"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: true
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_GIGS_RESP"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: false,
+        data: action.data
+      });
+      break;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (gigsReducer);
 
 /***/ }),
 
@@ -39481,25 +39566,31 @@ var homePageReducer = function homePageReducer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
 /* harmony import */ var _app_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-state */ "./redux/reducers/app-state.js");
-/* harmony import */ var _sigin_in__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sigin-in */ "./redux/reducers/sigin-in.js");
-/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home */ "./redux/reducers/home.js");
+/* harmony import */ var _sign_in__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sign-in */ "./redux/reducers/sign-in.js");
+/* harmony import */ var _sign_up__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sign-up */ "./redux/reducers/sign-up.js");
+/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home */ "./redux/reducers/home.js");
+/* harmony import */ var _gigs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./gigs */ "./redux/reducers/gigs.js");
+
+
 
 
 
 
 var reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   appState: _app_state__WEBPACK_IMPORTED_MODULE_1__["appStateReducer"],
-  signIn: _sigin_in__WEBPACK_IMPORTED_MODULE_2__["default"],
-  home: _home__WEBPACK_IMPORTED_MODULE_3__["default"]
+  signIn: _sign_in__WEBPACK_IMPORTED_MODULE_2__["default"],
+  signUp: _sign_up__WEBPACK_IMPORTED_MODULE_3__["default"],
+  home: _home__WEBPACK_IMPORTED_MODULE_4__["default"],
+  gigs: _gigs__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (reducers);
 
 /***/ }),
 
-/***/ "./redux/reducers/sigin-in.js":
-/*!************************************!*\
-  !*** ./redux/reducers/sigin-in.js ***!
-  \************************************/
+/***/ "./redux/reducers/sign-in.js":
+/*!***********************************!*\
+  !*** ./redux/reducers/sign-in.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -39556,6 +39647,60 @@ var signinPageReducer = function signinPageReducer() {
 
 /***/ }),
 
+/***/ "./redux/reducers/sign-up.js":
+/*!***********************************!*\
+  !*** ./redux/reducers/sign-up.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "./redux/constants/index.js");
+
+
+var initialState = {
+  loading: false,
+  progressBarStatus: false,
+  error: null,
+  authUser: ''
+};
+/* eslint-disable */
+
+var signUpPageReducer = function signUpPageReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["SIGNUP_PAGE_LOADING"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: true
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["SIGNUP_PAGE_LOADED"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: false
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["SIGNUP_PAGE_FAILED"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: false,
+        error: action.error
+      });
+      break;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (signUpPageReducer);
+
+/***/ }),
+
 /***/ "./redux/sagas/app-state.js":
 /*!**********************************!*\
   !*** ./redux/sagas/app-state.js ***!
@@ -39587,7 +39732,7 @@ function watcherAppStateSaga() {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          console.log('watcher fired');
+          console.log('watcherAppStateSaga fired');
           _context.next = 3;
           return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_constants__WEBPACK_IMPORTED_MODULE_2__["APP_LOADING"], workerAppStateSaga);
 
@@ -39603,13 +39748,127 @@ function workerAppStateSaga() {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          console.log('worker fired');
+          console.log('workerAppStateSaga fired');
           _context2.next = 3;
           return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
             type: _constants__WEBPACK_IMPORTED_MODULE_2__["APP_LOADED"]
           });
 
         case 3:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, _marked2);
+}
+
+/***/ }),
+
+/***/ "./redux/sagas/gigs.js":
+/*!*****************************!*\
+  !*** ./redux/sagas/gigs.js ***!
+  \*****************************/
+/*! exports provided: watcherGigsSaga, workerGigsSaga */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "watcherGigsSaga", function() { return watcherGigsSaga; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "workerGigsSaga", function() { return workerGigsSaga; });
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../constants */ "./redux/constants/index.js");
+
+
+var _marked =
+/*#__PURE__*/
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watcherGigsSaga),
+    _marked2 =
+/*#__PURE__*/
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(workerGigsSaga);
+
+
+
+
+function watcherGigsSaga() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watcherGigsSaga$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          console.log('watcherGigsSaga fired');
+          _context.next = 3;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_constants__WEBPACK_IMPORTED_MODULE_3__["FETCH_GIGS_REQ"], workerGigsSaga);
+
+        case 3:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _marked);
+}
+function workerGigsSaga(actionObj) {
+  var rawUrl, retrievedGigs, error;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function workerGigsSaga$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          console.log('workerGigsSaga fired');
+          console.log('action obj is ', actionObj);
+          rawUrl = '';
+          error = null;
+          console.log('gist env var', "7c88e1645fd8518999fb9c764c0d1869"); // go to gist
+
+          _context2.next = 7;
+          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()("https://api.github.com/gists/".concat("7c88e1645fd8518999fb9c764c0d1869")).then(function (res) {
+            return res.json();
+          }).then(function (json) {
+            console.log('json is back: ', json);
+            return rawUrl = json.files.gigs.raw_url;
+          })["catch"](function (err) {
+            return error = err;
+          });
+
+        case 7:
+          _context2.next = 9;
+          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()(rawUrl).then(function (res) {
+            return res.json();
+          }).then(function (json) {
+            return retrievedGigs = json.gigs.sort(function (a, b) {
+              var textA = a.name;
+              var textB = b.name;
+              return textA < textB ? -1 : textA > textB ? 1 : 0;
+            });
+          })["catch"](function (err) {
+            return console.log('err ', err);
+          });
+
+        case 9:
+          if (!(retrievedGigs && retrievedGigs.length !== 0)) {
+            _context2.next = 14;
+            break;
+          }
+
+          _context2.next = 12;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            type: actions.FETCH_GIGS_RESP,
+            data: retrievedGigs
+          });
+
+        case 12:
+          _context2.next = 16;
+          break;
+
+        case 14:
+          _context2.next = 16;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            type: actions.FETCH_GIGS_RESP,
+            data: error
+          });
+
+        case 16:
         case "end":
           return _context2.stop();
       }
@@ -39632,11 +39891,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
 /* harmony import */ var _app_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-state */ "./redux/sagas/app-state.js");
+/* harmony import */ var _gigs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gigs */ "./redux/sagas/gigs.js");
 
 
 var _marked =
 /*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(rootSaga);
+
 
 
 
@@ -39647,7 +39908,7 @@ function rootSaga() {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(_app_state__WEBPACK_IMPORTED_MODULE_2__["watcherAppStateSaga"])()]);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(_app_state__WEBPACK_IMPORTED_MODULE_2__["watcherAppStateSaga"])(), Object(_gigs__WEBPACK_IMPORTED_MODULE_3__["watcherGigsSaga"])()]);
 
         case 2:
         case "end":

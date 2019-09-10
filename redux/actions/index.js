@@ -4,7 +4,7 @@ export const startApp = () => {
   return { type: actionTypes.APP_LOADING };
 };
 
-// PAGE | Sign in
+// PAGE | Auth / Sign In
 export const signInPageLoading = () => {
   return { type: actionTypes.SIGNIN_PAGE_LOADING };
 };
@@ -17,7 +17,28 @@ export const signInPageFailed = () => {
   return { type: actionTypes.SIGNIN_PAGE_FAILED };
 };
 
-export const saveUid = uid => ({ type: actionTypes.SAVE_UID, uid })
+export const saveAuthenticatedUID = uid => ({ type: actionTypes.SAVE_UID, uid: uid });
+
+// PAGE | Auth / Sign Up
+export const signUpPageLoading = () => {
+  return { type: actionTypes.SIGNUP_PAGE_LOADING };
+};
+
+export const signUpPageLoaded = () => {
+  return { type: actionTypes.SIGNUP_PAGE_LOADED };
+};
+
+export const signUpPageFailed = () => {
+  return { type: actionTypes.SIGNUP_PAGE_FAILED };
+};
+
+
+export const fetchGigsFromGist = () => {
+  return { type: actionTypes.FETCH_GIGS_REQ }
+}
+
+
+
 
 // PAGE | Home
 

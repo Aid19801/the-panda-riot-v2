@@ -1071,7 +1071,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
 /*!**********************************!*\
   !*** ./redux/constants/index.js ***!
   \**********************************/
-/*! exports provided: APP_LOADING, APP_LOADED, APP_FAILED, SIGNIN_PAGE_LOADING, SIGNIN_PAGE_LOADED, SIGNIN_PAGE_FAILED, SAVE_UID, HOME_PAGE_LOADING, HOME_PAGE_LOADED, HOME_PAGE_FAILED */
+/*! exports provided: APP_LOADING, APP_LOADED, APP_FAILED, SIGNIN_PAGE_LOADING, SIGNIN_PAGE_LOADED, SIGNIN_PAGE_FAILED, SAVE_UID, SIGNUP_PAGE_LOADING, SIGNUP_PAGE_LOADED, SIGNUP_PAGE_FAILED, HOME_PAGE_LOADING, HOME_PAGE_LOADED, HOME_PAGE_FAILED, FETCH_GIGS_REQ, FETCH_GIGS_RESP */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1083,9 +1083,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNIN_PAGE_LOADED", function() { return SIGNIN_PAGE_LOADED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNIN_PAGE_FAILED", function() { return SIGNIN_PAGE_FAILED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAVE_UID", function() { return SAVE_UID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNUP_PAGE_LOADING", function() { return SIGNUP_PAGE_LOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNUP_PAGE_LOADED", function() { return SIGNUP_PAGE_LOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGNUP_PAGE_FAILED", function() { return SIGNUP_PAGE_FAILED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_LOADING", function() { return HOME_PAGE_LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_LOADED", function() { return HOME_PAGE_LOADED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HOME_PAGE_FAILED", function() { return HOME_PAGE_FAILED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_GIGS_REQ", function() { return FETCH_GIGS_REQ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_GIGS_RESP", function() { return FETCH_GIGS_RESP; });
 // app state
 const APP_LOADING = 'APP_LOADING';
 const APP_LOADED = 'APP_LOADED';
@@ -1094,11 +1099,18 @@ const APP_FAILED = 'APP_FAILED'; // sign in
 const SIGNIN_PAGE_LOADING = 'SIGNIN_PAGE_LOADING';
 const SIGNIN_PAGE_LOADED = 'SIGNIN_PAGE_LOADED';
 const SIGNIN_PAGE_FAILED = 'SIGNIN_PAGE_FAILED';
-const SAVE_UID = 'SAVE_UID'; // home page
+const SAVE_UID = 'SAVE_UID'; // sign up
+
+const SIGNUP_PAGE_LOADING = 'SIGNUP_PAGE_LOADING';
+const SIGNUP_PAGE_LOADED = 'SIGNUP_PAGE_LOADED';
+const SIGNUP_PAGE_FAILED = 'SIGNUP_PAGE_FAILED'; // home page
 
 const HOME_PAGE_LOADING = 'HOME_PAGE_LOADING';
 const HOME_PAGE_LOADED = 'HOME_PAGE_LOADED';
-const HOME_PAGE_FAILED = 'HOME_PAGE_FAILED';
+const HOME_PAGE_FAILED = 'HOME_PAGE_FAILED'; // gigs
+
+const FETCH_GIGS_REQ = 'FETCH_GIGS_REQ';
+const FETCH_GIGS_RESP = 'FETCH_GIGS_RESP';
 
 /***/ }),
 
@@ -1144,6 +1156,49 @@ const appStateReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+/***/ }),
+
+/***/ "./redux/reducers/gigs.js":
+/*!********************************!*\
+  !*** ./redux/reducers/gigs.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "./redux/constants/index.js");
+
+
+const initialState = {
+  loading: false,
+  data: null
+};
+/* eslint-disable */
+
+const gigsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_GIGS_REQ"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: true
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_GIGS_RESP"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: false,
+        data: action.data
+      });
+      break;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (gigsReducer);
 
 /***/ }),
 
@@ -1209,25 +1264,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _app_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-state */ "./redux/reducers/app-state.js");
-/* harmony import */ var _sigin_in__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sigin-in */ "./redux/reducers/sigin-in.js");
-/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home */ "./redux/reducers/home.js");
+/* harmony import */ var _sign_in__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sign-in */ "./redux/reducers/sign-in.js");
+/* harmony import */ var _sign_up__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sign-up */ "./redux/reducers/sign-up.js");
+/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home */ "./redux/reducers/home.js");
+/* harmony import */ var _gigs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./gigs */ "./redux/reducers/gigs.js");
+
+
 
 
 
 
 const reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   appState: _app_state__WEBPACK_IMPORTED_MODULE_1__["appStateReducer"],
-  signIn: _sigin_in__WEBPACK_IMPORTED_MODULE_2__["default"],
-  home: _home__WEBPACK_IMPORTED_MODULE_3__["default"]
+  signIn: _sign_in__WEBPACK_IMPORTED_MODULE_2__["default"],
+  signUp: _sign_up__WEBPACK_IMPORTED_MODULE_3__["default"],
+  home: _home__WEBPACK_IMPORTED_MODULE_4__["default"],
+  gigs: _gigs__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (reducers);
 
 /***/ }),
 
-/***/ "./redux/reducers/sigin-in.js":
-/*!************************************!*\
-  !*** ./redux/reducers/sigin-in.js ***!
-  \************************************/
+/***/ "./redux/reducers/sign-in.js":
+/*!***********************************!*\
+  !*** ./redux/reducers/sign-in.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1281,6 +1342,57 @@ const signinPageReducer = (state = initialState, action) => {
 
 /***/ }),
 
+/***/ "./redux/reducers/sign-up.js":
+/*!***********************************!*\
+  !*** ./redux/reducers/sign-up.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "./redux/constants/index.js");
+
+
+const initialState = {
+  loading: false,
+  progressBarStatus: false,
+  error: null,
+  authUser: ''
+};
+/* eslint-disable */
+
+const signUpPageReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["SIGNUP_PAGE_LOADING"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: true
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["SIGNUP_PAGE_LOADED"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: false
+      });
+      break;
+
+    case _constants__WEBPACK_IMPORTED_MODULE_1__["SIGNUP_PAGE_FAILED"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        loading: false,
+        error: action.error
+      });
+      break;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (signUpPageReducer);
+
+/***/ }),
+
 /***/ "./redux/sagas/app-state.js":
 /*!**********************************!*\
   !*** ./redux/sagas/app-state.js ***!
@@ -1298,13 +1410,67 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function* watcherAppStateSaga() {
-  console.log('watcher fired');
+  console.log('watcherAppStateSaga fired');
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_constants__WEBPACK_IMPORTED_MODULE_1__["APP_LOADING"], workerAppStateSaga);
 }
 function* workerAppStateSaga() {
-  console.log('worker fired');
+  console.log('workerAppStateSaga fired');
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
     type: _constants__WEBPACK_IMPORTED_MODULE_1__["APP_LOADED"]
+  });
+}
+
+/***/ }),
+
+/***/ "./redux/sagas/gigs.js":
+/*!*****************************!*\
+  !*** ./redux/sagas/gigs.js ***!
+  \*****************************/
+/*! exports provided: watcherGigsSaga, workerGigsSaga */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "watcherGigsSaga", function() { return watcherGigsSaga; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "workerGigsSaga", function() { return workerGigsSaga; });
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
+/* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants */ "./redux/constants/index.js");
+
+
+
+function* watcherGigsSaga() {
+  console.log('watcherGigsSaga fired');
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_constants__WEBPACK_IMPORTED_MODULE_2__["FETCH_GIGS_REQ"], workerGigsSaga);
+}
+function* workerGigsSaga(actionObj) {
+  console.log('workerGigsSaga fired');
+  console.log('action obj is ', actionObj);
+  let rawUrl = '';
+  let retrievedGigs;
+  let error = null;
+  console.log('gist env var', "7c88e1645fd8518999fb9c764c0d1869"); // go to gist
+
+  yield isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default()(`https://api.github.com/gists/${"7c88e1645fd8518999fb9c764c0d1869"}`).then(res => res.json()).then(json => {
+    console.log('json is back: ', json);
+    return rawUrl = json.files.gigs.raw_url;
+  }).catch(err => error = err); // get dirty raw url for all the gigs
+
+  yield isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default()(rawUrl).then(res => res.json()).then(json => {
+    return retrievedGigs = json.gigs.sort((a, b) => {
+      var textA = a.name;
+      var textB = b.name;
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
+  }).catch(err => console.log('err ', err));
+  retrievedGigs && retrievedGigs.length !== 0 ? yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+    type: actions.FETCH_GIGS_RESP,
+    data: retrievedGigs
+  }) : yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+    type: actions.FETCH_GIGS_RESP,
+    data: error
   });
 }
 
@@ -1322,11 +1488,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _app_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-state */ "./redux/sagas/app-state.js");
+/* harmony import */ var _gigs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gigs */ "./redux/sagas/gigs.js");
+
 
 
 
 function* rootSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(_app_state__WEBPACK_IMPORTED_MODULE_1__["watcherAppStateSaga"])()]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(_app_state__WEBPACK_IMPORTED_MODULE_1__["watcherAppStateSaga"])(), Object(_gigs__WEBPACK_IMPORTED_MODULE_2__["watcherGigsSaga"])()]);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (rootSaga);
@@ -1509,6 +1677,17 @@ module.exports = require("firebase/auth");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase/database");
+
+/***/ }),
+
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 

@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { withFirebase } from '.';
 import * as cache from '../lib/cache';
 import Router from 'next/router';
-import { saveUid } from '../redux/actions';
+import hoistNonReactStatic from 'hoist-non-react-statics';
 
-const withAuthentication = Component => {
-  class withAuthentication extends React.Component {
+import { saveAuthenticatedUID } from '../redux/actions';
+
+const withAuthentication = PlatformSpecificComponent => {
+  class withAuthenticationClass extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -16,25 +18,69 @@ const withAuthentication = Component => {
     }
 
     componentDidMount() {
+      // const uid = cache.getFromCache('uid');
+      // if (!uid) {
+      //   return Router.push('/signin');
+      // }
       this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
         authUser
           ? this.ifAuthSaveToCache(authUser)
           : this.ifNotAuthRouteToSignIn();
       });
-      // this.ifNotAuthRouteToSignIn();
     }
 
     ifNotAuthRouteToSignIn = () => {
+      cache.clearFromCache('userProfile');
+      cache.clearFromCache('uid');
       this.setState({
         authUser: null
       });
       Router.push('/signin');
     };
 
-    ifAuthSaveToCache = authUser => {
+    // if the user is authorised (signedin) then grab deets
+    // for local state, redux and cacheing.
+    ifAuthSaveToCache = async authUser => {
+      // USER AUTH save authUser to local state, redux and cache.
       this.setState({ authUser });
-      this.props.updateStateUID(authUser.uid);
-      return cache.saveToCache('uid', authUser.uid);
+      this.props.updateStateWithUID(authUser.uid);
+      cache.saveToCache('uid', authUser.uid);
+
+      // DATABASE / USER PROFILE
+      // get userProfile from cache (this is just a string bool)
+      let userProfile = await cache.getFromCache('userProfile');
+      // console.log('userProfileStatus string ', userProfileStatus)
+      // switch to a real bool
+      let userProfileStatus = userProfile === 'true' ? true : false;
+      // console.log('userProfileStatus bool ', userProfileStatus)
+      // if its false, check the FB database, if it includes faveGig
+      // set to true.
+      // so first time it renders after signup, it will check if you
+      // entered a faveGig minimum for your profile, and if not,
+      // `userProfile` cache stays false.
+      if (!userProfileStatus) {
+        // console.log('user prof status is false =>' , userProfileStatus, typeof userProfileStatus)
+        this.props.firebase.user(authUser.uid).on('value', snapshot => {
+          // console.log('on value fired')
+          let fbuserProfile = snapshot.val();
+          // console.log('fbUserProfile snapshot val ', fbuserProfile)
+          // get FB profile, check if faveGig exists
+          if (fbuserProfile && fbuserProfile.faveGig === '') {
+            // if profile exists but faveGig empty, set cache to false (user hasnt completed db profile)
+            // console.log('fave gig doesnt exist, userProfile cache should be false');
+            cache.saveToCache('userProfile', 'false');
+          }
+          // if it exists and it's not empty, set cache to true (user has completed db profile)
+          if (fbuserProfile && fbuserProfile.faveGig !== '') {
+            // console.log('fave gig DOES exist, userProfile cache should be true');
+            cache.saveToCache('userProfile', 'true');
+          }
+        });
+        return;
+      }
+
+      return Router.push('/home');
+      //   return cache.saveToCache('uid', authUser.uid);
     };
 
     componentWillUnmount() {
@@ -43,6 +89,8 @@ const withAuthentication = Component => {
 
     signOut = () => {
       cache.clearFromCache('uid', '');
+      cache.clearFromCache('userProfile', false);
+      this.props.firebase.doSignOut();
       Router.push('/signin');
     };
 
@@ -54,19 +102,33 @@ const withAuthentication = Component => {
     render() {
       const { authUser } = this.state;
       return (
-        <Component {...this.props} authUser={authUser} signOut={this.signOut} />
+        <PlatformSpecificComponent
+          {...this.props}
+          authUser={authUser}
+          signOut={this.signOut}
+        />
       );
     }
   }
 
   const mapDispatchToProps = dispatch => ({
-      updateStateUID: (uid) => dispatch(saveUid(uid)),
-  })
+    updateStateWithUID: id => dispatch(saveAuthenticatedUID(id))
+  });
+
   
+  hoistNonReactStatic(withAuthenticationClass, PlatformSpecificComponent);
+  
+  if (withAuthenticationClass.getInitialProps) {
+    withAuthenticationClass.getInitialProps()
+  }
+
   return compose(
-      withFirebase,
-      connect(null, mapDispatchToProps),
-  )(withAuthentication)
+    withFirebase,
+    connect(
+      null,
+      mapDispatchToProps
+    )
+  )(withAuthenticationClass);
 };
 
 export default withAuthentication;
