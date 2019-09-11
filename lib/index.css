@@ -53,3 +53,10 @@ h2 {
     text-align: center;
     width: 50%;
   }
+
+  .blog__content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

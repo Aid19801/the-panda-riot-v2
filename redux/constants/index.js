@@ -23,3 +23,11 @@ export const HOME_PAGE_FAILED = 'HOME_PAGE_FAILED';
 // gigs
 export const FETCH_GIGS_REQ = 'FETCH_GIGS_REQ';
 export const FETCH_GIGS_RESP = 'FETCH_GIGS_RESP';
+
+// blog
+
+export const BLOG_PAGE_LOADING = 'BLOG_PAGE_LOADING';
+export const BLOG_PAGE_LOADED = 'BLOG_PAGE_LOADED';
+export const BLOG_PAGE_FAILED = 'BLOG_PAGE_FAILED';
+export const FETCH_BLOG_REQ = 'FETCH_BLOG_REQ';
+export const FETCH_BLOG_RES = 'FETCH_BLOG_RES';

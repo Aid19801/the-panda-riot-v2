@@ -26,10 +26,10 @@ class HomePage extends React.Component {
 
     let sortedGigs = [];
     // if we're in dev,  pass in the mocks
-    // if (process.env.NODE_ENV !== 'production') {
-    //   reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
-    //   return;
-    // }
+    if (process.env.NODE_ENV !== 'production') {
+      reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
+      return;
+    }
 
     try {
       const res = await fetch(

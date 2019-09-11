@@ -42,11 +42,7 @@ export const gotGigsFromGist = (gigs) => {
   return { type: actionTypes.FETCH_GIGS_RESP, data: gigs }
 }
 
-
-
-
 // PAGE | Home
-
 export const homePageLoading = () => {
   return { type: actionTypes.HOME_PAGE_LOADING };
 };
@@ -58,3 +54,23 @@ export const homePageLoaded = () => {
 export const homePageFailed = () => {
   return { type: actionTypes.HOME_PAGE_FAILED };
 };
+
+
+// PAGE | Blog
+export const blogPageLoading = () => {
+  return { type: actionTypes.BLOG_PAGE_LOADING };
+}
+export const blogPageLoaded = () => {
+  return { type: actionTypes.BLOG_PAGE_LOADED };
+}
+export const blogPageFailed = () => {
+  return { type: actionTypes.BLOG_PAGE_FAILED };
+}
+
+export const fetchBlogPageReq = () => {
+  return { type: actionTypes.FETCH_BLOG_REQ }
+}
+
+export const fetchBlogPageRes = (content) => {
+  return { type: actionTypes.FETCH_BLOG_RES, content }
+}
