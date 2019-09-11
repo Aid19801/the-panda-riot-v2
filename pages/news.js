@@ -7,19 +7,18 @@ import Prismic from 'prismic-javascript';
 import { RichText } from 'prismic-reactjs';
 import { prismicEndpoint } from '../lib/prismic';
 import {
-  blogPageLoading,
-  blogPageLoaded,
-  blogPageFailed,
-  fetchBlogPageReq
+  newsPageLoading,
+  newsPageLoaded,
+  newsPageFailed,
+  fetchNewsPageReq
 } from '../redux/actions';
 
 import '../lib/index.css';
 
-class BlogPage extends React.Component {
+class NewsPage extends React.Component {
   static async getInitialProps({ reduxStore, req }) {
-    // blog page.
-    // update state that we're getting content
-    reduxStore.dispatch(fetchBlogPageReq());
+    // update state that we're fetching content from Prismic
+    reduxStore.dispatch(fetchNewsPageReq());
 
     // grab doc from the Prismic API
     const doc = await this.fetchContent(req);
@@ -56,7 +55,7 @@ class BlogPage extends React.Component {
 
   render() {
     if (process.browser) {
-      console.log('blog page props ==> ', this.props);
+      console.log('news page props ==> ', this.props);
     }
     return (
       <div id="page-container">
@@ -64,8 +63,8 @@ class BlogPage extends React.Component {
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',
-            title: `blog page yo`,
-            description: 'This is a blog page for the panda riot',
+            title: `news page yo`,
+            description: 'This is a news page for the panda riot',
             images: [
               {
                 url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
@@ -83,12 +82,15 @@ class BlogPage extends React.Component {
             ]
           }}
         />
-        <h1 className="funky-title">Blog</h1>
+        <h1 className="funky-title">news</h1>
 
-        <div className="blog__content-container">
-          { this.props.doc && this.props.doc.data}
-          <h1>{RichText.asText(this.props.doc.data.title)}</h1>
-          <h4>{RichText.asText(this.props.doc.data.description)}</h4>
+        <div className="news__content-container">
+          { this.props.doc && this.props.doc.data && (
+            <>
+              <h1>{RichText.asText(this.props.doc.data.title)}</h1>
+              <h4>{RichText.asText(this.props.doc.data.description)}</h4>
+            </>
+          )}
         </div>
 
         <button onClick={this.signOut}>Sign Out</button>
@@ -98,16 +100,16 @@ class BlogPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  loading: state.blog.loading,
-  content: state.blog.content,
-  error: state.blog.error
+  loading: state.news.loading,
+  content: state.news.content,
+  error: state.news.error
 });
 
 const mapDispatchToProps = dispatch => ({
-  pageLoading: () => dispatch(blogPageLoading()),
-  pageLoaded: () => dispatch(blogPageLoaded()),
-  pageFailed: () => dispatch(blogPageFailed()),
-  fetchContent: () => dispatch(fetchBlogPageReq())
+  pageLoading: () => dispatch(newsPageLoading()),
+  pageLoaded: () => dispatch(newsPageLoaded()),
+  pageFailed: () => dispatch(newsPageFailed()),
+  fetchContent: () => dispatch(fetchNewsPageReq())
 });
 
 export default compose(
@@ -115,4 +117,4 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   )
-)(BlogPage);
+)(NewsPage);

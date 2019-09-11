@@ -7,26 +7,26 @@ const initialState = {
 };
 
 /* eslint-disable */
-const blogReducer = (state = initialState, action) => {
+const newsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actions.BLOG_PAGE_LOADING:
-      console.log('reducer heard BLOG_PAGE_LOADING...');
+    case actions.NEWS_PAGE_LOADING:
+      console.log('reducer heard NEWS_PAGE_LOADING...');
       return {
         ...state,
         loading: true
       };
       break;
 
-    case actions.BLOG_PAGE_LOADED:
-      console.log('reducer heard BLOG_PAGE_LOADED ', action);
+    case actions.NEWS_PAGE_LOADED:
+      console.log('reducer heard NEWS_PAGE_LOADED ', action);
       return {
         ...state,
         loading: false,
       };
       break;
 
-    case actions.BLOG_PAGE_FAILED:
-      console.log('reducer heard BLOG_PAGE_FAILED', action);
+    case actions.NEWS_PAGE_FAILED:
+      console.log('reducer heard NEWS_PAGE_FAILED', action);
       return {
         ...state,
         loading: false,
@@ -34,16 +34,16 @@ const blogReducer = (state = initialState, action) => {
       };
       break;
 
-    case actions.FETCH_BLOG_REQ:
-      console.log('reducer heard FETCH_BLOG_REQ ', action);
+    case actions.FETCH_NEWS_REQ:
+      console.log('reducer heard FETCH_NEWS_REQ ', action);
       return {
         ...state,
         loading: true,
       };
       break;
 
-    case actions.FETCH_BLOG_RES:
-      console.log('reducer heard FETCH_BLOG_RES', action);
+    case actions.FETCH_NEWS_RES:
+      console.log('reducer heard FETCH_NEWS_RES', action);
       return {
         ...state,
         loading: false,
@@ -56,4 +56,4 @@ const blogReducer = (state = initialState, action) => {
   }
 };
 
-export default blogReducer;
+export default newsReducer;

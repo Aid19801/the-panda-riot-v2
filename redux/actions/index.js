@@ -58,19 +58,19 @@ export const homePageFailed = () => {
 
 // PAGE | Blog
 export const blogPageLoading = () => {
-  return { type: actionTypes.BLOG_PAGE_LOADING };
+  return { type: actionTypes.NEWS_PAGE_LOADING };
 }
 export const blogPageLoaded = () => {
-  return { type: actionTypes.BLOG_PAGE_LOADED };
+  return { type: actionTypes.NEWS_PAGE_LOADED };
 }
 export const blogPageFailed = () => {
-  return { type: actionTypes.BLOG_PAGE_FAILED };
+  return { type: actionTypes.NEWS_PAGE_FAILED };
 }
 
 export const fetchBlogPageReq = () => {
-  return { type: actionTypes.FETCH_BLOG_REQ }
+  return { type: actionTypes.FETCH_NEWS_REQ }
 }
 
 export const fetchBlogPageRes = (content) => {
-  return { type: actionTypes.FETCH_BLOG_RES, content }
+  return { type: actionTypes.FETCH_NEWS_RES, content }
 }

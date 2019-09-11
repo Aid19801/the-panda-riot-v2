@@ -4,7 +4,7 @@ import signinPageReducer from './sign-in';
 import signUpPageReducer from './sign-up';
 import homePageReducer from './home';
 import gigsReducer from './gigs';
-import blogReducer from './blog';
+import newsReducer from './news';
 
 const reducers = combineReducers({
     appState: appStateReducer,
@@ -12,7 +12,7 @@ const reducers = combineReducers({
     signUp: signUpPageReducer,
     home: homePageReducer,
     gigs: gigsReducer,
-    blog: blogReducer,
+    news: newsReducer,
 })
 
 export default reducers;
