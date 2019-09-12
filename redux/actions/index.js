@@ -57,20 +57,22 @@ export const homePageFailed = () => {
 
 
 // PAGE | Blog
-export const blogPageLoading = () => {
+export const newsPageLoading = () => {
   return { type: actionTypes.NEWS_PAGE_LOADING };
 }
-export const blogPageLoaded = () => {
+
+export const newsPageLoaded = () => {
   return { type: actionTypes.NEWS_PAGE_LOADED };
 }
-export const blogPageFailed = () => {
+
+export const newsPageFailed = () => {
   return { type: actionTypes.NEWS_PAGE_FAILED };
 }
 
-export const fetchBlogPageReq = () => {
+export const fetchNewsPageReq = () => {
   return { type: actionTypes.FETCH_NEWS_REQ }
 }
 
-export const fetchBlogPageRes = (content) => {
+export const fetchNewsPageRes = (content) => {
   return { type: actionTypes.FETCH_NEWS_RES, content }
 }
