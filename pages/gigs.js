@@ -30,7 +30,7 @@ class GigsPage extends Component {
   static async getInitialProps({ reduxStore, req }) {
     let sortedGigs = [];
     // if we're in dev,  pass in the mocks
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV !== 'production') {
       reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
       return { gigs: mockGigs.gigs };
     }
