@@ -1,5 +1,6 @@
 import React from 'react';
 // import fetch from 'isomorphic-unfetch';
+import { Router, Link } from '../routes';
 import { NextSeo } from 'next-seo';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -21,11 +22,11 @@ class NewsPage extends React.Component {
     reduxStore.dispatch(fetchNewsPageReq());
 
     // grab doc from the Prismic API
-    const doc = await this.fetchContent(req);
+    const docs = await this.fetchContent(req);
 
     // pop him in props
     return {
-      doc: doc,
+      docs: docs
     };
   }
 
@@ -39,9 +40,8 @@ class NewsPage extends React.Component {
       );
       const rev = res.results.reverse();
       console.log('revrsed prismic news stories: ', rev);
-      
-      return rev;
 
+      return rev;
     } catch (error) {
       console.log('try catch error getting prismic ', error);
     }
@@ -53,12 +53,17 @@ class NewsPage extends React.Component {
     pageLoaded();
   }
 
+  handleClick = (id) => {
+    console.log('handleClick fired: ', id);
+    return Router.pushRoute(`/news/${id}`);
+  };
+
   render() {
     if (process.browser) {
       console.log('news page props ==> ', this.props);
     }
     return (
-      <div id="page-container">
+      <div id="page-container container">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -84,13 +89,24 @@ class NewsPage extends React.Component {
         />
         <h1 className="funky-title">news</h1>
 
-        <div className="news__content-container">
-          { this.props.doc && this.props.doc.data && (
-            <>
-              <h1>{RichText.asText(this.props.doc.data.title)}</h1>
-              <h4>{RichText.asText(this.props.doc.data.description)}</h4>
-            </>
-          )}
+        <Link to="home">
+          <a>Home</a>
+        </Link>
+
+        <div className="row">
+          {this.props.docs &&
+            this.props.docs.map((each, i) => {
+              return (
+                <div onClick={() => this.handleClick(each.id)} className="news__card-container col-sm-4" key={i}>
+                  <RichText render={each.data['news-headline1']} />
+                  <img
+                    className="news__card-img"
+                    alt={each.data['news-image'].alt}
+                    src={each.data['news-image'].url}
+                  />
+                </div>
+              );
+            })}
         </div>
 
         <button onClick={this.signOut}>Sign Out</button>
