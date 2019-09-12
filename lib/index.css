@@ -30,20 +30,10 @@ p {
   text-rendering: optimizeLegibility;
 }
 
+
+
 h1 {
   font-family: 'Raleway';
-  color: lightgrey;
-}
-
-h2 {
-  font-family: monospace;
-  font-weight: 700;
-  text-shadow: 5px 6px 8px black;
-  color: white;
-}
-
-
-.funky-title {
     background: black;
     color: orange !important;
     font-weight: 700;
@@ -53,6 +43,15 @@ h2 {
     text-align: center;
     width: 50%;
   }
+
+
+h2 {
+  font-family: monospace;
+  font-weight: 700;
+  text-shadow: 5px 6px 8px black;
+  color: white;
+}
+
 
   .news__content-container {
     /* display: flex;
