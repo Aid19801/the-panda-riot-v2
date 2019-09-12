@@ -21,11 +21,20 @@ export const HOME_PAGE_LOADED = 'HOME_PAGE_LOADED';
 export const HOME_PAGE_FAILED = 'HOME_PAGE_FAILED';
 
 // gigs
+export const GIGS_PAGE_LOADING = 'GIGS_PAGE_LOADING';
+export const GIGS_PAGE_LOADED = 'GIGS_PAGE_LOADED';
+export const GIGS_PAGE_FAILED = 'GIGS_PAGE_FAILED';
 export const FETCH_GIGS_REQ = 'FETCH_GIGS_REQ';
 export const FETCH_GIGS_RESP = 'FETCH_GIGS_RESP';
+export const RESET_GIGS = 'RESET_GIGS';
+export const FETCH_FILTERS = 'FETCH_FILTERS';
+
+// filters
+export const LOAD_FILTERS = 'LOAD_FILTERS';
+export const LOADED_FILTERS = 'LOADED_FILTERS';
+export const FILTERS_CHANGED = 'FILTERS_CHANGED';
 
 // blog
-
 export const NEWS_PAGE_LOADING = 'NEWS_PAGE_LOADING';
 export const NEWS_PAGE_LOADED = 'NEWS_PAGE_LOADED';
 export const NEWS_PAGE_FAILED = 'NEWS_PAGE_FAILED';

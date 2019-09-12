@@ -32,15 +32,46 @@ export const signUpPageFailed = () => {
   return { type: actionTypes.SIGNUP_PAGE_FAILED };
 };
 
+// GIGS, api and gigs map page
+export const gigsPageLoading = () => {
+  return { type: actionTypes.GIGS_PAGE_LOADING }
+}
 
+export const gigsPageLoaded = () => {
+  return { type: actionTypes.GIGS_PAGE_LOADED }
+}
+
+export const gigsPageFailed = () => {
+  return { type: actionTypes.GIGS_PAGE_LOADED }
+}
+// GIGS api
 export const fetchGigsFromGist = () => {
   return { type: actionTypes.FETCH_GIGS_REQ }
 }
 
-
 export const gotGigsFromGist = (gigs) => {
   return { type: actionTypes.FETCH_GIGS_RESP, data: gigs }
 }
+
+export const fetchFilters = () => {
+  return { type: actionTypes.LOAD_FILTERS }
+}
+
+export const filtersLoaded = () => {
+  return { type: actionTypes.LOADED_FILTERS }
+}
+export const filtersChanged = (arr) => {
+  return { type: actionTypes.FILTERS_CHANGED, filters: arr }
+}
+// 
+// 
+export const resetGigs = (gigs) => {
+  return { type: actionTypes.RESET_GIGS, gigs }
+}
+
+
+
+
 
 // PAGE | Home
 export const homePageLoading = () => {

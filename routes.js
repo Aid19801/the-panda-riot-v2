@@ -16,6 +16,7 @@ const routes = require('next-routes');
 module.exports = routes()
     .add('index', '/')
     .add('home', '/home')
+    .add('gigs', '/gigs')
     .add('signin', '/signin')
     .add('signup', '/signup')
     .add('news', '/news')

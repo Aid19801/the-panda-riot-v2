@@ -1,0 +1,17 @@
+.filters__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+
+}
+
+.filters__container button {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid red;
+    font-size: 12px;
+}
