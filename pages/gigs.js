@@ -13,9 +13,10 @@ import * as cache from '../lib/cache';
 
 import '../lib/index.css';
 import Filters from '../components/Filters';
+import MapBox from '../components/MapBox';
 
 // 1. load GIGS and FILTERS into local state
-// 2.
+// 2. gigs: render whatever is in local state out
 // 3.
 
 class GigsPage extends Component {
@@ -23,8 +24,11 @@ class GigsPage extends Component {
     super();
     this.state = {
       gigs: [],
+      filteredGigs: [],
+      finalGigs: [],
+
       filters: [],
-      loading: false,
+      loading: false
     };
   }
   static async getInitialProps({ reduxStore, req }) {
@@ -62,74 +66,19 @@ class GigsPage extends Component {
     };
   }
 
-  async componentDidMount() {
-    if (this.props.gigs) {
-      this.setState({ gigs: this.props.gigs });
+  componentDidMount() {
+    const cachedGigs = cache.getFromCache('gigs');
+    if (!cachedGigs) {
+      cache.saveToCache('gigs', this.props.gigs);
     }
-    if (this.props.filters) {
-      this.setState({ filters: this.props.filters });
+    if (cachedGigs) {
+      const checking = cache.getFromCache('gigs');
+      console.log('checking: ', checking);
     }
   }
 
-  componentWillReceiveProps = nextProps => {
-    if (nextProps.filters !== this.state.filters) {
-      this.setState({ filters: nextProps.filters }, () =>
-        this.updateGigsBasedOnUpdatedFilters()
-      );
-    }
-  };
-
-  updateGigsBasedOnUpdatedFilters = () => {
-    const activeFilters = this.state.filters.filter(
-      each => each.active !== false
-    );
-    console.log('active Filters are ', activeFilters);
-    this.setState({ loading: true })
-
-    activeFilters.map(each => {
-      if (each.name === 'Mon') {
-        let res = this.state.gigs.filter(each => each.nights.includes('Mon'));
-        this.setState({ gigs: res });
-      }
-      if (each.name === 'Tue') {
-        let res = this.state.gigs.filter(each => each.nights.includes('Tue'));
-        this.setState({ gigs: res });
-      }
-      if (each.name === 'Wed') {
-        let res = this.state.gigs.filter(each => each.nights.includes('Wed'));
-        this.setState({ gigs: res });
-      }
-      if (each.name === 'Thu') {
-        console.log('filtering thursday...');
-        let res = this.state.gigs.filter(each => each.nights.includes('Thu'));
-        console.log('res for filtering thursday is ', res);
-        this.setState({ gigs: res });
-      }
-      if (each.name === 'Fri') {
-        let res = this.state.gigs.filter(each => each.nights.includes('Fri'));
-        this.setState({ gigs: res });
-      }
-      if (each.name === 'Sat') {
-        let res = this.state.gigs.filter(each => each.nights.includes('Sat'));
-        this.setState({ gigs: res });
-      }
-      if (each.name === 'Sun') {
-        let res = this.state.gigs.filter(each => each.nights.includes('Sun'));
-        this.setState({ gigs: res });
-      }
-      if (each.name === 'Bringers') {
-        let res = this.state.gigs.filter(each => each.bringer === true);
-        this.setState({ gigs: res });
-      }
-      if (each.name === 'Non-Bringers') {
-        let res = this.state.gigs.filter(each => each.bringer !== true);
-        this.setState({ gigs: res });
-      }
-    });
-    this.setState({ loading: false })
-  };
-
   render() {
+
     return (
       <div id="page-container" className="container">
         <h1>gigs</h1>
@@ -143,10 +92,9 @@ class GigsPage extends Component {
 
           <div className="col-sm-6">
             <ul className="ul__gigs">
-              {this.state.gigs &&
-                this.state.gigs.map((each, i) => {
-                  return <li key={i}>{each.name}</li>;
-                })}
+              {this.props.gigs.map((each, i) => (
+                <li key={i}>{each.name}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -164,7 +112,7 @@ const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(gigsPageLoading()),
   pageLoaded: () => dispatch(gigsPageLoaded()),
   fetchGigs: () => dispatch(fetchGigsFromGist()),
-  updateGigsWithFilter: arr => dispatch(gotGigsFromGist(arr))
+  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr))
 });
 
 export default compose(

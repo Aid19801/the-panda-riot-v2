@@ -40,6 +40,13 @@ const gigsReducer = (state = initialState, action) => {
       };
       break;
 
+      case actions.GIGS_FILTERED:
+      console.log('reducer heard GIGS_FILTERED: ', action);
+      return {
+        ...state,
+        data: action.data,
+      }
+      break;
 
     case actions.GIGS_PAGE_FAILED:
         console.log('reducer heard GIGS_PAGE_FAILED', action);

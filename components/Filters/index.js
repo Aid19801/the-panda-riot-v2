@@ -45,7 +45,7 @@ class Filters extends React.Component {
         var textB = b.id;
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     });
-    this.props.updateStateFilteredGigs(sortedFilters);
+    this.props.updateStateFiltersChanged(sortedFilters);
   };
 
   render() {
@@ -75,7 +75,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   loadInFiltersFromRedux: () => dispatch(fetchFilters()),
   updateStateFiltersLoaded: () => dispatch(filtersLoaded()),
-  updateStateFilteredGigs: arr => dispatch(filtersChanged(arr))
+  updateStateFiltersChanged: arr => dispatch(filtersChanged(arr))
 });
 
 export default connect(
