@@ -1,98 +1,1176 @@
-{
-    "gigs": [
-        { 
-            "id": 2,
-            "name": "Mon Tue | Bringer",
-            "venue": "The Cavendish Arms",
-            "img": "http://www.thecavendisharmsstockwell.co.uk/images/comedy_virgins_logo.jpg?crc=458167020",
-            "imgs": ["https://pbs.twimg.com/media/DfziteJXkAA9Ioj.jpg", "http://media.virbcdn.com/cdn_images/resize_500x500/c5/12b784cd041995f0-TheCav-4-min.jpg", "http://3.bp.blogspot.com/-Axgg1ZvCRdY/UOlXQ22CAnI/AAAAAAAAMA8/pyW2w3dGnhw/s1600/Max_Turner_Prize_Cavendish_Arms.jpg"],
-            "blurb": "It's the Comedy Virgins show featuring newish acts doing 5 min sets and the crowd voting for the best in the Infamous clap-off. Hosts keep it rolling with free drinks for their favourite audience members!",
-            "lat": 51.4766,
-            "lng": -0.1276,
-            "nights": ["Mon", "Tue"],
-            "walkins": true,
-            "walkinSignUp": "18:30",
-            "prebook": true,
-            "prebookSignUp": "contact via email - booked a month in advance",
-            "bringer": true,
-            "nearestTubes": ["Stockwell"],
-            "twitterHandle": "comedyVirgins"
-        },
-        { 
-            "id": 2,
-            "name": "Mon & Sat | NON bringer",
-            "venue": "The Cavendish Arms",
-            "img": "http://www.thecavendisharmsstockwell.co.uk/images/comedy_virgins_logo.jpg?crc=458167020",
-            "imgs": ["https://pbs.twimg.com/media/DfziteJXkAA9Ioj.jpg", "http://media.virbcdn.com/cdn_images/resize_500x500/c5/12b784cd041995f0-TheCav-4-min.jpg", "http://3.bp.blogspot.com/-Axgg1ZvCRdY/UOlXQ22CAnI/AAAAAAAAMA8/pyW2w3dGnhw/s1600/Max_Turner_Prize_Cavendish_Arms.jpg"],
-            "blurb": "It's the Comedy Virgins show featuring newish acts doing 5 min sets and the crowd voting for the best in the Infamous clap-off. Hosts keep it rolling with free drinks for their favourite audience members!",
-            "lat": 51.4766,
-            "lng": -0.1276,
-            "nights": ["Mon", "Sat"],
-            "walkins": true,
-            "walkinSignUp": "18:30",
-            "prebook": true,
-            "prebookSignUp": "contact via email - booked a month in advance",
-            "bringer": false,
-            "nearestTubes": ["Stockwell"],
-            "twitterHandle": "comedyVirgins"
-        },
-        { 
-            "id": 4,
-            "name": "Wed | Bringer | Gigs!",
-            "venue": "Fannys Bar",
-            "img": "https://media-cdn.tripadvisor.com/media/photo-s/16/6e/7b/9f/getlstd-property-photo.jpg",
-            "imgs": ["https://media.timeout.com/images/105399612/630/472/image.jpg", "https://static1.squarespace.com/static/56cb5b0fb09f95c550166caf/t/5b8a819140ec9a2651d39cd9/1535803799950/IMG_20180818_223225_390.jpg", "https://images1.the-dots.com/1792084/fannys6.jpeg?p=projectImageFullJpg"],
-            "blurb": "The 42 Comedy Club is a weekly comedy night in Stoke Newington that run 2 shows in one night (7.30pm and 9.30pm). Most spots are Bringers (except headliners they've seen before). There’s a possibility to progress to headline spots.",
-            "lat": 51.5599,
-            "lng": -0.0738,
-            "nights": ["Wed"],
-            "walkins": false,
-            "walkinSignUp": "00:00",
-            "prebook": true,
-            "prebookSignUp": "https://docs.google.com/forms/d/e/1FAIpQLSfSJwqMRgFpiUsnyEDsAEUdwupKJWsWRcoo0NHKc9AX9sJWvA/viewform",
-            "bringer": true,
-            "nearestTubes": ["Rectory Road"],
-            "twitterHandle": "FannysKebabs"
-        },
-        { 
-            "id": 17,
-            "name": "just Thu Gig bringer!",
-            "venue": "Arch 1",
-            "img": "https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg",
-            "imgs": ["https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg", "https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg"],
-            "blurb": "Great open mic nights every Wednesday out in E16. MC'd by resident magician-comedian, Kyle Wallace, the night is a Bringer BUT you can Be-Your-Own-Bringer by attending the previous week's show.",
-            "lat": 51.5226,
-            "lng": -0.0040,
-            "nights": ["Thu"],
-            "walkins": false,
-            "walkinSignUp": "00:00",
-            "prebook": true,
-            "prebookSignUp": "",
-            "bringer": true,
-            "nearestTubes": ["Camden Road", "Camden"],
-            "twitterHandle": "GABcomedy",
-            "website": "https://www.facebook.com/00000000",
-            "howToBook": "https://www.facebook.com/groups/226354827562684/"
-        },
-        { 
-            "id": 17,
-            "name": "Sat Gig!",
-            "venue": "Arch 1",
-            "img": "https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg",
-            "imgs": ["https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg", "https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg"],
-            "blurb": "Great open mic nights every Wednesday out in E16. MC'd by resident magician-comedian, Kyle Wallace, the night is a Bringer BUT you can Be-Your-Own-Bringer by attending the previous week's show.",
-            "lat": 51.5226,
-            "lng": -0.0040,
-            "nights": ["Sat"],
-            "walkins": false,
-            "walkinSignUp": "00:00",
-            "prebook": true,
-            "prebookSignUp": "",
-            "bringer": true,
-            "nearestTubes": ["Camden Road", "Camden"],
-            "twitterHandle": "GABcomedy",
-            "website": "https://www.facebook.com/00000000",
-            "howToBook": "https://www.facebook.com/groups/226354827562684/"
-        }
+{  
+    "gigs":[  
+       {  
+          "id":1,
+          "name":"MOCK Comedy Virgins!",
+          "venue":"Cavendish Arms",
+          "img":"https://pbs.twimg.com/media/DSoMdf2XUAMFzJ5.jpg",
+          "blurb":"Possibly the best of the bringers. But also (unless its changed recently?) the most militant. It is in a delightful mini theatre at the back of the pub, about ten minutes from Stockwell tube. ",
+          "lat":51.4766,
+          "lng":-0.1276,
+          "nights":[  
+             "Mon",
+             "Tue",
+             "Wed"
+          ],
+          "walkins":true,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"https://www.facebook.com/groups/comedyvirgins/",
+          "bringer":true,
+          "nearestTubes":[  
+             "Stockwell"
+          ],
+          "twitterHandle":"ComedyVirgins",
+          "website":"https://www.facebook.com/groups/comedyvirgins/",
+          "howToBook":"https://www.facebook.com/groups/comedyvirgins/about/"
+       },
+       {  
+          "id":2,
+          "isSelected":false,
+          "name":"MOCK Jester Jesters!",
+          "venue":"The Betsey Trotwood",
+          "img":"http://jesterjesters.com/image/jesterjesters-logo.jpeg",
+          "imgs":[  
+             "http://www.jamesquintin.co.uk/wp-content/uploads/2015/02/jesters.jpg",
+             "https://media-cdn.tripadvisor.com/media/photo-s/0f/65/b2/89/got-to-see-fern-brady.jpg",
+             "https://www.shepherdneame.co.uk/sites/default/files/The%20Betsey%20Trotwood%20Clerkenwell%20Exterior.jpg"
+          ],
+          "blurb":"Jester Jesters is an open mic Comedy Night - organised jointly by: Jonathan Hearn and Chris Timoney - running every Monday at The Betsey Trotwood, 56 Farringdon Road. The nearest tube is Farringdon. N.B- This is a traditional Open Mic gig; SIGN UP ON THE NIGHT from 6:45pm or REQUEST A SPOT WITH THIS: https://spotlz.com or SEND AN EMAIL TO mondays@jesterjesters.com TO PRE-BOOK A SLOT. Acts get 5 minutes to do their thing and the best part about the night is that it's all FREE! Except the drinks.",
+          "lat":51.5233,
+          "lng":-0.108,
+          "nights":[  
+             "Mon"
+          ],
+          "walkins":true,
+          "walkinSignUp":"18:45",
+          "prebook":true,
+          "prebookSignUp":"Request an available Monday or Wednesday using SPOTlz (https://spotlz.com) or email info@jesterjesters.com",
+          "bringer":false,
+          "nearestTubes":[  
+             "Farringdon"
+          ],
+          "twitterHandle":"JesterJesters",
+          "website":"http://www.jesterjesters.com/"
+       },
+       {  
+          "id":3,
+          "isSelected":false,
+          "name":"MOCK Jester Jesters",
+          "venue":"Oak & Pastor",
+          "img":"http://jesterjesters.com/image/jesterjesters-logo.jpeg",
+          "imgs":[  
+             "http://www.jamesquintin.co.uk/wp-content/uploads/2015/02/jesters.jpg",
+             "https://media-cdn.tripadvisor.com/media/photo-s/0f/65/b2/89/got-to-see-fern-brady.jpg",
+             "https://www.shepherdneame.co.uk/sites/default/files/The%20Betsey%20Trotwood%20Clerkenwell%20Exterior.jpg"
+          ],
+          "blurb":"Jester-Jesters' new material night every Weds at The Oak & Pastor. 4 weeks waiting / booking period. If you walk-up on the night, we'll add you to a reserve list to replace any acts who don't show...",
+          "lat":51.5625,
+          "lng":-0.1365,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":true,
+          "walkinSignUp":"18:45",
+          "prebook":true,
+          "prebookSignUp":"Req an available Weds using SPOTlz app (https://spotlz.com) / email info@jesterjesters.com",
+          "bringer":false,
+          "nearestTubes":[  
+             "Archway",
+             "Tufnell Park"
+          ],
+          "twitterHandle":"JesterJesters",
+          "website":"http://www.jesterjesters.com/"
+       },
+       {  
+          "id":4,
+          "isSelected":false,
+          "name":"MOCK Angel Comedy RAW",
+          "venue":"The Camden Head",
+          "img":"https://media.timeout.com/images/103343547/image.jpg",
+          "imgs":[  
+             "https://www.angelcomedy.co.uk/wp-content/uploads/2016/04/Angel_Comedy_audience-e1519062430787.jpg",
+             "https://www.thinkingbob.co.uk/wp-content/uploads/2015/04/ARTS-Barry-Ferns-Angel-Comedy.jpg",
+             "https://media-cdn.tripadvisor.com/media/photo-s/0d/90/65/8c/getlstd-property-photo.jpg"
+          ],
+          "blurb":"Angel Comedy has grown from a once a week gig into a 7 nights-a-week. Wed, Thu & Sun are nights full of potential & variety. Stars & experienced acts trying new material & some acts trying stand up for the first time.",
+          "lat":51.5357,
+          "lng":-0.1029,
+          "nights":[  
+             "Wed",
+             "Thu",
+             "Sun"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email raw@angelcomedy.co.uk",
+          "bringer":true,
+          "nearestTubes":[  
+             "Angel",
+             "Highbury & Islington"
+          ],
+          "twitterHandle":"angelcomedy",
+          "website":"https://www.angelcomedy.co.uk/event-detail/54454/",
+          "howToBook":"https://www.angelcomedy.co.uk/event-detail/54454/"
+       },
+       {  
+          "id":5,
+          "isSelected":false,
+          "name":"MOCK Big Nose Comedy",
+          "venue":"The Boogaloo",
+          "img":"https://pbs.twimg.com/profile_images/739835411233673216/SvghrKWg.jpg",
+          "imgs":[  
+             "https://i.ytimg.com/vi/UlnUgkq4Mzo/maxresdefault.jpg",
+             "https://theboogaloo.co.uk/wp-content/uploads/2017/09/bignose2.jpg"
+          ],
+          "blurb":"BNC @ The Boogaloo is a weekly open-mic / new material comedy night near Highgate tube station. It's run by David Lewis. And it's on Thursday nights...",
+          "lat":51.5763,
+          "lng":-0.1434,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email bignosecomedy@gmail.com",
+          "bringer":false,
+          "nearestTubes":[  
+             "Highgate"
+          ],
+          "twitterHandle":"bignosecomedy",
+          "website":"https://www.facebook.com/bignosecomedy/"
+       },
+       {  
+          "id":6,
+          "isSelected":false,
+          "name":"MOCK Big Nose Comedy",
+          "venue":"The Old Dairy",
+          "img":"https://pbs.twimg.com/profile_images/739835411233673216/SvghrKWg.jpg",
+          "imgs":[  
+             "https://i.ytimg.com/vi/UlnUgkq4Mzo/maxresdefault.jpg",
+             "https://theboogaloo.co.uk/wp-content/uploads/2017/09/bignose2.jpg"
+          ],
+          "blurb":"BNC @ The Old Dairy is a weekly open mic / new material comedy night run by David Lewis. It is on Sunday nights...",
+          "lat":51.5711,
+          "lng":-0.1169,
+          "nights":[  
+             "Sun"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email bignosecomedy@gmail.com",
+          "bringer":false,
+          "nearestTubes":[  
+             "Crouch Hill",
+             "Finsbury Park"
+          ],
+          "twitterHandle":"bignosecomedy",
+          "website":"https://www.facebook.com/bignosecomedy/"
+       },
+       {  
+          "id":7,
+          "isSelected":false,
+          "name":"MOCK King Gong",
+          "venue":"The Comedy Store",
+          "img":"https://headbox-media.imgix.net/uploads/space_photo/filename/9855/detail_Venue_Photo_2.jpg?auto=compress,format",
+          "imgs":[  
+             "https://thecomedystore.co.uk/london/wp-content/uploads/sites/4/2013/11/king-gong-banner-560x359.jpg",
+             "https://i.ytimg.com/vi/xxzpxXshlcU/hqdefault.jpg",
+             "https://d1wx4w35ubmdix.cloudfront.net/media/event/3ZU9/king-gong-triplet-one-dG1h.jpg?versionId=hoR.xKvbGL0rq4GYPuHP2lhcsdKgLzub"
+          ],
+          "blurb":"Possibly the greatest comedy club of them all, The Comedy Store, hosts a monthly event where newbies can try out. The catch? Theres 3 audience judges & if they all get bored of your shit & hold-up their cards at the same time, they gong a massive cymbal and youre OFF the stage. Brutal but fun.",
+          "lat":51.5101,
+          "lng":-0.1323,
+          "nights":[  
+             "Mon"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"e-mail london@thecomedystore.co.uk",
+          "bringer":false,
+          "nearestTubes":[  
+             "Leics Square",
+             "Picadilly Circus"
+          ],
+          "twitterHandle":"comedystoreuk",
+          "website":"https://thecomedystore.co.uk/london/regular-shows/",
+          "howToBook":"https://thecomedystore.co.uk/london/regular-shows/"
+       },
+       {  
+          "id":8,
+          "isSelected":false,
+          "name":"MOCK Colindale Comedy",
+          "venue":"The Chandos Arms",
+          "img":"http://www.times-series.co.uk/resources/images/4390291.jpg?display=1&htype=0&type=responsive-gallery",
+          "imgs":[  
+             "https://media-cdn.tripadvisor.com/media/photo-s/09/95/6e/a5/the-chandos-arms.jpg",
+             "https://static1.squarespace.com/static/575c2598c2ea51b70d40d0f5/59872fa9d482e9f06c7c5470/5a66091c085229f6b1f0de08/1548503393033/26685299_2127847750779959_8455135345491965087_o.jpg",
+             "https://pbs.twimg.com/media/DfuEe9CX0AAmnLO.jpg"
+          ],
+          "blurb":"Monthly - Last Thursday of the month - open mic comedy night, hosted by Polly - with 5 minute spots and headliners booked also. Takes place in Colindale NW5. Join the Facebook group for more information.",
+          "lat":51.5931,
+          "lng":-0.256,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"join FB group: https://www.facebook.com/pg/colindalecomedy",
+          "bringer":false,
+          "nearestTubes":[  
+             "Colindale"
+          ],
+          "twitterHandle":"ChandosArmsPub",
+          "website":"https://www.facebook.com/pg/colindalecomedy/about/?ref=page_internal",
+          "howToBook":"https://www.facebook.com/pg/colindalecomedy/about/?ref=page_internal"
+       },
+       {  
+          "id":9,
+          "isSelected":false,
+          "name":"MOCK Comedy by Bow",
+          "venue":"The Galvanisers Union",
+          "img":"https://galvanisersunion.com/wp-content/gallery/home/Galvanisers12.jpg",
+          "imgs":[  
+             "https://galvanisersunion.com/wp-content/uploads/MG_0217.jpg",
+             "https://galvanisersunion.com/wp-content/uploads/comedy-galva.jpg",
+             "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F59076785%2F50083380638%2F1%2Foriginal.20190325-163035?h=230&w=460&auto=compress&rect=0%2C24%2C2000%2C1000&s=1de0f2769a9db367a6d396446373fe0f"
+          ],
+          "blurb":"Comedy-by-Bow is the lazily named open mic and new material night at the Galvanisers Union in Bromley-by-Bow.",
+          "lat":51.5231,
+          "lng":-0.0123,
+          "nights":[  
+             "Mon"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email: comedybybow@gmail.com",
+          "bringer":false,
+          "nearestTubes":[  
+             "Bromley-by-Bow"
+          ],
+          "twitterHandle":"comedybybow",
+          "website":"https://www.facebook.com/comedybybow/",
+          "howToBook":"https://www.facebook.com/comedybybow/"
+       },
+       {  
+          "id":10,
+          "isSelected":false,
+          "name":"MOCK Comedy Cabin",
+          "venue":"Hoxton Cabin",
+          "img":"https://media-cdn.tripadvisor.com/media/photo-s/15/fd/5d/d6/every-wednesday-night.jpg",
+          "imgs":[  
+             "https://media-cdn.tripadvisor.com/media/photo-s/13/99/d2/26/a-great-evening.jpg",
+             "https://media-cdn.tripadvisor.com/media/photo-s/13/99/d1/c0/a-funny-evening.jpg"
+          ],
+          "blurb":"Every Weds, it's the RAW new act/new material night. It's a bringer, but there are non-bringer spots for more seasoned acts. If you're a brand new comedian or looking to try some brand new stuff out, this is the night for you. Hosted by Will Preston, Stephen Trumble, and Adrian Tauss.",
+          "lat":51.5297,
+          "lng":-0.077,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email: willprestoncomedian@gmail.com",
+          "bringer":true,
+          "nearestTubes":[  
+             "Haggerston"
+          ],
+          "twitterHandle":"ComedyCabin",
+          "website":"http://hoxtoncabin.com/comedy-cabin/",
+          "howToBook":"https://www.facebook.com/comedybybow/"
+       },
+       {  
+          "id":11,
+          "isSelected":false,
+          "name":"MOCK TNT Comedy",
+          "venue":"The Vine NW5",
+          "img":"http://foodnoise.co.uk/wp-content/uploads/2018/03/Vine-exterior-copy.jpg",
+          "imgs":[  
+             "https://i.ytimg.com/vi/rUw6tb4wGTg/hqdefault.jpg",
+             "https://scontent-atl3-1.cdninstagram.com/vp/3f49dc31629d26821ff4230e74e9189a/5D42111D/t51.2885-15/e35/56249806_410685376193286_2708287825261618844_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com"
+          ],
+          "blurb":"TNT has been running every Tuesday for years. It is one of London's favourite Bringers.  15-17 pre-booked acts. Entry is FREE but audience members will be asked to make a voluntary contribution via a raffle & will have a chance to win prizes to be drawn during each show. Anyone wishing to perform can email or FB Msg Sarma Woolf directly. Pref given to those that have attended before as audience. The spots are 5 - 10 minutes long depending on experience and time allowance.",
+          "lat":51.5551,
+          "lng":-0.1449,
+          "nights":[  
+             "Tue"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email: tntgigs@gmail.com",
+          "bringer":true,
+          "nearestTubes":[  
+             "Kentish Town"
+          ],
+          "twitterHandle":"TNTComedy",
+          "website":"https://www.facebook.com/groups/341746814250/about/",
+          "howToBook":"https://www.facebook.com/groups/341746814250/about/"
+       },
+       {  
+          "id":12,
+          "isSelected":false,
+          "name":"MOCK Comedy East",
+          "venue":"The White Hart Brew Pub",
+          "img":"https://static.wixstatic.com/media/b2dfba_6569610491b14ca1a153d27fe858262a~mv2_d_2000_1500_s_2.jpg",
+          "imgs":[  
+             "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F59126565%2F142923865471%2F1%2Foriginal.20190326-102809?w=1000&auto=compress&rect=0%2C62%2C1162%2C581&s=92ff12c90a0023801c80814415721c1a",
+             "https://static1.squarespace.com/static/57e90e18e6f2e191cbf2ff5f/t/58bd3d35db29d66bb3bd6569/1488797004846/DSC_9087.JPG?format=1500w"
+          ],
+          "blurb":"A mix of new acts and experienced comedians trying out new material, based at The White Hart Brew Pub in East London.",
+          "lat":51.5204,
+          "lng":-0.0545,
+          "nights":[  
+             "Mon",
+             "Tue",
+             "Wed"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"join their group on Facebook and fill out the form...",
+          "bringer":false,
+          "nearestTubes":[  
+             "Whitechapel",
+             "Stepney Green"
+          ],
+          "twitterHandle":"",
+          "website":"https://www.comedyeast.london",
+          "howToBook":"https://www.facebook.com/ComedyEastLondon/"
+       },
+       {  
+          "id":13,
+          "isSelected":false,
+          "name":"MOCK The Comedy Tavern",
+          "venue":"North London Tavern",
+          "img":"https://d31fr2pwly4c4s.cloudfront.net/b/b/3/1156130_0_the-comedy-tavern_400.jpg",
+          "imgs":[  
+             "https://d31fr2pwly4c4s.cloudfront.net/b/b/3/1156130_0_the-comedy-tavern_400.jpg",
+             "https://assets.londonist.com/uploads/2013/08/i640/nlondontavern.png"
+          ],
+          "blurb":"Every Tuesday - a 'more experienced act's stand-up comedy night (100 gigs+); at the North London Tavern in Kilburn. Show starts at 8pm. Show promises the best up-and-coming acts, with preference for ten spots to more experienced comedians.",
+          "lat":51.5451,
+          "lng":-0.2022,
+          "nights":[  
+             "Tue"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email: kilburncomedytavern@gmail.com",
+          "bringer":false,
+          "nearestTubes":[  
+             "Brondesbury",
+             "Kilburn"
+          ],
+          "twitterHandle":"taverncomedy",
+          "website":"https://www.comedyeast.london",
+          "howToBook":"https://www.facebook.com/ComedyEastLondon/"
+       },
+       {  
+          "id":14,
+          "isSelected":false,
+          "name":"MOCK G&B Comedy",
+          "venue":"Arch 1",
+          "img":"https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg",
+          "imgs":[  
+             "https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg",
+             "https://i.ytimg.com/vi/00xrXWCeUls/maxresdefault.jpg"
+          ],
+          "blurb":"Great open mic nights every Wednesday out in E16. MC'd by resident magician-comedian, Kyle Wallace, the night is a Bringer BUT you can Be-Your-Own-Bringer by attending the previous week's show.",
+          "lat":51.5226,
+          "lng":-0.004,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"",
+          "bringer":true,
+          "nearestTubes":[  
+             "Camden Road",
+             "Camden"
+          ],
+          "twitterHandle":"GABcomedy",
+          "website":"https://www.facebook.com/00000000",
+          "howToBook":"https://www.facebook.com/groups/226354827562684/"
+       },
+       {  
+          "id":15,
+          "isSelected":false,
+          "name":"MOCK Nice N' Spiky Comedy",
+          "venue":"The Regent Islington",
+          "img":"https://pbs.twimg.com/profile_images/991412911091408898/a_6QKyPw_400x400.jpg",
+          "imgs":[  
+             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw9PwWkn5_69aRS_ULvPtiQZQ1rcZ3K6IYqebQI2zi_qFEG8wZ",
+             "https://pbs.twimg.com/media/DdwGMLJU8AA7iIf.jpg"
+          ],
+          "blurb":"Nice & Spiky began with gigs at The Paradise By Way Of Kensal Green and The Garage, Highbury but now run a Monday night open mic at The Regent Islington. Previous acts include: Stewart Lee, Reginald D Hunter, Jack Whitehall. Hosted by Nathan Cassidy & run by Richard Dellow, the night is a non-bringer and serves as a deliciously dark, beautiful basement with a few faces looking to try some new ideas.",
+          "lat":51.54,
+          "lng":-0.1068,
+          "nights":[  
+             "Mon"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email: richarddellow@hotmail.com",
+          "bringer":false,
+          "nearestTubes":[  
+             "Angel",
+             "Highbury & Islington"
+          ],
+          "twitterHandle":"NiceNSpiky",
+          "website":"https://www.facebook.com/nicenspikycomedy",
+          "howToBook":"https://www.facebook.com/pg/nicenspikycomedy/about/?ref=page_internal"
+       },
+       {  
+          "id":16,
+          "isSelected":false,
+          "name":"MOCK ZAM Comedy | Riffin at The Griffin",
+          "venue":"The Vauxhall Griffin",
+          "img":"https://pbs.twimg.com/media/D374A9FUIAAluRD.jpg",
+          "imgs":[  
+             "https://d3ph2ovtiyj37.cloudfront.net/wp-content/uploads/2017/12/05173839/crowd-laughing.jpg",
+             "https://media.timeout.com/images/102962379/630/472/image.jpg"
+          ],
+          "blurb":"This is a bringer open mic show every Friday from 6-8pm at The Griffin Belle, SW8. The first hour is open-mic. The second is semi-pro / more professional.",
+          "lat":51.4817,
+          "lng":-0.1258,
+          "nights":[  
+             "Fri"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"email: zsdills@yahoo.com",
+          "bringer":true,
+          "nearestTubes":[  
+             "Vauxhall"
+          ],
+          "twitterHandle":"Vauxhallgriffin",
+          "website":"https://www.facebook.com/ZAM-Comedy-present-Riffin-at-The-Griffin-293560734646494/?eid=ARB3AY0Tk5S809PAD-LRk1gcXk_K8UoRCjrvU_eUDiTf-lL5CY4FjJCNs0s85WnCJWOgXWtups8lOA4_",
+          "howToBook":"https://www.facebook.com/pg/ZAM-Comedy-present-Riffin-at-The-Griffin-293560734646494/about/?ref=page_internal"
+       },
+       {  
+          "id":17,
+          "isSelected":false,
+          "name":"MOCK Downstairs @ The Kings Head",
+          "venue":"The Kings Head",
+          "img":"https://i.ytimg.com/vi/Em6FsKMspEE/maxresdefault.jpg",
+          "imgs":[  
+             "http://www.crouchenders.co.uk/wp-content/uploads/2016/02/kings-head-festival-300x169.png",
+             "http://dantamblingcomedy.com/wp-content/uploads/2014/03/Kings-Head-image.jpg"
+          ],
+          "blurb":"Perhaps best known as one of the oldest Comedy Clubs in Britain specialising in presenting great entertainment in a friendly and intimate environment. Founded in 1981 by Peter Grahame & Huw Thomas. Champion the Best of the New. A favourite of Audiences and Performers. Capacity of 100 people. Excellent PA system, fully stocked bar, air con... and comfortable seating on stools and benches around tables.",
+          "lat":51.578,
+          "lng":-0.1246,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"phone: 01920 823265 between 9am-11am weekdays",
+          "bringer":false,
+          "nearestTubes":[  
+             "Crouch End"
+          ],
+          "twitterHandle":"downstairskhead",
+          "website":"http://www.downstairsatthekingshead.com",
+          "howToBook":"http://www.downstairsatthekingshead.com/Performers.aspx"
+       },
+       {  
+          "id":18,
+          "isSelected":false,
+          "name":"MOCK Lions Den Comedy Club",
+          "venue":"Bar Rumba",
+          "img":"https://www.chortle.co.uk/images/photos/small/lionsden_logo.jpg",
+          "imgs":[  
+             "https://i.ytimg.com/vi/snpDam9DOgY/maxresdefault.jpg",
+             "https://www.lionsdencomedy.co.uk/images/logocarcrash_on_black_295x295px.jpg"
+          ],
+          "blurb":"At 12 years, Lions Den is one of London's longest running open mics. Started by the late Tim Rendle in Kings Cross's now defunct The Cross Keys, Lions Den's Comedy Car Crash moved to Bar Rumba and continues to serve as a friendly hub of raw stand-up try-outs. It is NOT a bringer but has operated a very modest pay-to-play approach in the past...",
+          "lat":51.5112,
+          "lng":-0.1334,
+          "nights":[  
+             "Tue"
+          ],
+          "walkins":true,
+          "walkinSignUp":"18:30",
+          "prebook":false,
+          "prebookSignUp":"",
+          "bringer":false,
+          "nearestTubes":[  
+             "Leics Square",
+             "Picadilly Circus"
+          ],
+          "twitterHandle":"lionsdencomedy",
+          "website":"https://www.lionsdencomedy.co.uk/",
+          "howToBook":""
+       },
+       {  
+          "id":19,
+          "isSelected":false,
+          "name":"MOCK Battersea Power Comedy",
+          "venue":"The Duchess Pub",
+          "img":"https://i.opencomedy.com/uploads/1yw98qnvdofgqh28_n.jpg",
+          "imgs":[  
+             "https://i2.wp.com/basic-comedy.com/wp-content/uploads/2018/09/lance-at-battersea-power-comedy-e1536355310855-300x212.jpg?resize=300%2C212",
+             "https://media.timeout.com/images/103967665/630/472/image.jpg"
+          ],
+          "blurb":"Battersea Power Comedy is a Bringer comedy night near Battersea Power Station. Hosts include Vlad Ilich and the bill is about 12 acts. To book, you need to email the organiser. He also runs Earls Vegas Comedy on Tuesdays.",
+          "lat":51.4793,
+          "lng":-0.1432,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"FB Msg: https://www.facebook.com/batterseapowercomedy",
+          "bringer":true,
+          "nearestTubes":[  
+             "Battersea Park",
+             "Queenstown Road"
+          ],
+          "twitterHandle":"Duchesspub",
+          "website":"https://www.facebook.com/batterseapowercomedy",
+          "howToBook":"https://www.facebook.com/batterseapowercomedy"
+       },
+       {  
+          "id":20,
+          "isSelected":false,
+          "name":"MOCK Lost Comedy Club",
+          "venue":"Lost Society",
+          "img":"https://scontent-lht6-1.xx.fbcdn.net/v/t31.0-8/30420628_144399663073196_5615109259859228875_o.jpg?_nc_cat=102&_nc_ht=scontent-lht6-1.xx&oh=081dc47e260d548429e7fed6b0b20c20&oe=5D609E39",
+          "imgs":[  
+             "https://media-cdn.tripadvisor.com/media/photo-s/0f/e9/88/f7/lost-co-battersea.jpg",
+             "https://scontent-lht6-1.xx.fbcdn.net/v/t31.0-8/30420628_144399663073196_5615109259859228875_o.jpg?_nc_cat=102&_nc_ht=scontent-lht6-1.xx&oh=081dc47e260d548429e7fed6b0b20c20&oe=5D609E39"
+          ],
+          "blurb":"Comedy club held every Wednesday at Lost & Co / Lost Society in the beautiful surroundings of Battersea. Strictly a bringer",
+          "lat":51.4741,
+          "lng":-0.1566,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"Email: lostcomedyclub@gmail.com",
+          "bringer":true,
+          "nearestTubes":[  
+             "Battersea Park",
+             "Queenstown Road"
+          ],
+          "twitterHandle":"lostSocietyBar",
+          "website":"https://www.facebook.com/lostcomedy/",
+          "howToBook":"https://www.facebook.com/pg/lostcomedy/about/?ref=page_internal"
+       },
+       {  
+          "id":21,
+          "isSelected":false,
+          "name":"MOCK Freedom Fridge",
+          "venue":"The Rose & Crown",
+          "img":"https://pbs.twimg.com/profile_images/2550189831/4je7rgbi81324xl52sqq_400x400.jpeg",
+          "imgs":[  
+             "https://i.ytimg.com/vi/HOL_lerRHfk/maxresdefault.jpg",
+             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvuCIvG8ub23uMzHn_GIgzE_9F-WwxN8timseQPuU3j7W5ZcjR"
+          ],
+          "blurb":"Long-standing open mic comedy every Thursday from 8pm at The Rose & Crown in Kentish Town. Inquiries via website below or email thefreedomfridge@gmail.com",
+          "lat":51.5502,
+          "lng":-0.1331,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"Email: thefreedomfridge@gmail.com",
+          "bringer":true,
+          "nearestTubes":[  
+             "Kentish Town"
+          ],
+          "twitterHandle":"Freedom_Fridge",
+          "website":"http://thefreedomfridge.weebly.com/",
+          "howToBook":"http://thefreedomfridge.weebly.com/booking-a-spot.html"
+       },
+       {  
+          "id":22,
+          "isSelected":false,
+          "name":"MOCK Pegasus Comedy",
+          "venue":"The Rose & Crown",
+          "img":"https://static.designmynight.com/uploads/2014/09/Rose-Crown-Lead-optimised.jpg",
+          "imgs":[  
+             "https://static.designmynight.com/uploads/2014/09/Rose-Crown-Lead-optimised.jpg"
+          ],
+          "blurb":"The Pegusus WILL NEVER DIE! This night has been going for ages. Previously run by Luke Gretton, then handed to Richy Wright, before more recently being handed to Jacob Hatton. Performers must obey the Pegasus Charter: 1. Don't be a dickhead 2. Do something brand new and brave that has every chance of failing miserably.",
+          "lat":51.5503,
+          "lng":-0.1331,
+          "nights":[  
+             "Mon"
+          ],
+          "walkins":true,
+          "walkinSignUp":"18:00",
+          "prebook":true,
+          "prebookSignUp":"Email: pegasuscomedyreborn@gmail.com",
+          "bringer":false,
+          "nearestTubes":[  
+             "Kentish Town"
+          ],
+          "twitterHandle":"roseandcrownnw5",
+          "website":"https://www.facebook.com/pegasusreborn",
+          "howToBook":"https://www.facebook.com/pegasusreborn/about"
+       },
+       {  
+          "id":23,
+          "isSelected":false,
+          "name":"MOCK Instant Laughs",
+          "venue":"The Grove",
+          "img":"http://i0.wp.com/www.instant-laughs.com/wp-content/uploads/2017/12/instantlaughs-1-e1514263886117-300x265.jpeg?resize=432%2C381",
+          "imgs":[  
+             "http://i2.wp.com/www.instant-laughs.com/wp-content/uploads/2017/12/14691992_697931937047765_4716562416321268379_o.jpg?resize=640%2C427",
+             "http://i0.wp.com/www.instant-laughs.com/wp-content/uploads/2016/05/Jakebaker-2.jpg?zoom=2&fit=513%2C385"
+          ],
+          "blurb":"Instant laughs is a comedy club set-up by comedians that have been gigging across the UK for a couple of years, going from the cramped, minuscule basements of the London circuit, to the freezing big foot of comedy, the Edinburgh Fringe. We have come across a wide range of audiences and acts, where we have amassed something close to two thousand gigs...",
+          "lat":51.4976,
+          "lng":-0.2278,
+          "nights":[  
+             "Sun"
+          ],
+          "walkins":true,
+          "walkinSignUp":"19:00",
+          "prebook":true,
+          "prebookSignUp":"App: https://spotlz.com/",
+          "bringer":false,
+          "nearestTubes":[  
+             "Hammersmith"
+          ],
+          "twitterHandle":"instantlaughshq",
+          "website":"http://www.instant-laughs.com/",
+          "howToBook":"http://www.instant-laughs.com/interested-in-performing/"
+       },
+       {  
+          "id":24,
+          "isSelected":false,
+          "name":"MOCK Heavenly Comedy",
+          "venue":"The Princess Victoria",
+          "img":"https://pbs.twimg.com/profile_images/926474145692553216/8917jbVo.jpg",
+          "imgs":[  
+             "https://pbs.twimg.com/profile_images/926474145692553216/8917jbVo.jpg",
+             "https://princessvictoria.co.uk/assets/fullsizeoutput_47c7-1158x500.jpeg"
+          ],
+          "blurb":"Heavenly comedy is a supportive comedy club especially for new acts and more experienced comics trying new material. It's every Wednesday offering 5 min (or 10 min slots for those comics who bring a friend). Based in Shepherds Bush at The Princess Victoria, Uxbridge Rd. Apply for your spot by emailing! Booked in advance.",
+          "lat":51.5064,
+          "lng":-0.2404,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"contact email bigncomedy@yahoo.co.uk",
+          "bringer":false,
+          "nearestTubes":[  
+             "Shepherds Bush",
+             "Shepherds Bush Market"
+          ],
+          "twitterHandle":"Heavenlycomedy",
+          "website":"https://www.facebook.com/groups/107019676090831/",
+          "howToBook":"https://www.facebook.com/groups/107019676090831/"
+       },
+       {  
+          "id":25,
+          "isSelected":false,
+          "name":"MOCK Vauxhall Comedy Club",
+          "venue":"Vauxhall Comedy Club",
+          "img":"https://media-cdn.tripadvisor.com/media/photo-s/16/98/8a/67/vauxhall-comedy-club.jpg",
+          "imgs":[  
+             "https://ents24.imgix.net/image/000/184/376/db05bb62d0e91868ee9274c44d5d8cee753d4504.jpg?w=358&h=268&auto=format",
+             "https://static1.squarespace.com/static/5b8963597c93278fbdbe0e91/t/5c7be8d0104c7b336a2c869b/1551624538116/WEEL%3AY+EVENTS",
+             "https://pbs.twimg.com/media/D2M8icxX4AAf_K9.jpg"
+          ],
+          "blurb":"4-nights a week & a bringer. Possibly the most exciting of open mic nights to emerge is The Vauxhall Comedy Club. North London's rein of open mic comes to an end with Vauxhall Comedy Club's Monday-Thursday take-over! Pop in, grab a wrap & enjoy some amazing comics - NOTE: Pay-What-You-Like dontations at the end of the show",
+          "lat":51.4855,
+          "lng":-0.1235,
+          "nights":[  
+             "Mon",
+             "Tue",
+             "Wed",
+             "Thu"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"hit up website!",
+          "bringer":true,
+          "nearestTubes":[  
+             "Vauxhall"
+          ],
+          "twitterHandle":"vauxhallcomedy",
+          "website":"https://vauxhallcomedyclub.com",
+          "howToBook":"https://vauxhallcomedyclub.com/apply-to-perform-2"
+       },
+       {  
+          "id":26,
+          "isSelected":false,
+          "name":"MOCK HYPER MIC NIGHT",
+          "venue":"The FAs Comedy Room",
+          "img":"https://static1.squarespace.com/static/567a7e094bf118f6295a3af5/t/5c2e1e664ae2374f420ff506/1557928261841/",
+          "blurb":"Don't blink or you'll miss it! This is London's fastest and funnest open mic. We have one hour to get 10 acts up. If you want to perform, just sign-up, show up, and throw your name in the bucket. ",
+          "lat":51.5471,
+          "lng":-0.1298,
+          "nights":[  
+             "Sat"
+          ],
+          "walkins":true,
+          "walkinSignUp":"",
+          "prebook":null,
+          "prebookSignUp":"n/a",
+          "bringer":null,
+          "nearestTubes":[  
+             "Camden Road",
+             "Kentish Town"
+          ],
+          "twitterHandle":"FAImprov",
+          "website":"https://thefreeassociation.co.uk/comedy-room-shows-list/",
+          "howToBook":"turn-up, sign-up, name in a bucket"
+       },
+       {  
+          "id":27,
+          "isSelected":false,
+          "name":"MOCK Lolipops Comedy Night",
+          "venue":"Horse & Stables",
+          "img":"https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/49161338_1949052712070491_8175575981440892928_o.jpg?_nc_cat=102&_nc_ht=scontent-lht6-1.xx&oh=7d0de56f4f6627fe561b725494d144a3&oe=5D69004D",
+          "blurb":"Open Mic standup comedy night featuring a mix of comedians doing booked spots and walk-ins. If you are a comedian interested in performing just message the page with details of how long you have been going, what sort of gigs you do and a video link if you have one. Starts 7:30pm until 10pm.",
+          "lat":51.4998,
+          "lng":-0.114,
+          "nights":[  
+             "Tue"
+          ],
+          "walkins":true,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"follow instructions @  https://m.facebook.com/lolipopscomedy/",
+          "bringer":false,
+          "nearestTubes":[  
+             "Lambeth North"
+          ],
+          "twitterHandle":"",
+          "website":"https://m.facebook.com/lolipopscomedy/",
+          "howToBook":"instructions here https://m.facebook.com/lolipopscomedy/"
+       },
+       {  
+          "id":28,
+          "isSelected":false,
+          "name":"MOCK Strange Brew Comedy!",
+          "venue":"Little Faith Tap Room",
+          "img":"https://i.opencomedy.com/uploads/yh5v124r6w371vqf_n.jpg",
+          "blurb":"London's freshest comedy open mic at Little Faith Taproom, Deptford. Run by the hilarious, Adam Kirby.",
+          "lat":51.4767,
+          "lng":-0.0218,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":false,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"Fill out form @ website",
+          "bringer":false,
+          "nearestTubes":[  
+             "Deptford Bridge"
+          ],
+          "twitterHandle":"littleFaithBeer",
+          "website":"https://www.facebook.com/strangebrewcomedynight/",
+          "howToBook":"https://docs.google.com/forms/d/e/1FAIpQLSeTkfI5oSpj5KxX77BOZm3-LSrzOtKrF5kjvIerCoy1z8xAtg/viewform"
+       },
+       {  
+          "id":29,
+          "isSelected":false,
+          "name":"MOCK Coffee & Cocktails",
+          "venue":"The King & Queen Pub",
+          "img":"https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/18057039_281764645604638_5886466651620129579_n.jpg?_nc_cat=102&_nc_ht=scontent-lht6-1.xx&oh=f6ed931c1c0d46b6dccfe7349601c358&oe=5D8B5BCD",
+          "blurb":"The ethos: Coffee & Cocktails Jokes is a friendly, supportive environment for people who are new to standup or who want to try new stuff. 1st Saturday of the month (there are a couple of exceptions). Not a bringer. The only thing we ask is a couple of pound for the pubs charity (McMillan Cancer Support). And remember Share the Love!",
+          "lat":51.5202,
+          "lng":-0.139,
+          "nights":[  
+             "Sat"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"email requesting a spot",
+          "bringer":null,
+          "nearestTubes":[  
+             "Great Portland St"
+          ],
+          "twitterHandle":"kingandqueenpub",
+          "website":"https://www.facebook.com/CCJStandup/",
+          "howToBook":"https://www.facebook.com/pg/CCJStandup/about/?ref=page_internal"
+       },
+       {  
+          "id":30,
+          "isSelected":false,
+          "name":"MOCK Blackout!",
+          "venue":"Up The Creek",
+          "img":"https://www.the-blackout.co.uk/wp-content/uploads/2018/10/JOHNNY-COCHRANE-300x200.png",
+          "blurb":"Having run a traditional open mic for many years, our waiting lists to perform were becoming longer… and longer. With The Blackout format we can get to acts quicker, speeding up the process of being seen and hopefully being developed at Up the Creek. The idea is for performers to have at least five minutes of comedy material…if not the stage is plunged into darkness as you hit The Blackout.",
+          "lat":51.4814,
+          "lng":-0.0108,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"email Up The Creek!",
+          "bringer":null,
+          "nearestTubes":[  
+             "Greenwich"
+          ],
+          "twitterHandle":"UTCComedyclub",
+          "website":"https://www.the-blackout.co.uk/",
+          "howToBook":"https://www.the-blackout.co.uk/#perform"
+       },
+       {  
+          "id":32,
+          "isSelected":false,
+          "name":"MOCK Mates Rates Comedy",
+          "venue":"Bluegrass BBQ",
+          "img":"https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/60731337_673022869817950_2917183220992704512_n.jpg?_nc_cat=101&_nc_eui2=AeEkZb10G1YMsF2r6WArSMRkQq8ZOpShC3E1WQ4pRzVRacHDc56ZR1BW3qABaANm3fcxBfNRO0qNTpivjjZ1b7DtMtd52CGqip-JajdDnUtikA&_nc_ht=scontent-lht6-1.xx&oh=41e7121f6324f9c89b64a258a8f19017&oe=5D93A7D8",
+          "blurb":"Sunday afternoon comedy show every *first Sunday of the month*. Non-bringer non-stayer. Free drink for acts. 10 spots but not a new material night and generally well attended. Details for signing up are on the \"about\" of their Facebook page.",
+          "lat":51.454,
+          "lng":-0.9729,
+          "nights":[  
+             "Sun"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"join Facebook group & message Nick",
+          "bringer":null,
+          "nearestTubes":[  
+             "Reading Overground"
+          ],
+          "twitterHandle":"nickbyard93",
+          "website":"https://matesratescomedy970019129.wordpress.com",
+          "howToBook":"https://matesratescomedy970019129.wordpress.com/i-want-to-perform-at-mates-rates-comedy/"
+       },
+       {  
+          "id":33,
+          "isSelected":false,
+          "name":"MOCK Comedy Explosion",
+          "venue":"The Rocksteady",
+          "img":"https://www.theculturediary.com/sites/default/files/styles/event_full/public/images/events/comedy_crop.jpg?itok=hvf2UZ0Q",
+          "blurb":"Sam Rhodes is a Musician and Comedian who runs and MCs numerous stand up nights in and around London. He preforms as often as humanly possible, and is not interested in awards (Unless hes winning them). This one is a bringer and resides in the effortlessly cool capital of Londinium, Dalston.",
+          "lat":51.5455,
+          "lng":-0.0759,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":false,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"message Sam https://m.me/SamRhodesCE",
+          "bringer":true,
+          "nearestTubes":[  
+             "Dalston Junction"
+          ],
+          "twitterHandle":"Sammus_the_Hutt",
+          "website":"https://www.facebook.com/pg/SamRhodesCE/",
+          "howToBook":"https://www.facebook.com/pg/SamRhodesCE/about"
+       },
+       {  
+          "id":34,
+          "isSelected":false,
+          "name":"MOCK 42 Comedy Club!",
+          "venue":"Fannys Bar",
+          "img":"https://media-cdn.tripadvisor.com/media/photo-s/16/6e/7b/9f/getlstd-property-photo.jpg",
+          "blurb":"The 42 Comedy Club is a weekly comedy night in Stoke Newington that run 2 shows in one night (7.30pm and 9.30pm). Most spots are Bringers (except headliners they've seen before). There’s a possibility to progress to headline spots.",
+          "lat":51.5599,
+          "lng":-0.0738,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"Webform => https://docs.google.com/forms/d/e/1FAIpQLSfSJwqMRgFpiUsnyEDsAEUdwupKJWsWRcoo0NHKc9AX9sJWvA/viewform",
+          "bringer":true,
+          "nearestTubes":[  
+             "Rectory Road"
+          ],
+          "twitterHandle":"",
+          "website":"https://www.facebook.com/groups/269362500659694/",
+          "howToBook":"https://www.facebook.com/groups/269362500659694/"
+       },
+       {  
+          "id":35,
+          "isSelected":false,
+          "name":"MOCK Sunday Shtick",
+          "venue":"Rose & Crown",
+          "img":"https://pbs.twimg.com/profile_images/641184585758412804/0lhS61Er_400x400.png",
+          "blurb":"A night of mirth & merriment hosted every Sunday at the Rose & Crown in god damn Kentish Town.  What better way to spend the Lords day than seeing the best comedians on the open mic circuit blow your bloody mind?",
+          "lat":51.5502,
+          "lng":-0.133,
+          "nights":[  
+             "Sun"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":" email sundayshtick@gmail.com",
+          "bringer":true,
+          "nearestTubes":[  
+             "Kentish Town"
+          ],
+          "twitterHandle":"SundayShtick",
+          "website":"https://www.facebook.com/groups/SundayShtick/",
+          "howToBook":"https://docs.google.com/forms/d/1GD-il6qi_89i0inl8RopfstMEdf3NMWSkQOmcwfYWs4/viewform?fbclid=IwAR0LoF_M_L9C8zH9XiAN5IvBR2fLif_j14uxKKXmAmDjLG-fe6diAUyuB8k&edit_requested=true"
+       },
+       {  
+          "id":36,
+          "isSelected":false,
+          "name":"MOCK Famous First Words",
+          "venue":"The Gunners",
+          "img":"https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/22405753_890957994386711_1636419236412827089_n.jpg?_nc_cat=103&_nc_eui2=AeGxGq-AwTTV69jlTmkMv29i9xbxDjOgEVJlZCWtmYCZfJSxKAr1EiOrHHLToCLZUZahQb9UV2iV4hCDWJM4ZJ8zN537HhVBUCLgV2wTuMjB3w&_nc_ht=scontent-lht6-1.xx&oh=a4bbd7701157f4017266326752b099d7&oe=5D8A6197",
+          "blurb":"Every Monday (except for Arsenal match days), Famous First Words is a Bringer open mic with a passion for variety. Comedy, Music, Poets and others are all welcome for 5 minutes / 3 songs stage time.  Pre-book your slot by messaging the page or Ana-Maria Dewey with your preferred date/s. Alternatively, walk up on the night if youre feeling frisky. The blurb on their facebook page says \"Staying is heavily encouraged (barring family emergencies, we're not complete monsters). If you really can't stand it: we're stuck there every week so think how we feel\". Lolz.",
+          "lat":51.5591,
+          "lng":-0.099,
+          "nights":[  
+             "Mon"
+          ],
+          "walkins":true,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"email the facebook page",
+          "bringer":true,
+          "nearestTubes":[  
+             "Finsbury Park"
+          ],
+          "twitterHandle":"ruskinruskin",
+          "website":"https://www.facebook.com/pg/FFWcomedy/",
+          "howToBook":"https://www.facebook.com/pg/FFWcomedy/about"
+       },
+       {  
+          "id":37,
+          "isSelected":false,
+          "name":"MOCK Funny Feckers",
+          "venue":"The Constitution",
+          "img":"https://media-cdn.tripadvisor.com/media/photo-s/11/dc/b9/0d/funny-feckers-mc-wes.jpg",
+          "blurb":"Funny Feckers is a long time favourite Bringer on the Open Mic, new act / new material scene. MC'd by Wes Dalton, it's a night of about 10-14 acts and a headliner.",
+          "lat":51.5403,
+          "lng":-0.1355,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":false,
+          "walkinSignUp":"00:00",
+          "prebook":true,
+          "prebookSignUp":"join: https://www.facebook.com/groups/582408618478799/",
+          "bringer":true,
+          "nearestTubes":[  
+             "Camden Road",
+             "Camden"
+          ],
+          "twitterHandle":"FunnyFeckers",
+          "website":"http://www.funnyfeckers.co.uk",
+          "howToBook":"http://www.funnyfeckers.co.uk/performers/"
+       },
+       {  
+          "id":38,
+          "name":"MOCK Funny Feckers",
+          "venue":"The Dean Swift",
+          "img":"https://i.ytimg.com/vi/5kOzeYp8RgU/hqdefault.jpg",
+          "blurb":"Funny Feckers is a weekly FREE comedy night founded & compered by Irish MC, Wes Dalton. Branching out from their Camden roots with a brand new Monday show @ The Dean Swift in Tower Bridge. Each week they bring you a craic-ing bill of up-and-coming acts and special guest to headline. Fun and friendly night which brings people together through laughter and silliness. Doors 19.30!",
+          "lat":51.5024,
+          "lng":-0.0734,
+          "nights":[  
+             "Mon",
+             "Sat"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"monthly booking via email",
+          "bringer":true,
+          "nearestTubes":[  
+             "Bermondsey"
+          ],
+          "twitterHandle":"FunnyFeckers",
+          "website":"http://www.funnyfeckers.co.uk",
+          "howToBook":"http://www.funnyfeckers.co.uk/performers/"
+       },
+       {  
+          "id":39,
+          "isSelected":false,
+          "name":"MOCK Monkey Business",
+          "venue":"Pembroke Castle",
+          "img":"https://pbs.twimg.com/profile_images/1049034029725564928/_MqSP_Nc_400x400.jpg",
+          "blurb":"Martin Bessermans long-running new material night is a mixed bag. A fab night in a fab area for seasoned acts to try new ideas. But also a confusingly £6-ticketed new act spot. That said hes had some great names passing through and the night has been running longer than a stack of others so he must be doing something right. Not a bringer. ",
+          "lat":51.54223,
+          "lng":-0.154907,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"email martin_besserman@yahoo.co.uk",
+          "bringer":null,
+          "nearestTubes":[  
+             "Chalk Farm"
+          ],
+          "twitterHandle":"ComedyCamden1",
+          "website":"http://www.monkeybusinesscomedyclub.co.uk",
+          "howToBook":"https://www.facebook.com/groups/31918811444/about/"
+       },
+       {  
+          "id":40,
+          "isSelected":false,
+          "name":"MOCK Love Comedy Club",
+          "venue":"Loves Company",
+          "img":"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F60105308%2F185060150138%2F1%2Foriginal.20190410-013148?w=1000&auto=compress&rect=0%2C7%2C770%2C385&s=4793e4312b0fa38b699426975ce507e4",
+          "blurb":"New comedy club in Old Street. Its NOT a bringer, 10 acts, tuesday nights, at Loves Company in old street or Shoreditch <-- depending on how trendy youre trying to sound.",
+          "lat":51.5262,
+          "lng":-0.0884,
+          "nights":[  
+             "Tue"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"join group, send message.",
+          "bringer":null,
+          "nearestTubes":[  
+             "Old Street"
+          ],
+          "twitterHandle":"_LovesCo",
+          "website":"https://www.facebook.com/Love-Comedy-Club-280404106131428/",
+          "howToBook":"https://www.opencomedy.com/UK/gigs/london/love-comedy-club/?fbclid=IwAR0GHiXVpSikqRTU2s2Fu6LXEOLXeAGpdIqAGVAd4u_UPgw7NMFe6ABWh8Y"
+       },
+       {  
+          "id":41,
+          "isSelected":false,
+          "name":"MOCK Lighthouse Comedy",
+          "venue":"Lighthouse Bar",
+          "img":"https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/65042974_10161949626795125_7470024901814910976_n.jpg?_nc_cat=105&_nc_ht=scontent-lht6-1.xx&oh=26679c8ed1108682e2a70f43f50d9cc7&oe=5D903C57",
+          "blurb":"Marcus Tisson brings us this fresh and new East London open mic. Its NOT a bringer (rejoice!) and youre only obligation is to maybe help promote it by sharing the gig around on Social Media. Easier said than done as we cant find a twitter for either Marcus or the gig or the venue! agh! That said, looks like some cracking photos on the Facebook page and the fact its new and NOT a bringer is something to celebrate & support. Get on it.",
+          "lat":51.5261,
+          "lng":-0.079,
+          "nights":[  
+             "Wed"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"email marcusscomedian1979@gmail.com",
+          "bringer":null,
+          "nearestTubes":[  
+             "Shoreditch High St"
+          ],
+          "twitterHandle":"",
+          "website":"https://www.facebook.com/lighthousecomedyclub/",
+          "howToBook":"https://www.facebook.com/pg/lighthousecomedyclub/about/"
+       },
+       {  
+          "id":42,
+          "name":"MOCK The Cutty Bang Cabaret Show",
+          "venue":"The New Cross House",
+          "img":"https://66.media.tumblr.com/8d580e00e6b211131e1ade97d0b9ed7d/tumblr_p9jnhqxW5R1wxfnm6o1_1280.jpg",
+          "blurb":"Every Last Thursday of the month it's the Cutty Bang Cabaret Show! Run by John McQue, this is a variety open mic so possibly one for the ukelele, poet and magician types amongst you. To Book? Hit the website below and message them.",
+          "lat":51.47581,
+          "lng":-0.0345,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"hit up the Facebook page",
+          "bringer":null,
+          "nearestTubes":[  
+             "New Cross Gate"
+          ],
+          "twitterHandle":"thecuttybang",
+          "website":"https://www.facebook.com/thecuttybang/",
+          "howToBook":"https://www.facebook.com/thecuttybang/about"
+       },
+       {  
+          "id":43,
+          "name":"MOCK Convenient Comedy",
+          "venue":"The Worlds End",
+          "img":"http://www.worldsendfinsburypark.com/sites/default/files/events/images/comedy-mic_0.jpg",
+          "blurb":"Tuesday night gig in Finsbury Park. Joke books at the ready. Get in touch if you want to take one of their slots for the evening, or if you would just like a table to view the stage. 12 acts each week. Everything is usually wrapped up by 10. ",
+          "lat":51.5674,
+          "lng":-0.109,
+          "nights":[  
+             "Tue"
+          ],
+          "walkins":true,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"email convenientcomedy@gmail.com",
+          "bringer":null,
+          "nearestTubes":[  
+             "Finsbury Park"
+          ],
+          "twitterHandle":"convenientCMDY",
+          "website":"http://www.worldsendfinsburypark.com/events/04-06-2019/convenient-comedy-4",
+          "howToBook":"https://www.facebook.com/pg/Convenient-Comedy-2294213997520596/about/?ref=page_internal"
+       },
+       {  
+          "id":44,
+          "name":"MOCK Montys",
+          "venue":"Montys Bar",
+          "img":"https://s3-media3.fl.yelpcdn.com/bphoto/2NLWL6zKbcSuJ2adX_DHBg/348s.jpg",
+          "blurb":"A new bringer to the East London stables. Firmly in Brick Lane, Monty's is E1, a bringer and boasts a lovely atmosphere. ",
+          "lat":51.5244,
+          "lng":-0.0716,
+          "nights":[  
+             "Mon"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"Email standupmontys@gmail.com",
+          "bringer":true,
+          "nearestTubes":[  
+             "Shoreditch High St"
+          ],
+          "twitterHandle":"",
+          "website":"https://www.instagram.com/standupnightslondon/?hl=en",
+          "howToBook":"https://www.instagram.com/standupnightslondon/?hl=en"
+       },
+       {  
+          "id":31,
+          "name":"MOCK Mascara Mayhem Comedy Spectacular",
+          "venue":"Mascara Bar",
+          "img":"https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/56966803_1277542202398838_6066906511240593408_n.png?_nc_cat=100&_nc_eui2=AeFrA30Rz2QenuO_ewx8zWUqc757-ECI8Abe83ajoH_Zu-ejEkaddm_afSW9Wl-k_5XVc5-MZcI2PpCbqVYycegV9-GPC4MEnbGOjm9rjFMQcg&_nc_ht=scontent-lht6-1.xx&oh=fda29aed2f459195276adbaa78db5ebf&oe=5D931525",
+          "blurb":"Bill Egans twice monthly night in Stoke Newington is NOT a bringer! yay! The first and third Thursday of the month is a comedy spectacular like no other at the bar like nowhere else! Londons funniest spitting zingers, full buffet, games, prizes.",
+          "lat":51.567,
+          "lng":-0.0727,
+          "nights":[  
+             "Thu"
+          ],
+          "walkins":null,
+          "walkinSignUp":"",
+          "prebook":true,
+          "prebookSignUp":"Add Bill on Facebook and message him.",
+          "bringer":null,
+          "nearestTubes":[  
+             "Stoke Newington"
+          ],
+          "twitterHandle":"mascaraBar",
+          "website":"https://www.facebook.com/Mascara-Mayhem-Comedy-Spectacular-1277537785732613/",
+          "howToBook":"https://www.facebook.com/Mascara-Mayhem-Comedy-Spectacular-1277537785732613/"
+       }
     ]
-}
+ }

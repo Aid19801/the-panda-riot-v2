@@ -69,23 +69,18 @@ class GigsPage extends Component {
   componentDidMount() {
     const cachedGigs = cache.getFromCache('gigs');
     if (!cachedGigs) {
-      cache.saveToCache('gigs', this.props.gigs);
-    }
-    if (cachedGigs) {
-      const checking = cache.getFromCache('gigs');
-      console.log('checking: ', checking);
+      return cache.saveToCache('gigs', this.props.gigs);
     }
   }
 
   render() {
-
     return (
-      <div id="page-container" className="container">
+      <div id="page-container" className="container container-fluid">
         <h1>gigs</h1>
 
         {this.state.loading && <p>loading...</p>}
 
-        <div className="row">
+        <div className="row full-width">
           <div className="col-sm-6">
             <Filters results={this.props.gigs} />
           </div>

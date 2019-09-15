@@ -19,28 +19,35 @@ export function* workerGigsSaga({ filters }) {
   let rawUrl = '';
   let error = null;
 
-  if (cachedGigs) {
-    gigs = JSON.parse(localStorage.getItem('gigs'));
+  if (process.env.NODE_ENV === 'production') {
+    if (cachedGigs) {
+      gigs = JSON.parse(localStorage.getItem('gigs'));
+    }
+
+    if (!cachedGigs) {
+      // go to gist
+      yield fetch(
+        `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
+      )
+        .then(res => res.json())
+        .then(json => {
+          return (rawUrl = json.files.gigs.raw_url);
+        })
+        .catch(err => (error = err));
+
+      // get dirty raw url for all the gigs
+      yield fetch(rawUrl)
+        .then(res => res.json())
+        .then(json => {
+          cache.saveToCache('gigs', json.gigs);
+          return (gigs = json.gigs);
+        })
+        .catch(err => console.log('err ', err));
+    }
   }
 
-  if (!cachedGigs) {
-    // go to gist
-    yield fetch(`https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`)
-      .then(res => res.json())
-      .then(json => {
-        return (rawUrl = json.files.gigs.raw_url);
-      })
-      .catch(err => (error = err));
-  
-    // get dirty raw url for all the gigs
-    yield fetch(rawUrl)
-      .then(res => res.json())
-      .then(json => {
-        cache.saveToCache('gigs', json.gigs);
-        return (gigs = json.gigs);
-      })
-      .catch(err => console.log('err ', err));
-
+  if (process.env.NODE_ENV === 'development') {
+    gigs = mockGigs.gigs;
   }
 
   let activeFilterTwo = {};
@@ -51,14 +58,14 @@ export function* workerGigsSaga({ filters }) {
 
   // if second filter exists, declare it as activeFilterTwo
   if (onlyActiveFilters && onlyActiveFilters.length > 1) {
-    console.log('if activeFilters > 1');
+    console.log('if activeFilters > 1', onlyActiveFilters);
     activeFilterTwo = filters.filter(each => each.active === true)[1].name;
   }
 
   // if THIRD filter exists, declare it as activeFilterThree
   if (onlyActiveFilters && onlyActiveFilters.length > 2) {
-    console.log('if activeFilters > 2');
-    activeFilterThree = filters.filter(each => each.active === true[2]).name;
+    console.log('if activeFilters > 2', onlyActiveFilters);
+    activeFilterThree = filters.filter(each => each.active === true[1]).name;
   }
 
   // create array to push results into
@@ -112,7 +119,7 @@ export function* workerGigsSaga({ filters }) {
       each.nights.includes(activeFilterTwo)
     );
   }
-
+  console.log('actuce 3: ', activeFilterTwo);
   // filter three
   if (activeFilterThree === 'Bringers') {
     console.log('active filter three ', activeFilterThree);
@@ -122,6 +129,7 @@ export function* workerGigsSaga({ filters }) {
 
   if (activeFilterThree === 'Non-bringers') {
     updatedGigs = updatedGigs.filter(each => each.bringer !== true);
+    console.log('active filter three GIGS ', updatedGigs);
   }
 
   // if active filter one is a Day-of-week, filter it down to that...
@@ -134,9 +142,11 @@ export function* workerGigsSaga({ filters }) {
     activeFilterThree === 'Sat' ||
     activeFilterThree === 'Sun'
   ) {
+    console.log('active filter 3 is ', activeFilterThree);
     updatedGigs = updatedGigs.filter(each =>
       each.nights.includes(activeFilterThree)
     );
+    console.log('active filter three GIGS ', updatedGigs);
   }
 
   if (

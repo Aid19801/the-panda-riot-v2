@@ -1,7 +1,11 @@
 import React from 'react';
 import { filters as staticFilters } from './filters';
 import { connect } from 'react-redux';
-import { fetchFilters, filtersChanged, filtersLoaded } from '../../redux/actions';
+import {
+  fetchFilters,
+  filtersChanged,
+  filtersLoaded
+} from '../../redux/actions';
 import './styles.css';
 
 // 1. Filters takes in an array of gigs via props.
@@ -25,8 +29,7 @@ class Filters extends React.Component {
       results: this.props.arr // load in gigs via props
     });
     if (this.props.filters) {
-        console.log('filters exist!')
-        this.props.updateStateFiltersLoaded();
+      this.props.updateStateFiltersLoaded();
     }
   };
 
@@ -39,11 +42,11 @@ class Filters extends React.Component {
       active: !optionToChange.active
     };
     updatedFilters.push(updatedOption);
-    
+
     let sortedFilters = updatedFilters.sort((a, b) => {
-        var textA = a.id;
-        var textB = b.id;
-        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+      var textA = a.id;
+      var textB = b.id;
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
     });
     this.props.updateStateFiltersChanged(sortedFilters);
   };
@@ -53,15 +56,19 @@ class Filters extends React.Component {
     return (
       <div className="filters__container">
         <h4>Filters</h4>
-        {this.props.filters && filters.map((each, i) => (
-          <button
-            disabled={each.active}
-            onClick={() => this.handleClick(each.id)} key={i}
-            style={ each.active ? { color: 'green' } : { color: 'red' }}
-            >
-            {each.name}
-          </button>
-        ))}
+        {this.props.filters &&
+          filters.map((each, i) => {
+            return (
+              <button
+                disabled={each.active}
+                onClick={() => this.handleClick(each.id)}
+                key={i}
+                style={each.active ? { opacity: '0.3' } : { color: 'black' }}
+              >
+                {each.name}
+              </button>
+            );
+          })}
       </div>
     );
   }
@@ -69,7 +76,7 @@ class Filters extends React.Component {
 
 const mapStateToProps = state => ({
   filters: state.filters.filters,
-  gigs: state.gigs.data,
+  gigs: state.gigs.data
 });
 
 const mapDispatchToProps = dispatch => ({
