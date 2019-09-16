@@ -29,6 +29,8 @@ export const FETCH_GIGS_RESP = 'FETCH_GIGS_RESP';
 export const RESET_GIGS = 'RESET_GIGS';
 export const FETCH_FILTERS = 'FETCH_FILTERS';
 export const GIGS_FILTERED = 'GIGS_FILTERED';
+export const SELECTED_GIG = 'SELECTED_GIG';
+
 // filters
 export const LOAD_FILTERS = 'LOAD_FILTERS';
 export const LOADED_FILTERS = 'LOADED_FILTERS';

@@ -55,7 +55,6 @@ class Filters extends React.Component {
     const { filters } = this.props;
     return (
       <div className="filters__container">
-        <h4>Filters</h4>
         {this.props.filters &&
           filters.map((each, i) => {
             return (

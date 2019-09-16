@@ -58,15 +58,58 @@ ul {
 }
 
 .ul__gigs {
+  width: 100%;
   margin-top: 20px;
   min-width: 250px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .full-width {
   width: 100%;
 }
 
+.white {
+  color: white;
+}
+
+.red {
+  color: red;
+}
+
+.margin-on {
+  margin: 20px;
+}
+
+.margin-off {
+  margin: 0;
+}
+
+.border-on {
+  border: 1px solid red;
+}
+
+.tpr__border {
+  border: 5px solid orange;
+  border-radius: 12px;
+}
+
+.padding-on {
+  padding: 20px;
+}
+
+.padding-off {
+  padding: 0;
+}
+
+
+.flex-center {
+  display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
   .news__content-container {
     /* display: flex;
     justify-content: center;

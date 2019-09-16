@@ -13,6 +13,7 @@ import * as cache from '../lib/cache';
 
 import '../lib/index.css';
 import Filters from '../components/Filters';
+import {InfoCard} from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 
 // 1. load GIGS and FILTERS into local state
@@ -26,7 +27,7 @@ class GigsPage extends Component {
       gigs: [],
       filteredGigs: [],
       finalGigs: [],
-
+      toggleMarker: false,
       filters: [],
       loading: false
     };
@@ -74,23 +75,43 @@ class GigsPage extends Component {
   }
 
   render() {
+    const { selectedGig } = this.props;
     return (
-      <div id="page-container" className="container container-fluid">
-        <h1>gigs</h1>
+      <div id="page-container" className="container container-fluid border-on">
+        <div className="row full-width">
+          <div className="col-sm-12 flex-center">
+            <h1>gigs</h1>
+          </div>
+        </div>
 
         {this.state.loading && <p>loading...</p>}
 
         <div className="row full-width">
-          <div className="col-sm-6">
+          <div className="col-sm-1">
             <Filters results={this.props.gigs} />
           </div>
 
-          <div className="col-sm-6">
-            <ul className="ul__gigs">
-              {this.props.gigs.map((each, i) => (
-                <li key={i}>{each.name}</li>
-              ))}
-            </ul>
+          {!selectedGig && (
+            <div className="col-sm-11">
+              <MapBox />
+            </div>
+          )}
+
+          {selectedGig && (
+            <>
+              <div className="col-sm-5">
+                <MapBox />
+              </div>
+              <div className="col-sm-6">
+                <InfoCard paneInfo={selectedGig} />
+              </div>
+            </>
+          )}
+        </div>
+
+        <div className="row full-width">
+          <div className="col-sm-12">
+            
           </div>
         </div>
       </div>
@@ -100,7 +121,8 @@ class GigsPage extends Component {
 
 const mapStateToProps = state => ({
   gigs: state.gigs.data,
-  filters: state.filters.filters
+  filters: state.filters.filters,
+  selectedGig: state.gigs.selectedGig
 });
 
 const mapDispatchToProps = dispatch => ({

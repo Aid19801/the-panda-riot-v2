@@ -3,6 +3,7 @@ import * as actions from '../constants';
 const initialState = {
   loading: false,
   data: null,
+  selectedGig: null,
 };
 
 /* eslint-disable */
@@ -47,6 +48,16 @@ const gigsReducer = (state = initialState, action) => {
         data: action.data,
       }
       break;
+
+
+      case actions.SELECTED_GIG:
+      console.log('reducer heard SELECTED_GIG: ', action);
+      return {
+        ...state,
+        selectedGig: action.selectedGig,
+      }
+      break;
+
 
     case actions.GIGS_PAGE_FAILED:
         console.log('reducer heard GIGS_PAGE_FAILED', action);

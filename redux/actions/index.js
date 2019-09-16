@@ -63,14 +63,14 @@ export const filtersLoaded = () => {
 export const filtersChanged = (arr) => {
   return { type: actionTypes.FILTERS_CHANGED, filters: arr }
 }
-// 
-// 
+
 export const resetGigs = (gigs) => {
   return { type: actionTypes.RESET_GIGS, gigs }
 }
 
-
-
+export const userSelectedGig = obj => {
+  return { type: actionTypes.SELECTED_GIG, selectedGig: obj }
+}
 
 
 // PAGE | Home
