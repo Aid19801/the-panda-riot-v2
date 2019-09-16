@@ -13,8 +13,9 @@ import * as cache from '../lib/cache';
 
 import '../lib/index.css';
 import Filters from '../components/Filters';
-import {InfoCard} from '../components/InfoCard';
+import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
+import MoreInfoCard from '../components/MoreInfoCard';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
@@ -87,10 +88,6 @@ class GigsPage extends Component {
         {this.state.loading && <p>loading...</p>}
 
         <div className="row full-width">
-          <div className="col-sm-1">
-            <Filters results={this.props.gigs} />
-          </div>
-
           {!selectedGig && (
             <div className="col-sm-11">
               <MapBox />
@@ -99,20 +96,23 @@ class GigsPage extends Component {
 
           {selectedGig && (
             <>
-              <div className="col-sm-5">
+              <div className="col-sm-6">
                 <MapBox />
               </div>
-              <div className="col-sm-6">
+              <div className="col-sm-6 flex-col flex-center">
                 <InfoCard paneInfo={selectedGig} />
+                <MoreInfoCard paneInfo={selectedGig} />
               </div>
             </>
           )}
+
+          <div className="col-sm-12">
+            <Filters results={this.props.gigs} />
+          </div>
         </div>
 
         <div className="row full-width">
-          <div className="col-sm-12">
-            
-          </div>
+          <div className="col-sm-12"></div>
         </div>
       </div>
     );

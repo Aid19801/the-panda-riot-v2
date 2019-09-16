@@ -1,6 +1,6 @@
 .map__container {
   width: 100%;
-  padding: 20px;
+  margin-top: 20px;
 }
 
 .div__filters-outer-container {
@@ -19,74 +19,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.div__filters-outer-container > p {
-  color: white;
-}
-
-.div__filters-inner-container {
-}
-
-.div__filters-row {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-
-.div__filters-row p {
-  text-align: center;
-  color: orange;
-}
-
-.p__filter {
-  background: grey;
-  color: orange;
-  font-size: 9px;
-  width: 100%;
-}
-
-.p__filter-active {
-  background: lightgreen;
-  color: black;
-  font-size: 9px;
-  width: 100%;
-}
-
-.p__filter-days-active {
-  background: orange;
-  color: black;
-  font-size: 9px;
-  width: 100%;
-}
-
-.p__filter-days {
-  background: orange;
-  color: black;
-  font-size: 9px;
-  width: 100%;
-}
-
-.full-width-row {
-  justify-content: center;
-  width: 100%;
-}
-
-.row-short-height {
-  height: auto;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-}
-
-.container {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
 }
 
 .carousel-columns {
@@ -135,10 +67,10 @@
   animation-timing-function: ease-out;
 }
 
-.map-container {
+/* .map-container {
   border: 12px solid orange;
   box-shadow: 1px 2px 3px rgba(255, 255, 255, 0.5);
-}
+} */
 
 .mapMeMarkerStyle {
   background-color: blue;

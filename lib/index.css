@@ -89,7 +89,7 @@ ul {
 }
 
 .tpr__border {
-  border: 5px solid orange;
+  border: 20px solid orange;
   border-radius: 12px;
 }
 
@@ -110,6 +110,12 @@ ul {
     align-content: center;
     text-align: center;
 }
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
   .news__content-container {
     /* display: flex;
     justify-content: center;

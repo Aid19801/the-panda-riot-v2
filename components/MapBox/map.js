@@ -154,7 +154,7 @@ class Map extends Component {
             center={this.state.center}
             zoom={selectedGig ? [14] : [11]}
             containerStyle={{
-              height: '695px'
+              height: '350px'
             }}
             onStyleLoad={this.onStyleLoad}
             onMove={this.onMove}
