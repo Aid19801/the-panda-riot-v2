@@ -41,7 +41,7 @@ export const filters = [
   },
   {
     id: 8,
-    name: 'Non-Bringers',
+    name: 'Non-bringers',
     active: false
   },
 ];

@@ -1,43 +1,85 @@
 .gigs__more-info-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    background: linear-gradient(grey, darkgrey);
-    height: auto;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  background: linear-gradient(grey, darkgrey);
+  height: auto;
+  width: 100%;
 }
 
 .gigs__flex-row {
-    border: 1px solid red;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-    align-items: start;
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: start;
+  margin-bottom: 5px;
+  /* margin-right: 5px; */
 }
 
 .gigs__flex-col {
-    border: 1px solid green;
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-}
-
-.gigs__flex-row:nth-child(1) {
-    margin-top: 20px;
+  /* border: 1px solid green; */
+  background: orange;
+  /* transform: skewY(-2deg); */
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
 }
 
 .gigs__more-info-container h2 {
-    color: orange;
+  color: orange;
 }
 
 .gigs__more-info-container p {
-    color: white;
-    margin: 0;
+  color: white;
+  margin: 0;
+}
+
+.moreinfo__each-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /* border: 1px solid green; */
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.moreinfo__each-row > h4 {
+  color: white !important;
+  margin-left: 20px;
+  text-align: start;
+}
+
+.moreinfo__each-row a h4 {
+  margin-left: 20px;
+}
+
+.moreinfo__each-row p {
+  margin-left: 10px;
+  margin-bottom: 0;
+  color: white;
+}
+
+.gigs__flex-row:nth-child(2) .moreinfo__each-row:nth-child(2) a h4 {
+  /* border: 5px solid pink; */
+  margin-left: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .gigs__flex-row {
+    flex-direction: column;
+  }
+  .moreinfo__each-row {
+    transform: skewY(2deg) !important;
+  }
 }

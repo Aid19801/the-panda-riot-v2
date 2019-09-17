@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import { trimStringSpecifically } from '../../lib/utils';
+import './styles.css';
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1];
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
@@ -26,7 +27,7 @@ export function InfoCard({ paneInfo, toggleMarker }) {
       </div>
       
       <div className={ toggleMarker ? "bg-img-div effect" : "bg-img-div" }>
-        <img alt="open mic comedy venue promo" className="bg-img" src={ paneInfo.img === '' ? 'https://cdn.xl.thumbs.canstockphoto.com/microphone-icon-vector-illustration-drawing_csp46244294.jpg' : paneInfo.img } />
+        <img alt="open mic comedy venue promo" className="bg-img" src={ !paneInfo.img ? 'https://cdn.xl.thumbs.canstockphoto.com/microphone-icon-vector-illustration-drawing_csp46244294.jpg' : paneInfo.img } />
       </div>
     </animated.div>
   )

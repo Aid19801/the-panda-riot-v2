@@ -148,7 +148,7 @@ class Map extends Component {
 
     if (!this.state.isLoading) {
       return (
-        <div className="foo tpr__border">
+        <div className="map__container tpr__border">
           <MapBoxMap
             style="mapbox://styles/mapbox/streets-v9"
             center={this.state.center}

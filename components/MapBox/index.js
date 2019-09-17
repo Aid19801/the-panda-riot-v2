@@ -7,7 +7,7 @@ const DynamicMapWithNoSSR = dynamic((props) => import('./map'), {
 });
 
 const MapBoxContainer = () => (
-  <div className="map__container">
+  <div className="map__dynamic-no-ssr">
     <DynamicMapWithNoSSR />
   </div>
 );

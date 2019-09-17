@@ -85,11 +85,17 @@ class GigsPage extends Component {
           </div>
         </div>
 
+        <div className="row full-width">
+          <div className="col-sm-12">
+            <Filters results={this.props.gigs} />
+          </div>
+        </div>
+
         {this.state.loading && <p>loading...</p>}
 
         <div className="row full-width">
           {!selectedGig && (
-            <div className="col-sm-11">
+            <div className="col-sm-12 flex-center">
               <MapBox />
             </div>
           )}
@@ -99,16 +105,15 @@ class GigsPage extends Component {
               <div className="col-sm-6">
                 <MapBox />
               </div>
-              <div className="col-sm-6 flex-col flex-center">
-                <InfoCard paneInfo={selectedGig} />
+              <div className="col-sm-6 flex-col flex-center border-on">
+                <InfoCard
+                  paneInfo={selectedGig}
+                  toggleMarker={selectedGig ? true : false}
+                />
                 <MoreInfoCard paneInfo={selectedGig} />
               </div>
             </>
           )}
-
-          <div className="col-sm-12">
-            <Filters results={this.props.gigs} />
-          </div>
         </div>
 
         <div className="row full-width">

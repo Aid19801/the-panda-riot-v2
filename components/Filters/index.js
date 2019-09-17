@@ -59,6 +59,7 @@ class Filters extends React.Component {
           filters.map((each, i) => {
             return (
               <button
+                className="col-sm-3"
                 disabled={each.active}
                 onClick={() => this.handleClick(each.id)}
                 key={i}
