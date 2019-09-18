@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withFirebase } from '.';
 import * as cache from '../lib/cache';
 import Router from 'next/router';
-import { saveAuthenticatedUID } from '../redux/actions';
+import { saveAuthenticatedUID, userAuthenticatedAsAdmin, userIsSignedIn } from '../redux/actions';
 
 export default function withAuth(PlatformSpecificComponent) {
   class withAuthenticationClass extends React.Component {
@@ -35,15 +35,25 @@ export default function withAuth(PlatformSpecificComponent) {
       this.checkAuthStatus();
     }
 
+    ifNotAuthRouteToSignIn = () => {
+      return Router.push('/signin');
+    }
+
     // route based on whats in cache
     checkAuthStatus = async (fbUID) => {
       const cacheUID = await cache.getFromCache('uid');
-
+      if (fbUID && fbUID !== '') {
+        this.props.updateStateUserSignedIn();
+      }
       // if theres no uid in cache, save one.
       if (!cacheUID) {
         cache.saveToCache('uid', fbUID);
       }
-
+      
+      // if the uid from firebase matches the admin password, update state to isAdmin true
+      if (fbUID === process.env.REACT_APP_PANDA_RIOT_ADMINI) {
+        this.props.updateStateIsAdmin();
+      }
       // if user has no DB profile, route to `/me`
 
       // DATABASE / USER PROFILE
@@ -96,7 +106,9 @@ export default function withAuth(PlatformSpecificComponent) {
   }
 
   const mapDispatchToProps = dispatch => ({
-    updateStateWithUID: id => dispatch(saveAuthenticatedUID(id))
+    updateStateWithUID: id => dispatch(saveAuthenticatedUID(id)),
+    updateStateIsAdmin: () => dispatch(userAuthenticatedAsAdmin()),
+    updateStateUserSignedIn: () => dispatch(userIsSignedIn()),
   });
 
   return compose(

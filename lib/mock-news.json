@@ -1,0 +1,336 @@
+{  
+    "articles":[  
+       {  
+          "_id":"5",
+          "headline":"MOCK Stand Up & Be Laughed At - Mark Watson",
+          "blurb":"Performing at an open mic night is a free but sometimes painful experience, writes comedian Mark Watson.",
+          "link":"https://www.theguardian.com/lifeandstyle/2007/jan/06/freestuff.guardianspecial415",
+          "img":"https://www.varsity.co.uk/images/derived/article-objects/md5-c902395d39bd0cd4002f5c7341f18bdd/15852.jpeg",
+          "src":"Guardian"
+       },
+       {  
+          "_id":"5d80c30950c4280024df2633",
+          "headline":"MOCK The Taskmaster army",
+          "img":"https://www.chortle.co.uk/images/photos/small/alex-horne-taskmaster-fans.jpg",
+          "link":"https://www.chortle.co.uk/news/2019/09/16/44324/the_taskmaster_army",
+          "blurb":"Alex Horne overwhelmed as 1,000 fans respond to book challenge\n                                16/09/2019 … Around 1,000 people descended on a small Buckinghamshire park yesterday to complete one of the challenges in the Taskmaster book.",
+          "src":"Chortle",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2630",
+          "headline":"MOCK Gold orders star-studded seaside sitcom",
+          "img":"https://www.chortle.co.uk/images/photos/small/dw_david_walliams_bgt.jpg",
+          "link":"https://www.chortle.co.uk/news/2019/09/17/44327/gold_orders_star-studded_seaside_sitcom",
+          "blurb":"David Walliams, Sanjeev Bhaskar and Simon Bird all head for Sandylands\n                                17/09/2019 … David Walliams, Sanjeev Bhaskar and Simon Bird are to star in a new seaside-set sitcom for the Gold channel.",
+          "src":"Chortle",
+          "__v":0
+       },
+       {  
+          "_id":"9",
+          "headline":"MOCK 8 Eccentrics Youll Meet At Open Mic Comedy",
+          "blurb":"Jay Islaam has graced the stage across the ",
+          "link":"https://www.huffingtonpost.co.uk/jay-islaam/eight-eccentrics-youll-meet-at-open-mic-comedy_b_8518246.html",
+          "img":"https://o.aolcdn.com/images/dims?quality=80&thumbnail=250%2C140&image_uri=http%3A%2F%2Fi.huffpost.com%2Fgen%2F3648528%2Fimages%2Fn-VINTAGE-MICROPHONE-628x314.jpg&client=cbc79c14efcebee57402&signature=025bc38d03ecce901eb322696880192dd06ccf71",
+          "src":"HuffPost"
+       },
+       {  
+          "_id":"5d80c30950c4280024df2635",
+          "headline":"MOCK Keith Lemons a crafty one...",
+          "img":"https://www.chortle.co.uk/images/photos/small/fantastical-factory.jpg",
+          "link":"https://www.chortle.co.uk/news/2019/09/16/44320/keith_lemons_a_crafty_one...",
+          "blurb":"Comic returns to Channel 4 to host a new crafts competition\n                                16/09/2019 … He has been a face of ITV2 for more than a decade – but Keith Lemon is returning to Channel 4 for a different sort of show that fans are used to.",
+          "src":"Chortle",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2629",
+          "headline":"MOCK Blue plaque celebrates Allo Allo!",
+          "img":"https://pbs.twimg.com/profile_images/1016231093425582080/lUZK3DzN_400x400.jpg",
+          "link":"https://www.bbc.co.uk/news/uk-england-norfolk-49569939?intlink_from_url=&link_location=live-reporting-story",
+          "blurb":"The British Comedy Society said people from across Europe attended the unveiling in Norfolk.",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2625",
+          "headline":"MOCK Ever seen an otter do the scream?",
+          "img":"https://media-cdn.tripadvisor.com/media/photo-s/14/63/7e/32/off-the-wall-also-organizes.jpg",
+          "link":"https://www.bbc.co.uk/news/newsbeat-49690173?intlink_from_url=&link_location=live-reporting-story",
+          "blurb":"These are the finalists of the Comedy Wildlife Photography Awards 2019.",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2624",
+          "headline":"MOCK Saturday Night Live fires new comedian for slurs",
+          "img":"https://media-cdn.tripadvisor.com/media/photo-s/14/63/7e/32/off-the-wall-also-organizes.jpg",
+          "link":"https://www.bbc.co.uk/news/world-us-canada-49722926?intlink_from_url=&link_location=live-reporting-story",
+          "blurb":"Gillis apologised for the remarks saying he was a comedian \"who pushes boundaries\".",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df2623",
+          "headline":"MOCK News: Infinite Monkey Cage Returns With Britspace Specialmore",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/the_infinite_monkey_cage_returns.jpg?itok=Ls_YvxDb",
+          "link":"https://www.beyondthejoke.co.uk/content/7704/monkey-cage-ince",
+          "blurb":"The Infinite Monkey Cage returns to Radio 4 for 20th series with a Tim Peake and Helen Sharman specialBritish astronauts Tim Peake and Helen Sharman will appear in a special episode of award-... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"8",
+          "headline":"MOCK How To Put An End To Bringer Gigs",
+          "blurb":"Ben Morgan: I myself am a below average/piss poor comedian... ",
+          "link":"https://www.huffingtonpost.co.uk/ben-morgan/bringer-gigs_b_7641390.html?utm_hp_ref=uk-stand-up",
+          "img":"https://o.aolcdn.com/images/dims?quality=80&thumbnail=250%2C140&image_uri=http%3A%2F%2Fi.huffpost.com%2Fgen%2F2436674%2Fimages%2Fn-PODCAST-MIC-628x314.jpg&client=cbc79c14efcebee57402&signature=2f0c36aea37af15d22ef1dcb50ccf60bc4d317cd",
+          "src":"HuffPost"
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df261a",
+          "headline":"MOCK News: David Walliams, Sanjeev Bhaskar, Simon Bird Star In New Gold Sitcom more",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/sandylands_anno.jpg?itok=5jegqJA8",
+          "link":"https://www.beyondthejoke.co.uk/content/7714/david-walliams-sitcom",
+          "blurb":"UKTV has commissioned a new comedy, Sandylands, for the comedy channel Gold. The series, produced by King Bert Productions, starts filming this month featuring a cast including Sanjeev Bhaskar (... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2632",
+          "headline":"MOCK Netflix signs up Seinfeld",
+          "img":"https://www.chortle.co.uk/images/photos/small/seinfeld_group.jpg",
+          "link":"https://www.chortle.co.uk/news/2019/09/16/44325/netflix_signs_up_seinfeld",
+          "blurb":"...but not until 2021\n                                16/09/2019 … Seinfeld is coming to Netflix – but not until 2021.",
+          "src":"Chortle",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df2620",
+          "headline":"MOCK News: Joel Dommett Marries Hannah Cooper In Island Ceremonymore",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/joel_dommett.png?itok=URdBcTHb",
+          "link":"https://www.beyondthejoke.co.uk/content/7707/joel-dommett-marries",
+          "blurb":"Comedian Joel Dommett has married his partner Hannah Cooper on the Greek Island of Mykonos.A photo was posted in Instagram by Dommett, in which the ceremony appeared to have been officiated... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df2622",
+          "headline":"MOCK News: Brassic Is A Big Hit For Skymore",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/brassic-tile-f1be3c36jpg.jpg?itok=--fS9C37",
+          "link":"https://www.beyondthejoke.co.uk/content/7705/news-brassic-big-hit-sky",
+          "blurb":"Sky One's new series Brassic has proved to be a big hit for the broadcaster.The northern comedy drama, co-created by its star Joseph Gilgun and BAFTA-winning writer Danny Brocklehurst, is their... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df262b",
+          "headline":"MOCK Transcript: Dear Janine - Please can I borrow your nipples?",
+          "img":"https://pbs.twimg.com/profile_images/1016231093425582080/lUZK3DzN_400x400.jpg",
+          "link":"https://www.bbc.co.uk/news/disability-49550448?intlink_from_url=&link_location=live-reporting-story",
+          "blurb":"This is a full transcript of Dear Janine - Please can I borrow your nipples? A largely uncut version of the live show BBC Ouch: Storytelling Live recorded at the Edinburgh Festival Fringe.",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2631",
+          "headline":"MOCK Saturday Night Live fires its new recruit over racist term",
+          "img":"https://www.chortle.co.uk/images/photos/small/shane-gillis.jpg",
+          "link":"https://www.chortle.co.uk/news/2019/09/16/44326/saturday_night_live_fires_its_new_recruit_over_racist_term",
+          "blurb":"'The language Shane Gillis used is offensive, hurtful and unacceptable'\n                                16/09/2019 … Saturday Night Live has fired its new cast member Shane Gillis for using a racist term in a podcast – even before the new season has started.",
+          "src":"Chortle",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df262a",
+          "headline":"MOCK Hat factory will stop towns talent drain",
+          "img":"https://lifecharity.org.uk/wp-content/uploads/2019/02/bbc-logo.jpg",
+          "link":"https://www.bbc.co.uk/news/uk-england-beds-bucks-herts-49609057?intlink_from_url=&link_location=live-reporting-story",
+          "blurb":"An arts centre in a former factory is reopening is part of a £10m project to form a \"creative cluster\".",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"2",
+          "headline":"MOCK Be funny: Why we still love a crowd",
+          "blurb":"WHAT makes the live arts experience so compelling and important, even in this digital age? That’s one of the questions that will be asked when electronic pop star Be Charlotte, comedian Ashley Storrie, TRNSMT organiser",
+          "link":"https://www.heraldscotland.com/news/17619572.be-charlotte-be-live-be-funny-why-we-still-love-a-crowd/",
+          "img":"https://www.heraldscotland.com/resources/images/9809744/?type=responsive-gallery-fullscreen",
+          "src":"Herald"
+       },
+       {  
+          "_id":"4",
+          "headline":"MOCK Heard The One About Standups That Bring Their Own Audience?",
+          "blurb":"On the open mic scene, comedians are securing their time on stage by bulking out the crowd with paying friends. Is the rise of ‘bringer gigs’ bad for the artform?",
+          "link":"https://www.theguardian.com/stage/2015/jun/22/standups-who-bring-their-own-audience",
+          "img":"https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/6/22/1434971591335/0d5323f2-0d0f-45ae-93e2-0e0325484f78-2060x1236.jpeg?width=300&quality=85&auto=format&fit=max&s=745088cb6e568462000f69a0011c89ab",
+          "src":"Guardian"
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df2621",
+          "headline":"MOCK News: Soho Theatre and NextUp Announce Partnershipmore",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/jenbrister_idilsukan-min_-_copy_0.jpg?itok=g3UIL4P2",
+          "link":"https://www.beyondthejoke.co.uk/content/7706/soho-theatre-jen-brister",
+          "blurb":"Soho Theatre, one of the UK’s leading comedy producers and presenters, joins trail-blazing streaming platform NextUp in a new partnership to film and distribute a series of live comedy specials... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df261e",
+          "headline":"MOCK News: \"Best in Test!” – Award-Winner Taskmaster Goes Nordicmore",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/taskmaster_s9_0499_rt_medium_res.jpg?itok=ug7kfSPn",
+          "link":"https://www.beyondthejoke.co.uk/content/7710/taskmaster-nordic-sweden",
+          "blurb":"Following Sweden’s version of Taskmaster, ‘Bäst i Test!’ (“Best in Test!”) winning Programme of the Year at the Kristallen 2019 (Sweden’s TV Academy Awards) more countries are creating... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df261c",
+          "headline":"MOCK News: Comedy Returns To Londons Winter Wonderland more",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/winter_wonderland.jpg?itok=XFGw6kPN",
+          "link":"https://www.beyondthejoke.co.uk/content/7712/comedy-winter-wonderland",
+          "blurb":"Comedy returns to Hyde Park later this year as part of the annual Winter Wonderland festival.Among the acts taking part are Marcus Brigstocke, Lost Voice Guy, Milton Jones, Zoe Lyons, Andrew Maxwell... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df262c",
+          "headline":"MOCK Dear Janine - Please can I borrow your nipples?",
+          "img":"https://pbs.twimg.com/profile_images/1016231093425582080/lUZK3DzN_400x400.jpg",
+          "link":"https://www.bbc.co.uk/news/disability-49522532?intlink_from_url=&link_location=live-reporting-map",
+          "blurb":"The lost battery which nearly sparked a terror alert and the woman who's lost her nipples",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df261f",
+          "headline":"MOCK News: Russell Howard And His Mum Go Travelling Againmore",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/screen_shot_2019-09-12_at_11.16.06.png?itok=kDw7x5ZZ",
+          "link":"https://www.beyondthejoke.co.uk/content/7708/russell-howard-mum",
+          "blurb":"Russell Howard and his mum Ninette are off on brand new and unusual adventures in India, South Korea, Thailand and Japan. The highly anticipated fourth series of Russell Howard and Mum... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2626",
+          "headline":"MOCK How two comedians with cerebral palsy fell in love",
+          "img":"https://media-cdn.tripadvisor.com/media/photo-s/14/63/7e/32/off-the-wall-also-organizes.jpg",
+          "link":"https://www.bbc.co.uk/news/disability-49675333?intlink_from_url=&link_location=live-reporting-map",
+          "blurb":"The best eavesdrop on a conversation you'll hear all week",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df262e",
+          "headline":"MOCK Demetri Martin cancels UK gigs – AGAIN",
+          "img":"https://www.chortle.co.uk/images/photos/small/dm_demetri_martin_overthinker.jpg",
+          "link":"https://www.chortle.co.uk/news/2019/09/17/44332/demetri_martin_cancels_uk_gigs_%E2%80%93_again",
+          "blurb":"Rescheduled dates pulled with no explanation\n                                17/09/2019 … Demetri Martin has scrapped his UK and Ireland tour dates for the second time in six months.",
+          "src":"Chortle",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2627",
+          "headline":"MOCK Will the Billy Connolly statue ever find a home?",
+          "img":"https://kandl-genres.files.bbci.co.uk/kandl-genres/1231-1/images/meta-images/bbc_blocks.png",
+          "link":"https://www.bbc.co.uk/news/uk-scotland-glasgow-west-49524041?intlink_from_url=&link_location=live-reporting-story",
+          "blurb":"In 2011 a statue was built depicting two of Scotland's great comedians - but it has never left storage.",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df261b",
+          "headline":"MOCK News: Manchester Podcast Festival Announcedmore",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/auditoriumbsmall.jpg?itok=Vp2Iwz9P",
+          "link":"https://www.beyondthejoke.co.uk/content/7713/manchester-richard-herring",
+          "blurb":"The Manchester Podcast Festival has announced the line-up for its second year, bringing together some of the UK’s most popular podcasts. The festival will begin with Help! I Sexted My Boss ... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2628",
+          "headline":"MOCK Allo Allo! blue plaque reveal goes off script",
+          "img":"https://kandl-genres.files.bbci.co.uk/kandl-genres/1231-1/images/meta-images/bbc_blocks.png",
+          "link":"https://www.bbc.co.uk/news/uk-england-norfolk-49623142?intlink_from_url=&link_location=live-reporting-map",
+          "blurb":"The plan was simple - pull the rope at the right moment to reveal a comedy honour.",
+          "src":"BBC",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df2634",
+          "headline":"MOCK Vikki Stone helps rewrite High Fidelity musical",
+          "img":"https://www.chortle.co.uk/images/photos/small/vs_vikki_stone_definitely.jpg",
+          "link":"https://www.chortle.co.uk/other-news/2019/09/16/44322/vikki_stone_helps_rewrite_high_fidelity_musical",
+          "blurb":"Comic brings the story back to London\n                                16/09/2019 … Makers of a musical comedy based on Nick Hornby’s book High Fidelity have drafted in musical comedian Vikki Stone to help move the action BACK to London.",
+          "src":"Chortle",
+          "__v":0
+       },
+       {  
+          "_id":"5d80c30950c4280024df262f",
+          "headline":"MOCK Manchester Podcast Festival line-up unveiled",
+          "img":"https://www.chortle.co.uk/images/photos/small/guilty_feminist_ed18.jpg",
+          "link":"https://www.chortle.co.uk/other-news/2019/09/17/44330/manchester_podcast_festival_line-up_unveiled",
+          "blurb":"Guilty Feminist, Richard Herring and more\n                                17/09/2019 …  The Manchester Podcast Festival has unveiled its programme for 2019.",
+          "src":"Chortle",
+          "__v":0
+       },
+       {  
+          "_id":"11",
+          "headline":"MOCK Why I Quit Comedy",
+          "blurb":"Martin Pilgrim reflects on his experiences",
+          "link":"http://moodycomedy.co.uk/martin-pilgrim-why-i-quit-comedy/",
+          "img":"https://i2.wp.com/moodycomedy.co.uk/wp-content/uploads/2016/02/Screen-Shot-2016-02-09-at-17.15.38.png",
+          "src":"Moody"
+       },
+       {  
+          "_id":"1",
+          "headline":"MOCK The guru who’s changing stand-up comedy from the dog eat dog of open-mic nights to a culture of caring",
+          "blurb":"Comedy instructor Gerry Katzman aims to change the culture of the Los Angeles comedy scene into one of kindness and inclusiveness",
+          "link":"https://www.scmp.com/lifestyle/arts-culture/article/3006857/guru-whos-changing-stand-comedy-dog-eat-dog-open-mic-nights",
+          "img":"https://cdn.i-scmp.com/sites/default/files/styles/1200x800/public/d8/images/methode/2019/05/07/cb843b26-60df-11e9-b745-17e2afcf325c_image_hires_105242.jpeg?itok=UWHCHR1B",
+          "src":"SCMP"
+       },
+       {  
+          "_id":"7",
+          "headline":"MOCK Whatever You Do Someone Will Call You A Dick",
+          "blurb":"Dave Attell talks to the AV Club",
+          "link":"https://tv.avclub.com/dave-attell-1798208252",
+          "img":"https://media.spokesman.com/photos/2018/10/25/53179177XX036_Comedy_Centra.JPG.jpg",
+          "src":"AVclub"
+       },
+       {  
+          "_id":"5d80c2fe50c4280024df261d",
+          "headline":"MOCK News: Keith Lemon To Co-Host C4 Craft Showmore",
+          "img":"https://www.beyondthejoke.co.uk/sites/beyondthejoke.co.uk/files/styles/thumbnail/public/fantastical_factory_of_curious_crafta.jpg?itok=QSYbeJ1T",
+          "link":"https://www.beyondthejoke.co.uk/content/7711/keith-lemon-craft",
+          "blurb":"Channel 4 has commissioned a new crafting series from Studio Ramsay fronted by Keith Lemon and Anna Richardson.In The Fantastical Factory of Curious Craft skilful competitors turn... more",
+          "src":"BeyondTheJoke",
+          "__v":0
+       },
+       {  
+          "_id":"3",
+          "headline":"MOCK My One-Night Standup Hell",
+          "blurb":"Trying my hand at comedy sounded like a great idea. It wasnt.",
+          "link":"https://www.spectator.co.uk/2018/11/my-one-night-stand-up-hell/",
+          "img":"https://spectator.imgix.net/content/uploads/2018/11/iStock-901985210.jpg?auto=compress,enhance,format&crop=faces,entropy,edges&fit=crop&w=820&h=550",
+          "src":"Standard"
+       },
+       {  
+          "_id":"6",
+          "headline":"MOCK Anthony Jeselnik on the thankless American open-mic circuit...",
+          "blurb":"Comedian, host, and sometime hardass, Anthony Jeselnik has made a career out of being a little bit sensational. He’s gleefully fought hard to push the boundaries of what’s okay to joke about, from cancer to obesity, earning both groans and laughs along the way.",
+          "link":"https://www.avclub.com/anthony-jeselnik-on-sharon-stone-thankless-open-mics-1798285518",
+          "img":"https://i.kinja-img.com/gawker-media/image/upload/s--qmYilFUo--/c_scale,f_auto,fl_progressive,q_80,w_800/ihjoexgc8saf5vdpyfbf.jpg",
+          "src":"AVclub"
+       },
+       {  
+          "_id":"5d80c30950c4280024df262d",
+          "headline":"MOCK Jo Brand battery acid joke went too far",
+          "img":"https://media-assets-01.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-116055-bbc--2x1--940.jpg",
+          "link":"https://www.bbc.co.uk/news/entertainment-arts-49508231?intlink_from_url=&link_location=live-reporting-story",
+          "blurb":"The BBC partially upholds complaints about a comment made by the comedian on Radio 4 in June.",
+          "src":"BBC",
+          "__v":0
+       }
+    ]
+ }

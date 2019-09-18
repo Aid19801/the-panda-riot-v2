@@ -5,6 +5,7 @@ import signUpPageReducer from './sign-up';
 import homePageReducer from './home';
 import gigsReducer from './gigs';
 import newsReducer from './news';
+import newsApiReducer from './news-api';
 import filtersReducer from './filters';
 
 const reducers = combineReducers({
@@ -15,6 +16,7 @@ const reducers = combineReducers({
     gigs: gigsReducer,// all gigs live here.
     filters: filtersReducer, // filteredGigs live here.
     news: newsReducer,
+    newsApi: newsApiReducer,
 })
 
 export default reducers;

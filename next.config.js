@@ -43,9 +43,11 @@ module.exports = withCSS({
     });
   
     config.plugins.push(new webpack.DefinePlugin({
+      'process.env.REACT_APP_PANDA_RIOT_ADMINI': JSON.stringify(process.env.REACT_APP_PANDA_RIOT_ADMINI),
+      
       'process.env.REACT_APP_API_KEY': JSON.stringify(process.env.REACT_APP_API_KEY),
-      'process.env.REACT_APP_DATABASE_URL': JSON.stringify(process.env.REACT_APP_DATABASE_URL),
       'process.env.REACT_APP_AUTH_DOMAIN': JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
+      'process.env.REACT_APP_DATABASE_URL': JSON.stringify(process.env.REACT_APP_DATABASE_URL),
       'process.env.REACT_APP_GIG_GIST': JSON.stringify(process.env.REACT_APP_GIG_GIST),
       'process.env.REACT_APP_INSTA_CLIENTID': JSON.stringify(process.env.REACT_APP_INSTA_CLIENTID),
       'process.env.REACT_APP_INSTA_CLIENTSECRET': JSON.stringify(process.env.REACT_APP_INSTA_CLIENTSECRET),

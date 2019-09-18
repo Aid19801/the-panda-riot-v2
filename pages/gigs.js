@@ -16,6 +16,7 @@ import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
+import { NavBar } from '../components';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
@@ -79,6 +80,7 @@ class GigsPage extends Component {
     const { selectedGig } = this.props;
     return (
       <div id="page-container" className="container container-fluid border-on">
+        <NavBar firebase={this.props.firebase} />
         <div className="row full-width">
           <div className="col-sm-12 flex-center">
             <h1>gigs</h1>
@@ -138,7 +140,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
-  //   withAuth,
+  withAuth,
   connect(
     mapStateToProps,
     mapDispatchToProps

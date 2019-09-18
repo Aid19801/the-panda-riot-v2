@@ -58,7 +58,6 @@ class Map extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
     if (this.props.selectedGig && this.state.toggle === false) {
       const newCenter = [ this.props.selectedGig.lng, this.props.selectedGig.lat ];
       console.log('newCenter ', newCenter);

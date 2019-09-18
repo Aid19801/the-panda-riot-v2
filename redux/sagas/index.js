@@ -1,11 +1,14 @@
 import { all } from 'redux-saga/effects';
 import { watcherAppStateSaga } from './app-state';
-import { watcherGigsSaga } from './gigs';
+import { watcherGigsSaga, watcherGigsTonightSaga } from './gigs';
+import { watcherFetchNews } from './news-api';
 
 function* rootSaga() {
     yield all([
         watcherAppStateSaga(),
+        watcherFetchNews(),
         watcherGigsSaga(),
+        watcherGigsTonightSaga(),
     ])
 }
 

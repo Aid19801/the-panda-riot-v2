@@ -3,7 +3,7 @@ import * as actions from '../constants';
 const initialState = {
   loading: false,
   data: null,
-  selectedGig: null,
+  selectedGig: null
 };
 
 /* eslint-disable */
@@ -17,7 +17,7 @@ const gigsReducer = (state = initialState, action) => {
       break;
 
     case actions.FETCH_GIGS_RESP:
-      console.log('reducer heard FETCH GIGS RESP ', action);
+      console.log('reducer heard FETCH GIGS RESP ');
       return {
         ...state,
         loading: false,
@@ -41,33 +41,47 @@ const gigsReducer = (state = initialState, action) => {
       };
       break;
 
-      case actions.GIGS_FILTERED:
+    case actions.GIGS_FILTERED:
       console.log('reducer heard GIGS_FILTERED: ', action);
       return {
         ...state,
-        data: action.data,
-      }
+        data: action.data
+      };
       break;
 
-
-      case actions.SELECTED_GIG:
+    case actions.SELECTED_GIG:
       console.log('reducer heard SELECTED_GIG: ', action);
       return {
         ...state,
-        selectedGig: action.selectedGig,
-      }
+        selectedGig: action.selectedGig
+      };
       break;
 
-
-    case actions.GIGS_PAGE_FAILED:
-        console.log('reducer heard GIGS_PAGE_FAILED', action);
+      case actions.FETCH_GIGS_TONIGHT:
+        console.log('heard FETCH GIGS TONIGHT');
         return {
           ...state,
-          loading: false,
-          error: action.error,
-        
-        };
+          loading: true,
+        }
         break;
+
+      case actions.GIGS_TONIGHT_RESP:
+          console.log('heard GIGS_TONIGHT_RESP');
+          return {
+            ...state,
+            gigsTonight: action.gigsTonight,
+            loading: false,
+          }
+          break;
+
+    case actions.GIGS_PAGE_FAILED:
+      console.log('reducer heard GIGS_PAGE_FAILED', action);
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      };
+      break;
 
     default:
       return state;

@@ -8,17 +8,24 @@ export const SIGNIN_PAGE_LOADING = 'SIGNIN_PAGE_LOADING';
 export const SIGNIN_PAGE_LOADED = 'SIGNIN_PAGE_LOADED';
 export const SIGNIN_PAGE_FAILED = 'SIGNIN_PAGE_FAILED';
 export const SAVE_UID = 'SAVE_UID';
+export const USER_SIGNED_IN = 'USER_SIGNED_IN';
+export const USER_SIGNED_OUT = 'USER_SIGNED_OUT';
 
 // sign up
 export const SIGNUP_PAGE_LOADING = 'SIGNUP_PAGE_LOADING';
 export const SIGNUP_PAGE_LOADED = 'SIGNUP_PAGE_LOADED';
 export const SIGNUP_PAGE_FAILED = 'SIGNUP_PAGE_FAILED';
-
+export const IS_ADMIN = 'IS_ADMIN';
 
 // home page
 export const HOME_PAGE_LOADING = 'HOME_PAGE_LOADING';
 export const HOME_PAGE_LOADED = 'HOME_PAGE_LOADED';
 export const HOME_PAGE_FAILED = 'HOME_PAGE_FAILED';
+
+// news API
+export const NEWS_API_REQ = 'NEWS_API_REQ';
+export const NEWS_API_SUCCESS = 'NEWS_API_SUCCESS';
+export const NEWS_API_FAIL = 'NEWS_API_FAIL';
 
 // gigs
 export const GIGS_PAGE_LOADING = 'GIGS_PAGE_LOADING';
@@ -30,6 +37,9 @@ export const RESET_GIGS = 'RESET_GIGS';
 export const FETCH_FILTERS = 'FETCH_FILTERS';
 export const GIGS_FILTERED = 'GIGS_FILTERED';
 export const SELECTED_GIG = 'SELECTED_GIG';
+export const FETCH_GIGS_TONIGHT = 'FETCH_GIGS_TONIGHT';
+export const GIGS_TONIGHT_RESP = 'GIGS_TONIGHT_RESP';
+
 
 // filters
 export const LOAD_FILTERS = 'LOAD_FILTERS';

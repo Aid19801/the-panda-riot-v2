@@ -1,0 +1,202 @@
+.nav-container {
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 12;
+    /* position: absolute; */
+    
+    width: 100%;
+}
+
+.nav-ul {
+    list-style-type: none;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.nav-option-wrapper {
+
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    display: flex;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+.nav-option-wrapper a {
+    background: black;
+    color: orange !important;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.nav__admin-option {
+    background: black;
+    color: orange;
+    font-weight: 700;
+    -webkit-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.mr-auto {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.div__flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-option-wrapper p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+span.navbar-brand a {
+    font-family: monospace;
+    color: white;
+    font-size: 25px;
+}
+
+.nav-option-wrapper:nth-child(5) {
+    margin-left: 20px;
+    margin-right: 20px;
+    transform: rotate(0deg) !important;
+    margin-top: 10px;
+}
+
+.nav__prof-pic-container {
+    width: 100px;
+    transform: skewY(0deg);
+    display: flex;
+    justify-content: flex-end;
+    background: darkgrey;
+}
+.nav-option-wrapper:nth-child(5) a {
+    padding-top: 0 !important;
+}
+
+.nav__prof-pic {
+    width: 40px;
+    height: 40px;
+}
+
+.nav__prof-pic div {
+    width: 40px;
+    height: 40px;
+}
+
+.nav__prof-pic div img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid lightgrey;
+}
+
+.nav-option-wrapper .btn__signout {
+}
+
+.nav__my-acc__popout {
+    position: absolute;
+    margin-top: 47px;
+    border: 5px solid white;
+    display: flex;
+    align-items: flex-start;
+    width: 190px;
+    padding: 10px;
+    flex-direction: column;
+    background: grey;
+    animation: fadeInNavPopOut 0.3s ease-in;
+}
+
+.nav__my-acc__popout a {
+    background: black;
+    color: orange;
+    font-weight: 700;
+    transform: skewY(-2deg);
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@keyframes fadeInNavPopOut {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .nav-option-wrapper {
+        transform: rotate(0deg);
+        margin-bottom: 5px;
+        background: black;
+    color: orange;
+    font-weight: 700;
+    transform: skewY(-2deg);
+    }
+    .nav-option-wrapper > a {
+        font-size: 40px;
+    }
+
+    .nav-option-wrapper:nth-child(5) {
+        margin-bottom: 9px;
+    }
+
+    .nav__prof-pic {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .nav__prof-pic div {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .nav__prof-pic div img {
+        width: 50px;
+        height: 50px;
+        border: 5px solid lightgrey;
+    }
+
+    .nav__my-acc__popout {
+        width: 230px;
+        margin-top: 60px;
+    }
+    .nav__my-acc__popout a {
+        font-size: 40px;
+    }
+
+
+.div__flex-row {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nav__prof-pic-container {
+    display: flex;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 90%;
+    justify-content: flex-end;
+}
+    
+}

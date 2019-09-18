@@ -4,7 +4,9 @@ const initialState = {
   loading: false,
   progressBarStatus: false,
   error: null,
-  uid: ''
+  uid: '',
+  isAdmin: false,
+  isSignedIn: false
 };
 
 /* eslint-disable */
@@ -36,6 +38,28 @@ const signinPageReducer = (state = initialState, action) => {
       return {
         ...state,
         uid: action.uid
+      };
+      break;
+
+    case actions.USER_SIGNED_IN:
+      return {
+        ...state,
+        isSignedIn: true
+      };
+      break;
+
+    case actions.USER_SIGNED_OUT:
+      return {
+        ...state,
+        isSignedIn: false,
+        isAdmin: false
+      };
+      break;
+
+    case actions.IS_ADMIN:
+      return {
+        ...state,
+        isAdmin: true
       };
       break;
 
