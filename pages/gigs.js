@@ -79,47 +79,51 @@ class GigsPage extends Component {
   render() {
     const { selectedGig } = this.props;
     return (
-      <div id="page-container" className="container container-fluid border-on">
+      <div id="page-container" className="border-on">
         <NavBar firebase={this.props.firebase} />
-        <div className="row full-width">
-          <div className="col-sm-12 flex-center">
-            <h1>gigs</h1>
-          </div>
-        </div>
 
-        <div className="row full-width">
-          <div className="col-sm-12">
-            <Filters results={this.props.gigs} />
-          </div>
-        </div>
-
-        {this.state.loading && <p>loading...</p>}
-
-        <div className="row full-width">
-          {!selectedGig && (
+        <div className="container">
+          <div className="row full-width">
             <div className="col-sm-12 flex-center">
-              <MapBox />
+              <h1>gigs</h1>
             </div>
-          )}
+          </div>
 
-          {selectedGig && (
-            <>
-              <div className="col-sm-6">
+          <div className="row full-width">
+            <div className="col-sm-12">
+              <Filters results={this.props.gigs} />
+            </div>
+          </div>
+
+          {this.state.loading && <p>loading...</p>}
+
+          <div className="row full-width">
+            {!selectedGig && (
+              <div className="col-sm-12 flex-center">
                 <MapBox />
               </div>
-              <div className="col-sm-6 flex-col flex-center border-on">
-                <InfoCard
-                  paneInfo={selectedGig}
-                  toggleMarker={selectedGig ? true : false}
-                />
-                <MoreInfoCard paneInfo={selectedGig} />
-              </div>
-            </>
-          )}
-        </div>
+            )}
 
-        <div className="row full-width">
-          <div className="col-sm-12"></div>
+            {selectedGig && (
+              <>
+                <div className="col-sm-6">
+                  <MapBox />
+                </div>
+                <div className="col-sm-6 flex-col flex-center border-on">
+                  <InfoCard
+                    paneInfo={selectedGig}
+                    toggleMarker={selectedGig ? true : false}
+                  />
+                  <MoreInfoCard paneInfo={selectedGig} />
+                </div>
+              </>
+            )}
+          </div>
+
+          <div className="row full-width">
+            <div className="col-sm-12"></div>
+          </div>
+
         </div>
       </div>
     );

@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { NextSeo } from 'next-seo';
 import { connect } from 'react-redux';
 import { startApp } from '../redux/actions';
+import { NavBar } from '../components';
 
 class HomePage extends React.Component {
   static async getInitialProps({ req }) {
@@ -45,6 +46,7 @@ class HomePage extends React.Component {
             ]
           }}
         />
+        <NavBar />
         <h1>users: {this.props.users && this.props.users.length}</h1>;
       </div>
     );

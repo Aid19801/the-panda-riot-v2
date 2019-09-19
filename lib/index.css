@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Raleway|Rubik');
 
+.app__page-wrapper {
+  background: linear-gradient(45deg, black, grey);
+}
+
 #page-container {
   height: 100vh;
   display: flex;
@@ -10,7 +14,7 @@
 }
 #page-container a {
   text-decoration: none;
-  color: white !important;
+  /* color: white !important; */
 }
 .orange {
   background: orange;
