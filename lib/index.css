@@ -3,10 +3,11 @@
 
 .app__page-wrapper {
   background: linear-gradient(45deg, black, grey);
+  height: 100vh;
 }
 
 #page-container {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: start;
   align-items: center;

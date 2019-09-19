@@ -39,7 +39,9 @@ class GigsPage extends Component {
     // if we're in dev,  pass in the mocks
     if (process.env.NODE_ENV !== 'production') {
       reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
-      return { gigs: mockGigs.gigs };
+      return { 
+        gigs: mockGigs.gigs
+      };
     }
 
     try {

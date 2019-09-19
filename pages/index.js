@@ -5,16 +5,16 @@ import { connect } from 'react-redux';
 import { startApp } from '../redux/actions';
 import { NavBar } from '../components';
 
-class HomePage extends React.Component {
-  static async getInitialProps({ req }) {
-    // const isServer = !!req
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    const json = await res.json();
+class LandingPage extends React.Component {
+  // static async getInitialProps({ req }) {
+  //   // const isServer = !!req
+  //   const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  //   const json = await res.json();
 
-    return {
-      users: json
-    };
-  }
+  //   return {
+  //     users: json
+  //   };
+  // }
 
   componentDidMount() {
     const { updateStateStartApp } = this.props;
@@ -47,7 +47,7 @@ class HomePage extends React.Component {
           }}
         />
         <NavBar />
-        <h1>users: {this.props.users && this.props.users.length}</h1>;
+        <h1>this is homepage</h1>;
       </div>
     );
   }
@@ -60,4 +60,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   null,
   mapDispatchToProps
-)(HomePage);
+)(LandingPage);

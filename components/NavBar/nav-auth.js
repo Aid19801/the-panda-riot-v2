@@ -18,15 +18,17 @@ class NavigationAuth extends Component {
   }
 
   componentWillMount = async () => {
-    // const cachePic = await cache.getFromCache('cached-profilePicture');
+    const jsonObj = await cache.getFromCache('user-profile-object');
+    const cachedPic = JSON.parse(jsonObj).profilePicture;
+    
     // const cacheUID = await cache.getFromCache('uid');
-    // if (cachePic) {
-    //   this.setState({ profilePic: cachePic });
-    // }
-    // if (!cachePic) {
-    //   const newPic = this.fetchProfilePicFromFirebase();
-    //   this.setState({ profilePic: newPic });
-    // }
+    if (cachedPic) {
+      this.setState({ profilePic: cachedPic });
+    }
+    if (!cachedPic) {
+      // const newPic = this.fetchProfilePicFromFirebase();
+      this.setState({ profilePic: 'https://png.pngtree.com/svg/20170602/user_circle_1048392.png' });
+    }
     // this.setState({ uid: cacheUID })
   };
 

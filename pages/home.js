@@ -10,7 +10,7 @@ import {
   homePageFailed,
   gotGigsFromGist,
   getAllNews,
-  newsApiSuccess,
+  newsApiSuccess
 } from '../redux/actions';
 import * as cache from '../lib/cache';
 import withAuth from '../HOCs/with-auth';
@@ -28,25 +28,32 @@ class HomePage extends React.Component {
 
   static async getInitialProps({ reduxStore, req }) {
     let sortedGigs = [];
+    let retrievedArticles = [];
     // if we're in dev,  pass in the mocks
     if (process.env.NODE_ENV !== 'production') {
-      console.log('we are not in production')
+      console.log('we are not in production');
       reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
       reduxStore.dispatch(newsApiSuccess(mockNews.articles));
-      return;
+      return {
+        gigs: mockGigs.gigs,
+        stories: mockNews.articles
+      };
     }
 
-    // GET ALL GIGS IN SSR
+    // IF IN PROD, GET ALL GIGS IN SSR
     try {
       const res = await fetch(
         `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
       );
+      console.log('prod res: ', res);
       const json = await res.json();
+      console.log('prod json ', json);
       const rawUrl = json.files.gigs.raw_url;
-
+      console.log('prod rawUrl ', rawUrl);
       const req = await fetch(rawUrl);
+      console.log('prod req ', req);
       const reqJson = await req.json();
-
+      console.log('prod reqJson ', reqJson);
       sortedGigs = reqJson.gigs.sort((a, b) => {
         var textA = a.name;
         var textB = b.name;
@@ -56,37 +63,56 @@ class HomePage extends React.Component {
       cache.saveToCache('gigs', sortedGigs);
       reduxStore.dispatch(gotGigsFromGist(sortedGigs));
     } catch (error) {
-      console.log('getInitialProps err: ', error);
+      console.log('GIGS getInitialProps err: ', error);
     }
 
     // GET ALL NEWS IN SSR
     try {
-      const res = await fetch('https://api.github.com/gists/424b043765bf5ad54cb686032f141b34');
+      const res = await fetch(
+        'https://api.github.com/gists/424b043765bf5ad54cb686032f141b34'
+      );
+      console.log('prod news res', res);
       const json = await res.json();
+      console.log('prod news json', res);
       const rawUrl = json.files.articles.raw_url;
-
+      console.log('prod news rawUrl', rawUrl);
       const req = await fetch(rawUrl);
+      console.log('prod news req', req);
       const reqJson = await req.json();
+      console.log('prod news reqJson', reqJson);
 
       retrievedArticles = reqJson.articles.slice(0, 12);
-      console.log('retrieved articals are ', retrievedArticles.length);
-      cache.saveToCache('stories', JSON.stringify(retrievedArticles));
+      console.log('prod news retrievedArticles', retrievedArticles.length);
+      // console.log('retrieved articals are ', retrievedArticles.length);
+      // cache.saveToCache('stories', JSON.stringify(retrievedArticles));
       reduxStore.dispatch(newsApiSuccess(retrievedArticles));
     } catch (error) {
-      console.log('getInitialProps err: ', error);
+      console.log('NEWS getInitialProps err: ', error);
     }
 
     return {
       gigs: sortedGigs,
-      stories: sortedStories
+      stories: retrievedArticles,
     };
   }
 
   async componentDidMount() {
-    const { pageLoading, updateStatefetchNews, pageLoaded, gigs, stories } = this.props;
+    const {
+      pageLoading,
+      updateStatefetchNews,
+      pageLoaded,
+      gigs,
+      stories
+    } = this.props;
     pageLoading();
-    if (!stories) { updateStatefetchNews() }
-    if (!gigs) { updateStatefetchGigs() }
+    if (!stories) {
+      console.log('there are no stories so fetching them...')
+      updateStatefetchNews();
+    }
+    if (!gigs) {
+      console.log('there are no gigs so fetching them...')
+      updateStatefetchGigs();
+    }
     pageLoaded();
     // this.saveNewsAndGigsToCache();
   }
@@ -95,12 +121,12 @@ class HomePage extends React.Component {
     this.props.signOut();
   };
 
-  // saveNewsAndGigsToCache = () => {
-  //   const cachedGigs = cache.getFromCache('gigs');
-  //   const cachedNews = cache.getFromCache('stories');
-  //   if (!cachedGigs) { cache.saveToCache('gigs', JSON.stringify(this.props.gigs))}
-  //   if (!cachedNews) { cache.saveToCache('stories', JSON.stringify(this.props.stories))}
-  // }
+  saveNewsAndGigsToCache = () => {
+    const cachedGigs = cache.getFromCache('gigs');
+    const cachedNews = cache.getFromCache('stories');
+    if (!cachedGigs) { cache.saveToCache('gigs', JSON.stringify(this.props.gigs))}
+    if (!cachedNews) { cache.saveToCache('stories', JSON.stringify(this.props.stories))}
+  }
 
   componentDidUpdate = newProps => {
     console.log('nextProps: ', newProps.stories !== this.props.stories);
@@ -150,7 +176,7 @@ const mapStateToProps = state => ({
   error: state.signIn.error,
   reduxUserAuth: state.signIn.userAuth,
   gigs: state.gigs.data,
-  stories: state.newsApi.stories,
+  stories: state.newsApi.stories
 });
 
 const mapDispatchToProps = dispatch => ({

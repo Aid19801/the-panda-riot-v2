@@ -3,6 +3,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import NavigationAuth from './nav-auth';
 import NavigationNonAuth from './nav-non-auth';
+import './styles.css';
 
 // if signed in, one nav bar, if NOT signed in, a different one...
 const Navigation = ({ isAdmin, isSignedIn, firebase }) => (
