@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import { NextSeo } from 'next-seo';
 import {
   gigsPageLoading,
   gigsPageLoaded,
@@ -16,7 +17,7 @@ import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
-import { NavBar } from '../components';
+import { NavBar, FunkyTitle } from '../components';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
@@ -39,7 +40,7 @@ class GigsPage extends Component {
     // if we're in dev,  pass in the mocks
     if (process.env.NODE_ENV !== 'production') {
       reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
-      return { 
+      return {
         gigs: mockGigs.gigs
       };
     }
@@ -82,19 +83,35 @@ class GigsPage extends Component {
     const { selectedGig } = this.props;
     return (
       <div id="page-container" className="border-on">
+        <NextSeo
+          openGraph={{
+            type: 'website',
+            url: 'https://www.thePandaRiot.com',
+            title: `${this.props.gigs[0].name}`,
+            description: 'Sign in to the panda riot open mic comedy webapp!',
+            images: [
+              {
+                url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
+                width: 800,
+                height: 600,
+                alt: 'Og Image Alt'
+              },
+              {
+                url:
+                  'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',
+                width: 800,
+                height: 600,
+                alt: 'Og Image Alt 2'
+              }
+            ]
+          }}
+        />
         <NavBar firebase={this.props.firebase} />
 
         <div className="container">
-          <div className="row full-width">
-            <div className="col-sm-12 flex-center">
-              <h1>gigs</h1>
-            </div>
-          </div>
-
-          <div className="row full-width">
-            <div className="col-sm-12">
-              <Filters results={this.props.gigs} />
-            </div>
+          <div className="row full-width flex-center margin-top">
+            <FunkyTitle text="Gigs" />
+            <Filters results={this.props.gigs} />
           </div>
 
           {this.state.loading && <p>loading...</p>}
@@ -125,7 +142,6 @@ class GigsPage extends Component {
           <div className="row full-width">
             <div className="col-sm-12"></div>
           </div>
-
         </div>
       </div>
     );

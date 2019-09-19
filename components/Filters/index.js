@@ -54,7 +54,7 @@ class Filters extends React.Component {
   render() {
     const { filters } = this.props;
     return (
-      <div className="filters__container">
+      <div className="filters__container col-sm-12">
         {this.props.filters &&
           filters.map((each, i) => {
             return (

@@ -18,7 +18,7 @@ import mockGigs from '../lib/mock-gigs.json';
 import mockNews from '../lib/mock-news.json';
 
 import '../lib/index.css';
-import { NavBar, SignOutButton, NewsContainer } from '../components';
+import { NavBar, SignOutButton, NewsContainer, FunkyTitle } from '../components';
 
 class HomePage extends React.Component {
   constructor() {
@@ -171,8 +171,8 @@ class HomePage extends React.Component {
         <NavBar firebase={this.props.firebase} />
 
         <div className="container">
-          <div className="row full-width">
-            <h1 className="funky-title">Home</h1>
+          <div className="row full-width flex-center margin-top">
+            <FunkyTitle text="Home" />
             <NewsContainer />
             <p>you can only see me if youre logged in</p>
             <p>gigs are back: {this.props.gigs && this.props.gigs.length}</p>

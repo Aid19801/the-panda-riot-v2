@@ -3,7 +3,8 @@
 
 .app__page-wrapper {
   background: linear-gradient(45deg, black, grey);
-  height: 150vh !important;
+  /* height: 150vh !important; */
+  padding-bottom: 40px;
 }
 
 #page-container {

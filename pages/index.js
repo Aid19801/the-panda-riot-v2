@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { NextSeo } from 'next-seo';
 import { connect } from 'react-redux';
 import { startApp } from '../redux/actions';
-import { NavBar } from '../components';
+import { NavBar, FunkyTitle } from '../components';
 
 class LandingPage extends React.Component {
   // static async getInitialProps({ req }) {
@@ -46,8 +46,13 @@ class LandingPage extends React.Component {
             ]
           }}
         />
+
         <NavBar />
-        <h1>this is homepage</h1>;
+        <div className="container">
+          <div className="row full-width flex-center margin-top">
+            <FunkyTitle text="This is landingPage" />
+          </div>
+        </div>
       </div>
     );
   }

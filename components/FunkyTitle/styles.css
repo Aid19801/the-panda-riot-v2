@@ -1,0 +1,11 @@
+.title__container {
+  padding: 20px;
+}
+
+.title__container h1 {
+  width: 100%;
+  background: black;
+  color: orange;
+  font-family: 'Raleway';
+  transform: skewY(-4deg);
+}
