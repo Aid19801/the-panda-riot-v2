@@ -3,12 +3,22 @@ import * as actions from '../constants';
 const initialState = {
   loading: false,
   stories: [],
-  error: null,
+  error: null
 };
 
 /* eslint-disable */
 const newsApiReducer = (state = initialState, action) => {
   switch (action.type) {
+    case actions.NEWS_CONTAINER_LOADING:
+      return {
+        ...state
+      };
+      break;
+    case actions.NEWS_CONTAINER_LOADED:
+      return {
+        ...state
+      };
+      break;
     case actions.NEWS_API_REQ:
       console.log('reducer heard NEWS_API_REQ...');
       return {
@@ -22,7 +32,7 @@ const newsApiReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        stories: action.stories,
+        stories: action.stories
       };
       break;
 
@@ -31,7 +41,7 @@ const newsApiReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: action.error,
+        error: action.error
       };
       break;
 

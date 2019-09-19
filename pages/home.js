@@ -18,7 +18,7 @@ import mockGigs from '../lib/mock-gigs.json';
 import mockNews from '../lib/mock-news.json';
 
 import '../lib/index.css';
-import { NavBar, SignOutButton } from '../components';
+import { NavBar, SignOutButton, NewsContainer } from '../components';
 
 class HomePage extends React.Component {
   constructor() {
@@ -60,7 +60,7 @@ class HomePage extends React.Component {
         return textA < textB ? -1 : textA > textB ? 1 : 0;
       });
 
-      cache.saveToCache('gigs', sortedGigs);
+      // cache.saveToCache('gigs', sortedGigs);
       reduxStore.dispatch(gotGigsFromGist(sortedGigs));
     } catch (error) {
       console.log('GIGS getInitialProps err: ', error);
@@ -92,7 +92,7 @@ class HomePage extends React.Component {
 
     return {
       gigs: sortedGigs,
-      stories: retrievedArticles,
+      stories: retrievedArticles
     };
   }
 
@@ -106,15 +106,18 @@ class HomePage extends React.Component {
     } = this.props;
     pageLoading();
     if (!stories) {
-      console.log('there are no stories so fetching them...')
+      console.log('there are no stories so fetching them...');
       updateStatefetchNews();
     }
     if (!gigs) {
-      console.log('there are no gigs so fetching them...')
+      console.log('there are no gigs so fetching them...');
       updateStatefetchGigs();
     }
     pageLoaded();
-    // this.saveNewsAndGigsToCache();
+
+    if (process.browser) {
+      this.saveNewsAndGigsToCache();
+    }
   }
 
   signOut = () => {
@@ -124,9 +127,13 @@ class HomePage extends React.Component {
   saveNewsAndGigsToCache = () => {
     const cachedGigs = cache.getFromCache('gigs');
     const cachedNews = cache.getFromCache('stories');
-    if (!cachedGigs) { cache.saveToCache('gigs', JSON.stringify(this.props.gigs))}
-    if (!cachedNews) { cache.saveToCache('stories', JSON.stringify(this.props.stories))}
-  }
+    if (!cachedGigs) {
+      cache.saveToCache('gigs', JSON.stringify(this.props.gigs));
+    }
+    if (!cachedNews) {
+      cache.saveToCache('stories', JSON.stringify(this.props.stories));
+    }
+  };
 
   componentDidUpdate = newProps => {
     console.log('nextProps: ', newProps.stories !== this.props.stories);
@@ -137,7 +144,7 @@ class HomePage extends React.Component {
       // console.log('homepage props ==> ', mockNews.articles);
     }
     return (
-      <div id="page-container">
+      <div id="page-container" className="border-on">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -162,10 +169,18 @@ class HomePage extends React.Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-        <h1 className="funky-title">Home</h1>
-        <p>you can only see me if youre logged in</p>
-        <p>gigs are back: {this.props.gigs && this.props.gigs.length}</p>
-        <p>news is back: {this.props.stories && this.props.stories.length}</p>
+
+        <div className="container">
+          <div className="row full-width">
+            <h1 className="funky-title">Home</h1>
+            <NewsContainer />
+            <p>you can only see me if youre logged in</p>
+            <p>gigs are back: {this.props.gigs && this.props.gigs.length}</p>
+            <p>
+              news is back: {this.props.stories && this.props.stories.length}
+            </p>
+          </div>
+        </div>
       </div>
     );
   }

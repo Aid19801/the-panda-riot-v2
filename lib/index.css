@@ -3,7 +3,7 @@
 
 .app__page-wrapper {
   background: linear-gradient(45deg, black, grey);
-  height: 100vh;
+  height: 150vh !important;
 }
 
 #page-container {
@@ -108,6 +108,23 @@ ul {
 
 .margin-off {
   margin: 0;
+}
+
+
+.margin-left {
+  margin-left: 20px;
+}
+
+.margin-right {
+  margin-right: 20px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
 }
 
 .border-on {

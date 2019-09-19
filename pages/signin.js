@@ -111,6 +111,7 @@ class SignInPage extends React.Component {
         <Input
           name="password"
           title="password"
+          type="password"
           onChange={this.onChange}
           placeholder="password here"
         />

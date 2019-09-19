@@ -32,21 +32,6 @@ class NavigationAuth extends Component {
     // this.setState({ uid: cacheUID })
   };
 
-  fetchProfilePicFromFirebase = () => {
-    // const { uid } = this.state;
-    // console.log('uid is ', uid);
-    // this.props.firebase.user(uid)
-    //   .on('value', snapshot => {
-    //       let profilePic = '';
-    //       const me = snapshot.val();
-    //       me && !me.profilePicture ? profilePic = '' : profilePic = me.profilePicture;
-    //       me && me.profilePicture && sessionStorage.setItem('cached-profilePicture', me.profilePicture);
-    //       this.setState({
-    //         profilePic: profilePic,
-    //       })
-    //   })
-  };
-
   handleClick = () => {
     this.setState({ popOut: !this.state.popOut });
   };

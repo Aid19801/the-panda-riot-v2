@@ -103,6 +103,15 @@ export const homePageFailed = () => {
 };
 
 // news api
+
+export const newsContainerLoading = () => {
+  return { type: actionTypes.NEWS_CONTAINER_LOADING }
+}
+
+export const newsContainerLoaded = () => {
+  return { type: actionTypes.NEWS_CONTAINER_LOADED }
+}
+
 export const getAllNews = () => {
   return { type: actionTypes.NEWS_API_REQ };
 };
@@ -114,6 +123,7 @@ export const newsApiFailed = (error) => {
 export const newsApiSuccess = (res) => {
   return { type: actionTypes.NEWS_API_SUCCESS, stories: res };
 };
+
 
 // PAGE | Blog
 export const newsPageLoading = () => {
