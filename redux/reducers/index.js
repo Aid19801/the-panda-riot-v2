@@ -7,6 +7,7 @@ import gigsReducer from './gigs';
 import newsReducer from './news';
 import newsApiReducer from './news-api';
 import filtersReducer from './filters';
+import prismicApiReducer from './prismic-api';
 
 const reducers = combineReducers({
     appState: appStateReducer,
@@ -17,6 +18,7 @@ const reducers = combineReducers({
     filters: filtersReducer, // filteredGigs live here.
     news: newsReducer,
     newsApi: newsApiReducer,
+    prismic: prismicApiReducer,
 })
 
 export default reducers;

@@ -102,6 +102,34 @@ export const homePageFailed = () => {
   return { type: actionTypes.HOME_PAGE_FAILED };
 };
 
+// prismic news tpr_stories api
+
+export const prismicNewsApiReq = () => {
+  return { type: actionTypes.PRISMIC_API_REQ };
+};
+
+export const prismicNewsApiSuccess = (res) => {
+  return { type: actionTypes.PRISMIC_API_SUCCESS, tpr_stories: res };
+};
+
+export const prismicNewsApiFail = (err) => {
+  return { type: actionTypes.PRISMIC_API_FAIL, error: err };
+};
+
+// prismic fetching *ONE* individual TPR news story news/:id
+export const fetchTPRStory = () => {
+  return { type: actionTypes.FETCH_TPR_STORY }
+}
+
+export const fetchTPRSuccess = (res) => {
+  return { type: actionTypes.FETCH_TPR_SUCCESS, content: res }
+}
+
+export const fetchTPRFail = (err) => {
+  return { type: actionTypes.FETCH_TPR_FAIL, error: err }
+}
+
+
 // news api
 
 export const newsContainerLoading = () => {

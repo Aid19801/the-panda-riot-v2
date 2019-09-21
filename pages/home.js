@@ -10,15 +10,29 @@ import {
   homePageFailed,
   gotGigsFromGist,
   getAllNews,
-  newsApiSuccess
+  newsApiSuccess,
+  prismicNewsApiReq,
+  prismicNewsApiSuccess,
+  prismicNewsApiFail
 } from '../redux/actions';
 import * as cache from '../lib/cache';
+
+import { prismicEndpoint } from '../lib/prismic'; // prismic yo
+import Prismic from 'prismic-javascript'; // prismic yo
+import { RichText } from 'prismic-reactjs';
+
 import withAuth from '../HOCs/with-auth';
 import mockGigs from '../lib/mock-gigs.json';
 import mockNews from '../lib/mock-news.json';
+import mockTpr_stories from '../lib/mock-tpr_stories.json';
+import {
+  NavBar,
+  SignOutButton,
+  NewsContainer,
+  FunkyTitle
+} from '../components';
 
 import '../lib/index.css';
-import { NavBar, SignOutButton, NewsContainer, FunkyTitle } from '../components';
 
 class HomePage extends React.Component {
   constructor() {
@@ -29,31 +43,30 @@ class HomePage extends React.Component {
   static async getInitialProps({ reduxStore, req }) {
     let sortedGigs = [];
     let retrievedArticles = [];
-    // if we're in dev,  pass in the mocks
+    let retrievedPrismicStories = [];
+
+    // if we're in dev, pass in the mocks
     if (process.env.NODE_ENV !== 'production') {
-      console.log('we are not in production');
       reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
       reduxStore.dispatch(newsApiSuccess(mockNews.articles));
+      reduxStore.dispatch(prismicNewsApiSuccess(mockTpr_stories.results));
       return {
         gigs: mockGigs.gigs,
-        stories: mockNews.articles
+        stories: mockNews.articles,
+        tpr_stories: mockTpr_stories.results
       };
     }
 
-    // IF IN PROD, GET ALL GIGS IN SSR
+    // IF IN *PROD*, GET ALL GIGS IN SSR
     try {
       const res = await fetch(
         `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
       );
-      console.log('prod res: ', res);
       const json = await res.json();
-      console.log('prod json ', json);
       const rawUrl = json.files.gigs.raw_url;
-      console.log('prod rawUrl ', rawUrl);
       const req = await fetch(rawUrl);
-      console.log('prod req ', req);
       const reqJson = await req.json();
-      console.log('prod reqJson ', reqJson);
+
       sortedGigs = reqJson.gigs.sort((a, b) => {
         var textA = a.name;
         var textB = b.name;
@@ -71,18 +84,18 @@ class HomePage extends React.Component {
       const res = await fetch(
         'https://api.github.com/gists/424b043765bf5ad54cb686032f141b34'
       );
-      console.log('prod news res', res);
+      // console.log('prod news res', res);
       const json = await res.json();
-      console.log('prod news json', res);
+      // console.log('prod news json', res);
       const rawUrl = json.files.articles.raw_url;
-      console.log('prod news rawUrl', rawUrl);
+      // console.log('prod news rawUrl', rawUrl);
       const req = await fetch(rawUrl);
-      console.log('prod news req', req);
+      // console.log('prod news req', req);
       const reqJson = await req.json();
-      console.log('prod news reqJson', reqJson);
+      // console.log('prod news reqJson', reqJson);
 
       retrievedArticles = reqJson.articles.slice(0, 12);
-      console.log('prod news retrievedArticles', retrievedArticles.length);
+      // console.log('prod news retrievedArticles', retrievedArticles.length);
       // console.log('retrieved articals are ', retrievedArticles.length);
       // cache.saveToCache('stories', JSON.stringify(retrievedArticles));
       reduxStore.dispatch(newsApiSuccess(retrievedArticles));
@@ -90,10 +103,33 @@ class HomePage extends React.Component {
       console.log('NEWS getInitialProps err: ', error);
     }
 
+    // GET ALL PRISMIC STORIES
+
+    try {
+      reduxStore.dispatch(prismicNewsApiReq()); // update state, requesting it
+      retrievedPrismicStories = await this.fetchPrismic(); // get the stories
+      reduxStore.dispatch(prismicNewsApiSuccess(retrievedPrismicStories)); // update state with them.
+    } catch (error) {
+      console.log('PRISMIC getInitialProps err: ', error);
+    }
+
     return {
       gigs: sortedGigs,
-      stories: retrievedArticles
+      stories: retrievedArticles,
+      tpr_stories: retrievedPrismicStories
     };
+  }
+
+  static async fetchPrismic() {
+    const client = Prismic.client(prismicEndpoint);
+    try {
+      const res = await client.query(
+        Prismic.Predicates.at('document.type', 'news-story'),
+        { orderings: '[document.last_publication_date]' }
+      );
+      let mostRecentFirst = res.results.reverse();
+      return mostRecentFirst;
+    } catch (error) {}
   }
 
   async componentDidMount() {
@@ -102,17 +138,25 @@ class HomePage extends React.Component {
       updateStatefetchNews,
       pageLoaded,
       gigs,
-      stories
+      stories,
+      tpr_stories,
+      updateStateFetchPrismicStories
     } = this.props;
     pageLoading();
     if (!stories) {
-      console.log('there are no stories so fetching them...');
+      console.log('client / there are no stories so fetching them...');
       updateStatefetchNews();
     }
     if (!gigs) {
-      console.log('there are no gigs so fetching them...');
+      console.log('client / there are no gigs so fetching them...');
       updateStatefetchGigs();
     }
+    if (!tpr_stories) {
+      console.log('client / there are no prismic stories so fetching them...');
+      const res = await this.fetchPrismic();
+      updateStateFetchPrismicStories(res);
+    }
+
     pageLoaded();
 
     if (process.browser) {
@@ -191,12 +235,14 @@ const mapStateToProps = state => ({
   error: state.signIn.error,
   reduxUserAuth: state.signIn.userAuth,
   gigs: state.gigs.data,
-  stories: state.newsApi.stories
+  stories: state.newsApi.stories,
+  tpr_stories: state.prismic.tpr_stories
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(homePageLoading()),
   updateStatefetchNews: () => dispatch(getAllNews()),
+  updateStateFetchPrismicStories: () => dispatch(prismicNewsApiReq()), // get prismic stories
   updateStatefetchGigs: () => dispatch(fetchGigsFromGist()),
   pageLoaded: () => dispatch(homePageLoaded()),
   pageFailed: () => dispatch(homePageFailed())

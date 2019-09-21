@@ -12,4 +12,4 @@ app.prepare().then(() => {
     .listen(PORT, () => process.stdout.write(`Point Your Browser To: http://localhost:${PORT}\n`))
 });
 
-console.log('Foo Bar: ', process.env.NODE_ENV)
+// console.log('Foo Bar: ', process.env.NODE_ENV)

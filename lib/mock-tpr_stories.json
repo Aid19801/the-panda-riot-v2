@@ -1,0 +1,2909 @@
+{  
+   "page":1,
+   "results_per_page":20,
+   "results_size":5,
+   "total_results_size":5,
+   "total_pages":1,
+   "next_page":null,
+   "prev_page":null,
+   "results":[  
+      {  
+         "id":"XTnT3BEAACMAxdMt",
+         "uid":"fatherhood--comedy-my-return-to-standup",
+         "type":"news-story",
+         "href":"https://des-lynham.cdn.prismic.io/api/v2/documents/search?ref=XXotSREAACUARfXF&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XTnT3BEAACMAxdMt%22%29+%5D%5D",
+         "tags":[  
+
+         ],
+         "first_publication_date":"2019-07-25T16:08:03+0000",
+         "last_publication_date":"2019-07-25T19:25:11+0000",
+         "slugs":[  
+            "fatherhood--comedy-my-return-to-standup"
+         ],
+         "linked_documents":[  
+
+         ],
+         "lang":"en-gb",
+         "alternate_languages":[  
+
+         ],
+         "data":{  
+            "news-headline1":[  
+               {  
+                  "type":"heading3",
+                  "text":"MOCK | Fatherhood & Comedy: My Return To Standup",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-image":{  
+               "dimensions":{  
+                  "width":700,
+                  "height":466
+               },
+               "alt":null,
+               "copyright":null,
+               "url":"https://des-lynham.cdn.prismic.io/des-lynham/eb4160486a0e26d02d40253e40b5128a7cf569c5_mic.jpeg"
+            },
+            "news-body":[  
+               {  
+                  "type":"heading3",
+                  "text":"MOCKI recently made a half-arsed return to stand-up. I say half-arsed. That’s probably the wrong word/phrase. I’m restricted from giving it too much of my time because Dadding and Day-Job and life and stuff.",
+                  "spans":[  
+                     {  
+                        "start":55,
+                        "end":65,
+                        "type":"em"
+                     },
+                     {  
+                        "start":136,
+                        "end":139,
+                        "type":"em"
+                     },
+                     {  
+                        "start":164,
+                        "end":171,
+                        "type":"em"
+                     },
+                     {  
+                        "start":176,
+                        "end":183,
+                        "type":"em"
+                     },
+                     {  
+                        "start":188,
+                        "end":192,
+                        "type":"em"
+                     },
+                     {  
+                        "start":197,
+                        "end":202,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Gone are the days of finishing my office’y job, sitting on a train for an hour across London, hungover from the previous night’s gig, only to get hammered again and talk shit to seven or eight equally tired/hungover comics in a room above a pub somewhere.",
+                  "spans":[  
+                     {  
+                        "start":155,
+                        "end":160,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Ugh, how awful does that sound? And yet those days seem like some distant, opulent fantasy now?",
+                  "spans":[  
+                     {  
+                        "start":9,
+                        "end":14,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Some enjoy S&M. Some like feet.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Me? I’d just like to leave the house for a bit.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Anyway, recently I have at least been able to explore the circuit again. A night a week, which has been nut-cummingly fun. As a lover of language I do love words but they fail pathetically to articulate how much I’ve missed the writing, tweaking, performing and then feeling some shit come alive in a room. Even if it is barely into double figures in terms of audience, it’s nicereturning to it. I dont give a Kinge Cross fuck if it is in some diluted, Monday-Night-Social kind of way. I’m more of a ‘Dad-Rock’ pub band than an aspiring rock star now.",
+                  "spans":[  
+                     {  
+                        "start":156,
+                        "end":161,
+                        "type":"em"
+                     },
+                     {  
+                        "start":176,
+                        "end":188,
+                        "type":"em"
+                     },
+                     {  
+                        "start":374,
+                        "end":379,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"So having been away for just over three years, I know you’ll all be dying to read what I’ve observed now I’ve returned. What I experienced when I left. And if you’re not, you may as well pretend you are or I’ll write a blog twice as shit next time.",
+                  "spans":[  
+                     {  
+                        "start":68,
+                        "end":73,
+                        "type":"em"
+                     },
+                     {  
+                        "start":92,
+                        "end":101,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Fuck it, here we go.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"list-item",
+                  "text":"We Are Funny Project are sunsetting their live shows. I wrote about that here.",
+                  "spans":[  
+                     {  
+                        "start":25,
+                        "end":35,
+                        "type":"em"
+                     },
+                     {  
+                        "start":73,
+                        "end":77,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://medium.com/@AidThompsin/final-thoughts-on-we-are-funny-project-405be9819b8c?source=post_page---------------------------"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"list-item",
+                  "text":"There is supposedly a crescendoing movement of wokeness and SJWs threatening to shit-stain the fabric of comedy itself.",
+                  "spans":[  
+                     {  
+                        "start":65,
+                        "end":90,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.vice.com/en_uk/article/xwn5w4/comedy-unleashed-london-free-speech-right-wing?source=post_page---------------------------"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"list-item",
+                  "text":"There are some exciting new acts that I can’t wait to see more of.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"list-item",
+                  "text":"Comedy Friendships are like real friendships. Sooner or later you will realise who you were actually friends with and who was just pleasant to you.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/e315e61120915814450a5c21441c30afb7eec21e_alfie.png",
+                  "alt":"alfie at we are funny project",
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":676,
+                     "height":397
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"First up. Briefly: WAFP.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Very sad. I will miss them. Alfie & Alex ran the best open mic nights in London. Where else are you going to be booked-in, checked-in, signed-in, video’d and broadly documented with Communist-like process and efficiency and find it juxtaposed with total anarchy? Acts stripping down to leather pants, people getting hospitalised for alcoholism, fights breaking out; there was also some comedy. Bon Voyage on your future endeavours, guys. There will soon be a WAFP-shaped donut hole in London open mic.",
+                  "spans":[  
+                     {  
+                        "start":381,
+                        "end":385,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"heading1",
+                  "text":"The Wokeness",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":12,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/f3c9bc61f4ba0d3a1d74cbc70ac954d44a9dd352_safepsace.png",
+                  "alt":null,
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":419,
+                     "height":418
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Next, let’s shove the second finger in this thing. It’s probably a cliche at this point, to look at news stories like the Jo Brand joke being reported to Number 10 or Vice articles tearing into Comedy Unleashed — and pull them to pieces. All of that shit is tired. This whole “Safe Space” nonsense is comedy death. It might sound good on Twitter to say “we won’t tolerate Hate Speech at any of our events” but it crumbles as soon as you apply practical examples to it.",
+                  "spans":[  
+                     {  
+                        "start":258,
+                        "end":263,
+                        "type":"em"
+                     },
+                     {  
+                        "start":308,
+                        "end":314,
+                        "type":"em"
+                     },
+                     {  
+                        "start":354,
+                        "end":404,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Say I run a night and I declare it aSafe Space. That means there won’t be any material that could possibly offend anyone in the audience, right? A mother-in-law joke? That’s misogyny. It’s offensive to mothers. And mothers in law. It’s also not inclusive to yourfatherin law. Maybe I’ll up the ante. Spool back to some shit I used to do regularly: an abortion joke. The joke itself was really about the media’s assumption that Kate Middleton seeing a doctor simply *had* to mean she was having a baby. An outdatedassumption. I closed it by suggesting she comes out of the clinic like: “You guys have made this abortion really awkward”. Well, that’s out because it’s upsetting to anyone that ever had an abortion. Even though the joke is really about sexist expectations of women.",
+                  "spans":[  
+                     {  
+                        "start":36,
+                        "end":46,
+                        "type":"em"
+                     },
+                     {  
+                        "start":262,
+                        "end":268,
+                        "type":"em"
+                     },
+                     {  
+                        "start":513,
+                        "end":523,
+                        "type":"em"
+                     },
+                     {  
+                        "start":586,
+                        "end":633,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"What if the person in the front row is an idiot? What if they don’t get the nuance and they think I’m just saying it would be funny if a royal had an abortion? I’m not exaggerating, there are people who are literally that stupid. Do we ban jokes preemptively, lest they upset an idiot? Great: Minority Report Comedy. The Pre-Cogs have determined it might be offensive to someone somewhere so it’s banned. Sounds rad. What about the rest of the audience that enjoy it? Do they get a say? Who decides that? Is it you? Me? Jo Brand? The Government?",
+                  "spans":[  
+                     {  
+                        "start":349,
+                        "end":354,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Liberalism will eat itself.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"heading1",
+                  "text":"\nNew Acts, New Material.\n",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":25,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I was over in Dalston last month and saw a dude called Brandon Palmer. Check him out here. Nice guy and definitely one to watch. Had a great joke about the “No-Homo” idiom. < — what? This isn’t a fucking Safe Space, you bell-end.",
+                  "spans":[  
+                     {  
+                        "start":85,
+                        "end":89,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.thebrandonpalmer.com/?source=post_page---------------------------"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Another guy was Tommy Ettling. Great stage presence and a couple of great lines in there to boot.",
+                  "spans":[  
+                     {  
+                        "start":16,
+                        "end":29,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://twitter.com/maldoror84?lang=en&source=post_page---------------------------"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I also met a good dude called David Carrington. He’s super new, barely into double figures (no. of gigs). Fresh out of a divorce and exploring standup. If you see him give him some support.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"There are more. I just don’t have the sleep-hours to remember their names right now.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"heading1",
+                  "text":"Comedy Friends",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":14,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/f373f554d27a74839a91ab64be56fe0349bb9de1_fwends.png",
+                  "alt":"friends in open mic comedy",
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":500,
+                     "height":207
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Perhaps the most stark thing I could reflect on, having being away for three years is how cut-off I felt, being a Dad. I imagine its akin to working mothers being left out, left behind or missing out on a job because of childcare. Half FOMO, half-“I have a baby now why isn’t that enough I must be some kind of monster!?\".",
+                  "spans":[  
+                     {  
+                        "start":248,
+                        "end":320,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I don’t want to sound like a total twat here so I’ll try and keep this light.",
+                  "spans":[  
+                     {  
+                        "start":35,
+                        "end":39,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I really did bleed comedy for five years. 2011 to 2016. Gigging, promoting, editing, interviewing other comedians, vlogs, Edinburgh. To have that immediately shut off was hard to adjust to.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I created a new Facebook profile.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Somehow I had collected over a thousand ‘friends’ on my old one and my entire feed was comedy. Comedy I couldn’t be part of.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"“Applications Open For Next Month!”",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":35,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"“Hey, guys, check out my 5-set!”",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":32,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"“Check out my comedy, guys, I’m doing comedy and who’s up for some comedy, you comedy bastards!”",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":96,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Ugh.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It was like being cyber bullied by my best friend.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"The new account, I added a select few I had become friends with over those years. Mostly it was old mates and relatives. The exercise was like a badly handled breakup.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"“You’re not in my life anymore so I don’t want to see you on my social media. Out of sight, out of mind…\"",
+                  "spans":[  
+                     {  
+                        "start":1,
+                        "end":105,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Just couldn’t handle it.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Then, I added a couple of acts from having become friends and a couple more not because we were particularly close but just that I found them so bloody funny I wanted to see their careers explode as it happened. Thanyia Moore for example. Not super-bud-BFFs but she’s just amazing and I love seeing her shit (← interpret that in any way you wish).",
+                  "spans":[  
+                     {  
+                        "start":109,
+                        "end":115,
+                        "type":"em"
+                     },
+                     {  
+                        "start":212,
+                        "end":225,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"http://thanyiamoore/?source=post_page---------------------------"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Anyway, as the days of parenting became nights and the nights and days became one long stream of unbroken consciousness and shit & piss covered despair — fatherhood endured.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Lonely.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I’m not a doctor but I’d probably categorise myself, in that period, as having been a tad mentally unwell. It was great in many ways becoming a Dad, but the comedy hiatus got me more and more depressed. It was legitimately the only thing I think I ever felt half good at? And it was gone. I was disengaged. Isolated.",
+                  "spans":[  
+                     {  
+                        "start":99,
+                        "end":105,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"My brain was still in “funny” mode though. Thinking up little concepts, teasing me.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"“Oi, British people mock Americans for dumb language but we call private school ‘Public School’ even though it’s not really open to the public, it’s the least public thing ever. It’s actually segregation for the rich. Why do we call it Public? Haha, there’s probably something in that, Aid. Why don’t you try it somewhere tonigOHTHAT’SRIGHTYOUCAN’T. Fuck off and change a nappy, you c*nt.”",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":389,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I had no way of trying or developing anything. Plus, socially I had made open mic my ‘circle’ for the last four years. My actual friends from back home had either lost interest in me and my pretentious comedy shit, or were childless themselves — too busy #livingMyBestLife to check-in. Let’s be brutally honest here: I had missed their birthdays and weddings because I was too busy playing unpaid tens to nine people. Why in the name of dog-fuckery should they feel obligated to drive an hour to come see me?",
+                  "spans":[  
+                     {  
+                        "start":16,
+                        "end":22,
+                        "type":"em"
+                     },
+                     {  
+                        "start":122,
+                        "end":128,
+                        "type":"em"
+                     },
+                     {  
+                        "start":209,
+                        "end":213,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Lonely. Unwell.",
+                  "spans":[  
+                     {  
+                        "start":8,
+                        "end":14,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I messaged a couple of acts I had got to know well over the years. One started when I did, we’d met-up socially and gotten pissed quite a few times. We talked about who was funny, who was shit, which female comics we’d bang. The usual. Another started a bit after me and had asked me for advice, pointers, feedback. We had gigged loads and drank and laughed.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Of both of those guys, both of whom I would’ve called friends, neither bothered to ask how things were going, if they could stop by, or wish me well.",
+                  "spans":[  
+                     {  
+                        "start":54,
+                        "end":61,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I asked for MP3s of their gigs. If I couldn’t gig myself, maybe I could just hear how shows were going? I was excited for them and wanted to hear their previews. Just to feel connected. Pathetic really. Like some secretary at home breast-feeding, begging her boss to post her an Ink Jet — just so she can vaguely smell the scent of an office. Neither sent anything. No audio. Just “ahhh man, I’ll be embarrassed. I’m shy…”.",
+                  "spans":[  
+                     {  
+                        "start":77,
+                        "end":81,
+                        "type":"em"
+                     },
+                     {  
+                        "start":118,
+                        "end":121,
+                        "type":"em"
+                     },
+                     {  
+                        "start":175,
+                        "end":184,
+                        "type":"em"
+                     },
+                     {  
+                        "start":305,
+                        "end":312,
+                        "type":"em"
+                     },
+                     {  
+                        "start":382,
+                        "end":421,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"If I was unwell before, that sent me fucking bat-shit.",
+                  "spans":[  
+                     {  
+                        "start":45,
+                        "end":53,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"In my sleepless and disconnected, emotional state, I wanted to snap back: “Fuck me gently, you cunt. I’m stuck out here with a screaming baby, daily meltdowns, sleepless and mourning the loss of my. own. life. And you wont send me a pissing MP3 file cuz you’re too shy to share the thing you literally share in front of 30 people every other night?! WHAT AM I TO YOU! WHERE IS THIS RELATIONSHIP GOING!”",
+                  "spans":[  
+                     {  
+                        "start":75,
+                        "end":401,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Lonely, Unwell, Loopy.",
+                  "spans":[  
+                     {  
+                        "start":16,
+                        "end":21,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/24a07dd6aeccc308d3b542cadad35c8d511b09fa_depress.jpeg",
+                  "alt":null,
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":500,
+                     "height":332
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Now, let’s be objective about it. I’m big enough and ugly enough to know that there could be very good reasons for the way they responded. It’s entirely possible we were never actually friends.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It’s entirely possible that, at a time in my life when I felt isolated and sensitive, I saw two guys I did a few gigs with as chums but they saw me as “that guy I gigged with a few times”. Or they *may* have seen me as a mate but assumed I’d be too busy adjusting to fatherhood and didn’t really want to bother me? Seems reasonable.",
+                  "spans":[  
+                     {  
+                        "start":145,
+                        "end":147,
+                        "type":"em"
+                     },
+                     {  
+                        "start":152,
+                        "end":186,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Another possibility, full disclosure: I’d done a shit-tonne of vlogs about comedy and filmed things without really getting permission. I’d pull out my cam and start recording weird and wonderful tidbits here and there. *Never* sets or material but little scrappy interviews, the before-and-after gigs stuff. I never bothered asking the people that appeared in them really.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"If they complained I’d dismissed it: “oh get a grip, it’s a YouTube vlog with thirteen subscribers, nobody cares if you ran out of gel today, you tosser”. So I can’t rule out that they thought I would use their MP3 in a vlog or put it online or something. It’s a stretch. And I absolutely never would have. But i’d understand if they thought I might.",
+                  "spans":[  
+                     {  
+                        "start":38,
+                        "end":152,
+                        "type":"em"
+                     },
+                     {  
+                        "start":289,
+                        "end":294,
+                        "type":"em"
+                     },
+                     {  
+                        "start":344,
+                        "end":349,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Anyway, I didn’t ever explode at them. I’m sure they’re doing well and I wish them the best. In the following months, every now and then, I’d ping a message to the We Are Funny guys. “Hey, just checking in, how the fuck are you!”. I’d put comments on Alex Martini’s wall: “I want to bum you in the mouth\" (they weren’t always useful or even half polite). They’d always enquire how things were going, when I’d come back; Alex came down to Guildford to see me (to be clear: zero mouth-bumming). I got out the house to see Harry in Peckham. I chatted with Steve McLean and Gary Shaw on messenger. Ben Adams and I went for beers a few times. These were the people that stayed in touch. These were the good guys and I’m forever thankful to all of them. I doubt they even know how much their contact meant to me in those first two and a half years.",
+                  "spans":[  
+                     {  
+                        "start":184,
+                        "end":228,
+                        "type":"em"
+                     },
+                     {  
+                        "start":273,
+                        "end":303,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Anyway, I’m back now with a renewed sense of perspective. A new website for comedians. A beautiful kid. Oh, and a shit tonne of ideas to try out.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"So let me finish this set by saying:",
+                  "spans":[  
+                     {  
+                        "start":10,
+                        "end":16,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It’s great to be here. Are you well?",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":36,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Aid Thompsin is a stand-up comedian, Software Engineer and owner of ThePandaRiot.com",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":12,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://twitter.com/aidThompsin?source=post_page---------------------------"
+                        }
+                     },
+                     {  
+                        "start":68,
+                        "end":84,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.thepandariot.com/home?source=post_page---------------------------"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-headline":[  
+               {  
+                  "type":"heading1",
+                  "text":"MOCK",
+                  "spans":[  
+
+                  ]
+               }
+            ]
+         }
+      },
+      {  
+         "id":"XTnVSREAACMAxddY",
+         "uid":"the-other-day-i-was-scanning-down-my-facebook-feed",
+         "type":"news-story",
+         "href":"https://des-lynham.cdn.prismic.io/api/v2/documents/search?ref=XXotSREAACUARfXF&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XTnVSREAACMAxddY%22%29+%5D%5D",
+         "tags":[  
+
+         ],
+         "first_publication_date":"2019-07-25T16:14:09+0000",
+         "last_publication_date":"2019-07-25T19:27:50+0000",
+         "slugs":[  
+            "is-the-standard-of-u.s.-standup-higher"
+         ],
+         "linked_documents":[  
+
+         ],
+         "lang":"en-gb",
+         "alternate_languages":[  
+
+         ],
+         "data":{  
+            "news-headline1":[  
+               {  
+                  "type":"heading3",
+                  "text":"MOCK | Is The Standard Of U.S. Standup Higher?",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-image":{  
+               "dimensions":{  
+                  "width":480,
+                  "height":240
+               },
+               "alt":null,
+               "copyright":null,
+               "url":"https://des-lynham.cdn.prismic.io/des-lynham/ea1f5bc3e41fa1aa13beb4531be5d76fdd55d755_ckdc.jpg"
+            },
+            "news-body":[  
+               {  
+                  "type":"heading3",
+                  "text":"The other day, I was scanning down my Facebook feed and saw a status update from a highly-regarded circuit act. He suggested, from listening to various podcasts, that American comics didn't rate British ones too highly.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Further down, were comments from London acts, some of whom had gone as far as saying they couldn't name a British comedian they would pay to see. Something felt weird about reading that. Not one they would pay to see. At first i was taken aback. I had one of those ridiculous 'Wait? You're-Attacking-Me, Personally?!' moments. I mean, how dare a nameless someone, somewhere, on some podcast i was never likely to hear or care about, suggest that British comedy had failed to meet expectations i had no part in setting. Ooh, I was offended. But then? Well, I kind of saw their point.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Now, don't get me wrong. I don't genuinely believe that all British comedians are bad. This isn't the Daily Mail. There's some awesome talent out there. This is about exposure, taste and comparison. I mean, I've cried with laughter at acts across the capital, but clearly the stuff that hits the mainstream fails to capture the imagination of podcasters, who then weigh it up against counterparts across-the-pond.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Are we all seen as cheeky-chappy, post-Vaudeville, panel-show acts maybe? Where a lot of the same faces are rolled out time and again, each one just a Post Office queue punchline away from a BBC2 travel show series; weighing that up against the US mainstream, where darker, exploratory content seems more readily accepted, with HBO specials and the like - it could start to get depressing. If you look at stand-up as in any way an arty, expressive, performance craft of spoken word (however ridiculous that sounds), it's easy to see why you might term the British TV stuff, err, different.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"And that's interesting, isn't it? Considering the popularity of the so-called \"British sense of humour\", that the industrial representation of that is less so; that our comics might be seen as not up to the US' level.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Because in the US they have Open Mic nights like we have Open Mic nights. They have comedy clubs like we have comedy clubs. We both have a history of sitcoms, talk shows; But with the HBO special, a highly-regarded platform where the best of the industry film an hour of their best material, the US acts have a standard to uphold; a would-be career highlight. And failing that, there's Hollywood to exploit. There's something sad about us opting-out of the 'special', about career trajectory swerving an opportunity to create a Bring The Pain, Raw, Shameless or Elephant In The Room.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/638674039ae4d00d94e3e2bfb884b99df0a57e69_mcintyre.jpg",
+                  "alt":"christmas dvd michael mcintyre",
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":389,
+                     "height":550
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Industrially, we resort to Christmas DVDs and saturated panels; pre-written answers to quiz show questions that don't matter, leaving you with a feeling that it's all staged, it's not real, it's faked; Which to me is the opposite of what comedy should be. I mean, not everything is or could be 'real' on a stage. Obviously a lot of it is made-up, written down and recited. But every time i see a comedian with perfect teeth answer a question with an auto-cue quip, I feel like I'm watching Kurt Cobain lip-syncing.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"As I said, there are outstanding acts out there. London has proven itself time and again for spawning internationally successful stand-ups. I remember seeing Jim Jefferies honing it here years ago and thinking he was immense. Then he flew off to New York to film for HBO. Simon Amstell's Do Nothing remains a favourite of the last decade yet with his subsequent US tours, appearances on The View and Letterman, he feels more Brit-in-America now than an exhibit of what's going on in British comedy. In watching an interview with Frankie Boyle and Jimmy Carr, it was interesting to see them answer \"so what comedians are you both into?\" with an almost immediate \"Doug Stanhope\" followed by a list of other US comics. I wonder how many US comedians would name Brits in the same scenario? I wonder why it is that when we stand around outside venues talking about who we're interested in, almost without exception, acts lean towards either the American mainstream (Louis CK, Bill Burr) or the British acts that appear to shirk ours (Stewart Lee, Daniel Kitson).",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/3b11aaea4a7c84c051fb4887f1a0e282dfb577fd_dug.jpg",
+                  "alt":null,
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":1280,
+                     "height":720
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It's too simplistic to say that it's hipsterdom in comedy; that we just don't like what's already popular. If it was just that, you'd have to assume that comics would hate what's popular in America also - which simply isn't the case. Equally, you could say i'm biased because the comics i chat to that cite Burr or CK as influences are the ones i'm drawn to talk to, because i enjoyed their set, and they have a similar style to the American acts i admire. But if it's just my taste, then the more 'British' ones, like those that appear on panel shows or Live At The Apollo, should then occasionally appeal to Americans on podcasts or become successful overseas. Yet neither of those things seem to happen.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I guess what I'm saying is: the US don't do panel shows. And we don't do HBO specials. Mainstream America's acts are seen as credible influences for us but rarely is that reciprocated. Is that a symptom of those formats? I feel that it might be. I just hope that in this era of YouTube channels, free editing apps and On Demand, the freedom to create and provide content to the public without adhering to executives' tastes should provide exposure for comics, sufficiently, to appease the expectations of podcasters and vloggers; to provoke some backtracking.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"A vlog of them eating their words? I wonder who'd pay to see that.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Originally Published by The Huffington Post May, 2014.",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-headline":[  
+
+            ]
+         }
+      },
+      {  
+         "id":"XTcdYhAAAHfcOqIW",
+         "uid":"we-are-funny-finished",
+         "type":"news-story",
+         "href":"https://des-lynham.cdn.prismic.io/api/v2/documents/search?ref=XXotSREAACUARfXF&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XTcdYhAAAHfcOqIW%22%29+%5D%5D",
+         "tags":[  
+
+         ],
+         "first_publication_date":"2019-07-23T14:44:55+0000",
+         "last_publication_date":"2019-07-25T19:35:02+0000",
+         "slugs":[  
+            "we-were-funny",
+            "bye-bye-we-are-funny",
+            "don-biswas-wins-new-comedy-award"
+         ],
+         "linked_documents":[  
+
+         ],
+         "lang":"en-gb",
+         "alternate_languages":[  
+
+         ],
+         "data":{  
+            "news-headline1":[  
+               {  
+                  "type":"heading3",
+                  "text":"MOCK We WERE Funny?",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-image":{  
+               "dimensions":{  
+                  "width":700,
+                  "height":481
+               },
+               "alt":null,
+               "copyright":null,
+               "url":"https://des-lynham.cdn.prismic.io/des-lynham/b14848d225c207b3a9f969d277fa1a153a5a6f06_waf1.png"
+            },
+            "news-body":[  
+               {  
+                  "type":"heading3",
+                  "text":"Its over, done, gone. We wish them the best for the future and thank them for a job well done x\n",
+                  "spans":[  
+                     {  
+                        "start":95,
+                        "end":96,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"When I started “comedy” in 2012, it wasn’t a totally foreign world to me.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I had done live stuff before, musically, and had gone to King Gong a bunch of times just for the brutality-fuck of it. My housemate in ‘06 was an aspiring comic (/is now a pro). I’d made a comedy hip-hop album, god forgive me. I had cried with laughter at specials like Raw, Live & Unleashed and Bring The Pain. It’d always been something I wanted to try but sort of assumed the things I found funny would merely find themselves filed under “things I said in the pub that someone politely sniggered at, momentarily”.",
+                  "spans":[  
+                     {  
+                        "start":57,
+                        "end":66,
+                        "type":"em"
+                     },
+                     {  
+                        "start":57,
+                        "end":67,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://thecomedystore.co.uk/london/regular-show/king-gong/?source=post_page---------------------------"
+                        }
+                     },
+                     {  
+                        "start":122,
+                        "end":131,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.standup.com.au/comedian/bonnie-davies?source=post_page---------------------------"
+                        }
+                     },
+                     {  
+                        "start":270,
+                        "end":273,
+                        "type":"em"
+                     },
+                     {  
+                        "start":275,
+                        "end":291,
+                        "type":"em"
+                     },
+                     {  
+                        "start":296,
+                        "end":310,
+                        "type":"em"
+                     },
+                     {  
+                        "start":351,
+                        "end":354,
+                        "type":"em"
+                     },
+                     {  
+                        "start":442,
+                        "end":514,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"When I did find the courage to try stand-up, there were two nights that helped me. Lions Den and We Are Funny Project.",
+                  "spans":[  
+                     {  
+                        "start":7,
+                        "end":10,
+                        "type":"em"
+                     },
+                     {  
+                        "start":83,
+                        "end":92,
+                        "type":"em"
+                     },
+                     {  
+                        "start":97,
+                        "end":117,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Lions Den was run by the late, great Tim Rendle. Credit where it’s due, he gave me my first shot at a supportive Open Mic. My hands were shaking I was so nervous. I had to keep them in my back pockets for the entirety of my set. Tim put those nerves to rest and I was able to consider going back again without evacuating my bowels.",
+                  "spans":[  
+                     {  
+                        "start":37,
+                        "end":47,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.chortle.co.uk/news/2018/06/25/40327/comedy_promoter_tim_rendle_dies_of_cancer?source=post_page---------------------------"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/37e09a9c0c7fbe63b74491007aa4aad6e7c9ca6c_waf2.png",
+                  "alt":null,
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":640,
+                     "height":478
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Around the same time, I got onstage at a pub called Dirty Dicks, on Bishopsgate, EC1. That night was run by Frank Cassidy and Alfie Noakes under the moniker: Dead Comedian’s Socks. I think the night itself was called “Touching Cloth — New Material”. The idea being: if you say something new, it tanks and stinks-out the room — you touch the cloth/banner behind you and everyone has to shout “New Material!” to get the energy back. A novel antidote to the room-stink of a not-worked-out new idea.",
+                  "spans":[  
+                     {  
+                        "start":52,
+                        "end":63,
+                        "type":"em"
+                     },
+                     {  
+                        "start":158,
+                        "end":179,
+                        "type":"em"
+                     },
+                     {  
+                        "start":183,
+                        "end":188,
+                        "type":"em"
+                     },
+                     {  
+                        "start":392,
+                        "end":405,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It wouldn’t be fair to say that Touching Cloth was the beginnings of We Are Funny Project. They were two separate beasts, for reasons I’ll go into in a moment. But like Ronan Farrow and Frank Sinatra, it’d be silly to pretend they weren’t very-obviously related, also.",
+                  "spans":[  
+                     {  
+                        "start":55,
+                        "end":65,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Alfie co-ran Touching Cloth.\nHe also MC’d.\nIt was at Dirty Dicks.\nIt was Open Mic.\nYou didn’t have to bring-a-friend to bulk up their audience.\nThey filmed you and edited a nice lil’ video so you could learn from it or show your mates.",
+                  "spans":[  
+                     {  
+                        "start":6,
+                        "end":8,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"In many ways it was very, very similar to the We Are Funny Project. But when Alfie ‘went solo’ and began running the operation himself, under the new moniker, the nights exerted a significantly more-professional lean. A ripple effect from his former life as a TV producer, no doubt.",
+                  "spans":[  
+                     {  
+                        "start":26,
+                        "end":30,
+                        "type":"em"
+                     },
+                     {  
+                        "start":46,
+                        "end":66,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"The floor-stand banners were slick and promo-styled. The quality of the videos improved. There were organised Meet-Up groups coming to sit in the audience. The nights expanded from Dirty Dicks to The Star & Garter in Putney. Then later The Duke’s Head, then later still at Farr’s in Dalston. At its peak, Alfie was running spots every weeknight but Friday — with some other semi-pro stuff occasionally on Saturdays. The type of nights broadened from straight-up Open Mic to the odd themed nights (“Summer Lovin”, “Sports”, “The Films Of Brad Pitt”), to organised debates and discussions, MC-training sessions, sitcom-writing workshops — WAFP became a god damn fuck-mother of all things London comedy.",
+                  "spans":[  
+                     {  
+                        "start":196,
+                        "end":213,
+                        "type":"em"
+                     },
+                     {  
+                        "start":236,
+                        "end":251,
+                        "type":"em"
+                     },
+                     {  
+                        "start":263,
+                        "end":269,
+                        "type":"em"
+                     },
+                     {  
+                        "start":273,
+                        "end":279,
+                        "type":"em"
+                     },
+                     {  
+                        "start":420,
+                        "end":424,
+                        "type":"em"
+                     },
+                     {  
+                        "start":482,
+                        "end":488,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Now I think about it: it catered for the entire lifecycle of an aspiring comedian: first-timers right through to experienced acts doing 10s, 20s, headliners or burnt-out comics trying to get into writing or MCing.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/bee89825d3b1aa41e7c7626085205a69af5d4129_waf3.png",
+                  "alt":null,
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":482,
+                     "height":347
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"For me personally, selfishly, We Are Funny Project was invaluable in the run up to recording, Eardiot, and its subsequent run at Edinburgh in 2015. The cliche is to say “new comics need as much stage-time as possible”. The reality (for me) wasn’t too far from that. I had a bunch of weird ideas and half-baked concepts that I heavily suspected would lead to me eating shit onstage multiple times until I could work out what the fuck they were, comedically. Without all that stage-time, I’m not sure I could really, trulydevelop the ideas I found interesting.",
+                  "spans":[  
+                     {  
+                        "start":19,
+                        "end":28,
+                        "type":"em"
+                     },
+                     {  
+                        "start":94,
+                        "end":101,
+                        "type":"em"
+                     },
+                     {  
+                        "start":94,
+                        "end":101,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.youtube.com/watch?v=HRsKk1KycZ8&t=1830s&source=post_page---------------------------"
+                        }
+                     },
+                     {  
+                        "start":170,
+                        "end":218,
+                        "type":"em"
+                     },
+                     {  
+                        "start":515,
+                        "end":520,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"For every ten ideas that tanked, maybe one or half of one would light up the room. That was what Alfie Noakes gave me. The freedom to say dat. weird. shit— a lot of the time badly — a lot of the time in front of a real(ly disappointed) audience — and for me to see where the edges were, what tweaks were needed, and then have an opportunity to test it, again, an hour later in the Putney venue, then again the following night back at Dirty Dicks — in front of different people — that was just invaluable.",
+                  "spans":[  
+                     {  
+                        "start":46,
+                        "end":50,
+                        "type":"em"
+                     },
+                     {  
+                        "start":174,
+                        "end":179,
+                        "type":"em"
+                     },
+                     {  
+                        "start":316,
+                        "end":320,
+                        "type":"em"
+                     },
+                     {  
+                        "start":400,
+                        "end":405,
+                        "type":"em"
+                     },
+                     {  
+                        "start":460,
+                        "end":469,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I really don’t know how people get material together without that support, unless they’ve *already got to a level* where they can rock-up at Backyardor Vauxhall and demand a 10-spot.",
+                  "spans":[  
+                     {  
+                        "start":141,
+                        "end":149,
+                        "type":"em"
+                     },
+                     {  
+                        "start":152,
+                        "end":160,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"heading2",
+                  "text":"A Non-Bringer Amongst Bringers",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":30,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It should be commended that We Are Funny was never a “bringer”. It’s the most boring thing in the world for comedians to moan about bringers. I know because i’ve done it ten thousand times myself and i’m bored of it. But let’s break this down quickly so we can look at WAFP for what it was and where it fit in.",
+                  "spans":[  
+                     {  
+                        "start":121,
+                        "end":125,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"For new, aspiring comedians, when I was gigging heavily, you had the following options as places to try new ideas:",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Dirty Dicks — usually busy",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":11,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Dukes Head — usually busy",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":11,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Cavendish Arms — bringer",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":15,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Freedom Fridge — bringer",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":15,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"TNT — bringer",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":3,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"G&B — bringer (or be-your-own-bringer)",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":3,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Jester Jesters — dead",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":15,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Pegasus — dead",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":7,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Lions Den — pay to play / dead’ish.",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":9,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Dead Comedians Socks (which moved to The Waterpoet, EC1) — dead",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":20,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Now, that’s not meant as a slight on the other nights. Fatherhood has matured me a little in that respect. If you don’t have the time to promote a night, fine. I don’t either (anymore). Someone should suck your dick just for trying to run an Open Mic spot. Do what you can. You do you, dawwwg.",
+                  "spans":[  
+                     {  
+                        "start":225,
+                        "end":232,
+                        "type":"em"
+                     },
+                     {  
+                        "start":281,
+                        "end":284,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"But just to illustrate how few the options for stage-time were (plug: checkout The Panda Riot for *current* bringer / non-bringer / days of the week vs gigs), if you’d been going for 6m+ and you’d run out of friends — then you can see the problem that 👆🏻We Are Funny solved👆🏻. It gave comics a stage, no bringer shit and a nice social atmosphere afterwards to convince you that running out of friends didn’t mean you had no friends.",
+                  "spans":[  
+                     {  
+                        "start":58,
+                        "end":63,
+                        "type":"em"
+                     },
+                     {  
+                        "start":79,
+                        "end":93,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.thepandariot.com/?source=post_page---------------------------"
+                        }
+                     },
+                     {  
+                        "start":218,
+                        "end":222,
+                        "type":"em"
+                     },
+                     {  
+                        "start":316,
+                        "end":320,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"When Dirty Dicks refurbished (or as I used to say: The Dirty Dicks Were Cleanedhohohothatdoesntreallyworkpleasekillmekillmenowinthehead), changing their basement into a city cocktail bar, it could’ve been the end of the operation. But Alfie and his number-two (my cohort in producing Eardiot →) Alex Martini, went on a crowdfund mission, it seemed to breathe new life into it. Though they fell short of their intended target — they managed to raise $23k for a full-time comedy venue. It seemed like an exciting time. All of those people donating, investing, ensuring that the project would live-on past its spiritual home to find itself permanently installed in a fitted-out venue, somewhere in London.",
+                  "spans":[  
+                     {  
+                        "start":73,
+                        "end":79,
+                        "type":"em"
+                     },
+                     {  
+                        "start":191,
+                        "end":199,
+                        "type":"em"
+                     },
+                     {  
+                        "start":284,
+                        "end":291,
+                        "type":"em"
+                     },
+                     {  
+                        "start":294,
+                        "end":307,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://twitter.com/martinicomedian?lang=en-gb&source=post_page---------------------------"
+                        }
+                     },
+                     {  
+                        "start":448,
+                        "end":453,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.indiegogo.com/projects/full-time-comedy-venue-with-we-are-funny-project?source=post_page---------------------------#/"
+                        }
+                     },
+                     {  
+                        "start":558,
+                        "end":566,
+                        "type":"em"
+                     },
+                     {  
+                        "start":637,
+                        "end":648,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It didn’t quite work out like that and, in a way, rather than breathing new life into it, the seeds for the shutdown of Alfie’s live-shows were sewn the second that Dirty Dicks wrapped.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"heading2",
+                  "text":"Why? Let’s peel the layers a bit.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I always got on well with Alfie but I’m not deaf and blind. I was aware that he and Frank hadn’t parted on the best of terms. I always looked at it like: whatever was said or happened between them, that’s for them to discuss and work out. It’s none of my business. It was literally their business. But whatever their reasons, they split, that parting caused a division between them obvs, but also socially between me and some other comedians/friends.",
+                  "spans":[  
+                     {  
+                        "start":111,
+                        "end":115,
+                        "type":"em"
+                     },
+                     {  
+                        "start":282,
+                        "end":288,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"We’d have exchanges along the lines of:",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"“Why do you still perform there?”\n“Because it’s a great night to perform at and frankly I don’t know what’s happened between Frank & Alfie.”\n“Right, but you could hazard a guess!”\n“I don’t want to be a guesser or a gossip or play sides and ‘who’s side are YOU on?’. This is all so fucking playground. I *just* want to do comedy.”",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":329,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Because I did.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"When Alfie took control of the comedy nights at Dirty Dicks, there were five or six people that seemed to take umbrage. When the curtains came down at DDs and the crowdfund finished, that number seemed to go-up, if only on The Comedy Collective posts and comments. It should be said that, weirdly, some were not even comedians, some that *were* comedians hadn’t even donated to the crowdfund and yet here they all were, demanding to know where “their” money was going.",
+                  "spans":[  
+                     {  
+                        "start":223,
+                        "end":244,
+                        "type":"em"
+                     },
+                     {  
+                        "start":367,
+                        "end":374,
+                        "type":"em"
+                     },
+                     {  
+                        "start":410,
+                        "end":413,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I personally saw Alfie respond to two of the comments (on the The Comedy Collective). Both times it seemed to defuse any argument or suggestion that the money was spaffed irresponsibly. But I live in the real world. And if we’re going to be objective about it, I suppose you could say “Well, he raised the money with the intended goal of a *venue*!” or “What happened to the podcast studio?!”.",
+                  "spans":[  
+                     {  
+                        "start":286,
+                        "end":348,
+                        "type":"em"
+                     },
+                     {  
+                        "start":354,
+                        "end":391,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"So, let’s be adults about this.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"You show me a London venue you can buy for $23k and I’ll suck your Dad off in it, twice.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Was the money spent? Was it spent wisely? Is there a precise breakdown of the pounds and pennies? I don’t fucking know. I suspect Alfie would’ve quite happily explained the intricacies of his re-strategised project (having not hit target), if people had asked him in person. I’d imagine it would circle around the new website, whatever equipment they got when they moved to Farr’s, keeping shit churning. I don’t blame him for possibly thinking “fuck off!” to people that had nothing to do with him or the crowdfund or We Are Funny. It’s like getting a personal expenses audit from your ex-girlfriend or some shit.",
+                  "spans":[  
+                     {  
+                        "start":34,
+                        "end":40,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"When I stopped doing stand-up (January’ish 2016) I was almost entirely removed from all the nonsense and sniping. I sort of assumed it had wound-down and people were instead focused on their Brighton Fringe and podcasts and shit YouTube channels (like me). I figured where there was bad blood before, as peoples’ careers had progressed, they’d probably moved-up and away from that tier of gossip and trolling.",
+                  "spans":[  
+                     {  
+                        "start":381,
+                        "end":385,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Imagine how refreshing, nay nostalgic, it was to return this year and find the same nonsense not only *still* happening, but it had now bled-out into entirely new slews of bellendry, some of whom weren’t comics, some of whom hadn’t donated and some of whom had never met or spoken to Alfie before.",
+                  "spans":[  
+                     {  
+                        "start":28,
+                        "end":37,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Now, I pride myself on maintaining an objective view where I can. It’s not always possible, I know. But i’ll try to do this fairly here: I’m positive Alfie is not perfect. I’m also positive that We Are Funny Project isn’t/wasn’t perfect either. I don’t know the ins-and-outs of the Crowdfund but i think if i had some sort of axe to grind with the money I donated (and i did donate), then I’d chat with him in person. If it was something that was *so much* of a problem that I had to opine and moralise and talk shit on Facebook threads, but it *wasn’t* enough of a problem that I felt compelled to ask face to face about it? Then *I’d* conclude: I’m being a dickless bell-end (←which is quite an achievement). You draw your own conclusions. You do you, dawwwg.",
+                  "spans":[  
+                     {  
+                        "start":371,
+                        "end":374,
+                        "type":"em"
+                     },
+                     {  
+                        "start":407,
+                        "end":416,
+                        "type":"strong"
+                     },
+                     {  
+                        "start":749,
+                        "end":752,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Alfie and i have had fiery discussions on more than one occasion but being grown-ups we chatted about it and moved on. It strikes me as incredibly sad that comedians of all people, who are the first to pin their flag to the mast in terms of pushing the envelope and “why is everyone so offended!?” are so emotional and ranty and determined to stay anchored to a bunch of shit that happened half a decade ago.",
+                  "spans":[  
+                     {  
+                        "start":156,
+                        "end":165,
+                        "type":"strong"
+                     },
+                     {  
+                        "start":267,
+                        "end":296,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I last saw Alfie about six weeks ago. He seemed fed-up. He’d been running Open Mic nights for ten years. There were new gigs on the block that were trying to cause him problems. There was the relentless trolling. People were joining his WAFP facebook group solely to cause fights. There were others calling him a crackhead. Quite simply, he seemed like a man that was over it. And who could blame him?",
+                  "spans":[  
+                     {  
+                        "start":368,
+                        "end":375,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I told him his nights were always the best and I hoped to gig more now that my son was a bit older. He said he was thinking of jacking it in unless the shit stopped.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/afc1d50c2f6cee02ae2bd4f0d22c49795eab63c6_waf4.png",
+                  "alt":null,
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":500,
+                     "height":275
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"The next day there was a post on his group confirming there’d been more trolls trying to get into the group. The attacks were non-stop and within four weeks the confirmation was out: live shows were pulled.",
+                  "spans":[  
+                     {  
+                        "start":67,
+                        "end":71,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I have a spot at Farr’s on 24th June. It’s a Dirty Dicks reunionnight with Gary Shaw, Graeme Mathews and Harry U Eldrich. It’s going to be my last spot for Alfie and We Are Funny Project, I guess.",
+                  "spans":[  
+                     {  
+                        "start":17,
+                        "end":23,
+                        "type":"em"
+                     },
+                     {  
+                        "start":45,
+                        "end":64,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.facebook.com/events/397382077506905/?source=post_page---------------------------"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I think that’s pretty shit. Alfie’s nights were the only London Open Mic that seemed to put any effort into promotion. They were the only ones that consistently gave me the encouragement and the stage-time I needed. I’d like to see the efforts of the people that were attacking him. If they’re running nights of their own, what kind of audience numbers they get, are they flyering, is it a bringer, is it just acts that turn up and fuck off by nine o’clock.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Forgetting all that WAFP did for a sec, that will likely be their comedic legacy.",
+                  "spans":[  
+                     {  
+                        "start":60,
+                        "end":65,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"They convinced a guy to stop his Open Mic nights in a City where there is (correct me if i’m wrong please) still no alternative for a reliable, packed-out Open Mic where it’s not Pay To Play or a Bringer.",
+                  "spans":[  
+                     {  
+                        "start":99,
+                        "end":107,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"So on that basis — i salute you, Alfie Noakes. You did a great thing, for quite a bloody while. You helped me and a bunch of others. I thoroughly enjoyed your nights and though i can’t blame you for fucking it off — i hope at some point in the future you can find some way of returning. Though hopefully with different shirts. Your shirts are bad. ← thats me being objective again.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Big love,",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Aid",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-headline":[  
+
+            ]
+         }
+      },
+      {  
+         "id":"XTqpdxEAACMAyYOb",
+         "uid":"gigs-basements-flyers",
+         "type":"news-story",
+         "href":"https://des-lynham.cdn.prismic.io/api/v2/documents/search?ref=XXotSREAACUARfXF&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XTqpdxEAACMAyYOb%22%29+%5D%5D",
+         "tags":[  
+
+         ],
+         "first_publication_date":"2019-07-26T07:19:23+0000",
+         "last_publication_date":"2019-07-26T07:19:23+0000",
+         "slugs":[  
+            "gigs-basements-flyers-online-releases...-music-pffff---no-its-the-life-of-an-open-mic-comedian"
+         ],
+         "linked_documents":[  
+
+         ],
+         "lang":"en-gb",
+         "alternate_languages":[  
+
+         ],
+         "data":{  
+            "news-headline1":[  
+               {  
+                  "type":"heading3",
+                  "text":"MOCK | Gigs, Basements, Flyers, Online Releases... (Music? Pffff - No, It's the Life of an Open Mic Comedian)",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-image":{  
+               "dimensions":{  
+                  "width":1199,
+                  "height":630
+               },
+               "alt":null,
+               "copyright":null,
+               "url":"https://des-lynham.cdn.prismic.io/des-lynham/8aeeb7f6c820b443ff702e38ae264c467c031577_micr.jpeg"
+            },
+            "news-body":[  
+               {  
+                  "type":"heading3",
+                  "text":"I would be tubing it to NW5, then east to Hackney; the following night I'd be at Dirty Dicks in EC2 trying some new ideas. The weekend would bring the odd 15 minute set. Yes, I heard heckles of \"Don't give up your day-job, mate!\". No, it didn't bother me. The joke was on them. I didn't have to give up my day-job. Stand-up got me fired from about three of them.\n",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"My name's Adrian. Or it was when I was born. But since 2011, I've gone by the stage-moniker 'Aid Thompsin', which was spawned from a desire to remain off-the-grid from my employers, should they ever find out I was attempting something as ridiculous as comedy. I guess the logic was that if I was going to talk about my actual life, taking the piss out of my then-job, ridiculing the situations I'd found myself in - it would probably be best if \"Adrian Thompson Comedy\" returned no results on Google.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"So you can imagine my delight when after four years of hard work my name(s) still return depressingly few results on the world's largest search engine.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"That said, I had fun. And that's the key thing. That you can look back and say it was awesome. I was an 'Open Miker' in a city, at a time, when open mic comedy was at its electrifying best. Every night of the week there was a show to be found. From Comedy Virgins to TNT to We Are Funny Project to Funny Feckers... You could get more stage-time in London than anywhere else in the world, I was told. And I took that and ran with it. For every godless, boring-as-piss-holes wine-bar there was, with pin-stripe traders quaffing their pinot and vomiting 'City' into the city - there was a gloriously grungey basement/loft with a blank sheet of paper, begging acts to sign up. And it was all-engulfing.",
+                  "spans":[  
+                     {  
+                        "start":249,
+                        "end":263,
+                        "type":"em"
+                     },
+                     {  
+                        "start":267,
+                        "end":271,
+                        "type":"em"
+                     },
+                     {  
+                        "start":274,
+                        "end":294,
+                        "type":"em"
+                     },
+                     {  
+                        "start":298,
+                        "end":311,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"A lot of people get into comedy because their friends stopped going out. They were the single ones, they still went to the pub every week, maybe saw a sandwich-board out front and decided to give it a bash. 'Social club comedians\", I thought of them as. They sort of accidentally fell into it and now they meet up every week to 10 days, tell a funny story and go back to whatever the fuck it is they do when they're not being introduced as \"Chuckly Joe & His HILARIOUS Ukulele!\".",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"But for me it was more than that. I made friends along the way, absolutely. But the focus was always there. 'Professional comedian' - that was the end goal. But alas, it wasn't to be. I don't mean that in a \"I joined a band, we recorded a demo and nothing really ever came of it\" way. I mean I slogged the shit out of it. I bled the passion, I crafted my sets, I put in the work and actually even got to a point where, had I not been such an entitled £35k-a-year media prick, I could've probably quit my job and done comedy full-time - had I been willing to live on boil-in-a-bag rice and my housemate's bath-water, of course. I imagined friends bumping into me in the street:",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"Hey Aid, i heard you quit your job and you're a professional comedian now! Congratulations man!?\"",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":98,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"Yeah, thanks, my life is improving!\"",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":37,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"The camera would pan out to reveal me smoking a rollie, waiting for the YMCA to open.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I was determined to get at least near my existing salary through event sponsorships, ticket revenue, merchandise and the like - before I would consider ending my 'Linkedin-Life'. And that meant leading a bizarre double one. A contrasting tapestry of feeling wired then exhausted, of high-creativity and office minutiae, becoming totally relaxed in front of forty, staring strangers, yet a nervous wreck when sat in silence with two colleagues.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"With its rep for being lonely and badly-paid, I saw it as fertile ground for diverse businesses. Circles, plural, of friends to be made from all ages, backgrounds, professions, races; A 'punk rock' landscape, where you could build up a guerrilla events company, guest on local radio, you could write articles for The Guardian, tweet vids of yourself to strangers looking for new comedy recommendations; In my mind it was literally as simple as \"this is something you can't fake\". I mused that as long as people are telling you that you're funny, and you put in the work, build out your profile - slowly success will follow.",
+                  "spans":[  
+                     {  
+                        "start":313,
+                        "end":325,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I would be tubing it to NW5, then east to Hackney; the following night I'd be at Dirty Dicks in EC2 trying some new ideas. The weekend would bring the odd 15 minute set. Yes, I heard heckles of \"Don't give up your day-job, mate!\". No, it didn't bother me. The joke was on them. I didn't have to give up my day-job. Stand-up got me fired from about three of them.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"By proxy of course. You can't fire someone for being hilarious. However much the BBC and Russell Brand may disagree with me. But you can put them on a Performance Improvement Plan for being exhausted, making mistakes and, well, generally being more interested in running out the door 20 minutes early than making sure things are done correctly and on-time.",
+                  "spans":[  
+                     {  
+                        "start":133,
+                        "end":137,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"For context, while I was first pursuing comedy, gigging every night, working every day - four hours sleep, coming into work hungover and incapable of constructing any worthwhile sentences - in the thick of all that I made a mistake at an investment bank that cost them twenty fucking thousand pounds. I did that. Twenty grand. So when aspiring comedians ask me if they're likely to earn money doing it, I ask them what sort of Lewis Carroll fantasy are they living in. You're going to lose entire employment contracts. You're going to lose so much money - other people are going to have to make really difficult budgeting decisions because of it.",
+                  "spans":[  
+                     {  
+                        "start":13,
+                        "end":19,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"When I moved to a different role, and as comedy swallowed me whole, I became obsessed with jokes, punchlines, build-ups, turns of phrase, clever metaphors - my next manager called me in for a review, offering the following feedback:",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"I just get the feeling that when someone asks you a question, you would rather reply with the thing that amuses you, personally, the most - rather than the thing that's actually going to be of any help to anybody.\"",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":215,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"In my years as an Open Miker, I had plenty of ups and downs, I loved the laughs and would romanticise the 'dying' on-stage, the late nights and early mornings - I adored all of it. The good and the bad. The peaks and the troughs. The being-torn-from-left-to-right. The excitement of scribbling down something at 16:30 and knowing it works by half-eight, only to try it again the next night and have it stink out the room.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I'd leave sold-out rooms in Shoreditch feeling like a fucking rock star then get booed off at The Comedy Store's King Gong three days later. I headlined at Dirty Dicks and had drinks bought for me, hands shaking mine, strangers telling me I was hilarious - then the following night I'd die on my arse trying to earn smirks from three tired-looking comedians. My material was praised by industry promoters but my crowd-work was atrocious. I booked, sold-out and filmed a one-hour show at Leicester Square Theatre. And came last in the first round of a competition the same fucking week. The highs were a high, the lows were just that. A momentary low, a blip, a day where things didn't go to plan - one that 24 hours later no one would even give a shit about. None of it mattered. Yet all of it was everything.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I edited \"Open Mic\" as a sort of lasting, douchey love-letter to standup. For me, it captures the insanity of the circuit. The bipolar shifts in your mood. The crunch point of wanting, needing to be a successful... something... a thing that you think you're half decent at - versus the sunset of your youth, moving out of London, trying to start a family, being an adult. Ultimately it's about the hard work it takes to end up being another nobody.",
+                  "spans":[  
+                     {  
+                        "start":10,
+                        "end":18,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.youtube.com/watch?v=OBexXGU4row",
+                           "target":"_blank"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It's now January 2016. I'm happy with how things have relaxed. It might not be over forever. I'm sure I'll head back and try some ideas out at some point. But for me? As an 'Open Miker'? As \"Aid Thompsin - Stand-up\" - dragging my DCs on the stage, grunge-esque posters advertising The Panda Riot gigs, shaking Harry U Eldrich's hand as we swap places on the Dirty Dicks stage, slurping a London Stout as I try to read the smeared notes on my hand? That period is over now. Harry quit, Funny Feckers is no more, I wear shoes into work and my girlfriend is pregnant with our first kid.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"To quote someone that was quoted on something that I can't remember: I don't feel sad that it's over. I feel happy that it happened.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Or maybe \"Don't think of it as over... think of it as complete.\"",
+                  "spans":[  
+                     {  
+                        "start":54,
+                        "end":62,
+                        "type":"strong"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Okay that second one was me, just now, I said that. Go me.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Anyway my point is this: it was fun, I made a film about it and now we're having a baby. Where's my fucking medal.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Plus they turned Dirty Dicks into a wine bar, Christ...",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Open Micis free to watch and available on YouTube.",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":8,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.youtube.com/watch?v=OBexXGU4row",
+                           "target":"_blank"
+                        }
+                     },
+                     {  
+                        "start":8,
+                        "end":50,
+                        "type":"strong"
+                     }
+                  ]
+               }
+            ],
+            "news-headline":[  
+
+            ]
+         }
+      },
+      {  
+         "id":"XTv6KxEAACAAz2lU",
+         "uid":"the-curious-case-of-benjamin-bello",
+         "type":"news-story",
+         "href":"https://des-lynham.cdn.prismic.io/api/v2/documents/search?ref=XXotSREAACUARfXF&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22XTv6KxEAACAAz2lU%22%29+%5D%5D",
+         "tags":[  
+
+         ],
+         "first_publication_date":"2019-07-27T17:08:29+0000",
+         "last_publication_date":"2019-09-12T11:34:33+0000",
+         "slugs":[  
+            "the-curious-case-of-benjamin-bello",
+            "the-curious-case-of-benjamin-bankole-bello"
+         ],
+         "linked_documents":[  
+
+         ],
+         "lang":"en-gb",
+         "alternate_languages":[  
+
+         ],
+         "data":{  
+            "news-headline1":[  
+               {  
+                  "type":"heading1",
+                  "text":"MOCK | The Curious Case Of Benjamin Bello",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-image":{  
+               "dimensions":{  
+                  "width":680,
+                  "height":400
+               },
+               "alt":"president obonjo joke theft samson kayo",
+               "copyright":null,
+               "url":"https://des-lynham.cdn.prismic.io/des-lynham/b7d00eee2398a2f219e480dba3b692ed85d1ad8c_obo382.jpg"
+            },
+            "news-body":[  
+               {  
+                  "type":"heading3",
+                  "text":"It should all have been so simple. Think of a show idea, find a half well-known face and shoot the pilot. Either it works and everyone has a job, or it doesn't and you move onto something else.  The only variable is how good the idea is. That's what's going to decide the success of your comedy show. I think? I imagine that's what someone would say.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"When BBC Studios announced the pilot of The Colonel Banjoko Show, it didn't really follow that script.",
+                  "spans":[  
+                     {  
+                        "start":40,
+                        "end":64,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.comedy.co.uk/tv/news/5425/the_colonel_banjoko_show/"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"On the 17th July, production was announced. A chat-show. A comedy character called Colonel Banjoko would host. He would be on the run from his North African nation. Living the high life on the spoils of his nation's health budget. ",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"But later that night, a live act known as President Obonjo (comedian, Benjamin Bankole Bello) became aware of the pilot and tweeted that it was 'an interesting development'. That was putting it lighty.",
+                  "spans":[  
+                     {  
+                        "start":145,
+                        "end":171,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It didn't take the comedy community long to get on-board, pointing out the slew of similarities between Colonel Banjoko and President Obonjo. North African, Dictators, using their draconian, militant sensibilities as comedic devices. In Banjoko's case \"his advanced interrogation technique when interviewing guests\". In Obonjo's, deadpanning to the audience: \"Anyone who does not laugh at my jokes will be shot\". In the Banjoko press release, he was on the run, living off his nation's riches. In Obonjo's routine, he cracked that other black leaders (Obama) had gotten the public expecting him to believe in \"Change\", though as an African leader he believed change should be in his pocket.",
+                  "spans":[  
+                     {  
+                        "start":360,
+                        "end":410,
+                        "type":"em"
+                     },
+                     {  
+                        "start":610,
+                        "end":616,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"The similarities were there. And if that were it, that would be it.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"But Bello wasn't unknown to the BBC. His videos had gone to The BBC New Comedy Awards, he had applied to The Caroline Aherne Bursery Scheme, he had been asked to submit sketch ideas - all using the Obonjo character (John Fleming's blog/interview has much more detail on this). Anyone with a passing interest in the British comedy circuit knew of Obonjo.",
+                  "spans":[  
+                     {  
+                        "start":17,
+                        "end":24,
+                        "type":"em"
+                     },
+                     {  
+                        "start":231,
+                        "end":245,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://thejohnfleming.wordpress.com/2019/07/22/bbc-tv-stole-this-character-comics-identity-making-channel-4-complicit/"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/8afc9ba015b63300f31f2484f1710673ce7d5e18_screenshot-from-2019-07-27-08-11-19.png",
+                  "alt":"joe jacobs president obonjo tweet",
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":599,
+                     "height":168
+                  }
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/803939237c1a16e33ab99af3388c575ac29665dc_screenshot-from-2019-07-27-08-13-56.png",
+                  "alt":"kae kurd president obonjo tweet",
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":595,
+                     "height":524
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"After what was probably an unexpected groundswell of support from the community - acts like Eshaan Akbar, Kae Kurd, Joe Jacobs - BBC Studios released a follow-up statement to their original press release. ",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"Colonel Banjoko is an original character developed by BBC Studios for Samson Kayo,\" it started. \"We are delighted he is taking on the role. It was inspired by a general in a recent coup who asked everyone to remain calm on the TV and the BBC Studios Comedy Team approached Samson with the idea. Viewers will get the opportunity to see it for themselves if the pilot is taken to series.\". ",
+                  "spans":[  
+                     {  
+                        "start":1,
+                        "end":66,
+                        "type":"em"
+                     },
+                     {  
+                        "start":67,
+                        "end":82,
+                        "type":"em"
+                     },
+                     {  
+                        "start":98,
+                        "end":386,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It felt weird. Something didn't sit right with that.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"A recent coup...\"",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":18,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"...character developed by BBC Studios...\"",
+                  "spans":[  
+                     {  
+                        "start":0,
+                        "end":42,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Why not say the name of the general, or the country - if it's where you drew inspiration from and you're now under the spotlight for maaaaybe being a joke-thief? Wouldn't you want to clear it up by providing clear-cut news clippings and dates and names? And why not credit your producer/s by name, with dreaming up the character? Rather than the vague \"developed by BBC Studios\". ",
+                  "spans":[  
+                     {  
+                        "start":16,
+                        "end":20,
+                        "type":"em"
+                     },
+                     {  
+                        "start":133,
+                        "end":141,
+                        "type":"em"
+                     },
+                     {  
+                        "start":353,
+                        "end":377,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"We should probably concede that it could've been totally honest, but it felt like an exercise in evading scrutiny.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"As if to say: \"How did we dream it up? Ooh, well, yeah it was a vague thing on the TV that somebody once saw somewhere but *annnnnnyway* let's move on and we're very happy Samson's taking the role...\"",
+                  "spans":[  
+                     {  
+                        "start":15,
+                        "end":200,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Nobody suggested any problem with Samson Kayo. ",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"Viewers will get the opportunity to see it for themselves...\"",
+                  "spans":[  
+                     {  
+                        "start":1,
+                        "end":62,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Nobody was talking about \"viewers\" or whether they'll have the opportunity. ",
+                  "spans":[  
+                     {  
+                        "start":63,
+                        "end":74,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"The whole thing felt weird.",
+                  "spans":[  
+                     {  
+                        "start":21,
+                        "end":27,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Also within the groundswell of support for Obonjo, was Live At The Apollo and Sunny D star, Dane Baptiste.",
+                  "spans":[  
+                     {  
+                        "start":55,
+                        "end":74,
+                        "type":"em"
+                     },
+                     {  
+                        "start":78,
+                        "end":85,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/84e995dab688b2c89cb6bd3b9abd464369dcf0fc_screenshot-from-2019-07-27-08-15-19.png",
+                  "alt":null,
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":596,
+                     "height":561
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"And there turned out to be a perculiar link.  Because we knew BBC Studios had produced Banjoko. And they'd also produced Dane's show, Sunny D. ",
+                  "spans":[  
+                     {  
+                        "start":134,
+                        "end":143,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"As a comic, I wanted to know who was *potentially* going round nicking comedians' acts. As the son of a journalist however, I kind of wanted to follow my hunch. So the first thing on my mind was this:",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Who specifically was laying claim to this exciting new character? Who was saying \"I thought of this and here's where my inspiration came from\".",
+                  "spans":[  
+                     {  
+                        "start":42,
+                        "end":50,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I started digging.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It seemed Samson Kayo who would be playing the BBC's Colonel also appeared in another BBC3 show, Famalam. So a familiar face for BBC3. It wasn't certain that the two shows would have anything else in common, but it didn't seem outrageous to think they might? Same star, same channel, same production house. Then i started digging to see if I could find an actual producer of Banjoko. Famalam seemed a good place to start. ",
+                  "spans":[  
+                     {  
+                        "start":61,
+                        "end":65,
+                        "type":"em"
+                     },
+                     {  
+                        "start":97,
+                        "end":104,
+                        "type":"em"
+                     },
+                     {  
+                        "start":252,
+                        "end":257,
+                        "type":"em"
+                     },
+                     {  
+                        "start":384,
+                        "end":391,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"That show was produced by Ak Ndifornyen who was by coincidence a co-star on Dane's show Sunny D. The three shows seemed linked if only in a superficial \"Well, yeah, it's a fucking BBC production mate, so they may well have shared some talent here and there, who gives a shit?\" way. ",
+                  "spans":[  
+                     {  
+                        "start":153,
+                        "end":274,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"But then I started googling a number of variations of \"Banjoko Samson Kayo producer\" and \"producer London bbc3 comedy kayo\" and finally I pot-luck googled and boom. There it was. Ndifornyen's CV. Sunny D. Famalam. Colonel Banjoko. There was no suggestion *he* had thought up or copied the Banjoko character, or even that he's involved in any creative process whatsoever. But if he was the producer, the organiser/coordinator of this new show, he'd probably know the creative process behind it.",
+                  "spans":[  
+                     {  
+                        "start":196,
+                        "end":229,
+                        "type":"em"
+                     },
+                     {  
+                        "start":389,
+                        "end":399,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"So back to Dane's tweet. ",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"The guy that Dane had acted with was the producer (or one of the producers) of the show he was now railing against for stealing Obonjo's character.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I tweeted him to see if he could get Ndifornyen to comment. ",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"The guy that played your cousin in Sunny D is...  ...producer of Colonel Banjoko,\" i said. \"Just interested to see if we can shed light on where they got the inspiration from? Given so many similarities with @realObonjo's act?\"",
+                  "spans":[  
+                     {  
+                        "start":1,
+                        "end":81,
+                        "type":"em"
+                     },
+                     {  
+                        "start":93,
+                        "end":227,
+                        "type":"em"
+                     },
+                     {  
+                        "start":209,
+                        "end":220,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://twitter.com/realObonjo"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"\"I vouch for Aks and Samson, I think the suits are at the bottom of this.\" Dane replied.",
+                  "spans":[  
+                     {  
+                        "start":1,
+                        "end":73,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Before we go all-in on the suits / 'The BBC Studios Comedy Team', let's take a minute to stand back and try to look at this objectively.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Could it be an honest case of \"parallel thinking\", where two minds come up with the same concept and riff on it in a similar way? Absolutely.",
+                  "spans":[  
+                     {  
+                        "start":130,
+                        "end":140,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"A lot of comics scoff at the idea of parallel thinking. But it is real. People act as though it's comedians giving themselves a Get Out Of Jail Free Card when they get busted stealing someone else's act. Louis CK and Dane Cook. Saturday Night Live and Jim Norton. Amy Schuemer and <fill-in-the-blanks />. Besides, you could make a case that Dictators aren't a new thing. Bello didn't invent them. Sacha Baron-Cohen made a movie about a Middle Eastern one. Charlie Chaplin also had a bash you might have heard of. ",
+                  "spans":[  
+                     {  
+                        "start":128,
+                        "end":153,
+                        "type":"em"
+                     },
+                     {  
+                        "start":282,
+                        "end":303,
+                        "type":"em"
+                     },
+                     {  
+                        "start":384,
+                        "end":390,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"But the difference between parallel thinking and this, is two comedians working different rooms may independently come up with the same idea. They may later realise it was kind of an obvious concept. Or at least not a totally abstract one immune from anyone else thinking of it. Example: Act 1 might look at Boris Johnson's lovechild and try to think of something that Jeremy Corbyn won't publicly admit to, say Anti-Semitism. Meanwhile Act 2 watches the news and sees Johnson refusing to answer a question about his child and also makes a link to Corbyn not answering questions about his sensitive subject. The two both test out their jokes separately and then, six months later, one accuses the other of stealing a joke that - on balance - could absolutely have been written twice by two different people in total innocence.",
+                  "spans":[  
+                     {  
+                        "start":100,
+                        "end":113,
+                        "type":"em"
+                     },
+                     {  
+                        "start":172,
+                        "end":176,
+                        "type":"em"
+                     },
+                     {  
+                        "start":527,
+                        "end":531,
+                        "type":"em"
+                     },
+                     {  
+                        "start":706,
+                        "end":714,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"I am positive that has happened a thousand times. Comics that should've been friends and collaborators owing to their shared sense of humour turn to bitter, sworn enemies.",
+                  "spans":[  
+                     {  
+                        "start":34,
+                        "end":42,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"BBC Studios can't claim the same independent thought, though. They aren't some staffless, broke, one-man operation. When one guy thinks up a concept and airs it in a room with a whiteboard and 5 other latte drinking media grads, isn't it fair to assume one of them will say \"I've heard that before\" or \"I'll get a researcher to check that\". ",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"They have those resources. I mean, this time last year they were issuing Press Releases singing of their first year sales of £400m. Glassdoor has a BBC Studios researcher salary pegged at fifty grand. I think it's fair to assume there are interns, Junior Producers, consultants; all of whom have a responsibility to create a TV show that is fun, entertaining and sticks to the rules.",
+                  "spans":[  
+                     {  
+                        "start":73,
+                        "end":87,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.bbc.co.uk/mediacentre/bbcstudios/2018/annual-review-2017-18"
+                        }
+                     },
+                     {  
+                        "start":160,
+                        "end":177,
+                        "type":"hyperlink",
+                        "data":{  
+                           "link_type":"Web",
+                           "url":"https://www.glassdoor.co.uk/Salary/BBC-Studios-Researcher-Salaries-E27186_D_KO12,22.htm"
+                        }
+                     }
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/ac9cdc8053d4d9e3620efc1f7ba7de9cd88ca6d4_bbc.jpg",
+                  "alt":null,
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":940,
+                     "height":470
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"It seems frankly bizarre that a company (and it is a commercial company) with those resources wouldn't have checked, as a first port of call, whether someone else was developing something so similar in British comedy, at the same time. Don't get me wrong. The inner machinations of a BBC Comedy production are not a puzzle I'm likely to have to solve, personally, anytime soon. But I'd never have thought that they would fail so spectacularly to check if what they were doing was already done - ironically, if only to *save* themselves from accusations of plagiarism. It also seems odd that the source of the inspiration was left so vague, in light of the speculations of joke theft. And while the BBC should be commended for their obvious commitment to diverse programming, you have to wonder what wrong they're righting by causing such distress to a BAME performer in this way?",
+                  "spans":[  
+                     {  
+                        "start":48,
+                        "end":50,
+                        "type":"em"
+                     }
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Tweets were sent to BBC Studios every day this week to get comment on the name of the figure and country that inspired Colonel Banjoko. A message was also sent to Line Producer, Laura Shaw.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"Neither have returned comment. ",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"This article will be updated if / when they do.",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/90ba57c8eec88ceb0613bd9ee030e3c60c62ee34_screenshot-from-2019-07-27-07-46-59.png",
+                  "alt":"president obonjo tweet one",
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":588,
+                     "height":149
+                  }
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/4032f78c6a01118a3289ccb66841d3882d2f15b3_screenshot-from-2019-07-27-07-48-54.png",
+                  "alt":"president obonjo tweet two",
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":582,
+                     "height":222
+                  }
+               },
+               {  
+                  "type":"image",
+                  "url":"https://des-lynham.cdn.prismic.io/des-lynham/bd165369cf524c00d9861d2aac4caf4caf4bfa52_screenshot-from-2019-07-27-07-49-41.png",
+                  "alt":"president obonjo tweet three",
+                  "copyright":null,
+                  "dimensions":{  
+                     "width":601,
+                     "height":323
+                  }
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               },
+               {  
+                  "type":"paragraph",
+                  "text":"",
+                  "spans":[  
+
+                  ]
+               }
+            ],
+            "news-headline":[  
+
+            ]
+         }
+      }
+   ],
+   "version":"58698d4",
+   "license":"All Rights Reserved"
+}
