@@ -1,5 +1,4 @@
 import React from 'react';
-import { filters as staticFilters } from './filters';
 import { connect } from 'react-redux';
 import {
   fetchFilters,
@@ -21,7 +20,7 @@ class Filters extends React.Component {
     this.state = {
       results: []
     };
-  }
+  }  /* font-size: 12px; */
 
   componentDidMount = () => {
     this.props.loadInFiltersFromRedux();

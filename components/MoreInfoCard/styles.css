@@ -70,6 +70,10 @@
   color: white;
 }
 
+.moreinfo__each-row a {
+  color: grey;
+}
+
 .gigs__flex-row:nth-child(2) .moreinfo__each-row:nth-child(2) a h4 {
   /* border: 5px solid pink; */
   margin-left: 0;

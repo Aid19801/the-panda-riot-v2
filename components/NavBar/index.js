@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import NavigationAuth from './nav-auth';
 import NavigationNonAuth from './nav-non-auth';
 import './styles.css';
+import { withFirebase } from '../../HOCs';
 
 // if signed in, one nav bar, if NOT signed in, a different one...
 const Navigation = ({ isAdmin, isSignedIn, firebase }) => (
@@ -22,7 +23,7 @@ const mapStateToProps = state => ({
 });
 
 export default compose(
-  // withFirebase,
+  withFirebase,
   connect(
     mapStateToProps,
     null

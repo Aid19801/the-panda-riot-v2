@@ -46,7 +46,7 @@ const prismicApiReducer = (state = initialState, action) => {
 
 
     case actions.FETCH_TPR_SUCCESS:
-      console.log('reducer heard FETCH_TPR_SUCCESS', action);
+      console.log('reducer heard FETCH_TPR_SUCCESS');
       return {
         ...state,
         loading: false,

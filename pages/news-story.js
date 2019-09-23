@@ -2,18 +2,22 @@ import { Link } from '../routes';
 // import { Client, linkResolver } from '../components/prismic';
 import { RichText } from 'prismic-reactjs';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { NextSeo } from 'next-seo';
 import Prismic from 'prismic-javascript';
+
+import { NavBar, FunkyTitle } from '../components';
 
 import * as actions from '../redux/actions';
 
 import { prismicEndpoint } from '../lib/prismic';
+import withAuth from '../HOCs/with-auth';
 
 class NewsStoryPage extends React.Component {
   static async getInitialProps({ reduxStore, req, query }) {
-    console.log('getInitialProps fired!', query.id);
-    const receivedContent = await this.fetchContent(query.id);
-    console.log('receivedContent back: ', receivedContent);
+    // console.log('getInitialProps fired LOOKING FOR ID ========>>> ', query.uid);
+    const receivedContent = await this.fetchContent(query.uid);
+    console.log('receivedContent back');
     reduxStore.dispatch(actions.fetchTPRSuccess(receivedContent));
     return {
       content: receivedContent
@@ -21,13 +25,11 @@ class NewsStoryPage extends React.Component {
   }
 
   static async fetchContent(uid) {
-    console.log('======= fetching content for this: ', uid);
+    // console.log('======= fetching content for this: ', uid);
     const client = Prismic.client(prismicEndpoint);
     try {
-      const res = await client.query(
-        Prismic.Predicates.at('document.id', 'XTnT3BEAACMAxdMt')
-      );
-      console.log('Story Retrieved: ', res);
+      const res = await client.query(Prismic.Predicates.at('document.id', uid));
+      // console.log('Story Retrieved: ', res);
       return res;
     } catch (error) {
       console.log('try catch error getting solo article: ', error);
@@ -39,12 +41,12 @@ class NewsStoryPage extends React.Component {
   };
 
   render() {
-    console.log('TPR News Story Props: ', this.props.content);
+    // console.log('TPR News Story Props: ', this.props.content);
     const { content } = this.props;
     // const { results } = content;
 
     return (
-      <div id="page-container" className="container">
+      <div id="page-container">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -68,15 +70,25 @@ class NewsStoryPage extends React.Component {
             ]
           }}
         />
+        <NavBar firebase={this.props.firebase} />
 
-        <div className="row">
-          <div className="col-sm-12">
-            <RichText render={this.props.content.results[0].data['news-headline1']} />
-            <img
-              src={this.props.content.results[0].data['news-image'].url}
-              alt="news for open mic comedy"
+        <div className="container tpr__container">
+          <div className="row flex-center">
+            <FunkyTitle
+              text={
+                this.props.content.results[0].data['news-headline1'][0].text
+              }
             />
-            <RichText render={this.props.content.results[0].data['news-body']} />
+            <div className="col-sm-12">
+              <img
+                className="tpr__image"
+                src={this.props.content.results[0].data['news-image'].url}
+                alt="news for open mic comedy"
+              />
+              <RichText
+                render={this.props.content.results[0].data['news-body']}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -92,7 +104,10 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => ({
   content: state.prismic.content
 });
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default compose(
+  withAuth,
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(NewsStoryPage);

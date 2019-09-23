@@ -24,11 +24,7 @@
   height: 55px;
   background: orange;
   border-radius: 12px;
-  /* box-shadow: 7px 12px 17px white; */
-  /* border: 4px solid grey; */
   padding: 10px;
-  /* margin-left: 20px;
-  margin-right: 20px; */
   margin-bottom: 10px;
   display: flex;
   text-align: center;
@@ -36,7 +32,6 @@
   flex-direction: column;
   border: none;
   margin-right: 2px;
-  /* font-size: 12px; */
 }
 
 @media screen and (max-width: 576px) {

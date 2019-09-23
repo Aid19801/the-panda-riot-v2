@@ -10,7 +10,8 @@ import {
   userIsSignedIn
 } from '../redux/actions';
 
-const myProm = new Promise((resolve, reject) => {});
+// const myProm = new Promise((resolve, reject) => {});
+
 export default function withAuth(PlatformSpecificComponent) {
   class withAuthenticationClass extends React.Component {
     static async getInitialProps(ctx) {
@@ -19,7 +20,7 @@ export default function withAuth(PlatformSpecificComponent) {
         PlatformSpecificComponent.getInitialProps &&
         (await PlatformSpecificComponent.getInitialProps(ctx));
       // Return props.
-      return { ...pageProps };
+      return { ...pageProps, query: ctx.query };
     }
 
     constructor(props) {
@@ -34,18 +35,28 @@ export default function withAuth(PlatformSpecificComponent) {
       this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
         authUser
           ? this.checkAuthStatus(authUser)
-          : this.ifNotAuthRouteToSignIn();
+          : this.handleNotSignedIn();
       });
+      // TO-DO if page isnt news-story then...
       const checkCache = cache.getFromCache('uid');
+    }
 
-      if (!checkCache) {
-        this.ifNotAuthRouteToSignIn();
+    handleNotSignedIn = () => {
+      // check if it's a news article. If it is, fine, if not, boot back to sign in.
+      if (process.browser) {
+        let isNews = window.location.href.includes('/news/');
+        console.log('isNews: ', isNews);
+        if (isNews) {
+          return;
+        }
+        if (!isNews) {
+          return this.routeToSignIn();
+        }
       }
     }
 
-    ifNotAuthRouteToSignIn = () => {
+    routeToSignIn = () => {
       if (process.browser) {
-
         return Router.push('/signin');
       }
     };

@@ -61,7 +61,7 @@ class GigsPage extends Component {
         return textA < textB ? -1 : textA > textB ? 1 : 0;
       });
 
-      cache.saveToCache('gigs', sortedGigs);
+      // cache.saveToCache('gigs', sortedGigs);
       reduxStore.dispatch(gotGigsFromGist(sortedGigs));
     } catch (error) {
       console.log('getInitialProps err: ', error);
@@ -72,10 +72,32 @@ class GigsPage extends Component {
     };
   }
 
-  componentDidMount() {
-    const cachedGigs = cache.getFromCache('gigs');
-    if (!cachedGigs) {
-      return cache.saveToCache('gigs', this.props.gigs);
+  async componentDidMount() {
+
+    if (process.env.NODE_ENV !== 'production') {
+      return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
+    }
+
+    try {
+      const res = await fetch(
+        `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
+      );
+      const json = await res.json();
+      const rawUrl = json.files.gigs.raw_url;
+
+      const req = await fetch(rawUrl);
+      const reqJson = await req.json();
+
+      sortedGigs = reqJson.gigs.sort((a, b) => {
+        var textA = a.name;
+        var textB = b.name;
+        return textA < textB ? -1 : textA > textB ? 1 : 0;
+      });
+
+      cache.saveToCache('gigs', sortedGigs);
+      return this.props.updateStateLoadInNewGigs(sortedGigs);
+    } catch (error) {
+      console.log('getInitialProps err: ', error);
     }
   }
 

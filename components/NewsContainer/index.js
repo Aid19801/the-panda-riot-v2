@@ -33,7 +33,7 @@ class NewsContainer extends Component {
               img={each.data["news-image"].url}
               headline={each.data["news-headline1"][0].text}
               blurb={each.data["news-body"][0].text}
-              link={`https://www.thepandariot.com/news/${each.data.uid}`}
+              link={`https://www.thepandariot.com/news/${each.id}`}
               src="TPR"
             />
           )
