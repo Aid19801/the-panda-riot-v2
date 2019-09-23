@@ -24,7 +24,10 @@ class NewsContainer extends Component {
 
   render() {
     return (
-      <div className="row margin-top">
+
+      <div className="col-sm-12 flex-center">
+
+      <div className="news__news-container__container row margin-top">
 
         { this.props.tpr_stories && this.props.tpr_stories.map((each, i) => {
           return (
@@ -44,6 +47,7 @@ class NewsContainer extends Component {
         })}
           
           {/* {!this.props.stories && <Spinner />} */}
+      </div>
       </div>
     );
   }

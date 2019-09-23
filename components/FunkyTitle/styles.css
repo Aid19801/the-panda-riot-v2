@@ -1,9 +1,14 @@
 .title__container {
   padding: 20px;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .title__container h1 {
-  width: 100%;
+  width: 50%;
+  /* border: 1px solid purple; */
   background: black;
   color: orange;
   font-family: 'Raleway';

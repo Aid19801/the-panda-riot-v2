@@ -1,5 +1,13 @@
+.news__news-container__container {
+  /* border: 3px solid pink; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
 .news-box__container {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   /* width: 100%; */
   margin-bottom: 20px;
   padding: 20px;

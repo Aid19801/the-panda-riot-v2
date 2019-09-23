@@ -26,6 +26,7 @@ import mockGigs from '../lib/mock-gigs.json';
 import mockNews from '../lib/mock-news.json';
 import mockTpr_stories from '../lib/mock-tpr_stories.json';
 import {
+  Banner,
   NavBar,
   SignOutButton,
   NewsContainer,
@@ -110,7 +111,8 @@ class HomePage extends React.Component {
       retrievedPrismicStories = await this.fetchPrismic(); // get the stories
       reduxStore.dispatch(prismicNewsApiSuccess(retrievedPrismicStories)); // update state with them.
     } catch (error) {
-      console.log('PRISMIC getInitialProps err: ', error);
+      console.log('error | PRISMIC getInitialProps ==> ', error);
+      reduxStore.dispatch(prismicNewsApiFail(error));
     }
 
     return {
@@ -129,7 +131,9 @@ class HomePage extends React.Component {
       );
       let mostRecentFirst = res.results.reverse();
       return mostRecentFirst;
-    } catch (error) {}
+    } catch (error) {
+      this.props.updateStatePrismicFailed(error);
+    }
   }
 
   async componentDidMount() {
@@ -188,13 +192,13 @@ class HomePage extends React.Component {
       // console.log('homepage props ==> ', mockNews.articles);
     }
     return (
-      <div id="page-container" className="border-on">
+      <div id="page-container" className="border-on flex-center">
         <NextSeo
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',
             title: `${this.props.gigs[0].name}`,
-            description: 'Sign in to the panda riot open mic comedy webapp!',
+            description: 'News, gig-map and act profiles from London\'s electric open mic comedy scene.',
             images: [
               {
                 url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
@@ -213,9 +217,10 @@ class HomePage extends React.Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
+        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
 
         <div className="container">
-          <div className="row full-width flex-center margin-top">
+          <div className="row margin-top">
             <FunkyTitle text="Home" />
             <NewsContainer />
             <p>you can only see me if youre logged in</p>
@@ -243,6 +248,7 @@ const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(homePageLoading()),
   updateStatefetchNews: () => dispatch(getAllNews()),
   updateStateFetchPrismicStories: () => dispatch(prismicNewsApiReq()), // get prismic stories
+  updateStatePrismicFailed: (err) => dispatch(prismicNewsApiFail(err)),
   updateStatefetchGigs: () => dispatch(fetchGigsFromGist()),
   pageLoaded: () => dispatch(homePageLoaded()),
   pageFailed: () => dispatch(homePageFailed())

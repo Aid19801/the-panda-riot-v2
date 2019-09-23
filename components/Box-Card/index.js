@@ -7,7 +7,7 @@ import './styles.css';
 const BoxCard = ({ id, img, blurb, headline, link, src }) => {
   if (src !== 'TPR') {
     return (
-      <div className="col-sm-4 margin-top margin-bottom">
+      <div className="col-sm-4 margin-top">
         <div className="box-card hvr-float-shadow">
           <a href={link} target="_blank">
             <h4 className="card-h4">{trimStringSpecifically(headline, 45)}</h4>
@@ -24,7 +24,7 @@ const BoxCard = ({ id, img, blurb, headline, link, src }) => {
   }
   if (src === 'TPR') {
     return (
-      <div className="col-sm-4 margin-top margin-bottom">
+      <div className="col-sm-4 margin-top">
         <Link href={`/news/${id}`}>
           <a>
             <div className="box-card hvr-float-shadow">
