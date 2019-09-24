@@ -12,7 +12,7 @@ import {
   saveAuthenticatedUID,
   fetchGigsFromGist
 } from '../redux/actions';
-import { Button, Input } from '../components';
+import { Banner, Button, Input, NavBar } from '../components';
 import { withFirebase } from '../HOCs';
 import * as cache from '../lib/cache';
 
@@ -20,13 +20,14 @@ import '../lib/index.css';
 // import WithGigs from '../HOCs/with-gigs';
 
 class SignUpPage extends React.Component {
-
   static async getInitialProps({ req }) {
-    console.log('======== SignUpPage getInitialProps ========')
-    const res = await fetch(`https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`)
-    const json = await res.json()
+    console.log('======== SignUpPage getInitialProps ========');
+    const res = await fetch(
+      `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
+    );
+    const json = await res.json();
     console.log('json back: ', json);
-    return { poo: true }
+    return { poo: true };
   }
 
   constructor() {
@@ -157,6 +158,8 @@ class SignUpPage extends React.Component {
             ]
           }}
         />
+        <NavBar />
+        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
         <h1 className="funky-title">Sign Up: </h1>
 
         {this.state.stage === 0 && (

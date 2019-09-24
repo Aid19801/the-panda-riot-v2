@@ -12,7 +12,7 @@ import {
   saveAuthUser,
   saveAuthenticatedUID
 } from '../redux/actions';
-import { Button, Input, NavBar } from '../components';
+import { Banner, Button, Input, NavBar } from '../components';
 import { withFirebase } from '../HOCs';
 import * as cache from '../lib/cache';
 
@@ -101,6 +101,7 @@ class SignInPage extends React.Component {
           }}
         />
         <NavBar />
+        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
         <h1 className="funky-title">Sign In: </h1>
         <Input
           name="email"

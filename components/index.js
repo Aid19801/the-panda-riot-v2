@@ -1,5 +1,8 @@
 import Button from './Button';
 import Banner from './Banner';
+import BoxCard from './Box-Card';
+import CircleImage from './CircleImage';
+
 import FunkyTitle from './FunkyTitle';
 import Input from './Input';
 import BlogPage from './BlogPage';
@@ -16,7 +19,9 @@ const PrismicTypes = {
 
 export {
   Banner,
+  BoxCard,
   Button,
+  CircleImage,
   FunkyTitle,
   Input,
   PrismicTypes,

@@ -13,6 +13,38 @@ html {
   padding-bottom: 40px;
 }
 
+.landing__page {
+  height: 100vh !important;
+}
+.landing__page .box-card {
+  /* border: 1px solid red; */
+  min-height: 310px;
+}
+
+.landing__page .col-sm-4:nth-child(1) {
+  transform: skewY(3deg)
+}
+
+.landing__page .col-sm-4:nth-child(3) {
+  transform: skewY(-3deg)
+}
+
+
+.landing__page .box-card h1 {
+  background: grey;
+  transform: skewY(2deg);
+  width: 100%;
+  color: black !important;
+}
+
+.landing__page .box-card p {
+  font-family: raleway;
+}
+
+.height-auto {
+  height: auto !important;
+}
+
 #page-container {
   height: 100%;
   display: flex;
