@@ -192,7 +192,7 @@ class HomePage extends React.Component {
       // console.log('homepage props ==> ', mockNews.articles);
     }
     return (
-      <div id="page-container" className="border-on flex-center">
+      <div id="page-container" className="page__homepage border-on flex-center">
         <NextSeo
           openGraph={{
             type: 'website',

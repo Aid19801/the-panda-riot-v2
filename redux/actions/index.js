@@ -4,6 +4,14 @@ export const startApp = () => {
   return { type: actionTypes.APP_LOADING };
 };
 
+export const getDevice = () => {
+  return { type: actionTypes.GET_DEVICE };
+}
+
+export const gotDevice = (res) => {
+  return { type: actionTypes.GOT_DEVICE, isMobile: res };
+}
+
 // PAGE | Auth / Sign In
 export const signInPageLoading = () => {
   return { type: actionTypes.SIGNIN_PAGE_LOADING };

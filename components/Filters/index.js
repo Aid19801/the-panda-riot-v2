@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import {
   fetchFilters,
   filtersChanged,
   filtersLoaded
 } from '../../redux/actions';
 import './styles.css';
+import WithResponsivityHOC from '../../HOCs/with-responsivity';
 
 // 1. Filters takes in an array of gigs via props.
 // 2. Locks them and filters in state.
@@ -18,9 +20,10 @@ class Filters extends React.Component {
   constructor() {
     super();
     this.state = {
-      results: []
+      results: [],
+      nukeInactiveFilters: false
     };
-  }  /* font-size: 12px; */
+  } /* font-size: 12px; */
 
   componentDidMount = () => {
     this.props.loadInFiltersFromRedux();
@@ -50,11 +53,26 @@ class Filters extends React.Component {
     this.props.updateStateFiltersChanged(sortedFilters);
   };
 
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.filters !== this.props.filters) {
+      const activeFilters = nextProps.filters.filter(
+        each => each.active !== false
+      );
+      if (activeFilters.length > 1) {
+        console.log('boooo active filters are ', activeFilters);
+        this.setState({
+          nukeInactiveFilters: true
+        });
+      }
+    }
+  };
+
   render() {
     const { filters } = this.props;
     return (
       <div className="filters__container col-sm-12">
         {this.props.filters &&
+          !this.state.nukeInactiveFilters &&
           filters.map((each, i) => {
             return (
               <button
@@ -68,6 +86,24 @@ class Filters extends React.Component {
               </button>
             );
           })}
+
+        {this.props.filters &&
+          this.state.nukeInactiveFilters &&
+          filters
+            .filter(each => each.active !== false)
+            .map((each, i) => {
+              return (
+                <button
+                  className="col-sm-3"
+                  disabled={each.active}
+                  onClick={() => null}
+                  key={i}
+                  style={{ opacity: '0.5', color: 'white' }}
+                >
+                  {each.name}
+                </button>
+              );
+            })}
       </div>
     );
   }
@@ -84,7 +120,10 @@ const mapDispatchToProps = dispatch => ({
   updateStateFiltersChanged: arr => dispatch(filtersChanged(arr))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default compose(
+  WithResponsivityHOC,
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(Filters);

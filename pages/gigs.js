@@ -6,7 +6,8 @@ import {
   gigsPageLoading,
   gigsPageLoaded,
   fetchGigsFromGist,
-  gotGigsFromGist
+  gotGigsFromGist,
+  // getDevice
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
 import mockGigs from '../lib/mock-gigs.json';
@@ -17,7 +18,8 @@ import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
-import { NavBar, FunkyTitle } from '../components';
+import { NavBar, FunkyTitle, Banner } from '../components';
+import WithResponsivityHOC from '../HOCs/with-responsivity';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
@@ -31,7 +33,6 @@ class GigsPage extends Component {
       filteredGigs: [],
       finalGigs: [],
       toggleMarker: false,
-      filters: [],
       loading: false
     };
   }
@@ -109,7 +110,7 @@ class GigsPage extends Component {
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',
-            title: `${this.props.gigs[0].name}`,
+            title: `The Panda Riot Gigs Map`,
             description: 'Sign in to the panda riot open mic comedy webapp!',
             images: [
               {
@@ -129,7 +130,7 @@ class GigsPage extends Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-
+        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
         <div className="container">
           <div className="row full-width flex-center margin-top">
             <FunkyTitle text="Gigs" />
@@ -173,17 +174,20 @@ class GigsPage extends Component {
 const mapStateToProps = state => ({
   gigs: state.gigs.data,
   filters: state.filters.filters,
-  selectedGig: state.gigs.selectedGig
+  selectedGig: state.gigs.selectedGig,
+  isMobile: state.responsive.isMobile,
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(gigsPageLoading()),
   pageLoaded: () => dispatch(gigsPageLoaded()),
   fetchGigs: () => dispatch(fetchGigsFromGist()),
-  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr))
+  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr)),
+  // updateStateGettingDevice: () => dispatch(getDevice()),
 });
 
 export default compose(
+  WithResponsivityHOC,
   withAuth,
   connect(
     mapStateToProps,

@@ -3,6 +3,10 @@ export const APP_LOADING = 'APP_LOADING';
 export const APP_LOADED = 'APP_LOADED';
 export const APP_FAILED = 'APP_FAILED';
 
+// responsive
+export const GET_DEVICE = 'GET_DEVICE';
+export const GOT_DEVICE = 'GOT_DEVICE';
+
 // sign in
 export const SIGNIN_PAGE_LOADING = 'SIGNIN_PAGE_LOADING';
 export const SIGNIN_PAGE_LOADED = 'SIGNIN_PAGE_LOADED';

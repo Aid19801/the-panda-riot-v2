@@ -8,6 +8,7 @@ import newsReducer from './news';
 import newsApiReducer from './news-api';
 import filtersReducer from './filters';
 import prismicApiReducer from './prismic-api';
+import responsiveReducer from './responsive';
 
 const reducers = combineReducers({
     appState: appStateReducer,
@@ -19,6 +20,7 @@ const reducers = combineReducers({
     news: newsReducer,
     newsApi: newsApiReducer,
     prismic: prismicApiReducer,
+    responsive: responsiveReducer,
 })
 
 export default reducers;
