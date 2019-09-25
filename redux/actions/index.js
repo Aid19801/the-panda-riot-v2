@@ -181,3 +181,19 @@ export const fetchNewsPageReq = () => {
 export const fetchNewsPageRes = content => {
   return { type: actionTypes.FETCH_NEWS_RES, content };
 };
+
+
+// PAGE | Acts
+
+export const actsPageLoading = () => {
+  return { type: actionTypes.ACTS_PAGE_LOADING }
+}
+
+export const actsPageLoaded = () => {
+  return { type: actionTypes.ACTS_PAGE_LOADED }
+}
+
+
+export const actsPageFailed = () => {
+  return { type: actionTypes.ACTS_PAGE_FAILED }
+}

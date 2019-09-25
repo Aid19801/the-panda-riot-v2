@@ -6,7 +6,7 @@ import mockGigs from '../../lib/mock-gigs.json';
 import { whatDayIsIt } from '../../lib/utils';
 
 export function* watcherGigsSaga() {
-  console.log('BOOM! saga fired!');
+  // console.log('BOOM! saga fired!');
   yield takeLatest(actionTypes.FILTERS_CHANGED, workerGigsSaga);
 }
 

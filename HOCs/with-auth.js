@@ -63,7 +63,7 @@ export default function withAuth(PlatformSpecificComponent) {
 
     // route based on whats in cache
     checkAuthStatus = async userObj => {
-      console.log('checking auth status for: ', userObj);
+      // console.log('checking auth status for: ', userObj);
       const cacheUID = await cache.getFromCache('uid');
       if (
         cacheUID &&
@@ -73,7 +73,7 @@ export default function withAuth(PlatformSpecificComponent) {
         cacheUID !== null &&
         cacheUID.length > 10
       ) {
-        console.log('cacheUID uid iexists, updating signed in ', cacheUID);
+        // console.log('cacheUID uid iexists, updating signed in ', cacheUID);
         this.props.updateStateUserSignedIn();
       }
       // if theres no uid in cache, save one.

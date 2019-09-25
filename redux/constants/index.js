@@ -41,6 +41,11 @@ export const NEWS_API_REQ = 'NEWS_API_REQ';
 export const NEWS_API_SUCCESS = 'NEWS_API_SUCCESS';
 export const NEWS_API_FAIL = 'NEWS_API_FAIL';
 
+// acts
+export const ACTS_PAGE_LOADING = 'ACTS_PAGE_LOADING';
+export const ACTS_PAGE_LOADED = 'ACTS_PAGE_LOADED';
+export const ACTS_PAGE_FAILED = 'ACTS_PAGE_FAILED';
+
 // gigs
 export const GIGS_PAGE_LOADING = 'GIGS_PAGE_LOADING';
 export const GIGS_PAGE_LOADED = 'GIGS_PAGE_LOADED';
