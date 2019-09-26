@@ -3,7 +3,7 @@ import * as actions from '../constants';
 const initialState = {
   loading: false,
   acts: [],
-  error: null,
+  error: null
 };
 
 /* eslint-disable */

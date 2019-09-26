@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { appStateReducer } from './app-state';
 import signinPageReducer from './sign-in';
 import actsPageReducer from './acts';
+import actPageReducer from './act';
 import signUpPageReducer from './sign-up';
 import homePageReducer from './home';
 import gigsReducer from './gigs';
@@ -14,6 +15,7 @@ import responsiveReducer from './responsive';
 const reducers = combineReducers({
     appState: appStateReducer,
     acts: actsPageReducer,
+    act: actPageReducer,
     signIn: signinPageReducer,
     signUp: signUpPageReducer,
     home: homePageReducer,

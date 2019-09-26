@@ -193,7 +193,28 @@ export const actsPageLoaded = () => {
   return { type: actionTypes.ACTS_PAGE_LOADED }
 }
 
-
 export const actsPageFailed = () => {
   return { type: actionTypes.ACTS_PAGE_FAILED }
+}
+
+// PAGE | Act
+
+export const actPageLoading = () => {
+  return { type: actionTypes.ACT_PAGE_LOADING }
+}
+
+export const actPageLoaded = (res) => {
+  return { type: actionTypes.ACT_PAGE_LOADED, userProfile: res }
+}
+
+export const actPageFailed = (error) => {
+  return { type: actionTypes.ACT_PAGE_FAILED, error }
+}
+
+export const fetchActProfile = (uid) => {
+  return { type: actionTypes.FETCH_ACT_PROFILE, uid }
+}
+
+export const gotActProfile = (actProfile) => {
+  return { type: actionTypes.GOT_ACT_PROFILE, actProfile }
 }

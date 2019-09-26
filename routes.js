@@ -21,5 +21,7 @@ module.exports = routes()
     .add('signup', '/signup')
     .add('news', '/news')
     .add('news-story', '/news/:uid')
+    .add('acts', '/acts')
+    .add('act', '/acts/:uid')
     .add('notfound', '/*')
 

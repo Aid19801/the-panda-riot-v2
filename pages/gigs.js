@@ -24,6 +24,7 @@ import WithResponsivityHOC from '../HOCs/with-responsivity';
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
 // 3.
+import '../lib/index.css';
 
 class GigsPage extends Component {
   constructor() {
