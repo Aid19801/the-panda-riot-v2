@@ -168,7 +168,7 @@ class ActsPage extends Component {
                         )}
                       </div>
 
-                      <Link href={`/user?id=${each.uid}`}>
+                      <Link href={`/acts/${each.uid}`}>
                         <a>
                           <img
                             className="each-act-img"

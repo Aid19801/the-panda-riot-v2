@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { useRouter } from 'next/router';
-import queryString from 'query-string';
+import { NextSeo } from 'next-seo';
 import withAuth from '../HOCs/with-auth';
-import { UserCard, UserInfoCard } from '../components';
+import {
+  UserCard,
+  UserInfoCard,
+  Banner,
+  NavBar,
+  FunkyTitle
+} from '../components';
 import '../lib/index.css';
 import {
   actPageLoading,
@@ -38,7 +43,8 @@ class UserProfilePage extends Component {
       twitter: '',
       facebook: '',
       youtubeChannelURL: '',
-      website: ''
+      website: '',
+      showSpinner: true
     };
   }
 
@@ -58,10 +64,7 @@ class UserProfilePage extends Component {
     // 6Rk5ZlGX04TTvQEGy0JuVdXwCgv2
 
     const location = window.location.href;
-    console.log('AT | location is: ', location);
     const uid = location.split('acts/')[1];
-    console.log('AT | uid ', uid);
-    // let uid = params.id;
     this.props.updateStateFetchActProfile(uid);
     this.props.firebase.user(uid).on('value', snapshot => {
       let faveGig = '';
@@ -108,12 +111,12 @@ class UserProfilePage extends Component {
         twitter,
         facebook,
         youtubeChannelURL,
-        website
+        website,
+        showSpinner: false
       });
 
       // TO-DO write a validator that always converts info into one, consistent
       // shaped object.
-      
     });
   };
 
@@ -127,7 +130,7 @@ class UserProfilePage extends Component {
 
   render() {
     console.log('this props ', this.props);
-    console.log('this state ', this.state);
+    // console.log('this state ', this.state);
 
     const {
       profilePicture,
@@ -140,13 +143,43 @@ class UserProfilePage extends Component {
       twitter,
       facebook,
       youtubeChannelURL,
-      website
+      website,
+      showSpinner
     } = this.state;
 
     return (
-      <>
+      <div id="page-container" className="page__homepage border-on flex-center">
+        <NextSeo
+          openGraph={{
+            type: 'website',
+            url: 'https://www.thePandaRiot.com',
+            title: `My Comedy Profile On ThePandaRiot.com`,
+            description:
+              "Find new acts, see their sets, explore the most exciting act profiles from London's electric open mic comedy scene.",
+            images: [
+              {
+                url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
+                width: 800,
+                height: 600,
+                alt: 'Og Image Alt'
+              },
+              {
+                url:
+                  'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',
+                width: 800,
+                height: 600,
+                alt: 'Og Image Alt 2'
+              }
+            ]
+          }}
+        />
+        <NavBar firebase={this.props.firebase} />
+        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
+
         <div className="container">
           <div className="row full-width margin-top">
+            {showSpinner && <h1>Loading...</h1>}
+            {!showSpinner && <FunkyTitle text={this.state.username} />}
             <div className="col-sm-6">
               <UserCard
                 profilePicture={profilePicture}
@@ -168,10 +201,11 @@ class UserProfilePage extends Component {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
+// TO-DO tidy up spinner ^^
 
 const mapStateToProps = state => ({
   actProfile: state.act.actProfile
