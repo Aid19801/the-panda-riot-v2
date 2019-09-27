@@ -23,7 +23,7 @@ import WithResponsivityHOC from '../HOCs/with-responsivity';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
-// 3.
+
 import '../lib/index.css';
 
 class GigsPage extends Component {
@@ -100,6 +100,33 @@ class GigsPage extends Component {
       return this.props.updateStateLoadInNewGigs(sortedGigs);
     } catch (error) {
       console.log('getInitialProps err: ', error);
+    }
+  }
+
+  componentWillReceiveProps = newProps => {
+    if (newProps.filters !== this.props.filters) {
+      this.scrollDownToMap();
+    }
+    if (newProps.selectedGig !== this.props.selectedGig) {
+      this.scrollDownToInfoPane();
+    }
+  }
+
+  scrollDownToMap = () => {
+    const { isMobile } = this.props;
+    if (isMobile && process.browser) {
+      const map = document.querySelector('.map__container');
+      return map.scrollIntoView(false);
+    }
+  }
+
+  scrollDownToInfoPane = () => {
+    const { isMobile } = this.props;
+    if (isMobile && process.browser) {
+      setTimeout(() => {
+        const el = document.querySelector('.gigs__more-info-container');
+        return el.scrollIntoView(false);
+      }, 500);
     }
   }
 
