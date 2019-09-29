@@ -33,5 +33,7 @@
     .div__title-and-value-container {
         flex-direction: column;
         justify-content: center;
+        width: 90%;
+        margin-bottom: 10px;
     }
 }

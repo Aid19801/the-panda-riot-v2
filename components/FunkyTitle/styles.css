@@ -14,3 +14,10 @@
   font-family: 'Raleway';
   transform: skewY(-4deg);
 }
+
+@media screen and (max-width: 991px) {
+
+  .act__name {
+    width: 90% !important;
+  }
+}

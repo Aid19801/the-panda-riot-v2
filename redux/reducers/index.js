@@ -3,6 +3,7 @@ import { appStateReducer } from './app-state';
 import signinPageReducer from './sign-in';
 import actsPageReducer from './acts';
 import actPageReducer from './act';
+import chatPageReducer from './chat';
 import signUpPageReducer from './sign-up';
 import homePageReducer from './home';
 import gigsReducer from './gigs';
@@ -16,6 +17,7 @@ const reducers = combineReducers({
     appState: appStateReducer,
     acts: actsPageReducer,
     act: actPageReducer,
+    chat: chatPageReducer,
     signIn: signinPageReducer,
     signUp: signUpPageReducer,
     home: homePageReducer,

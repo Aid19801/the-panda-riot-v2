@@ -41,6 +41,12 @@ export const NEWS_API_REQ = 'NEWS_API_REQ';
 export const NEWS_API_SUCCESS = 'NEWS_API_SUCCESS';
 export const NEWS_API_FAIL = 'NEWS_API_FAIL';
 
+// chat
+export const CHAT_PAGE_LOADING = 'CHAT_PAGE_LOADING';
+export const CHAT_PAGE_LOADED = 'CHAT_PAGE_LOADED';
+export const CHAT_PAGE_FAILED = 'CHAT_PAGE_FAILED';
+
+
 // acts
 export const ACTS_PAGE_LOADING = 'ACTS_PAGE_LOADING';
 export const ACTS_PAGE_LOADED = 'ACTS_PAGE_LOADED';

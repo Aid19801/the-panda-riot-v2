@@ -56,6 +56,11 @@ html {
   text-decoration: none;
   /* color: white !important; */
 }
+
+.page__actpage {
+  height: 150vh;
+  border: 1px solid red;
+}
 .orange {
   background: orange;
   color: white;

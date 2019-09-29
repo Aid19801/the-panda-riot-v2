@@ -76,6 +76,7 @@ class UserProfilePage extends Component {
       let website = '';
 
       const user = snapshot.val();
+      console.log('user is ', user);
       const {
         username,
         tagline,
@@ -148,7 +149,7 @@ class UserProfilePage extends Component {
     } = this.state;
 
     return (
-      <div id="page-container" className="page__homepage border-on flex-center">
+      <div id="page-container" className="page__actpage border-on flex-center">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -177,9 +178,9 @@ class UserProfilePage extends Component {
         <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
 
         <div className="container">
-          <div className="row full-width margin-top">
+          <div className="row margin-top">
             {showSpinner && <h1>Loading...</h1>}
-            {!showSpinner && <FunkyTitle text={this.state.username} />}
+            {!showSpinner && <FunkyTitle text={this.state.username} isActName />}
             <div className="col-sm-6">
               <UserCard
                 profilePicture={profilePicture}

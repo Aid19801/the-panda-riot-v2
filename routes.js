@@ -23,5 +23,6 @@ module.exports = routes()
     .add('news-story', '/news/:uid')
     .add('acts', '/acts')
     .add('act', '/acts/:uid')
+    .add('chat', '/chat')
     .add('notfound', '/*')
 

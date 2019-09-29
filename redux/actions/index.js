@@ -182,6 +182,26 @@ export const fetchNewsPageRes = content => {
   return { type: actionTypes.FETCH_NEWS_RES, content };
 };
 
+// PAGE | CHat
+
+export const chatPageLoading = () => {
+  return {
+    type: actionTypes.CHAT_PAGE_LOADING,
+  }
+}
+
+export const chatPageLoaded = () => {
+  return {
+    type: actionTypes.CHAT_PAGE_LOADED,
+  }
+}
+
+export const chatPageFailed = () => {
+  return {
+    type: actionTypes.CHAT_PAGE_FAILED,
+  }
+}
+
 
 // PAGE | Acts
 
