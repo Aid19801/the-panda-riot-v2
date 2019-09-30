@@ -24,5 +24,7 @@ module.exports = routes()
     .add('acts', '/acts')
     .add('act', '/acts/:uid')
     .add('chat', '/chat')
+    .add('Chat', '/messages')
+    .add('ChatMessage', '/message')
     .add('notfound', '/*')
 

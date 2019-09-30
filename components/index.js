@@ -2,6 +2,7 @@ import Button from './Button';
 import Banner from './Banner';
 import BoxCard from './Box-Card';
 import CircleImage from './CircleImage';
+import Chat from './Chat';
 import FunkyTitle from './FunkyTitle';
 import Input from './Input';
 import NavBar from './NavBar';
@@ -20,6 +21,7 @@ export {
   BoxCard,
   Button,
   CircleImage,
+  Chat,
   FunkyTitle,
   Input,
   // PrismicTypes,
