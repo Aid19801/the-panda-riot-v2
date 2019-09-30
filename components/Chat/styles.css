@@ -12,6 +12,7 @@
     background: linear-gradient(lightgrey, beige);
     margin-bottom: 17px;
     max-height: 500px !important;
+    min-height: 500px !important;
 }
 
 @keyframes slideIn {
