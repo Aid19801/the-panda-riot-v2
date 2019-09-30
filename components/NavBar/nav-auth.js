@@ -43,7 +43,7 @@ class NavigationAuth extends Component {
     return (
       <Navbar bg="dark" expand="lg">
         <Navbar.Brand>
-          <Link href="/">The Panda Riot</Link>
+          <Link href="/"><a>The Panda Riot</a></Link>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

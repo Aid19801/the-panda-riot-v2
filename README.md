@@ -52,3 +52,11 @@ NOTE: the MapBox instance takes a `center={` prop. That is assigned to local sta
 ## Home (news and gigs)
 
 nextJS `getInitialProps` SSR requests gigs
+
+## Chat
+
+SocketIO and GraphQL (Apollo / GraphCOOL) instances replaced with Pusher.
+
+This was in response to issues with websockets, apollo-ws versus Server Side Rendering. Could _not_ get it to ****ing work.
+
+Check it out here [https://codeburst.io/build-a-chat-app-with-sentiment-analysis-using-next-js-c43ebf3ea643]

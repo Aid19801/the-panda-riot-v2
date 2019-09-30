@@ -45,6 +45,11 @@ module.exports = withCSS({
     config.plugins.push(new webpack.DefinePlugin({
       'process.env.REACT_APP_PANDA_RIOT_ADMINI': JSON.stringify(process.env.REACT_APP_PANDA_RIOT_ADMINI),
       
+      'process.env.REACT_APP_PUSHER_APP_ID': JSON.stringify(process.env.REACT_APP_PUSHER_APP_ID),
+      'process.env.REACT_APP_PUSHER_APP_KEY': JSON.stringify(process.env.REACT_APP_PUSHER_APP_KEY),
+      'process.env.REACT_APP_PUSHER_APP_SECRET': JSON.stringify(process.env.REACT_APP_PUSHER_APP_SECRET),
+      'process.env.REACT_APP_PUSHER_APP_CLUSTER': JSON.stringify(process.env.REACT_APP_PUSHER_APP_CLUSTER),
+
       'process.env.REACT_APP_API_KEY': JSON.stringify(process.env.REACT_APP_API_KEY),
       'process.env.REACT_APP_AUTH_DOMAIN': JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
       'process.env.REACT_APP_DATABASE_URL': JSON.stringify(process.env.REACT_APP_DATABASE_URL),
