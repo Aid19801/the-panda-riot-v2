@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import Pusher from 'pusher-js';
 import ChatMessage from '../ChatMessage';
+import './styles.css';
 
 const SAD_EMOJI = [55357, 56864];
 const HAPPY_EMOJI = [55357, 56832];
@@ -45,6 +46,12 @@ class Chat extends Component {
 
       evt.target.value = '';
       axios.post('/message', chat);
+      if (process.browser) {
+        setTimeout(() => {
+          var element = document.querySelector('.chat__messages-container');
+          element.scrollTop = element.scrollHeight;
+        }, 300);
+      }
     }
   };
 
@@ -52,16 +59,11 @@ class Chat extends Component {
     return (
       this.props.activeUser && (
         <Fragment>
-          <div
-            className="border-bottom border-gray w-100 d-flex align-items-center bg-white"
-            style={{ height: 90 }}
-          >
-            <h2 className="text-dark mb-0 mx-4 px-2">
-              {this.props.activeUser}
-            </h2>
+          <div className="chat__name-container" style={{ height: 90 }}>
+            <h2>{this.props.activeUser}</h2>
           </div>
           <div
-            className="px-4 pb-4 w-100 d-flex flex-row flex-wrap align-items-start align-content-start position-relative"
+            className="chat__messages-container"
             style={{ height: 'calc(100% - 180px)', overflowY: 'scroll' }}
           >
             {this.state.chats.map((chat, index) => {
@@ -103,11 +105,11 @@ class Chat extends Component {
             })}
           </div>
           <div
-            className="border-top border-gray w-100 px-4 d-flex align-items-center bg-light"
+            className="border-top border-gray w-100 px-4 d-flex align-items-center orange rounded-corners"
             style={{ minHeight: 90 }}
           >
             <textarea
-              className="form-control px-3 py-2"
+              className="form-control px-3 py-2 rounded-corners"
               onKeyUp={this.handleKeyUp}
               placeholder="Enter a chat message"
               style={{ resize: 'none' }}

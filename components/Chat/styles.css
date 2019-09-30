@@ -1,0 +1,24 @@
+.chat__name-container {
+    border: 2px solid green;
+    display: none;
+}
+
+.chat__messages-container {
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    border: 2px solid white;
+    border-radius: 17px;
+    height: 70%;
+    background: linear-gradient(lightgrey, beige);
+    margin-bottom: 17px;
+    max-height: 500px !important;
+}
+
+@keyframes slideIn {
+    from {
+        margin-top: -67vh;
+    }
+    to {
+        margin-top: 0;
+    }
+}

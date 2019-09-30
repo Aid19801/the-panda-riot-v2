@@ -1,0 +1,10 @@
+.chat__input {
+    width: 100%;
+    max-width: 300px;
+    background: orange;
+    color: white;
+    font-family: 'Raleway', Arial, Monospace;
+    border-radius: 17px;
+    height: 48px;
+    border: 0px solid;
+}

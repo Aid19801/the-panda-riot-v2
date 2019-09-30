@@ -13,6 +13,11 @@ html {
   padding-bottom: 40px;
 }
 
+.page__chatpage {
+  height: 100vh !important;
+  border: 7px solid red !important;
+}
+
 .landing__page {
   height: 100vh !important;
 }
@@ -144,6 +149,11 @@ ul {
 
 .red {
   color: red;
+}
+
+.rounded-corners {
+  border-radius: 17px;
+  border: 0px solid;
 }
 
 .margin-on {
