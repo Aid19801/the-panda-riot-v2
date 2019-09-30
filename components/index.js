@@ -1,7 +1,6 @@
 import Button from './Button';
 import Banner from './Banner';
 import BoxCard from './Box-Card';
-import ChatBox from './ChatBox';
 import CircleImage from './CircleImage';
 import FunkyTitle from './FunkyTitle';
 import Input from './Input';
@@ -20,7 +19,6 @@ export {
   Banner,
   BoxCard,
   Button,
-  ChatBox,
   CircleImage,
   FunkyTitle,
   Input,
