@@ -20,39 +20,39 @@ import '../lib/index.css';
 // import WithGigs from '../HOCs/with-gigs';
 
 class SignUpPage extends React.Component {
-  static async getInitialProps({ req }) {
-    console.log('======== SignUpPage getInitialProps ========');
-    const res = await fetch(
-      `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
-    );
-    const json = await res.json();
-    console.log('json back: ', json);
-    return { poo: true };
-  }
+  // static async getInitialProps({ req }) {
+  //   console.log('======== SignUpPage getInitialProps ========');
+  //   const res = await fetch(
+  //     `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
+  //   );
+  //   const json = await res.json();
+  //   console.log('json back: ', json);
+  //   return { poo: true };
+  // }
 
   constructor() {
     super();
     this.state = {
-      stage: 1,
+      stage: 0,
       submitting: false,
       error: null,
 
       // user info
-      username: 'joe bloggs',
-      email: 'cultureSlutLondon@gmail.com',
-      password: 'London01',
+      username: '',
+      email: '',
+      password: '',
       profilePicture:
-        'https://www.logolynx.com/images/logolynx/23/23938578fb8d88c02bc59906d12230f3.png',
-      tagline: 'tagline here',
-      genre: 'genre here',
-      faveGig: 'Jester Jesters',
+        '',
+      tagline: '',
+      genre: '',
+      faveGig: '',
       includeInActRater: false,
-      youtube: 'https://www.youtube.com/watch?v=nwNGtb_0MEQ',
+      youtube: '',
       youtubeChannelURL:
-        'https://www.youtube.com/channel/UC2ccm1GajfSujz7T18d7cKA',
-      facebook: 'https://www.facebook.com/AidThompsin/',
-      twitter: 'https://twitter.com/aidThompsin',
-      website: 'www.stuffAndThings.net',
+        '',
+      facebook: '',
+      twitter: '',
+      website: '',
       rating: 0
     };
   }
@@ -159,7 +159,7 @@ class SignUpPage extends React.Component {
           }}
         />
         <NavBar />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
+        <Banner src="/static/banner-ldn.jpg" />
         <h1 className="funky-title">Sign Up: </h1>
 
         {this.state.stage === 0 && (

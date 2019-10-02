@@ -16,7 +16,7 @@ import {
   chatPageLoaded,
   chatPageFailed
 } from '../redux/actions';
-
+import { getFromCache } from '../lib/cache';
 import '../lib/index.css';
 
 class ChatPage extends Component {
@@ -27,12 +27,29 @@ class ChatPage extends Component {
     };
   }
 
+  componentDidMount() {
+    this.getUsersNameFromCache();
+  }
   handleKeyUp = evt => {
     if (evt.keyCode === 13) {
       const user = evt.target.value;
       this.setState({ user });
     }
   };
+
+  getUsersNameFromCache = async() => {
+    let userName = '';
+    try {
+      const json = await getFromCache('user-profile-object');
+      const userProfile = JSON.parse(json);
+      console.log('user profile is ', userProfile.username);
+      userName = userProfile.username;
+    } catch (error) {
+      console.log('getUsersNameFromCache | error: ', error);
+      this.setState({ user: 'unverified' })
+    }
+    this.setState({ user: userName });
+  }
 
   render() {
     const { user } = this.state;
@@ -64,13 +81,13 @@ class ChatPage extends Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
+        <Banner src="/static/banner-ldn.jpg" />
         <FunkyTitle text="chat" />
         <div className="container">
           <div className="row">
             <ChatContainer
               handleKeyUp={this.handleKeyUp}
-              user={this.state.user}
+              user={user}
             />
           </div>
         </div>

@@ -72,6 +72,10 @@ export const SELECTED_GIG = 'SELECTED_GIG';
 export const FETCH_GIGS_TONIGHT = 'FETCH_GIGS_TONIGHT';
 export const GIGS_TONIGHT_RESP = 'GIGS_TONIGHT_RESP';
 
+// me
+export const ME_PAGE_LOADING = 'ME_PAGE_LOADING';
+export const ME_PAGE_LOADED = 'ME_PAGE_LOADED';
+export const ME_PAGE_FAILED = 'ME_PAGE_FAILED';
 
 // filters
 export const LOAD_FILTERS = 'LOAD_FILTERS';

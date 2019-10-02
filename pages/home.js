@@ -218,7 +218,7 @@ class HomePage extends React.Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
+        <Banner src="/static/mic.jpg" />
 
         <div className="container">
           <div className="row margin-top">

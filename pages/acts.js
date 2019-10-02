@@ -131,7 +131,7 @@ class ActsPage extends Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
+        <Banner src="/static/mugshots.jpg" />
         <div className="container acts__container">
           <div className="row flex-center margin-top">
             <FunkyTitle text="Acts" />

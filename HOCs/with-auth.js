@@ -113,6 +113,7 @@ export default function withAuth(PlatformSpecificComponent) {
             // console.log('fave gig doesnt exist, userProfile cache should be false');
             cache.saveToCache('userProfile', 'false');
             return Router.push('/me');
+            // if user doesnt have faveGig / userProfile is false, bounce to me page
           }
           // if it exists and it's not empty, set cache to true (user has completed db profile)
           if (fbuserProfile && fbuserProfile.faveGig !== '') {

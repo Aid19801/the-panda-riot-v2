@@ -158,7 +158,7 @@ class GigsPage extends Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
+        <Banner src="/static/location.jpg" />
         <div className="container">
           <div className="row full-width flex-center margin-top">
             <FunkyTitle text="Gigs" />

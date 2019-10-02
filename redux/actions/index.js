@@ -57,6 +57,19 @@ export const signUpPageFailed = () => {
   return { type: actionTypes.SIGNUP_PAGE_FAILED };
 };
 
+// PAGE | Me / my account
+export const mePageLoading = () => {
+  return { type: actionTypes.ME_PAGE_LOADING };
+};
+
+export const mePageLoaded = () => {
+  return { type: actionTypes.ME_PAGE_LOADED };
+};
+
+export const mePageFailed = () => {
+  return { type: actionTypes.ME_PAGE_FAILED };
+};
+
 // GIGS, api and gigs map page
 export const gigsPageLoading = () => {
   return { type: actionTypes.GIGS_PAGE_LOADING };

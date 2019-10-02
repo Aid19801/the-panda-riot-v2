@@ -1,8 +1,14 @@
 .button__button-container {
     width: 200px;
+    height: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 12px;
     margin: 20px;
     z-index: 12;
+}
+
+.button__button-container h4 {
+    margin-bottom: 0;
 }

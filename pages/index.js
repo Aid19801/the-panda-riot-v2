@@ -49,13 +49,13 @@ class LandingPage extends React.Component {
         />
 
         <NavBar />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
+        <Banner src="/static/banner-ldn.jpg" />
 
         <div className="container">
           <div className="row margin-top">
             <FunkyTitle text="Open Mic Starts Here" />
           </div>
-          <div className="row">
+          <div className="row margin-top">
 
               <BoxCard
                 src="lp"

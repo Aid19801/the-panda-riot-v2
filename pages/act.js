@@ -8,7 +8,8 @@ import {
   UserInfoCard,
   Banner,
   NavBar,
-  FunkyTitle
+  FunkyTitle,
+  Spinner
 } from '../components';
 import '../lib/index.css';
 import {
@@ -175,31 +176,36 @@ class UserProfilePage extends Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
+        <Banner src="/static/audience.jpg" />
 
         <div className="container">
           <div className="row margin-top">
-            {showSpinner && <h1>Loading...</h1>}
-            {!showSpinner && <FunkyTitle text={this.state.username} isActName />}
-            <div className="col-sm-6">
-              <UserCard
-                profilePicture={profilePicture}
-                username={username}
-                tagline={tagline}
-              />
-            </div>
-            <div className="col-sm-6">
-              <UserInfoCard
-                faveGig={faveGig}
-                genre={genre}
-                rating={rating}
-                youtube={youtube}
-                twitter={twitter}
-                facebook={facebook}
-                youtubeChannelURL={youtubeChannelURL}
-                website={website}
-              />
-            </div>
+            {showSpinner && <Spinner />}
+            {!showSpinner && (
+              <>
+              <FunkyTitle text={this.state.username} isActName />
+                <div className="col-sm-6">
+                  <UserCard
+                    profilePicture={profilePicture}
+                    username={username}
+                    tagline={tagline}
+                  />
+                </div>
+                <div className="col-sm-6">
+                  <UserInfoCard
+                    faveGig={faveGig}
+                    genre={genre}
+                    rating={rating}
+                    youtube={youtube}
+                    twitter={twitter}
+                    facebook={facebook}
+                    youtubeChannelURL={youtubeChannelURL}
+                    website={website}
+                  />
+                </div>
+              </>
+            )
+            }
           </div>
         </div>
       </div>

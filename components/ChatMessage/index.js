@@ -26,7 +26,7 @@ class ChatMessage extends Component {
           style={messageBoxStyles}
         >
           <span
-            className={`d-block text-secondary ${align}`}
+            className={`d-block text-secondary ${align} each-chat-msg`}
             style={messageStyles}
           >
             {message}

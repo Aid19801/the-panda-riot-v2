@@ -15,6 +15,9 @@
     min-height: 500px !important;
 }
 
+.each-chat-msg {
+    font-size: 30px !important;
+}
 @keyframes slideIn {
     from {
         margin-top: -67vh;

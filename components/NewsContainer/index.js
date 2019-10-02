@@ -31,8 +31,10 @@ class NewsContainer extends Component {
 
         { this.props.tpr_stories && this.props.tpr_stories.map((each, i) => {
           return (
+
             <BoxCard
               id={each.id}
+              key={i}
               img={each.data["news-image"].url}
               headline={each.data["news-headline1"][0].text}
               blurb={each.data["news-body"][0].text}

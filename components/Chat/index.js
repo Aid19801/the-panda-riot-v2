@@ -105,7 +105,7 @@ class Chat extends Component {
             })}
           </div>
           <div
-            className="border-top border-gray w-100 px-4 d-flex align-items-center orange rounded-corners"
+            className="w-100 px-4 d-flex align-items-center orange rounded-corners"
             style={{ minHeight: 90 }}
           >
             <textarea

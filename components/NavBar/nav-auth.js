@@ -18,10 +18,12 @@ class NavigationAuth extends Component {
   }
 
   componentWillMount = async () => {
-    const jsonObj = await cache.getFromCache('user-profile-object');
-    const cachedPic = JSON.parse(jsonObj).profilePicture;
+    const stringJson = await cache.getFromCache('user-profile-object');
+    const obj = JSON.parse(stringJson);
+    console.log('FUCK ', obj);
+    const cachedPic = obj.profilePicture;
     
-    // const cacheUID = await cache.getFromCache('uid');
+    const cacheUID = await cache.getFromCache('uid');
     if (cachedPic) {
       this.setState({ profilePic: cachedPic });
     }
@@ -29,7 +31,7 @@ class NavigationAuth extends Component {
       // const newPic = this.fetchProfilePicFromFirebase();
       this.setState({ profilePic: 'https://png.pngtree.com/svg/20170602/user_circle_1048392.png' });
     }
-    // this.setState({ uid: cacheUID })
+    this.setState({ uid: cacheUID })
   };
 
   handleClick = () => {
@@ -81,7 +83,7 @@ class NavigationAuth extends Component {
               {popOut && (
                 <div className="nav__my-acc__popout" onClick={this.handleClick}>
                   <Link href="/me"><a>My Account</a></Link>
-                  <Link href={`/user?id=${uid}`}><a>My Profile</a></Link>
+                  <Link href={`/acts/${uid}`}><a>My Profile</a></Link>
                   {this.props.isAdmin && (
                     <div className="nav__admin-option">
                       <Link href="https://des-lynham.prismic.io/documents/working~l=en-gb/">
