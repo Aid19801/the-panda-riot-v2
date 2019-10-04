@@ -103,7 +103,7 @@ export default function withAuth(PlatformSpecificComponent) {
         this.props.firebase.user(userObj.uid).on('value', snapshot => {
           console.log('on value fired');
           let fbuserProfile = snapshot.val();
-          console.log('user has firestore profile: ', fbuserProfile);
+          console.log('user has firebase profile: ', fbuserProfile);
           // get FB profile, check if faveGig exists
           if (
             (fbuserProfile && fbuserProfile.faveGig === '') ||
@@ -116,7 +116,7 @@ export default function withAuth(PlatformSpecificComponent) {
             // if user doesnt have faveGig / userProfile is false, bounce to me page
           }
           // if it exists and it's not empty, set cache to true (user has completed db profile)
-          if (fbuserProfile && fbuserProfile.faveGig !== '') {
+          if (fbuserProfile && fbuserProfile.faveGig) {
             // console.log('fave gig DOES exist, userProfile cache should be true');
             cache.saveToCache('user-profile-object', JSON.stringify(fbuserProfile));
             return cache.saveToCache('userProfile', 'true');

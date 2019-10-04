@@ -45,24 +45,28 @@ const UserInfoCard = ({
       <TitleAndValue title="Style: " value={genre} />
       <TitleAndValue title="Current Rating: " value={rating} />
       <div className="div__youtube-container">
-
-        { youtube && (
+        {youtube && (
+          <>
             <ReactPlayer
-              url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+              url={`https://www.youtube.com/watch?v=${handleYouTubeLink(
+                youtube
+              )}`}
               playing
+              width={`100%`}
+              height={`100%`}
               youtubeConfig={{ playerVars: { showinfo: 1 } }}
             />
-
+          </>
         )}
 
-        { youtube === 'unknown' && (
+        {youtube === 'unknown' && (
           <img
             className="div__youtube no-youtube"
             src="https://www.internetvideoarchive.com/wp-content/uploads/2018/03/NOYT_380x190.png"
             alt="open mic comedian no youtube video"
           />
         )}
-        { !youtube && (
+        {!youtube && (
           <img
             className="div__youtube no-youtube"
             src="https://www.internetvideoarchive.com/wp-content/uploads/2018/03/NOYT_380x190.png"

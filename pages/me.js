@@ -10,7 +10,8 @@ import {
   NavBar,
   FunkyTitle,
   ProfilePic,
-  Button
+  Button,
+  Spinner
 } from '../components';
 
 import '../lib/index.css';
@@ -83,6 +84,7 @@ class MePage extends Component {
       let facebook = '';
       let youtubeChannelURL = '';
       let website = '';
+      let pp = '';
 
       const user = snapshot.val();
       console.log('user is ', user);
@@ -95,6 +97,9 @@ class MePage extends Component {
         includeInActRater
       } = user;
 
+      user && !user.profilePicture
+        ? (pp = '/static/no_prof_pic.png')
+        : (pp = user.profilePicture);
       user && !user.email ? (em = 'unknown@dunno.com') : (em = user.email);
       user && !user.faveGig ? (faveGig = 'n/a') : (faveGig = user.faveGig);
       user && !user.genre ? (genre = 'unknown') : (genre = user.genre);
@@ -115,7 +120,7 @@ class MePage extends Component {
         email: em,
         username,
         tagline,
-        profilePicture,
+        profilePicture: pp,
         includeInActRater: includeInActRaterStatus,
         rating: persistRatingFromDb,
         faveGig,
@@ -139,7 +144,7 @@ class MePage extends Component {
 
   onSubmit = event => {
     const {
-        uid,
+      uid,
       email,
       tagline,
       profilePicture,
@@ -174,30 +179,36 @@ class MePage extends Component {
     event.preventDefault();
 
     const objectForCache = {
-        username,
-        email,
-        tagline,
-        profilePicture,
-        faveGig,
-        genre,
-        youtube,
-        twitter,
-        facebook,
-        youtubeChannelURL,
-        website
-    }
+      username,
+      email,
+      tagline,
+      profilePicture,
+      faveGig,
+      genre,
+      youtube,
+      twitter,
+      facebook,
+      youtubeChannelURL,
+      website
+    };
 
     saveToCache('user-profile-object', objectForCache);
     saveToCache('userProfile', 'true');
     this.setState({ showSpinner: false });
-    Router.push(`/acts/${uid}`)
+    Router.push(`/acts/${uid}`);
   };
 
   handleChange = e => {
+    console.log('handleChange ', e.target);
     this.setState({
       [e.target.name]: e.target.value
     });
   };
+
+
+  handleEditProfilePicture = () => {
+    this.setState({ isEditingProfilePicture: !this.state.isEditingProfilePicture });
+  }
 
   render() {
     console.log('this props ', this.props);
@@ -216,9 +227,11 @@ class MePage extends Component {
       email,
       youtubeChannelURL,
       website,
-      showSpinner
+      showSpinner,
+      isEditingProfilePicture
     } = this.state;
 
+    console.log('this.state ', this.state.profilePicture);
     return (
       <div id="page-container" className="page__actpage border-on flex-center">
         <NavBar firebase={this.props.firebase} />
@@ -226,113 +239,142 @@ class MePage extends Component {
 
         <div className="container">
           <div className="row margin-top flex-center">
-            {showSpinner && <h1>Loading...</h1>}
-            {!showSpinner && <FunkyTitle text="My Profile" />}
+            {showSpinner && <Spinner />}
+            {!showSpinner && (
+              <>
+                <FunkyTitle text="My Profile" />
 
-            <div className="col-sm-10 flex-center">
-              <ProfilePic srcProp={profilePicture} />
-            </div>
+                <div className="col-sm-10 flex-center flex-col">
+                  <ProfilePic editable srcProp={profilePicture} handleEditProfilePicture={this.handleEditProfilePicture} />
+                  {!profilePicture ||
+                  profilePicture === '/static/no_prof_pic.png' ||
+                  profilePicture === '' ||
+                  profilePicture === 'n/a' ? (
+                    <p style={{ marginBottom: 0, color: 'red' }}>
+                      You need a profile picture!
+                    </p>
+                  ) : null}
+                </div>
 
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="email"
-                name="email"
-                placeholder={email}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="username"
-                name="username"
-                placeholder={username}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="tagline"
-                name="tagline"
-                placeholder={tagline}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="col-sm-10 flex-center">
-              <Input
-                type="select"
-                selectOptions={[
-                  genre,
-                  'Observational',
-                  'Pun Merchant',
-                  'One Liner',
-                  'Storytelling',
-                  'Musical Comedy',
-                  'MC',
-                  'Promoter',
-                  'Just a fan',
-                  'Adult',
-                  'Burlesque',
-                  'Abstract',
-                  'Political'
-                ]}
-                title="type of comedian"
-                name="genre"
-                onChange={this.handleChange}
-              />
-            </div>
+                {isEditingProfilePicture && (
+                  <div className="col-sm-10 flex-center">
+                    <Input
+                      title="Profile Picture"
+                      name="profilePicture"
+                      placeholder="https://www.some-photo.com/123.jpg"
+                      onChange={this.handleChange}
+                      darkorange
+                    />
+                  </div>
+                )}
 
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="favourite gig"
-                name="faveGig"
-                placeholder={faveGig}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="My YouTube Video URL"
-                name="youtube"
-                placeholder={youtube}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="My Twitter"
-                name="twitter"
-                placeholder={twitter}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="My Facebook Page"
-                name="facebook"
-                placeholder={facebook}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="My YouTube Channel"
-                name="youtubeChannelURL"
-                placeholder={youtubeChannelURL}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="col-sm-10 flex-center">
-              <Input
-                title="My Website"
-                name="website"
-                placeholder={website}
-                onChange={this.handleChange}
-              />
-            </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    title="email"
+                    name="email"
+                    placeholder={email}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    title="username"
+                    name="username"
+                    placeholder={username}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    title="tagline"
+                    name="tagline"
+                    placeholder={tagline}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    type="select"
+                    selectOptions={[
+                      genre,
+                      'Observational',
+                      'Pun Merchant',
+                      'One Liner',
+                      'Storytelling',
+                      'Musical Comedy',
+                      'MC',
+                      'Promoter',
+                      'Just a fan',
+                      'Adult',
+                      'Burlesque',
+                      'Abstract',
+                      'Political'
+                    ]}
+                    title="type of comedian"
+                    name="genre"
+                    onChange={this.handleChange}
+                  />
+                </div>
 
-            <div className="col-sm-12 flex-center margin-top">
-              <Button text="save" color="grey" onClick={this.onSubmit} />
-            </div>
+                <div className="col-sm-10 flex-center flex-col">
+                  <Input
+                    title="favourite gig"
+                    name="faveGig"
+                    placeholder={faveGig}
+                    onChange={this.handleChange}
+                  />
+                  {!faveGig || faveGig === '' || faveGig === 'n/a' ? (
+                    <p style={{ marginBottom: 0, color: 'red' }}>
+                      Please tell us your favourite gig!{' '}
+                    </p>
+                  ) : null}
+                </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    title="My YouTube Video URL"
+                    name="youtube"
+                    placeholder={youtube}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    title="My Twitter"
+                    name="twitter"
+                    placeholder={twitter}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    title="My Facebook Page"
+                    name="facebook"
+                    placeholder={facebook}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    title="My YouTube Channel"
+                    name="youtubeChannelURL"
+                    placeholder={youtubeChannelURL}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="col-sm-10 flex-center">
+                  <Input
+                    title="My Website"
+                    name="website"
+                    placeholder={website}
+                    onChange={this.handleChange}
+                  />
+                </div>
+
+                <div className="col-sm-12 flex-center margin-top">
+                  <Button text="save" color="grey" onClick={this.onSubmit} />
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

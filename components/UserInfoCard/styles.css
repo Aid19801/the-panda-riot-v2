@@ -29,10 +29,11 @@
 
 .div__youtube-container {
     display: flex;
+    height: 200px;
     justify-content: center;
     border: 2px solid grey;
     background: orange;
-    transform: skewX(4deg);
+    transform: skewX(2deg);
 }
 .div__youtube {
     width: 100%;

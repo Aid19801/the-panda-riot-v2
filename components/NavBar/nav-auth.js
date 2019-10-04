@@ -29,7 +29,7 @@ class NavigationAuth extends Component {
     }
     if (!cachedPic) {
       // const newPic = this.fetchProfilePicFromFirebase();
-      this.setState({ profilePic: 'https://png.pngtree.com/svg/20170602/user_circle_1048392.png' });
+      this.setState({ profilePic: '/static/no_prof_pic.png' });
     }
     this.setState({ uid: cacheUID })
   };
@@ -76,7 +76,7 @@ class NavigationAuth extends Component {
                   srcProp={
                     profilePic && profilePic !== ''
                       ? profilePic
-                      : 'https://png.pngtree.com/svg/20170602/user_circle_1048392.png'
+                      : ''
                   }
                 />
               </div>

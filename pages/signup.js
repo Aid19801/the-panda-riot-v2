@@ -41,15 +41,13 @@ class SignUpPage extends React.Component {
       username: '',
       email: '',
       password: '',
-      profilePicture:
-        '',
+      profilePicture: '',
       tagline: '',
       genre: '',
       faveGig: '',
-      includeInActRater: false,
+      includeInActRater: true,
       youtube: '',
-      youtubeChannelURL:
-        '',
+      youtubeChannelURL: '',
       facebook: '',
       twitter: '',
       website: '',
@@ -118,6 +116,7 @@ class SignUpPage extends React.Component {
   };
 
   onChange = event => {
+    console.log('onChange Fired : ', event.target);
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -181,8 +180,9 @@ class SignUpPage extends React.Component {
               title="password"
               onChange={this.onChange}
               placeholder="password here"
+              type="password"
             />
-            <Button text="Continue" onClick={this.moveForward} color="grey" />
+            <Button text="Next =>" onClick={this.moveForward} color="grey" />
           </>
         )}
 
@@ -207,6 +207,7 @@ class SignUpPage extends React.Component {
               placeholder="eg. Observational or Pun / One Liner"
               type="select"
               selectOptions={[
+                'N/A',
                 'Observational',
                 'Pun Merchant',
                 'One Liner',
@@ -221,7 +222,7 @@ class SignUpPage extends React.Component {
                 'Political'
               ]}
             />
-            <Button text="Continue" onClick={this.moveForward} color="grey" />
+            <Button text="Next =>" onClick={this.moveForward} color="grey" />
           </>
         )}
 
@@ -246,7 +247,7 @@ class SignUpPage extends React.Component {
               placeholder="eg. https://www.youtube.com/watch?v=5dsGWM5XGdg"
             />
 
-            <Button text="Continue" onClick={this.moveForward} color="grey" />
+            <Button text="Finish =>" onClick={this.moveForward} color="grey" />
           </>
         )}
 
@@ -274,14 +275,6 @@ class SignUpPage extends React.Component {
               onChange={this.onChange}
               placeholder="eg. www.ChucklyJoeSmith.com"
             />
-
-            <Button text="Continue" onClick={this.moveForward} color="grey" />
-          </>
-        )}
-
-        {this.state.stage === 4 && (
-          <>
-            <h1>Almost There...</h1>
 
             <Button text="Submit" onClick={this.onSubmit} color="grey" />
           </>

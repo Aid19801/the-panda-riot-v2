@@ -17,3 +17,13 @@
 .input__option {
     color: grey;
 }
+
+.input__dark-orange {
+    width: 400px;
+    height: 70px;
+    font-size: 30px;
+    border-radius: 12px;
+    background: rgb(104, 64, 15);
+    color: white;
+    border: 0px solid;
+}
