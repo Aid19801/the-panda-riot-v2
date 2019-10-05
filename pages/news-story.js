@@ -6,7 +6,7 @@ import { compose } from 'redux';
 import { NextSeo } from 'next-seo';
 import Prismic from 'prismic-javascript';
 
-import { NavBar, FunkyTitle } from '../components';
+import { NavBar, FunkyTitle, Banner } from '../components';
 
 import * as actions from '../redux/actions';
 
@@ -71,6 +71,7 @@ class NewsStoryPage extends React.Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
+        <Banner />
 
         <div className="container tpr__container">
           <div className="row flex-center">
