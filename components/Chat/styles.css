@@ -18,6 +18,19 @@
 .each-chat-msg {
     font-size: 30px !important;
 }
+
+.chat__entry {
+    border-radius: 19px;
+    height: 130px;
+    min-height: 130px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.chat__entry .form-control {
+    height: 90%;
+    font-size: 32px;
+}
 @keyframes slideIn {
     from {
         margin-top: -67vh;

@@ -105,11 +105,10 @@ class Chat extends Component {
             })}
           </div>
           <div
-            className="w-100 px-4 d-flex align-items-center orange rounded-corners"
-            style={{ minHeight: 90 }}
+            className="chat__entry w-100 d-flex align-items-center orange"
           >
             <textarea
-              className="form-control px-3 py-2 rounded-corners"
+              className="form-control rounded-corners"
               onKeyUp={this.handleKeyUp}
               placeholder="Enter a chat message"
               style={{ resize: 'none' }}

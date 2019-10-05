@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { actsPageLoading, actsPageLoaded } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
 import { tooSoon } from '../lib/utils';
-import { NavBar, FunkyTitle, Banner } from '../components';
+import { NavBar, FunkyTitle, Banner, ProfilePic } from '../components';
 import ClapIcon from '../components/Icons/clap-icon';
 import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
@@ -170,11 +170,9 @@ class ActsPage extends Component {
 
                       <Link href={`/acts/${each.uid}`}>
                         <a>
-                          <img
-                            className="each-act-img"
-                            alt="open mic comedy act profile"
-                            src={each.profilePicture}
-                          />
+                          
+                          <ProfilePic srcProp={each.profilePicture} />
+
                           <div className="each-act-name">
                             <h2>{each.username}</h2>
                             <p>{each.tagline}</p>

@@ -17,7 +17,6 @@ import { withFirebase } from '../HOCs';
 import * as cache from '../lib/cache';
 
 import '../lib/index.css';
-import withGigs from '../HOCs/with-gigs';
 
 class SignInPage extends React.Component {
   constructor() {
@@ -27,16 +26,6 @@ class SignInPage extends React.Component {
       password: 'London01',
       submitting: false,
       error: null
-    };
-  }
-  static async getInitialProps({ req }) {
-    console.log('getInitialProps fired');
-    // const isServer = !!req
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    const json = await res.json();
-    console.log('getInitialProps ', json);
-    return {
-      users: json
     };
   }
 
@@ -61,7 +50,38 @@ class SignInPage extends React.Component {
         updateStateAuthenticatedUID(res.user.uid);
         cache.saveToCache('uid', res.user.uid);
         this.setState({ email: '', password: '' });
-        Router.push('/home');
+
+        // console.log('user prof status is false =>' , userProfileStatus, typeof userProfileStatus)
+        this.props.firebase.user(res.user.uid).on('value', snapshot => {
+          
+          let fbuserProfile = snapshot.val();
+          console.log('SIGNIN | user has firebase profile: ', fbuserProfile);
+          // get FB profile, check if faveGig exists
+          if (
+            (fbuserProfile && fbuserProfile.faveGig === '') ||
+            (fbuserProfile && !fbuserProfile['faveGig'])
+          ) {
+            // if profile exists but faveGig empty, set cache to false (user hasnt completed db profile)
+            // console.log('fave gig doesnt exist, userProfile cache should be false');
+            cache.saveToCache('userProfile', 'false');
+            return Router.push('/me');
+            // if user doesnt have faveGig / userProfile is false, bounce to me page
+          }
+          // if it exists and it's not empty, set cache to true (user has completed db profile)
+          if (fbuserProfile && fbuserProfile.faveGig) {
+            // console.log('fave gig DOES exist, userProfile cache should be true');
+            cache.saveToCache(
+              'user-profile-object',
+              JSON.stringify(fbuserProfile)
+            );
+            return cache.saveToCache('userProfile', 'true');
+          }
+          console.log('SIGNIN | submitting this', fbuserProfile);
+        });
+        setTimeout(() => {
+          console.log('12947')
+        }, 3000);
+        return Router.push('/home');
       })
       .catch(error => {
         this.setState({ error });

@@ -50,13 +50,13 @@
 }
 
 #two {
-  background-color: green;
+  background-color: orange;
   transition: 0.4s;
   opacity: 0.5;
 }
 
 #three {
-  background-color: red;
+  background-color: black;
   transition: 0.4s;
   opacity: 0.5;
 }
@@ -67,7 +67,7 @@
   opacity: 0.5;
 }
 #five {
-  background-color: green;
+  background-color: grey;
   transition: 0.4s;
   opacity: 0.5;
 }
