@@ -18,39 +18,44 @@ class NavigationAuth extends Component {
   }
 
   componentDidMount = async () => {
+    // debugger;
     const stringJson = await cache.getFromCache('user-profile-object');
-    const obj = JSON.parse(stringJson);
-    console.log('object from cache ', obj);
 
-    // if theres a profile pic in cache, lock into cachedPic const
-    let cachedPic = '';
-
-
-    if (!obj) {
-      cachedPic = null;
-    }
-    
-    if (obj && obj.profilePicture && obj.profilePicture !== '') {
-      cachedPic = obj.profilePicture;
-    }
-    if (obj && !obj.profilePicture || obj.profilePicture === '') {
-      cachedPic = null;
-    }
-    
-    const cacheUID = await cache.getFromCache('uid');
-    
-    // if cachedPic exists, pop in state to render out in Navbar
-    if (cachedPic) {
-      this.setState({ profilePic: cachedPic });
-    }
-    
-    // if there's no pic in cached, set the state/nav to the placeholder image
-    if (!cachedPic) {
-      // const newPic = this.fetchProfilePicFromFirebase();
-      this.setState({ profilePic: '/static/no_prof_pic.png' });
-    }
-    // lock uid into local state too
-    this.setState({ uid: cacheUID })
+    setTimeout(async () => {
+      const obj = JSON.parse(stringJson);
+      console.log('object from cache ', obj);
+  
+      // if theres a profile pic in cache, lock into cachedPic const
+      let cachedPic = '';
+  
+  
+      if (!obj) {
+        return cachedPic = null;
+      }
+      
+      if (obj && obj !== null && obj.profilePicture && obj.profilePicture !== '') {
+        cachedPic = obj.profilePicture;
+      }
+      if (obj && obj !== null && !obj.profilePicture || obj.profilePicture === '') {
+        cachedPic = null;
+      }
+      
+      const cacheUID = await cache.getFromCache('uid');
+      
+      // if cachedPic exists, pop in state to render out in Navbar
+      if (cachedPic) {
+        this.setState({ profilePic: cachedPic });
+      }
+      
+      // if there's no pic in cached, set the state/nav to the placeholder image
+      if (!cachedPic) {
+        // const newPic = this.fetchProfilePicFromFirebase();
+        this.setState({ profilePic: '/static/no_prof_pic.png' });
+      }
+      // lock uid into local state too
+      this.setState({ uid: cacheUID })
+    }, 2000)
+   
   };
 
   handleClick = () => {

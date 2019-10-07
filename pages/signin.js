@@ -143,7 +143,7 @@ class SignInPage extends React.Component {
         </Link>
 
         {submitting && <p>Signing In..</p>}
-        {error && <p>{error.message}</p>}
+        {error && <p className="black white flex-center">{error.message}</p>}
       </div>
     );
   }

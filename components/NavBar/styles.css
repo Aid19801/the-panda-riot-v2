@@ -177,6 +177,7 @@ a.navbar-brand {
   .nav__my-acc__popout {
     width: 230px;
     margin-top: 60px;
+    bottom: 59px;
   }
   .nav__my-acc__popout a {
     font-size: 40px;

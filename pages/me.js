@@ -233,7 +233,7 @@ class MePage extends Component {
 
     console.log('this.state ', this.state.profilePicture);
     return (
-      <div id="page-container" className="page__actpage border-on flex-center">
+      <div id="page-container" className="page__actpage flex-center">
         <NavBar firebase={this.props.firebase} />
         <Banner src="/static/audience.jpg" />
 
@@ -371,7 +371,7 @@ class MePage extends Component {
                 </div>
 
                 <div className="col-sm-12 flex-center margin-top">
-                  <Button text="save" color="grey" onClick={this.onSubmit} />
+                  <Button text="save" color="black" onClick={this.onSubmit} />
                 </div>
               </>
             )}

@@ -14,30 +14,6 @@ const UserInfoCard = ({
   youtubeChannelURL,
   website
 }) => {
-  const opts = {
-    height: '100%',
-    width: 'auto',
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1
-    }
-  };
-
-  const _onReady = event => {
-    // access to player in all event handlers via event.target
-    // event.target.pauseVideo();
-  };
-
-  const handleYouTubeLink = link => {
-    let video_id = link.split('v=')[1];
-    // let ampersandPosition = video_id.indexOf('&');
-    // if (ampersandPosition && ampersandPosition !== -1) {
-    //   video_id = video_id.substring(0, ampersandPosition);
-    // }
-    console.log('link was ', link);
-    console.log('video_id was ', video_id);
-    return video_id;
-  };
 
   return (
     <div className="div__user-info-card-medium-container">
@@ -48,9 +24,7 @@ const UserInfoCard = ({
         {youtube && (
           <>
             <ReactPlayer
-              url={`https://www.youtube.com/watch?v=${handleYouTubeLink(
-                youtube
-              )}`}
+              url={youtube}
               playing
               width={`100%`}
               height={`100%`}

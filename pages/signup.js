@@ -10,7 +10,7 @@ import {
   signUpPageLoaded,
   signUpPageFailed,
   saveAuthenticatedUID,
-  fetchGigsFromGist
+  // fetchGigsFromGist
 } from '../redux/actions';
 import { Banner, Button, Input, NavBar } from '../components';
 import { withFirebase } from '../HOCs';
@@ -20,15 +20,6 @@ import '../lib/index.css';
 // import WithGigs from '../HOCs/with-gigs';
 
 class SignUpPage extends React.Component {
-  // static async getInitialProps({ req }) {
-  //   console.log('======== SignUpPage getInitialProps ========');
-  //   const res = await fetch(
-  //     `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
-  //   );
-  //   const json = await res.json();
-  //   console.log('json back: ', json);
-  //   return { poo: true };
-  // }
 
   constructor() {
     super();
@@ -131,7 +122,7 @@ class SignUpPage extends React.Component {
   render() {
     //     const { submitting, error } = this.state;
     // console.log('this state ', this.state);
-    console.log('this props ', this.props);
+    // console.log('this props ', this.props);
     return (
       <div id="page-container">
         <NextSeo
@@ -191,6 +182,7 @@ class SignUpPage extends React.Component {
             <Input
               name="profilePicture"
               title="Link to your profile picture"
+              helpTag="https://kb.benchmarkemail.com/what-is-an-image-url-and-how-do-i-find-the-image-url-for-an-image-i-want-to-use-in-benchmark-email/"
               onChange={this.onChange}
               placeholder="eg. https://some-picture.com/my-pic.jpg"
             />
@@ -230,7 +222,7 @@ class SignUpPage extends React.Component {
           <>
             <Input
               name="faveGig"
-              title="My Favourite Gig?"
+              title="My Favourite Gig? *"
               onChange={this.onChange}
             />
             <Input

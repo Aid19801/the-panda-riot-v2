@@ -36,6 +36,7 @@ import {
 } from '../components';
 
 import '../lib/index.css';
+import { Router } from 'next/router';
 
 class HomePage extends React.Component {
   constructor() {
@@ -191,6 +192,10 @@ class HomePage extends React.Component {
   componentDidUpdate = newProps => {
     console.log('nextProps: ', newProps.stories !== this.props.stories);
   };
+
+  handleClick = () => {
+    return Router.push('/gigs');
+  }
 
   render() {
     if (process.browser) {

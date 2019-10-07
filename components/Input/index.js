@@ -8,6 +8,7 @@ const Input = ({
   type,
   selectOptions,
   darkorange,
+  helpTag
 }) => {
   if (type && type === 'select') {
     return (
@@ -41,11 +42,23 @@ const Input = ({
     );
   }
 
-
   if (!type) {
     return (
       <div className="input__input-container margin-top white">
-        <h4>{title}</h4>
+        {helpTag && (
+          <div className="flex-row flex-center">
+            <h4>{title}</h4>
+            <p className="margin-off red margin-left" onClick={() => window.open(helpTag, '_newtab')}>
+              What's this?
+            </p>
+          </div>
+        )}
+
+        {!helpTag && (
+          <>
+            <h4>{title}</h4>
+          </>
+        )}
         <input
           name={name}
           className={darkorange ? 'input__dark-orange' : 'input__input'}

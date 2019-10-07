@@ -1,10 +1,11 @@
 import { trimStringSpecifically } from '../../lib/utils';
+import { Router, Link } from '../../routes';
 import './styles.css';
 
 const Bulletin = ({ stories }) => {
-  console.log('AT | stories are ', stories);
+  // console.log('AT | stories are ', stories);
   return (
-    <div className="bulletin__container">
+    <div className="bulletin__container" onClick={() => Router.pushRoute('/gigs')}>
       <p className="white">Happening Tonight: </p>
       <div className="bulletin__row">
         {stories.map((each, i) => {

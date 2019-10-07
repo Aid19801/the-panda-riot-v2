@@ -129,7 +129,7 @@ height: auto;
 
 .page__actpage {
   height: 150vh;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .orange {
   background: orange;
@@ -351,6 +351,11 @@ ul li a {
 .flex-col {
   display: flex;
   flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
 .news__content-container {
