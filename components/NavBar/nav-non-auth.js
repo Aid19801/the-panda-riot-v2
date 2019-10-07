@@ -13,7 +13,7 @@ class NavigationNonAuth extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <div className="nav-option-wrapper">
-              <Link href="/"><a>Landing Page</a></Link>
+              <Link href="/"><a>Promo Page</a></Link>
             </div>
             <div className="nav-option-wrapper">
               <Link href="/signin"><a>Sign In</a></Link>

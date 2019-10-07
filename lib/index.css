@@ -17,6 +17,14 @@ p {
   padding-bottom: 40px;
 }
 
+.orange-gradient {
+  background: linear-gradient(rgb(133, 89, 9), grey);
+}
+
+.black-gradient {
+  background: linear-gradient(black, grey);
+}
+
 .page__chatpage {
   height: 100vh !important;
   /* border: 7px solid red !important; */
@@ -28,6 +36,12 @@ p {
 
 .landing__page .box-card {
   min-height: 310px;
+  border: 3px solid black;
+}
+
+.landing__promo-box-icon {
+  width: 90%;
+height: auto;
 }
 
 .landing__page .col-sm-4:nth-child(1) {
@@ -56,6 +70,44 @@ p {
 
 .landing__page .circular-image:hover {
   opacity: 0.7;
+}
+
+
+.landing__jumbotron {
+  margin-top: 120px;
+}
+
+.landing__screens-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+
+.landing__screen-container img {
+  box-shadow: 9px 12px 17px 24px black;
+}
+
+@media screen and (max-width: 1200px) {
+  .landing__screens-container {
+    flex-direction: column;
+  }
+  .landing__screen-container:nth-child(1) {
+    contain: content;
+  }
+  .landing__screen-container:nth-child(2) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+
+@media screen and (max-width: 765px) {
+  
+  .landing__screen-container:nth-child(1) {
+    contain: content;
+  }
 }
 
 
@@ -221,7 +273,7 @@ ul li a {
 }
 
 .box-shadow {
-  box-shadow: 6px 82px 58px 50px black;
+  box-shadow: -38px 19px 96px 106px black;
 }
 
 .tpr__container h3,
