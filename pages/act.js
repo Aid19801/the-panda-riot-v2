@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { NextSeo } from 'next-seo';
+import withAnalytics from '../HOCs/with-ga';
 import withAuth from '../HOCs/with-auth';
 import {
   UserCard,
@@ -19,6 +20,7 @@ import {
   fetchActProfile,
   gotActProfile
 } from '../redux/actions';
+// import { analyticsPage } from '../lib/utils';
 
 class UserProfilePage extends Component {
   async getInitialProps(ctx) {
@@ -124,6 +126,7 @@ class UserProfilePage extends Component {
 
   componentDidMount() {
     this.props.pageLoaded();
+    // analyticsPage('v2-view-act-profile');
   }
 
   handleClick = () => {
@@ -227,6 +230,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withAnalytics,
   withAuth,
   connect(
     mapStateToProps,

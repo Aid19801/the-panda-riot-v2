@@ -17,8 +17,9 @@ import { withFirebase } from '../HOCs';
 import * as cache from '../lib/cache';
 
 import '../lib/index.css';
+// import { analyticsPage, analyticsEvent } from '../lib/utils';
 // import WithGigs from '../HOCs/with-gigs';
-
+import withAnalytics from '../HOCs/with-ga';
 class SignUpPage extends React.Component {
 
   constructor() {
@@ -50,6 +51,7 @@ class SignUpPage extends React.Component {
     const { pageLoading, pageLoaded } = this.props;
     pageLoading();
     pageLoaded();
+    // analyticsPage('v2-signup-page');
   }
 
   onSubmit = () => {
@@ -108,6 +110,7 @@ class SignUpPage extends React.Component {
 
   onChange = event => {
     console.log('onChange Fired : ', event.target);
+    // analyticsEvent(`v2-signup-${event.target.name}`);
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -289,6 +292,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withAnalytics,
   withFirebase,
   //   WithGigs,
   connect(

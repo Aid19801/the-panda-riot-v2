@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import { actsPageLoading, actsPageLoaded } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
+import withAnalytics from '../HOCs/with-ga';
 import { tooSoon } from '../lib/utils';
 import { NavBar, FunkyTitle, Banner, ProfilePic } from '../components';
 import ClapIcon from '../components/Icons/clap-icon';
@@ -94,6 +95,7 @@ class ActsPage extends Component {
 
   componentDidMount() {
     this.props.pageLoaded();
+    // analyticsPage('v2-view-all-acts')
   }
 
   bounceToActsProfile = uid => {};
@@ -201,6 +203,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withAnalytics,
   WithResponsivityHOC,
   withAuth,
   connect(

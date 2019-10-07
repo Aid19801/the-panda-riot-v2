@@ -15,6 +15,7 @@ import {
 } from '../redux/actions';
 
 import '../lib/index.css';
+// import { analyticsPage } from '../lib/utils';
 
 class NewsPage extends React.Component {
   static async getInitialProps({ reduxStore, req }) {
@@ -51,6 +52,7 @@ class NewsPage extends React.Component {
     const { pageLoading, pageLoaded } = this.props;
     pageLoading();
     pageLoaded();
+    // analyticsPage('v2-newspage')
   }
 
   handleClick = (id) => {

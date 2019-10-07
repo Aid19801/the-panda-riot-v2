@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { NextSeo } from 'next-seo';
 import withAuth from '../HOCs/with-auth';
+import withAnalytics from '../HOCs/with-ga';
 import {
   FunkyTitle,
   Input,
@@ -18,6 +19,7 @@ import {
 } from '../redux/actions';
 import { getFromCache } from '../lib/cache';
 import '../lib/index.css';
+// import { analyticsPage } from '../lib/utils';
 
 class ChatPage extends Component {
   constructor() {
@@ -29,6 +31,7 @@ class ChatPage extends Component {
 
   componentDidMount() {
     this.getUsersNameFromCache();
+    // analyticsPage('v2-chat-page');
   }
   handleKeyUp = evt => {
     if (evt.keyCode === 13) {
@@ -107,6 +110,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withAnalytics,
   withAuth,
   connect(
     mapStateToProps,

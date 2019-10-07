@@ -8,7 +8,10 @@ import {
   Banner,
   ProfilePic
 } from '../components';
+import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
+// import { analyticsPage } from '../lib/utils';
+import { compose } from 'redux';
 class LandingPage extends React.Component {
   constructor() {
     super();
@@ -21,6 +24,7 @@ class LandingPage extends React.Component {
     const { updateStateStartApp } = this.props;
     updateStateStartApp();
     this.handleGigsArray();
+    // analyticsPage('v2-landing-page');
   }
 
   handleGigsArray = () => {
@@ -193,7 +197,7 @@ const mapDispatchToProps = dispatch => ({
   updateStateStartApp: () => dispatch(startApp())
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
+export default compose(
+  withAnalytics,
+  connect(null, mapDispatchToProps)
 )(LandingPage);

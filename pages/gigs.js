@@ -10,6 +10,7 @@ import {
   // getDevice
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
+import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
 import * as cache from '../lib/cache';
 
@@ -25,6 +26,7 @@ import WithResponsivityHOC from '../HOCs/with-responsivity';
 // 2. gigs: render whatever is in local state out
 
 import '../lib/index.css';
+// import { analyticsPage } from '../lib/utils';
 
 class GigsPage extends Component {
   constructor() {
@@ -78,6 +80,7 @@ class GigsPage extends Component {
     if (!this.props.gigs) {
       this.fetchGigs();
     }
+    // analyticsPage('v2-gigs-page');
   }
 
   fetchGigs = async () => {
@@ -220,6 +223,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withAnalytics,
   WithResponsivityHOC,
   withAuth,
   connect(

@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 import Link from 'next/link';
-import { trimStringSpecifically, analyticsEvent } from '../../lib/utils';
+import { trimStringSpecifically } from '../../lib/utils';
 import './styles.css';
 
 const BoxCard = ({ id, img, blurb, headline, link, src }) => {

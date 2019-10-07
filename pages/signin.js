@@ -14,6 +14,7 @@ import {
 } from '../redux/actions';
 import { Banner, Button, Input, NavBar } from '../components';
 import { withFirebase } from '../HOCs';
+import withAnalytics from '../HOCs/with-ga';
 import * as cache from '../lib/cache';
 
 import '../lib/index.css';
@@ -33,6 +34,7 @@ class SignInPage extends React.Component {
     const { pageLoading, pageLoaded } = this.props;
     pageLoading();
     pageLoaded();
+    // analyticsPage('v2-signin-page');
   }
 
   onSubmit = () => {
@@ -89,6 +91,7 @@ class SignInPage extends React.Component {
   };
 
   onChange = event => {
+    // analyticsEvent(`v2-signin-${event.target.name}`);
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -162,7 +165,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
-  // withGigs,
+  withAnalytics,
   withFirebase,
   connect(
     mapStateToProps,

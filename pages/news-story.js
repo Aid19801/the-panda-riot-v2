@@ -12,12 +12,15 @@ import * as actions from '../redux/actions';
 
 import { prismicEndpoint } from '../lib/prismic';
 import withAuth from '../HOCs/with-auth';
+// import { analyticsPage } from '../lib/utils';
+import withAnalytics from '../HOCs/with-ga';
 
 class NewsStoryPage extends React.Component {
   static async getInitialProps({ reduxStore, req, query }) {
     // console.log('getInitialProps fired LOOKING FOR ID ========>>> ', query.uid);
     const receivedContent = await this.fetchContent(query.uid);
     console.log('receivedContent back');
+    // analyticsPage(`v2-tpr-news-story`);
     reduxStore.dispatch(actions.fetchTPRSuccess(receivedContent));
     return {
       content: receivedContent
@@ -38,6 +41,7 @@ class NewsStoryPage extends React.Component {
 
   componentDidMount = async () => {
     // TO-DO - put the client side fetching in here, if routing from home page.
+    // analyticsPage(`v2-tpr-news-story`);
   };
 
   render() {
@@ -106,6 +110,7 @@ const mapStateToProps = state => ({
   content: state.prismic.content
 });
 export default compose(
+  withAnalytics,
   withAuth,
   connect(
     mapStateToProps,

@@ -23,6 +23,7 @@ import Prismic from 'prismic-javascript'; // prismic yo
 // import { RichText } from 'prismic-reactjs';
 
 import withAuth from '../HOCs/with-auth';
+import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
 import mockNews from '../lib/mock-news.json';
 import mockTpr_stories from '../lib/mock-tpr_stories.json';
@@ -35,8 +36,9 @@ import {
   Bulletin
 } from '../components';
 
-import '../lib/index.css';
 import { Router } from 'next/router';
+import '../lib/index.css';
+// import { analyticsPage } from '../lib/utils';
 
 class HomePage extends React.Component {
   constructor() {
@@ -168,7 +170,6 @@ class HomePage extends React.Component {
     }
 
     pageLoaded();
-
     if (process.browser) {
       this.saveNewsAndGigsToCache();
     }
@@ -262,6 +263,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withAnalytics,
   withAuth,
   connect(
     mapStateToProps,

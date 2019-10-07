@@ -11,7 +11,9 @@ import '../lib/index.css';
 // mapbox
 // git gist
 
+
 class MyApp extends App {
+
   render() {
     const { Component, pageProps, reduxStore } = this.props;
     return (

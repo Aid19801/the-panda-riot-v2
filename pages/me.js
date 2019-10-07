@@ -3,6 +3,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import withAuth from '../HOCs/with-auth';
+import withAnalytics from '../HOCs/with-ga';
 import { getFromCache, saveToCache } from '../lib/cache';
 import {
   Input,
@@ -22,6 +23,7 @@ import {
   fetchActProfile,
   gotActProfile
 } from '../redux/actions';
+// import { analyticsEvent } from '../lib/utils';
 
 class MePage extends Component {
   //   async getInitialProps(ctx) {
@@ -87,7 +89,7 @@ class MePage extends Component {
       let pp = '';
 
       const user = snapshot.val();
-      console.log('user is ', user);
+      // console.log('user is ', user);
       const {
         email,
         username,
@@ -140,9 +142,11 @@ class MePage extends Component {
 
   componentDidMount() {
     this.props.pageLoaded();
+    // analyticsPage('v2-my-account');
   }
 
   onSubmit = event => {
+    // analyticsEvent('v2-me-onsubmit');
     const {
       uid,
       email,
@@ -199,7 +203,8 @@ class MePage extends Component {
   };
 
   handleChange = e => {
-    console.log('handleChange ', e.target);
+    // console.log('handleChange ', e.target);
+    // analyticsEvent(`v2-me-${e.target.name}`);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -211,7 +216,7 @@ class MePage extends Component {
   }
 
   render() {
-    console.log('this props ', this.props);
+    // console.log('this props ', this.props);
     // console.log('this state ', this.state);
 
     const {
@@ -220,7 +225,6 @@ class MePage extends Component {
       tagline,
       faveGig,
       genre,
-      rating,
       youtube,
       twitter,
       facebook,
@@ -231,7 +235,7 @@ class MePage extends Component {
       isEditingProfilePicture
     } = this.state;
 
-    console.log('this.state ', this.state.profilePicture);
+    // console.log('this.state ', this.state.profilePicture);
     return (
       <div id="page-container" className="page__actpage flex-center">
         <NavBar firebase={this.props.firebase} />
@@ -396,6 +400,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withAnalytics,
   withAuth,
   connect(
     mapStateToProps,
