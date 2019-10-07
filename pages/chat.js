@@ -55,7 +55,7 @@ class ChatPage extends Component {
     const { user } = this.state;
 
     return (
-      <div id="page-container" className="page__chatpage border-on flex-center">
+      <div id="page-container" className="page__chatpage flex-center">
         <NextSeo
           openGraph={{
             type: 'website',

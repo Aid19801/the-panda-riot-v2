@@ -8,6 +8,7 @@ import {
   homePageLoading,
   homePageLoaded,
   homePageFailed,
+  fetchGigsTonight,
   gotGigsFromGist,
   getAllNews,
   newsApiSuccess,
@@ -19,7 +20,7 @@ import * as cache from '../lib/cache';
 
 import { prismicEndpoint } from '../lib/prismic'; // prismic yo
 import Prismic from 'prismic-javascript'; // prismic yo
-import { RichText } from 'prismic-reactjs';
+// import { RichText } from 'prismic-reactjs';
 
 import withAuth from '../HOCs/with-auth';
 import mockGigs from '../lib/mock-gigs.json';
@@ -30,7 +31,8 @@ import {
   NavBar,
   SignOutButton,
   NewsContainer,
-  FunkyTitle
+  FunkyTitle,
+  Bulletin
 } from '../components';
 
 import '../lib/index.css';
@@ -76,6 +78,7 @@ class HomePage extends React.Component {
       });
 
       // cache.saveToCache('gigs', sortedGigs);
+      console.log('PROD GIGS ===> ', sortedGigs);
       reduxStore.dispatch(gotGigsFromGist(sortedGigs));
     } catch (error) {
       console.log('GIGS getInitialProps err: ', error);
@@ -142,19 +145,20 @@ class HomePage extends React.Component {
       pageLoading,
       updateStatefetchNews,
       pageLoaded,
-      gigs,
+      gigsTonight,
       stories,
       tpr_stories,
-      updateStateFetchPrismicStories
+      updateStateFetchPrismicStories,
+      updateStatefetchGigsTonight,
     } = this.props;
     pageLoading();
     if (!stories) {
       console.log('client / there are no stories so fetching them...');
       updateStatefetchNews();
     }
-    if (!gigs) {
+    if (!gigsTonight) {
       console.log('client / there are no gigs so fetching them...');
-      updateStatefetchGigs();
+      updateStatefetchGigsTonight();
     }
     if (!tpr_stories) {
       console.log('client / there are no prismic stories so fetching them...');
@@ -193,7 +197,7 @@ class HomePage extends React.Component {
       // console.log('homepage props ==> ', mockNews.articles);
     }
     return (
-      <div id="page-container" className="page__homepage border-on flex-center">
+      <div id="page-container" className="page__homepage flex-center">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -218,17 +222,14 @@ class HomePage extends React.Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
+        {this.props.gigsTonight && <Bulletin stories={this.props.gigsTonight} /> }
+        
         <Banner src="/static/mic.jpg" />
 
         <div className="container">
           <div className="row margin-top">
             <FunkyTitle text="Home" />
             <NewsContainer />
-            <p>you can only see me if youre logged in</p>
-            <p>gigs are back: {this.props.gigs && this.props.gigs.length}</p>
-            <p>
-              news is back: {this.props.stories && this.props.stories.length}
-            </p>
           </div>
         </div>
       </div>
@@ -240,7 +241,7 @@ const mapStateToProps = state => ({
   loading: state.signIn.loading,
   error: state.signIn.error,
   reduxUserAuth: state.signIn.userAuth,
-  gigs: state.gigs.data,
+  gigsTonight: state.gigs.gigsTonight,
   stories: state.newsApi.stories,
   tpr_stories: state.prismic.tpr_stories
 });
@@ -250,7 +251,7 @@ const mapDispatchToProps = dispatch => ({
   updateStatefetchNews: () => dispatch(getAllNews()),
   updateStateFetchPrismicStories: () => dispatch(prismicNewsApiReq()), // get prismic stories
   updateStatePrismicFailed: (err) => dispatch(prismicNewsApiFail(err)),
-  updateStatefetchGigs: () => dispatch(fetchGigsFromGist()),
+  updateStatefetchGigsTonight: () => dispatch(fetchGigsTonight()),
   pageLoaded: () => dispatch(homePageLoaded()),
   pageFailed: () => dispatch(homePageFailed())
 });

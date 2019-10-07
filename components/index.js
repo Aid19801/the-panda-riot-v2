@@ -1,4 +1,5 @@
 import Button from './Button';
+import Bulletin from './Bulletin';
 import Banner from './Banner';
 import BoxCard from './Box-Card';
 import ChatContainer from './ChatContainer';
@@ -19,6 +20,7 @@ import UserNameAndTagline from './UserNameAndTagline';
 
 export {
   Banner,
+  Bulletin,
   BoxCard,
   Button,
   ChatContainer,

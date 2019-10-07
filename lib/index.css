@@ -7,6 +7,10 @@ html {
   background-size: contain;
 }
 
+p {
+  margin: 0;
+}
+
 .app__page-wrapper {
   background: linear-gradient(45deg, black, grey);
   /* height: 150vh !important; */
@@ -15,7 +19,7 @@ html {
 
 .page__chatpage {
   height: 100vh !important;
-  border: 7px solid red !important;
+  /* border: 7px solid red !important; */
 }
 
 .landing__page {
@@ -51,7 +55,7 @@ html {
 }
 
 #page-container {
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   justify-content: start;
   align-items: center;
@@ -139,6 +143,11 @@ ul {
   /* border: 1px solid red; */
 }
 
+ul li a {
+  color: grey;
+  font-weight: 700;
+}
+
 .full-width {
   width: 100%;
 }
@@ -220,6 +229,7 @@ ul {
   text-align: center;
   width: 100%;
   /* margin-left: 20px; */
+  
 }
 
 .tpr__container ul {
@@ -241,6 +251,8 @@ ul {
   font-weight: 700;
   margin-bottom: 7px;
   max-width: 60%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .tpr__container p.block-img {
@@ -331,7 +343,7 @@ ul {
 .each-act-container {
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: orange;
+  background-color: rgba(0, 0, 0, 0.6);
   transform: skewY(-2deg);
   width: 100%;
 }
@@ -348,6 +360,9 @@ ul {
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-decoration: none;
+  text-align: start;
+  color: white;
 }
 
 .each-act-rating-container {
@@ -360,16 +375,14 @@ ul {
 }
 
 .each-act-rating {
-  color: white;
+  color: orange;
   width: 60px;
   text-align: center;
   text-shadow: 5px 5px 7px black;
 }
 
 .each-act-img {
-  width: 120px;
-  height: 100px;
-  border: 3px solid grey;
+  /* border: 2px solid grey; */
   box-shadow: 6px 6px 17px orange;
   border-radius: 50%;
   margin-bottom: 10px;
@@ -383,7 +396,7 @@ ul {
   padding: 5px;
 }
 .each-act-name h2 {
-  color: grey;
+  color: orange;
   margin-bottom: 0;
   text-align: start;
   font-weight: 300;
@@ -394,11 +407,14 @@ ul {
 }
 .each-act-name p {
   padding-bottom: 10px;
-  color: white;
-  width: 100%;
+  color: orange;
+  width: auto;
   font-size: 100%;
+  padding: 7px;
   margin-bottom: 0;
   text-align: start;
+  background: black;
+  transform: skewY(3deg);
 }
 
 @media screen and (min-width: 1000px) {

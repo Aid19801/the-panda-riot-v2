@@ -91,6 +91,14 @@ export const gotGigsFromGist = gigs => {
   return { type: actionTypes.FETCH_GIGS_RESP, data: gigs };
 };
 
+export const fetchGigsTonight = () => {
+  return { type: actionTypes.FETCH_GIGS_TONIGHT }
+}
+
+export const gotGigsTonight = (res) => {
+  return { type: actionTypes.GIGS_TONIGHT_RESP, gigsTonight: res }
+}
+
 export const fetchFilters = () => {
   return { type: actionTypes.LOAD_FILTERS };
 };

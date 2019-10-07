@@ -1,0 +1,31 @@
+.bulletin__container {
+    width: 100%;
+    contain: content;
+    background: black;
+    z-index: 11;
+    /* border: 1px solid red; */
+}
+
+.bulletin__row {
+    display: flex;
+    flex-direction: row;
+    max-height: 70px;
+    align-items: center;
+    animation: leftRight 18s infinite;
+    animation-timing-function: linear;
+}
+
+.bulletin__row h4 {
+    color: orange;
+    width: 330px;
+    min-width: 330px;
+}
+
+@keyframes leftRight {
+    from {
+        margin-left: 100vw;
+    }
+    to {
+        margin-left: -200vw;
+    }
+}

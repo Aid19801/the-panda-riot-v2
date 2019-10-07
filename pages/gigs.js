@@ -6,7 +6,7 @@ import {
   gigsPageLoading,
   gigsPageLoaded,
   fetchGigsFromGist,
-  gotGigsFromGist,
+  gotGigsFromGist
   // getDevice
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
@@ -75,33 +75,38 @@ class GigsPage extends Component {
   }
 
   async componentDidMount() {
-
-    if (process.env.NODE_ENV !== 'production') {
-      return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
-    }
-
-    try {
-      const res = await fetch(
-        `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
-      );
-      const json = await res.json();
-      const rawUrl = json.files.gigs.raw_url;
-
-      const req = await fetch(rawUrl);
-      const reqJson = await req.json();
-
-      sortedGigs = reqJson.gigs.sort((a, b) => {
-        var textA = a.name;
-        var textB = b.name;
-        return textA < textB ? -1 : textA > textB ? 1 : 0;
-      });
-
-      cache.saveToCache('gigs', sortedGigs);
-      return this.props.updateStateLoadInNewGigs(sortedGigs);
-    } catch (error) {
-      console.log('getInitialProps err: ', error);
+    if (!this.props.gigs) {
+      this.fetchGigs();
     }
   }
+
+  fetchGigs = async () => {
+    if (process.env.NODE_ENV !== 'production') {
+      return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
+    } else {
+      try {
+        const res = await fetch(
+          `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
+        );
+        const json = await res.json();
+        const rawUrl = json.files.gigs.raw_url;
+
+        const req = await fetch(rawUrl);
+        const reqJson = await req.json();
+
+        sortedGigs = reqJson.gigs.sort((a, b) => {
+          var textA = a.name;
+          var textB = b.name;
+          return textA < textB ? -1 : textA > textB ? 1 : 0;
+        });
+
+        cache.saveToCache('gigs', sortedGigs);
+        return this.props.updateStateLoadInNewGigs(sortedGigs);
+      } catch (error) {
+        console.log('getInitialProps err: ', error);
+      }
+    }
+  };
 
   componentWillReceiveProps = newProps => {
     if (newProps.filters !== this.props.filters) {
@@ -110,7 +115,7 @@ class GigsPage extends Component {
     if (newProps.selectedGig !== this.props.selectedGig) {
       this.scrollDownToInfoPane();
     }
-  }
+  };
 
   scrollDownToMap = () => {
     const { isMobile } = this.props;
@@ -118,7 +123,7 @@ class GigsPage extends Component {
       const map = document.querySelector('.map__container');
       return map.scrollIntoView(false);
     }
-  }
+  };
 
   scrollDownToInfoPane = () => {
     const { isMobile } = this.props;
@@ -128,12 +133,12 @@ class GigsPage extends Component {
         return el.scrollIntoView(false);
       }, 500);
     }
-  }
+  };
 
   render() {
     const { selectedGig } = this.props;
     return (
-      <div id="page-container" className="border-on">
+      <div id="page-container" className="page__gigspage">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -179,7 +184,7 @@ class GigsPage extends Component {
                 <div className="col-sm-6">
                   <MapBox />
                 </div>
-                <div className="col-sm-6 flex-col flex-center border-on">
+                <div className="col-sm-6 flex-col flex-center">
                   <InfoCard
                     paneInfo={selectedGig}
                     toggleMarker={selectedGig ? true : false}
@@ -203,14 +208,14 @@ const mapStateToProps = state => ({
   gigs: state.gigs.data,
   filters: state.filters.filters,
   selectedGig: state.gigs.selectedGig,
-  isMobile: state.responsive.isMobile,
+  isMobile: state.responsive.isMobile
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(gigsPageLoading()),
   pageLoaded: () => dispatch(gigsPageLoaded()),
   fetchGigs: () => dispatch(fetchGigsFromGist()),
-  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr)),
+  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr))
   // updateStateGettingDevice: () => dispatch(getDevice()),
 });
 

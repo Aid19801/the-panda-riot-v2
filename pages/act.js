@@ -150,7 +150,7 @@ class UserProfilePage extends Component {
     } = this.state;
 
     return (
-      <div id="page-container" className="page__actpage border-on flex-center">
+      <div id="page-container" className="page__actpage flex-center">
         <NextSeo
           openGraph={{
             type: 'website',

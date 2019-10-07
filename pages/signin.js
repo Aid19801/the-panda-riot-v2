@@ -96,7 +96,7 @@ class SignInPage extends React.Component {
     const { submitting, error } = this.state;
     // console.log('this state ', this.state);
     return (
-      <div id="page-container">
+      <div id="page-container" className="h-100">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -139,7 +139,7 @@ class SignInPage extends React.Component {
         <Button text="Submit" onClick={this.onSubmit} color="grey" />
 
         <Link href="/signup">
-          <a>Sign up</a>
+          <a className="btn btn-warning">Sign up?</a>
         </Link>
 
         {submitting && <p>Signing In..</p>}

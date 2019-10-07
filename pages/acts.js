@@ -106,7 +106,7 @@ class ActsPage extends Component {
     const { downVoteSwitchedOn } = this.state;
     // console.log('this props foo ', this.props);
     return (
-      <div id="page-container" className="border-on">
+      <div id="page-container" className="page__actspage">
         <NextSeo
           openGraph={{
             type: 'website',
@@ -174,7 +174,7 @@ class ActsPage extends Component {
                           <ProfilePic srcProp={each.profilePicture} />
 
                           <div className="each-act-name">
-                            <h2>{each.username}</h2>
+                            <h4>{each.username}</h4>
                             <p>{each.tagline}</p>
                           </div>
                         </a>
