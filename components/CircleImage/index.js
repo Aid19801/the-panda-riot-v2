@@ -1,10 +1,10 @@
 import React from 'react';
 
-const CircleImage = () => {
+const CircleImage = ({src}) => {
   return (
     <div className="col-sm-1">
       <div className="cicle__container">
-        <img className="circle__img" />
+        <img className="circle__img" src={src} />
       </div>
     </div>
   );

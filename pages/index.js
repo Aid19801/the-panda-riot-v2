@@ -1,35 +1,54 @@
 import React from 'react';
-import fetch from 'isomorphic-unfetch';
 import { NextSeo } from 'next-seo';
 import { connect } from 'react-redux';
 import { startApp } from '../redux/actions';
-import { NavBar, FunkyTitle, BoxCard, Banner, CircleImage } from '../components';
-
+import { NavBar, FunkyTitle, BoxCard, Banner, CircleImage, ProfilePic } from '../components';
+import mockGigs from '../lib/mock-gigs.json';
 class LandingPage extends React.Component {
-  // static async getInitialProps({ req }) {
-  //   // const isServer = !!req
-  //   const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  //   const json = await res.json();
 
-  //   return {
-  //     users: json
-  //   };
-  // }
+  constructor() {
+    super();
+    this.state = {
+      gigs: null,
+    }
+  }
 
   componentDidMount() {
     const { updateStateStartApp } = this.props;
     updateStateStartApp();
+    this.handleGigsArray();
+  }
+
+  handleGigsArray = () => {
+    const arr = mockGigs.gigs;
+  
+    function shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+  }
+
+  let trim = arr.slice(0, 24);
+
+  let shuffled = shuffle(trim);
+
+    this.setState({ gigs: shuffled });
   }
 
   render() {
+
+  const { gigs } = this.state;
+
     return (
       <div id="page-container" className="landing__page">
         <NextSeo
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',
-            title: 'Yay this is a title',
-            description: "London's freshest Open Mic Comedy webapp!",
+            title: 'The Panda Riot.',
+            description: "The go-to web-app for London's electric open mic comedy circuit.",
             images: [
               {
                 url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
@@ -78,9 +97,23 @@ class LandingPage extends React.Component {
                 blurb="Exchange ideas with other acts, explore other acts' profiles!"
               />
           </div>
-          <div className="row">
-            <CircleImage />
+          
+          <div className="row flex-center black box-shadow">
+            { gigs && gigs.map((each, i) => {
+              if (each.img) {
+                return <ProfilePic key={i} srcProp={each.img} />
+              }
+            }) }
           </div>
+
+          <div className="row flex-center black box-shadow">
+            { gigs && gigs.map((each, i) => {
+              if (each.img) {
+                return <ProfilePic key={i} srcProp={each.img} />
+              }
+            }) }
+          </div>
+
         </div>
       </div>
     );
