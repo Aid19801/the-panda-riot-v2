@@ -1,12 +1,12 @@
 .title__container {
-  /* max-height: 150px; */
   padding: 20px;
-  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   width: 100%;
   z-index: 13;
+  /* animation: bounceIn 0.3s; */
 }
+
 
 .title__container h1 {
   width: 50%;

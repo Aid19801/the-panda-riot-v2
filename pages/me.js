@@ -84,6 +84,7 @@ class MePage extends Component {
       let youtube = '';
       let twitter = '';
       let facebook = '';
+      let tl = '';
       let youtubeChannelURL = '';
       let website = '';
       let pp = '';
@@ -105,6 +106,9 @@ class MePage extends Component {
       user && !user.email ? (em = 'unknown@dunno.com') : (em = user.email);
       user && !user.faveGig ? (faveGig = 'n/a') : (faveGig = user.faveGig);
       user && !user.genre ? (genre = 'unknown') : (genre = user.genre);
+
+      user && !user.tagline ? (tl = 'i dont have a tagline!') : (tl = user.tagline);
+
       user && !user.youtube ? (youtube = 'unknown') : (youtube = user.youtube);
       user && !user.twitter ? (twitter = 'unknown') : (twitter = user.twitter);
       user && !user.facebook
@@ -121,7 +125,7 @@ class MePage extends Component {
       this.setState({
         email: em,
         username,
-        tagline,
+        tagline: tl,
         profilePicture: pp,
         includeInActRater: includeInActRaterStatus,
         rating: persistRatingFromDb,
@@ -146,7 +150,7 @@ class MePage extends Component {
   }
 
   onSubmit = event => {
-    // analyticsEvent('v2-me-onsubmit');
+
     const {
       uid,
       email,
@@ -276,8 +280,8 @@ class MePage extends Component {
                   <Input
                     title="email"
                     name="email"
-                    placeholder={email}
-                    onChange={this.handleChange}
+                    value={email}
+                    onChange={() => null}
                   />
                 </div>
                 <div className="col-sm-10 flex-center">

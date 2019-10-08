@@ -3,6 +3,7 @@ import './styles.css';
 const Input = ({
   title,
   name,
+  value,
   placeholder,
   onChange,
   type,
@@ -64,6 +65,7 @@ const Input = ({
           className={darkorange ? 'input__dark-orange' : 'input__input'}
           placeholder={placeholder}
           onChange={onChange}
+          value={ value ? value : null}
         />
       </div>
     );

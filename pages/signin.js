@@ -12,7 +12,7 @@ import {
   saveAuthUser,
   saveAuthenticatedUID
 } from '../redux/actions';
-import { Banner, Button, Input, NavBar } from '../components';
+import { Banner, Button, Input, NavBar, Spinner } from '../components';
 import { withFirebase } from '../HOCs';
 import withAnalytics from '../HOCs/with-ga';
 import * as cache from '../lib/cache';
@@ -55,7 +55,6 @@ class SignInPage extends React.Component {
 
         // console.log('user prof status is false =>' , userProfileStatus, typeof userProfileStatus)
         this.props.firebase.user(res.user.uid).on('value', snapshot => {
-          
           let fbuserProfile = snapshot.val();
           console.log('SIGNIN | user has firebase profile: ', fbuserProfile);
           // get FB profile, check if faveGig exists
@@ -81,7 +80,7 @@ class SignInPage extends React.Component {
           console.log('SIGNIN | submitting this', fbuserProfile);
         });
         setTimeout(() => {
-          console.log('12947')
+          console.log('12947');
         }, 3000);
         return Router.push('/home');
       })
@@ -125,28 +124,35 @@ class SignInPage extends React.Component {
         />
         <NavBar />
         <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
-        <h1 className="funky-title">Sign In: </h1>
-        <Input
-          name="email"
-          title="email"
-          onChange={this.onChange}
-          placeholder="abc@abc.com"
-        />
-        <Input
-          name="password"
-          title="password"
-          type="password"
-          onChange={this.onChange}
-          placeholder="password here"
-        />
-        <Button text="Submit" onClick={this.onSubmit} color="grey" />
 
-        <Link href="/signup">
-          <a className="btn btn-warning">Sign up?</a>
-        </Link>
+        {submitting && <div style={{ marginTop: 100 }}><Spinner /></div>}
 
-        {submitting && <p>Signing In..</p>}
-        {error && <p className="black white flex-center">{error.message}</p>}
+        {!submitting && (
+          <>
+            <h1 className="funky-title">Sign In: </h1>
+            <Input
+              name="email"
+              title="email"
+              onChange={this.onChange}
+              placeholder="abc@abc.com"
+            />
+            <Input
+              name="password"
+              title="password"
+              type="password"
+              onChange={this.onChange}
+              placeholder="password here"
+            />
+            <Button text="Submit" onClick={this.onSubmit} color="grey" />
+
+            <Link href="/signup">
+              <a className="btn btn-warning">Sign up?</a>
+            </Link>
+            {error && (
+              <p className="black white flex-center">{error.message}</p>
+            )}
+          </>
+        )}
       </div>
     );
   }
