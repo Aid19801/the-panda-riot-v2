@@ -1,9 +1,6 @@
 import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-// import { withFirebase } from '.';
-import * as cache from '../lib/cache';
-import Router from 'next/router';
 import { saveAuthenticatedUID } from '../redux/actions';
 
 export default function withFirebase(PlatformSpecificComponent) {
