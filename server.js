@@ -16,10 +16,10 @@ const handler = routes.getRequestHandler(app);
 const sentiment = new Sentiment();
 
 const pusher = new Pusher({
-  appId: '871542',
-  key: '807d3f2b56c8d22bc20f',
-  secret: 'cb4157865f9afb7f855d',
-  cluster: 'eu',
+  appId: process.env.REACT_APP_PUSHER_APP_ID,
+  key: process.env.REACT_APP_PUSHER_APP_KEY,
+  secret: process.env.REACT_APP_PUSHER_APP_SECRET,
+  cluster: process.env.REACT_APP_PUSHER_APP_CLUSTER,
   encrypted: true
 });
 

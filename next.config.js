@@ -50,7 +50,8 @@ module.exports = withCSS({
   },
   env: {
     // Make Yourself A TPR Admin
-    REACT_APP_PANDA_RIOT_ADMINI: 'seVFOFwaXJh8z20Mx6vdmut7SuI2',
+    REACT_APP_PANDA_RIOT_ADMINI: process.env.REACT_APP_PANDA_RIOT_ADMINI,
+    // REACT_APP_PANDA_RIOT_ADMINI: 'seVFOFwaXJh8z20Mx6vdmut7SuI2',
 
     // instagram
     REACT_APP_INSTA_CLIENTID: '12987de5768e49cc814c058fa37c0339',
