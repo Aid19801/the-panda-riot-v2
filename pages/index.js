@@ -2,16 +2,12 @@ import React from 'react';
 import { NextSeo } from 'next-seo';
 import { connect } from 'react-redux';
 import { startApp } from '../redux/actions';
-import {
-  NavBar,
-  FunkyTitle,
-  Banner,
-  ProfilePic
-} from '../components';
+import { NavBar, FunkyTitle, Banner, ProfilePic } from '../components';
 import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
 // import { analyticsPage } from '../lib/utils';
 import { compose } from 'redux';
+import Link from 'next/link';
 class LandingPage extends React.Component {
   constructor() {
     super();
@@ -77,117 +73,123 @@ class LandingPage extends React.Component {
 
         <NavBar />
         <Banner src="/static/banner-ldn.jpg" />
-
-        <div className="container">
-          <div className="row margin-top">
-            <FunkyTitle text="Open Mic Starts Here!" />
-          </div>
-
-          <div className="row margin-top margin-bottom">
-            <div className="col-md-4 margin-top margin-bottom">
-              <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                <h3 className="orange center black">WTF IS THIS!?!</h3>
-                <p className="white center">
-                  Everything you need to enjoy & endure London's electric Open
-                  Mic comedy circuit!
-                </p>
-                <img
-                  className="landing__promo-box-icon"
-                  src="/static/masks.svg"
-                />
+        <Link href="/signin">
+          <a>
+            <div className="container">
+              <div className="row margin-top">
+                <FunkyTitle text="Open Mic Starts Here!" />
               </div>
-            </div>
 
-            <div className="col-md-4 margin-top margin-bottom">
-              <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                <h3 className="orange center black">FIND GIGS!</h3>
-                <p className="white center">
-                  Check out where the latest Bringers & Non Bringers Are On The
-                  Filterable Gig Map!
-                </p>
-                <img
-                  className="landing__promo-box-icon"
-                  src="/static/location.svg"
-                />
-              </div>
-            </div>
-
-            <div className="col-md-4 margin-top margin-bottom">
-              <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                <h3 className="orange center black">WATCH SETS!</h3>
-                <p className="white center">
-                  Catch up on your friends' latest sets, watching their 5-spots!
-                </p>
-                <img
-                  className="landing__promo-box-icon"
-                  src="/static/video-camera.svg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container-fluid">
-          <div className="row w-1oo flex-center black box-shadow margin-off">
-            {gigs &&
-              gigs.map((each, i) => {
-                if (each.img) {
-                  return <ProfilePic key={i} srcProp={each.img} />;
-                }
-              })}
-          </div>
-        </div>
-
-        <div className="container margin-top">
-          <div className="row margin-top">
-            <div className="jumbotron w-100 landing__jumbotron rounded-corners tpr__border orange-gradient">
-              <div className="flex-col">
-                <h1 className="landing__jumbo-title flex-center grey">
-                  Totally Free
-                </h1>
-
-                <div className="landing__screens-container">
-                  <div className="landing__screen-container skew-right">
+              <div className="row margin-top margin-bottom">
+                <div className="col-md-4 margin-top margin-bottom">
+                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                    <h3 className="orange center black">WTF IS THIS!?!</h3>
+                    <p className="white center">
+                      Everything you need to enjoy & endure London's electric
+                      Open Mic comedy circuit!
+                    </p>
                     <img
-                      src="/static/screen_map.png"
-                      height={400}
-                      width={500}
+                      className="landing__promo-box-icon"
+                      src="/static/masks.svg"
                     />
                   </div>
-                  <div className="landing__screen-container skew-left">
+                </div>
+
+                <div className="col-md-4 margin-top margin-bottom">
+                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                    <h3 className="orange center black">FIND GIGS!</h3>
+                    <p className="white center">
+                      Check out where the latest Bringers & Non Bringers Are On
+                      The Filterable Gig Map!
+                    </p>
                     <img
-                      src="/static/screen_acts.png"
-                      height={500}
-                      width={250}
+                      className="landing__promo-box-icon"
+                      src="/static/location.svg"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-md-4 margin-top margin-bottom">
+                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                    <h3 className="orange center black">WATCH SETS!</h3>
+                    <p className="white center">
+                      Catch up on your friends' latest sets, watching their
+                      5-spots!
+                    </p>
+                    <img
+                      className="landing__promo-box-icon"
+                      src="/static/video-camera.svg"
                     />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="row margin-top box-shadow black">
-            <div className="col-md-6 margin-top margin-bottom">
-              <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                <h3 className="white center black skew-right">NEWS</h3>
-                <img
-                  className="landing__promo-box-icon"
-                  src="/static/screen_news.png"
-                />
+            <div className="container-fluid">
+              <div className="row w-1oo flex-center black box-shadow margin-off">
+                {gigs &&
+                  gigs.map((each, i) => {
+                    if (each.img) {
+                      return <ProfilePic key={i} srcProp={each.img} />;
+                    }
+                  })}
               </div>
             </div>
 
-            <div className="col-md-6 margin-top margin-bottom">
-              <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                <h3 className="white center black skew-left">FIND SPOTS!</h3>
-                <img
-                  className="landing__promo-box-icon"
-                  src="/static/screen_mapp.png"
-                />
+            <div className="container margin-top">
+              <div className="row margin-top">
+                <div className="jumbotron w-100 landing__jumbotron rounded-corners tpr__border orange-gradient">
+                  <div className="flex-col">
+                    <h1 className="landing__jumbo-title flex-center grey">
+                      Totally Free
+                    </h1>
+
+                    <div className="landing__screens-container">
+                      <div className="landing__screen-container skew-right">
+                        <img
+                          src="/static/screen_map.png"
+                          height={400}
+                          width={500}
+                        />
+                      </div>
+                      <div className="landing__screen-container skew-left">
+                        <img
+                          src="/static/screen_acts.png"
+                          height={500}
+                          width={250}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="row margin-top box-shadow black">
+                <div className="col-md-6 margin-top margin-bottom">
+                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                    <h3 className="white center black skew-right">NEWS</h3>
+                    <img
+                      className="landing__promo-box-icon"
+                      src="/static/screen_news.png"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-md-6 margin-top margin-bottom">
+                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                    <h3 className="white center black skew-left">
+                      FIND SPOTS!
+                    </h3>
+                    <img
+                      className="landing__promo-box-icon"
+                      src="/static/screen_mapp.png"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </a>
+        </Link>
       </div>
     );
   }
@@ -199,5 +201,8 @@ const mapDispatchToProps = dispatch => ({
 
 export default compose(
   withAnalytics,
-  connect(null, mapDispatchToProps)
+  connect(
+    null,
+    mapDispatchToProps
+  )
 )(LandingPage);

@@ -159,19 +159,19 @@ class SignUpPage extends React.Component {
           <>
             <Input
               name="username"
-              title="act name"
+              title="act name *"
               onChange={this.onChange}
               placeholder="eg. Lily Savage"
             />
             <Input
               name="email"
-              title="email"
+              title="email *"
               onChange={this.onChange}
               placeholder="abc@abc.com"
             />
             <Input
               name="password"
-              title="password"
+              title="password *"
               onChange={this.onChange}
               placeholder="password here"
               type="password"
@@ -184,20 +184,20 @@ class SignUpPage extends React.Component {
           <>
             <Input
               name="profilePicture"
-              title="Link to your profile picture"
+              title="Link to your profile pic*"
               helpTag="https://kb.benchmarkemail.com/what-is-an-image-url-and-how-do-i-find-the-image-url-for-an-image-i-want-to-use-in-benchmark-email/"
               onChange={this.onChange}
               placeholder="eg. https://some-picture.com/my-pic.jpg"
             />
             <Input
               name="tagline"
-              title="My Tag Line"
+              title="My Tag Line *"
               onChange={this.onChange}
               placeholder="Always the joker, never the joke..."
             />
             <Input
               name="genre"
-              title="genre"
+              title="genre *"
               onChange={this.onChange}
               placeholder="eg. Observational or Pun / One Liner"
               type="select"
