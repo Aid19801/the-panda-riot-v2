@@ -49,12 +49,13 @@ class NewsStoryPage extends React.Component {
     const { content } = this.props;
     // const { results } = content;
 
+    console.log('content yo ', content);
     return (
       <div id="page-container">
         <NextSeo
           openGraph={{
             type: 'website',
-            url: 'https://www.thePandaRiot.com',
+            url: `https://tpr-v2.herokuapp.com/news/${content.results[0].id}`,
             title: `${content.results[0].data['news-headline1'][0].text}`,
             description: `${content.results[0].data['news-body'][0].text}`,
             images: [
@@ -71,7 +72,8 @@ class NewsStoryPage extends React.Component {
                 height: 600,
                 alt: 'Og Image Alt 2'
               }
-            ]
+            ],
+            site_name: '#ThePandaRiot',
           }}
         />
         <NavBar firebase={this.props.firebase} />
