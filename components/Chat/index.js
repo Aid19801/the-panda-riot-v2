@@ -110,7 +110,7 @@ class Chat extends Component {
             <textarea
               className="form-control rounded-corners"
               onKeyUp={this.handleKeyUp}
-              placeholder="Enter a chat message"
+              placeholder="Press ENTER / RETURN to send..."
               style={{ resize: 'none' }}
             ></textarea>
           </div>
