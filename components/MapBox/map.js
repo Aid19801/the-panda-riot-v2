@@ -79,8 +79,6 @@ class Map extends Component {
     this.setState({
       clickedCluster: true,
       center: [coordinates[0], coordinates[1]],
-      // lng: coordinates[0],
-      // lat: coordinates[1],
       zoom: [14]
     });
   };
