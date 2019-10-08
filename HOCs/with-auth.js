@@ -45,7 +45,7 @@ export default function withAuth(PlatformSpecificComponent) {
       // check if it's a news article. If it is, fine, if not, boot back to sign in.
       if (process.browser) {
         let isNews = window.location.href.includes('/news/');
-        console.log('isNews: ', isNews);
+        // console.log('isNews: ', isNews);
         if (isNews) {
           return;
         }

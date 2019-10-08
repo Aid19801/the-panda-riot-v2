@@ -60,7 +60,6 @@ class Map extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.selectedGig && this.state.toggle === false) {
       const newCenter = [ this.props.selectedGig.lng, this.props.selectedGig.lat ];
-      console.log('newCenter ', newCenter);
       setTimeout(() => {
         this.setState({ toggle: true, center: [ this.props.selectedGig.lng, this.props.selectedGig.lat ]})
       }, 500)
@@ -76,7 +75,7 @@ class Map extends Component {
   }
 
   clusterClick = (coordinates, total, getLeaves) => {
-    // console.log('coords clicked: ', coordinates);
+    
     this.setState({
       clickedCluster: true,
       center: [coordinates[0], coordinates[1]],
@@ -87,7 +86,6 @@ class Map extends Component {
   };
 
   clusterMarker = (coordinates, pointCount, getLeaves) => {
-    // console.log('clusterMarker ', coordinates, pointCount, getLeaves);
     return (
       <Marker
         key={coordinates.toString()}
@@ -139,7 +137,6 @@ class Map extends Component {
   render() {
     // const { updateStateSelectedMarker } = this.props;\
     const { selectedGig } = this.props;
-    console.log('this.props MAP level ', this.props);
 
     if (this.state.isLoading) {
       return <h2>Loading...</h2>;

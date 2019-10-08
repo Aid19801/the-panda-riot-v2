@@ -23,7 +23,6 @@ class NavigationAuth extends Component {
 
     setTimeout(async () => {
       const obj = JSON.parse(stringJson);
-      console.log('object from cache ', obj);
   
       // if theres a profile pic in cache, lock into cachedPic const
       let cachedPic = '';
@@ -65,7 +64,7 @@ class NavigationAuth extends Component {
   render() {
     const { uid } = this.state;
     const { popOut, profilePic } = this.state;
-    console.log('props ', this.props)
+
     return (
       <Navbar bg="dark" expand="lg">
         <Navbar.Brand>

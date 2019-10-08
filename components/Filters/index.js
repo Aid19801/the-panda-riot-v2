@@ -59,7 +59,6 @@ class Filters extends React.Component {
         each => each.active !== false
       );
       if (activeFilters.length > 1) {
-        console.log('boooo active filters are ', activeFilters);
         this.setState({
           nukeInactiveFilters: true
         });
