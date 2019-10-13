@@ -19,7 +19,7 @@ import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
-import { NavBar, FunkyTitle, Banner } from '../components';
+import { NavBar, FunkyTitle, Banner, HaveIPlayedHere } from '../components';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 
 // 1. load GIGS and FILTERS into local state
@@ -192,14 +192,16 @@ class GigsPage extends Component {
                     paneInfo={selectedGig}
                     toggleMarker={selectedGig ? true : false}
                   />
+
                   <MoreInfoCard paneInfo={selectedGig} />
+                  <HaveIPlayedHere gig={selectedGig} />
                 </div>
               </>
             )}
           </div>
 
           <div className="row full-width">
-            <div className="col-sm-12"></div>
+            <div className="col-sm-4"></div>
           </div>
         </div>
       </div>

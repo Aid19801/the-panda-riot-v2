@@ -135,6 +135,11 @@ height: auto;
   background: orange;
   color: white;
 }
+.green {
+  background: green;
+  border: 2px solid lightgreen;
+  color: black;
+}
 
 button {
   font-family: 'Raleway';

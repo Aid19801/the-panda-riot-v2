@@ -2,6 +2,7 @@ import React from 'react';
 import { NextSeo } from 'next-seo';
 import { connect } from 'react-redux';
 import { startApp } from '../redux/actions';
+import Fade from 'react-reveal/Fade';
 import { NavBar, FunkyTitle, Banner, ProfilePic } from '../components';
 import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
@@ -81,47 +82,53 @@ class LandingPage extends React.Component {
               </div>
 
               <div className="row margin-top margin-bottom">
-                <div className="col-md-4 margin-top margin-bottom">
-                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="orange center black">WTF IS THIS!?!</h3>
-                    <p className="white center">
-                      Everything you need to enjoy & endure London's electric
-                      Open Mic comedy circuit!
-                    </p>
-                    <img
-                      className="landing__promo-box-icon"
-                      src="/static/masks.svg"
-                    />
+                <Fade>
+                  <div className="col-md-4 margin-top margin-bottom">
+                    <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                      <h3 className="orange center black">WTF IS THIS!?!</h3>
+                      <p className="white center">
+                        Everything you need to enjoy & endure London's electric
+                        Open Mic comedy circuit!
+                      </p>
+                      <img
+                        className="landing__promo-box-icon"
+                        src="/static/masks.svg"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Fade>
 
-                <div className="col-md-4 margin-top margin-bottom">
-                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="orange center black">FIND GIGS!</h3>
-                    <p className="white center">
-                      Check out where the latest Bringers & Non Bringers Are On
-                      The Filterable Gig Map!
-                    </p>
-                    <img
-                      className="landing__promo-box-icon"
-                      src="/static/location.svg"
-                    />
+                <Fade>
+                  <div className="col-md-4 margin-top margin-bottom">
+                    <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                      <h3 className="orange center black">FIND GIGS!</h3>
+                      <p className="white center">
+                        Check out where the latest Bringers & Non Bringers Are
+                        On The Filterable Gig Map!
+                      </p>
+                      <img
+                        className="landing__promo-box-icon"
+                        src="/static/location.svg"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Fade>
 
-                <div className="col-md-4 margin-top margin-bottom">
-                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="orange center black">WATCH SETS!</h3>
-                    <p className="white center">
-                      Catch up on your friends' latest sets, watching their
-                      5-spots!
-                    </p>
-                    <img
-                      className="landing__promo-box-icon"
-                      src="/static/video-camera.svg"
-                    />
+                <Fade>
+                  <div className="col-md-4 margin-top margin-bottom">
+                    <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                      <h3 className="orange center black">WATCH SETS!</h3>
+                      <p className="white center">
+                        Catch up on your friends' latest sets, watching their
+                        5-spots!
+                      </p>
+                      <img
+                        className="landing__promo-box-icon"
+                        src="/static/video-camera.svg"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Fade>
               </div>
             </div>
 
@@ -130,7 +137,13 @@ class LandingPage extends React.Component {
                 {gigs &&
                   gigs.map((each, i) => {
                     if (each.img) {
-                      return <ProfilePic key={i} srcProp={each.img} />;
+                      return (
+                        <>
+                          <Fade>
+                            <ProfilePic key={i} srcProp={each.img} />;
+                          </Fade>
+                        </>
+                      );
                     }
                   })}
               </div>
@@ -140,18 +153,22 @@ class LandingPage extends React.Component {
               <div className="row margin-top">
                 <div className="jumbotron w-100 landing__jumbotron rounded-corners tpr__border orange-gradient">
                   <div className="flex-col">
-                    <h1 className="landing__jumbo-title flex-center grey">
-                      Totally Free
-                    </h1>
+                    <Fade>
+                      <h1 className="landing__jumbo-title flex-center grey">
+                        Totally Free
+                      </h1>
+                    </Fade>
 
                     <div className="landing__screens-container">
-                      <div className="landing__screen-container skew-right">
-                        <img
-                          src="/static/screen_map.png"
-                          height={400}
-                          width={500}
-                        />
-                      </div>
+                      <Fade>
+                        <div className="landing__screen-container skew-right">
+                          <img
+                            src="/static/screen_map.png"
+                            height={400}
+                            width={500}
+                          />
+                        </div>
+                      </Fade>
                       <div className="landing__screen-container skew-left">
                         <img
                           src="/static/screen_acts.png"
@@ -165,27 +182,32 @@ class LandingPage extends React.Component {
               </div>
 
               <div className="row margin-top box-shadow black">
-                <div className="col-md-6 margin-top margin-bottom">
-                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="white center black skew-right">NEWS</h3>
-                    <img
-                      className="landing__promo-box-icon"
-                      src="/static/screen_news.png"
-                    />
+                <Fade>
+                  <div className="col-md-6 margin-top margin-bottom">
+                    <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                      <h3 className="white center black skew-right">NEWS</h3>
+                      <img
+                        className="landing__promo-box-icon"
+                        src="/static/screen_news.png"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Fade>
 
-                <div className="col-md-6 margin-top margin-bottom">
-                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="white center black skew-left">
-                      FIND SPOTS!
-                    </h3>
-                    <img
-                      className="landing__promo-box-icon"
-                      src="/static/screen_mapp.png"
-                    />
+                <Fade>
+                  <div className="col-md-6 margin-top margin-bottom">
+                    <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                      <h3 className="white center black skew-left">
+                        FIND SPOTS!
+                      </h3>
+                      <img
+                        className="landing__promo-box-icon"
+                        src="/static/screen_mapp.png"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Fade>
+                
               </div>
             </div>
           </a>

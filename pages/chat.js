@@ -84,7 +84,7 @@ class ChatPage extends Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/banner-ldn.jpg" />
+        <Banner src="/static/chat.jpg" />
         <FunkyTitle text="chat" />
         <div className="container">
           <div className="row">

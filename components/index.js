@@ -6,6 +6,7 @@ import ChatContainer from './ChatContainer';
 import CircleImage from './CircleImage';
 import Chat from './Chat';
 import FunkyTitle from './FunkyTitle';
+import HaveIPlayedHere from './HaveIPlayedHere';
 import Input from './Input';
 import NavBar from './NavBar';
 import NewsContainer from './NewsContainer';
@@ -27,6 +28,7 @@ export {
   CircleImage,
   Chat,
   FunkyTitle,
+  HaveIPlayedHere,
   Input,
   // PrismicTypes,
   ProfilePic,
