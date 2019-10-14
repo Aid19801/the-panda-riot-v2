@@ -52,17 +52,17 @@ class HomePage extends React.Component {
     let retrievedPrismicStories = [];
 
     // if we're in dev, pass in the mocks
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('NODE ENV NOT EQUAL TO PROD: ', process.env.NODE_ENV)
-      reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
-      reduxStore.dispatch(newsApiSuccess(mockNews.articles));
-      reduxStore.dispatch(prismicNewsApiSuccess(mockTpr_stories.results));
-      return {
-        gigs: mockGigs.gigs,
-        stories: mockNews.articles,
-        tpr_stories: mockTpr_stories.results
-      };
-    }
+    // if (process.env.NODE_ENV !== 'production') {
+    //   console.log('Homepage not in production ')
+    //   reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
+    //   reduxStore.dispatch(newsApiSuccess(mockNews.articles));
+    //   reduxStore.dispatch(prismicNewsApiSuccess(mockTpr_stories.results));
+    //   return {
+    //     gigs: mockGigs.gigs,
+    //     stories: mockNews.articles,
+    //     tpr_stories: mockTpr_stories.results
+    //   };
+    // }
 
     // IF IN *PROD*, GET ALL GIGS IN SSR
     try {
@@ -74,14 +74,14 @@ class HomePage extends React.Component {
       const req = await fetch(rawUrl);
       const reqJson = await req.json();
 
-      sortedGigs = reqJson.gigs.sort((a, b) => {
+      sortedGigs = reqJson.sort((a, b) => {
         var textA = a.name;
         var textB = b.name;
         return textA < textB ? -1 : textA > textB ? 1 : 0;
       });
 
       // cache.saveToCache('gigs', sortedGigs);
-      console.log('PROD GIGS ===> ', sortedGigs);
+      // console.log('PROD GIGS ===> ', sortedGigs);
       reduxStore.dispatch(gotGigsFromGist(sortedGigs));
     } catch (error) {
       console.log('GIGS getInitialProps err: ', error);

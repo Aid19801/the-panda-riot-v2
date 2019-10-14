@@ -42,12 +42,12 @@ class GigsPage extends Component {
   static async getInitialProps({ reduxStore, req }) {
     let sortedGigs = [];
     // if we're in dev,  pass in the mocks
-    if (process.env.NODE_ENV !== 'production') {
-      reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
-      return {
-        gigs: mockGigs.gigs
-      };
-    }
+    // if (process.env.NODE_ENV !== 'production') {
+    //   reduxStore.dispatch(gotGigsFromGist(mockGigs.gigs));
+    //   return {
+    //     gigs: mockGigs.gigs
+    //   };
+    // }
 
     try {
       const res = await fetch(
@@ -55,11 +55,10 @@ class GigsPage extends Component {
       );
       const json = await res.json();
       const rawUrl = json.files.gigs.raw_url;
-
       const req = await fetch(rawUrl);
       const reqJson = await req.json();
-
-      sortedGigs = reqJson.gigs.sort((a, b) => {
+      console.log('REQ JSON ===>> ', reqJson);
+      sortedGigs = reqJson.sort((a, b) => {
         var textA = a.name;
         var textB = b.name;
         return textA < textB ? -1 : textA > textB ? 1 : 0;
@@ -193,6 +192,7 @@ class GigsPage extends Component {
                     toggleMarker={selectedGig ? true : false}
                   />
 
+                  
                   <MoreInfoCard paneInfo={selectedGig} />
                   <HaveIPlayedHere gig={selectedGig} />
                 </div>

@@ -41,8 +41,8 @@ export function* workerGigsTonightSaga(actionObj) {
         yield fetch(rawUrl)
           .then(res => res.json())
           .then(json => {
-            cache.saveToCache('gigs', json.gigs);
-            return gigs = json.gigs;
+            cache.saveToCache('gigs', json);
+            return gigs = json;
           })
           .catch(err => console.log('err ', err));
       }
@@ -50,7 +50,7 @@ export function* workerGigsTonightSaga(actionObj) {
   }
   // DEV | GET MOCKS, ASSIGN TO `gigs`
   if (process.env.NODE_ENV === 'development') {
-    gigs = mockGigs.gigs;
+    gigs = mockGigs;
   }
 
   // get what day it is
@@ -92,7 +92,7 @@ export function* workerGigsSaga({ filters }) {
         .then(res => res.json())
         .then(json => {
           cache.saveToCache('gigs', json.gigs);
-          return (gigs = json.gigs);
+          return gigs = json;
         })
         .catch(err => console.log('err ', err));
     }

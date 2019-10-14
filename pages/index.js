@@ -25,7 +25,7 @@ class LandingPage extends React.Component {
   }
 
   handleGigsArray = () => {
-    const arr = mockGigs.gigs;
+    const arr = mockGigs;
 
     function shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {

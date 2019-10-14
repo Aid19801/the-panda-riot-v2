@@ -126,7 +126,8 @@ class Map extends Component {
       twitterHandle: data.twitterHandle,
       website: data.website,
       howToBook: data.howToBook,
-      venue: data.venue
+      venue: data.venue,
+      attended: data.attended,
     };
     this.setState({ zoom: [14], center: [data.lng, data.lat], toggle: true });
 
