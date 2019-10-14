@@ -74,7 +74,7 @@ module.exports = withCSS({
 
     // scraper / getter
     REACT_APP_TPR_SCRAPER_TOKEN: process.env.REACT_APP_TPR_SCRAPER_TOKEN,
-
+    REACT_APP_NEW_GIST_POST_TOKEN: process.env.REACT_APP_NEW_GIST_POST_TOKEN,
     // youtube
     REACT_APP_YOUTUBE_KEY: process.env.REACT_APP_YOUTUBE_KEY,
 

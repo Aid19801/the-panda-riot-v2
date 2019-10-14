@@ -6,11 +6,11 @@ export const startApp = () => {
 
 export const getDevice = () => {
   return { type: actionTypes.GET_DEVICE };
-}
+};
 
-export const gotDevice = (res) => {
+export const gotDevice = res => {
   return { type: actionTypes.GOT_DEVICE, isMobile: res };
-}
+};
 
 // PAGE | Auth / Sign In
 export const signInPageLoading = () => {
@@ -32,16 +32,16 @@ export const saveAuthenticatedUID = uid => ({
 
 export const userAuthenticatedAsAdmin = () => {
   return {
-    type: actionTypes.IS_ADMIN,
-  }
-}
+    type: actionTypes.IS_ADMIN
+  };
+};
 
 export const userIsSignedIn = () => ({
-  type: actionTypes.USER_SIGNED_IN,
+  type: actionTypes.USER_SIGNED_IN
 });
 
 export const userIsSignedOut = () => ({
-  type: actionTypes.USER_SIGNED_OUT,
+  type: actionTypes.USER_SIGNED_OUT
 });
 
 // PAGE | Auth / Sign Up
@@ -92,12 +92,12 @@ export const gotGigsFromGist = gigs => {
 };
 
 export const fetchGigsTonight = () => {
-  return { type: actionTypes.FETCH_GIGS_TONIGHT }
-}
+  return { type: actionTypes.FETCH_GIGS_TONIGHT };
+};
 
-export const gotGigsTonight = (res) => {
-  return { type: actionTypes.GIGS_TONIGHT_RESP, gigsTonight: res }
-}
+export const gotGigsTonight = res => {
+  return { type: actionTypes.GIGS_TONIGHT_RESP, gigsTonight: res };
+};
 
 export const fetchFilters = () => {
   return { type: actionTypes.LOAD_FILTERS };
@@ -116,6 +116,11 @@ export const resetGigs = gigs => {
 
 export const userSelectedGig = obj => {
   return { type: actionTypes.SELECTED_GIG, selectedGig: obj };
+};
+
+// add a user to a gig on the gigs gist.
+export const addUserToGig = (user, uid, gig) => {
+  return { type: actionTypes.ADDDING_USER_TO_GIG, user, uid, gig };
 };
 
 // PAGE | Home
@@ -137,50 +142,48 @@ export const prismicNewsApiReq = () => {
   return { type: actionTypes.PRISMIC_API_REQ };
 };
 
-export const prismicNewsApiSuccess = (res) => {
+export const prismicNewsApiSuccess = res => {
   return { type: actionTypes.PRISMIC_API_SUCCESS, tpr_stories: res };
 };
 
-export const prismicNewsApiFail = (err) => {
+export const prismicNewsApiFail = err => {
   return { type: actionTypes.PRISMIC_API_FAIL, error: err };
 };
 
 // prismic fetching *ONE* individual TPR news story news/:id
 export const fetchTPRStory = () => {
-  return { type: actionTypes.FETCH_TPR_STORY }
-}
+  return { type: actionTypes.FETCH_TPR_STORY };
+};
 
-export const fetchTPRSuccess = (res) => {
-  return { type: actionTypes.FETCH_TPR_SUCCESS, content: res }
-}
+export const fetchTPRSuccess = res => {
+  return { type: actionTypes.FETCH_TPR_SUCCESS, content: res };
+};
 
-export const fetchTPRFail = (err) => {
-  return { type: actionTypes.FETCH_TPR_FAIL, error: err }
-}
-
+export const fetchTPRFail = err => {
+  return { type: actionTypes.FETCH_TPR_FAIL, error: err };
+};
 
 // news api
 
 export const newsContainerLoading = () => {
-  return { type: actionTypes.NEWS_CONTAINER_LOADING }
-}
+  return { type: actionTypes.NEWS_CONTAINER_LOADING };
+};
 
 export const newsContainerLoaded = () => {
-  return { type: actionTypes.NEWS_CONTAINER_LOADED }
-}
+  return { type: actionTypes.NEWS_CONTAINER_LOADED };
+};
 
 export const getAllNews = () => {
   return { type: actionTypes.NEWS_API_REQ };
 };
 
-export const newsApiFailed = (error) => {
+export const newsApiFailed = error => {
   return { type: actionTypes.NEWS_API_FAIL, error };
 };
 
-export const newsApiSuccess = (res) => {
+export const newsApiSuccess = res => {
   return { type: actionTypes.NEWS_API_SUCCESS, stories: res };
 };
-
 
 // PAGE | Blog
 export const newsPageLoading = () => {
@@ -207,55 +210,54 @@ export const fetchNewsPageRes = content => {
 
 export const chatPageLoading = () => {
   return {
-    type: actionTypes.CHAT_PAGE_LOADING,
-  }
-}
+    type: actionTypes.CHAT_PAGE_LOADING
+  };
+};
 
 export const chatPageLoaded = () => {
   return {
-    type: actionTypes.CHAT_PAGE_LOADED,
-  }
-}
+    type: actionTypes.CHAT_PAGE_LOADED
+  };
+};
 
 export const chatPageFailed = () => {
   return {
-    type: actionTypes.CHAT_PAGE_FAILED,
-  }
-}
-
+    type: actionTypes.CHAT_PAGE_FAILED
+  };
+};
 
 // PAGE | Acts
 
 export const actsPageLoading = () => {
-  return { type: actionTypes.ACTS_PAGE_LOADING }
-}
+  return { type: actionTypes.ACTS_PAGE_LOADING };
+};
 
 export const actsPageLoaded = () => {
-  return { type: actionTypes.ACTS_PAGE_LOADED }
-}
+  return { type: actionTypes.ACTS_PAGE_LOADED };
+};
 
 export const actsPageFailed = () => {
-  return { type: actionTypes.ACTS_PAGE_FAILED }
-}
+  return { type: actionTypes.ACTS_PAGE_FAILED };
+};
 
 // PAGE | Act
 
 export const actPageLoading = () => {
-  return { type: actionTypes.ACT_PAGE_LOADING }
-}
+  return { type: actionTypes.ACT_PAGE_LOADING };
+};
 
-export const actPageLoaded = (res) => {
-  return { type: actionTypes.ACT_PAGE_LOADED, userProfile: res }
-}
+export const actPageLoaded = res => {
+  return { type: actionTypes.ACT_PAGE_LOADED, userProfile: res };
+};
 
-export const actPageFailed = (error) => {
-  return { type: actionTypes.ACT_PAGE_FAILED, error }
-}
+export const actPageFailed = error => {
+  return { type: actionTypes.ACT_PAGE_FAILED, error };
+};
 
-export const fetchActProfile = (uid) => {
-  return { type: actionTypes.FETCH_ACT_PROFILE, uid }
-}
+export const fetchActProfile = uid => {
+  return { type: actionTypes.FETCH_ACT_PROFILE, uid };
+};
 
-export const gotActProfile = (actProfile) => {
-  return { type: actionTypes.GOT_ACT_PROFILE, actProfile }
-}
+export const gotActProfile = actProfile => {
+  return { type: actionTypes.GOT_ACT_PROFILE, actProfile };
+};

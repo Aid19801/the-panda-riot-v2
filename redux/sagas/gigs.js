@@ -6,7 +6,6 @@ import mockGigs from '../../lib/mock-gigs.json';
 import { whatDayIsIt } from '../../lib/utils';
 
 export function* watcherGigsSaga() {
-  // console.log('BOOM! saga fired!');
   yield takeLatest(actionTypes.FILTERS_CHANGED, workerGigsSaga);
 }
 
@@ -65,10 +64,8 @@ export function* workerGigsTonightSaga(actionObj) {
 }
 
 export function* workerGigsSaga({ filters }) {
-  // console.log('BAP! filtering down...', filters);
   let onlyActiveFilters = filters.filter(each => each.active !== false);
   const cachedGigs = cache.getFromCache('gigs');
-  // console.log('cached Gigs yo ', cachedGigs);
 
   let gigs = [];
   let rawUrl = '';

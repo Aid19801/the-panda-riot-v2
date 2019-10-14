@@ -107,6 +107,7 @@ class Map extends Component {
 
   handleSelectMarker = data => {
     let newPaneInfo = {
+      id: data.id,
       isSelected: true,
       heading: data.name,
       subheading: `@ ${data.venue}`,

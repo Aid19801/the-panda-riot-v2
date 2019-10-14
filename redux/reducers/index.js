@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { appStateReducer } from './app-state';
 import signinPageReducer from './sign-in';
+import addUserToGigReducer from './add-user-to-gig';
 import actsPageReducer from './acts';
 import actPageReducer from './act';
 import chatPageReducer from './chat';
@@ -15,6 +16,7 @@ import responsiveReducer from './responsive';
 
 const reducers = combineReducers({
     appState: appStateReducer,
+    addUserToGig: addUserToGigReducer,
     acts: actsPageReducer,
     act: actPageReducer,
     chat: chatPageReducer,

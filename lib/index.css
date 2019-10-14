@@ -231,6 +231,11 @@ ul li a {
   border: 0px solid;
 }
 
+.fadeOut {
+  animation: fadeOut 0.3s;
+  opacity: 0;
+}
+
 .margin-on {
   margin: 20px;
 }
@@ -562,6 +567,7 @@ ul li a {
 }
 
 
+
 @keyframes bounceIn {
   from {
     margin-top: 900px;
@@ -577,5 +583,15 @@ ul li a {
   }
   to {
     opacity: 1;
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
