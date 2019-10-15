@@ -12,6 +12,7 @@ class Chat extends Component {
   state = { chats: [] };
 
   componentDidMount() {
+    console.log('REACT_APP_PUSHER_APP_KEY: ', REACT_APP_PUSHER_APP_KEY)
     this.pusher = new Pusher(process.env.REACT_APP_PUSHER_APP_KEY, {
       cluster: process.env.REACT_APP_PUSHER_APP_CLUSTER,
       encrypted: true
