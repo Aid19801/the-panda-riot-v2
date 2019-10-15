@@ -104,6 +104,15 @@ class ActsPage extends Component {
     return Router.push('/me');
   };
 
+  processTagline = (str) => {
+    let res = '';
+    if (str.length > 45) {
+      res = str.slice(0, 45) + '...';
+    } else {
+      res = str;
+    }
+    return res;
+  }
   render() {
     const { downVoteSwitchedOn } = this.state;
     // console.log('this props foo ', this.props);
@@ -177,7 +186,7 @@ class ActsPage extends Component {
 
                           <div className="each-act-name">
                             <h4>{each.username}</h4>
-                            <p>{each.tagline}</p>
+                            <p>{this.processTagline(each.tagline)}</p>
                           </div>
                         </a>
                       </Link>
