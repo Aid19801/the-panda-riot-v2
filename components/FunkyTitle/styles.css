@@ -27,3 +27,21 @@
     width: 90% !important;
   }
 }
+
+
+@media screen and (max-width: 500px) {
+
+  .funky-title {
+    width: 80%;
+   font-size: 4vh;
+  }
+}
+
+
+/* @media screen and (max-width: 450px) {
+
+  .funky-title {
+    
+  }
+} */
+

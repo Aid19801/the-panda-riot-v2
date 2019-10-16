@@ -34,11 +34,20 @@ p {
   height: 100vh !important;
 }
 
+.landing__page .landing__clicker {
+  width: 100%;
+}
+
+
 .landing__page .box-card {
   min-height: 310px;
   border: 3px solid black;
 }
+.landing__promo-box {
+  width: 100% !important;
+  /* border: 1px solid red !important; */
 
+}
 .landing__promo-box-icon {
   width: 90%;
 height: auto;
@@ -538,6 +547,9 @@ ul li a {
     margin-right: auto;
     margin-left: auto;
   }
+  .landing__promo-box-icon {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -562,7 +574,7 @@ ul li a {
   .each-act-name p {
       text-align: start;
       margin-left: 10px;
-      /* font-size: 55%; */
+      font-size: 55%;
       color: orange;
   }
 }
@@ -597,6 +609,25 @@ ul li a {
       margin-left: 10px;
       font-size: 55%;
       color: white;
+  }
+  .signin__page .input__input-container {
+    /* border: 1px solid red; */
+    width: 80%;
+  }
+  .signup__page .input__input-container input {
+    width: 100%;
+  }
+
+  .signup__page .input__input-container {
+    /* border: 1px solid red; */
+    width: 80%;
+  }
+  .signup__page .input__input-container input {
+    width: 100%;
+  }
+
+  .signup__page {
+    max-height: 100vh !important;
   }
 }
 

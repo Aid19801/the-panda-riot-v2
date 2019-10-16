@@ -98,7 +98,7 @@ class SignInPage extends React.Component {
     const { submitting, error } = this.state;
     // console.log('this state ', this.state);
     return (
-      <div id="page-container" className="h-100">
+      <div id="page-container" className="signin__page h-100">
         <NextSeo
           openGraph={{
             type: 'website',

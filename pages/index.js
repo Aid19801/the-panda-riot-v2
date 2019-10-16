@@ -75,7 +75,7 @@ class LandingPage extends React.Component {
         <NavBar />
         <Banner src="/static/banner-ldn.jpg" />
         <Link href="/signin">
-          <a>
+          <a className="landing__clicker">
             <div className="container">
               <div className="row margin-top">
                 <FunkyTitle text="Open Mic Starts Here!" />

@@ -127,7 +127,7 @@ class SignUpPage extends React.Component {
     // console.log('this state ', this.state);
     // console.log('this props ', this.props);
     return (
-      <div id="page-container">
+      <div id="page-container" className="signup__page" >
         <NextSeo
           openGraph={{
             type: 'website',
