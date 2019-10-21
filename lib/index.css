@@ -284,6 +284,12 @@ ul li a {
   border: 3px solid grey;
 }
 
+.tpr__container {
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+}
+
 .tpr__container img {
   max-width: 90%;
   /* box-shadow: 7px 12px 18px lightgrey; */
@@ -612,7 +618,7 @@ ul li a {
   }
   .signin__page .input__input-container {
     /* border: 1px solid red; */
-    width: 80%;
+    /* width: 80%; */
   }
   .signup__page .input__input-container input {
     width: 100%;

@@ -85,7 +85,8 @@ class SignInPage extends React.Component {
         return Router.push('/home');
       })
       .catch(error => {
-        this.setState({ error });
+        console.log('error in state is ', error);
+        this.setState({ error: error.message, submitting: false, });
       });
   };
 
@@ -144,7 +145,7 @@ class SignInPage extends React.Component {
               placeholder="password here"
             />
             <Button text="Submit" onClick={this.onSubmit} color="grey" />
-
+            { error && <p className="flex-center white">{error}</p> }
             <Link href="/signup">
               <a className="btn btn-warning">Sign up?</a>
             </Link>
