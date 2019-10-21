@@ -55,7 +55,7 @@ class NewsStoryPage extends React.Component {
         <NextSeo
           openGraph={{
             type: 'website',
-            url: `https://tpr-v2.herokuapp.com/news/${content.results[0].id}`,
+            url: `https://www.thePandaRiot.com/news/${content.results[0].id}`,
             title: `${content.results[0].data['news-headline1'][0].text}`,
             description: `${content.results[0].data['news-body'][0].text}`,
             images: [
