@@ -291,7 +291,7 @@ ul li a {
 }
 
 .tpr__container img {
-  max-width: 90%;
+  max-width: 65%;
   /* box-shadow: 7px 12px 18px lightgrey; */
   padding: 20px;
   
@@ -559,6 +559,17 @@ ul li a {
 }
 
 @media screen and (max-width: 650px) {
+
+  .tpr__container {
+    display: flex;
+    justify-content: center;
+  }
+  .tpr__image {
+    max-width: 90% !important;
+    padding: 5px;
+    background: black;
+  }
+
   .each-act-name {
     margin-left: 0;
   }

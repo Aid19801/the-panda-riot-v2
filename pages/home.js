@@ -38,6 +38,7 @@ import {
 
 import { Router } from 'next/router';
 import '../lib/index.css';
+import withProgressBar from '../HOCs/with-progress';
 // import { analyticsPage } from '../lib/utils';
 
 class HomePage extends React.Component {
@@ -143,6 +144,10 @@ class HomePage extends React.Component {
     }
   }
 
+  componentWillMount() {
+    this.props.showProgressBar(true);
+  }
+
   async componentDidMount() {
     const {
       pageLoading,
@@ -173,6 +178,10 @@ class HomePage extends React.Component {
     if (process.browser) {
       this.saveNewsAndGigsToCache();
     }
+
+    setTimeout(() => {
+      this.props.showProgressBar(false);
+    }, 400)
   }
 
   signOut = () => {
@@ -207,7 +216,7 @@ class HomePage extends React.Component {
         <NextSeo
           openGraph={{
             type: 'website',
-            url: 'https://www.thePandaRiot.com',
+            url: 'https://www.thePandaRiot.com/home',
             title: `${this.props.gigs[0].name}`,
             description: 'News, gig-map and act profiles from London\'s electric open mic comedy scene.',
             images: [
@@ -265,6 +274,7 @@ const mapDispatchToProps = dispatch => ({
 export default compose(
   withAnalytics,
   withAuth,
+  withProgressBar,
   connect(
     mapStateToProps,
     mapDispatchToProps

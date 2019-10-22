@@ -19,6 +19,7 @@ import {
 } from '../redux/actions';
 import { getFromCache } from '../lib/cache';
 import '../lib/index.css';
+import withProgressBar from '../HOCs/with-progress';
 // import { analyticsPage } from '../lib/utils';
 
 class ChatPage extends Component {
@@ -29,9 +30,16 @@ class ChatPage extends Component {
     };
   }
 
+  componentWillMount(){
+    this.props.showProgressBar(true)
+  }
+
   componentDidMount() {
     this.getUsersNameFromCache();
     // analyticsPage('v2-chat-page');
+    setTimeout(() => {
+      this.props.showProgressBar(false)
+    }, 300)
   }
   handleKeyUp = evt => {
     if (evt.keyCode === 13) {
@@ -62,7 +70,7 @@ class ChatPage extends Component {
         <NextSeo
           openGraph={{
             type: 'website',
-            url: 'https://www.thePandaRiot.com',
+            url: 'https://www.thePandaRiot.com/chat',
             title: `Chat Page`,
             description:
               "Chat about various topics relating to London's electric open mic comedy scene.",
@@ -110,6 +118,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withProgressBar,
   withAnalytics,
   withAuth,
   connect(

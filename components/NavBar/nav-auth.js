@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+
 import { ProfilePic, SignOutButton } from '../index';
 import Link from 'next/link';
 import * as cache from '../../lib/cache';

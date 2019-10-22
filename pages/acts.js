@@ -13,6 +13,7 @@ import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 
 import '../lib/index.css';
+import withProgressBar from '../HOCs/with-progress';
 
 class ActsPage extends Component {
   constructor() {
@@ -89,13 +90,16 @@ class ActsPage extends Component {
   };
 
   componentWillMount() {
+    this.props.showProgressBar(true);
     this.renderActs();
     this.props.pageLoading();
   }
 
   componentDidMount() {
     this.props.pageLoaded();
-    // analyticsPage('v2-view-all-acts')
+    setTimeout(() => {
+      this.props.showProgressBar(true);
+    }, 300);
   }
 
   bounceToActsProfile = uid => {};
@@ -215,6 +219,7 @@ export default compose(
   withAnalytics,
   WithResponsivityHOC,
   withAuth,
+  withProgressBar,
   connect(
     mapStateToProps,
     mapDispatchToProps

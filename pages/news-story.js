@@ -14,6 +14,7 @@ import { prismicEndpoint } from '../lib/prismic';
 import withAuth from '../HOCs/with-auth';
 // import { analyticsPage } from '../lib/utils';
 import withAnalytics from '../HOCs/with-ga';
+import withProgressBar from '../HOCs/with-progress';
 
 class NewsStoryPage extends React.Component {
   static async getInitialProps({ reduxStore, req, query }) {
@@ -39,9 +40,15 @@ class NewsStoryPage extends React.Component {
     }
   }
 
+  componentWillMount() {
+    this.props.showProgressBar(true);
+  }
   componentDidMount = async () => {
     // TO-DO - put the client side fetching in here, if routing from home page.
     // analyticsPage(`v2-tpr-news-story`);
+    setTimeout(() => {
+      this.props.showProgressBar(false);
+    }, 500);
   };
 
   render() {
@@ -112,6 +119,7 @@ const mapStateToProps = state => ({
   content: state.prismic.content
 });
 export default compose(
+  withProgressBar,
   withAnalytics,
   withAuth,
   connect(
