@@ -142,6 +142,8 @@ class GigsPage extends Component {
     return (
       <div id="page-container" className="page__gigspage">
         <NextSeo
+          title="The Panda Riot | GIGS"
+          description="Find gigs using London's favourite Open Mic Comedy web-app"
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',
@@ -192,7 +194,6 @@ class GigsPage extends Component {
                     toggleMarker={selectedGig ? true : false}
                   />
 
-                  
                   <MoreInfoCard paneInfo={selectedGig} />
                   <HaveIPlayedHere gig={selectedGig} />
                 </div>

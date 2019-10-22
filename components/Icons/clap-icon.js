@@ -4,7 +4,7 @@ import './styles.css';
 const ClapIcon = () => {
     return (
         <div className="icon__clap up-svg">
-            <img src="/static/clap.png" height={20} width={20} />
+            <img src="/static/clap.png" height={20} width={20} alt="audience clap" />
         </div>
     )
 }

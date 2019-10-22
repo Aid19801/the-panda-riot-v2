@@ -47,7 +47,11 @@ function HaveIPlayedHere({ gig, updateStateAddUserToGig}) {
             : `gigs__have-i-played-here-container __no`
         }
       >
-        <img src="/static/audience.jpg" className="gigs__have-i-bg" />
+        <img 
+          src="/static/audience.jpg"
+          className="gigs__have-i-bg"
+          alt="live comedy audience"
+          />
 
         <div style={{ position: 'relative' }}>
           <h4 className="margin-off">Have You Recently Performed Here?</h4>
@@ -65,7 +69,7 @@ function HaveIPlayedHere({ gig, updateStateAddUserToGig}) {
   } else {
     return (
       <div className="gigs__have-i-played-here-container __no fadeOut">
-        <img src="/static/audience.jpg" className="gigs__have-i-bg" />
+        <img src="/static/audience.jpg" className="gigs__have-i-bg" alt="alternative comedy audience" />
         <div style={{ position: 'relative' }}>
           <h4 className="margin-off">Have You Recently Performed Here?</h4>
         </div>

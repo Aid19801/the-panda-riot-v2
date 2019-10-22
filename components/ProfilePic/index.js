@@ -23,6 +23,7 @@ const ProfilePic = ({ srcProp, editable, handleEditProfilePicture }) => {
         <div className="circle contained-height-width" id="two"></div>
         <div className="circle contained-height-width" id="one">
           <img
+          alt="open mic comedian profile editable"
             className="contained-height-width"
                  src={newSrc ? newSrc : '/static/no_prof_pic.png'}
           />
@@ -34,6 +35,7 @@ const ProfilePic = ({ srcProp, editable, handleEditProfilePicture }) => {
   return (
     <div className="circular-img">
       <img
+      alt="open mic comedian not editable"
         className="contained-height-width circular-image"
         src={newSrc ? newSrc : '/static/no_prof_pic.png'}
         />

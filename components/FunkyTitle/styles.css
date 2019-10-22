@@ -31,17 +31,17 @@
 
 @media screen and (max-width: 500px) {
 
-  .funky-title {
-    width: 80%;
-   font-size: 4vh;
+  .title {
+    width: 80% !important;
+   /* font-size: 4vh; */
   }
 }
 
 
-/* @media screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
 
-  .funky-title {
-    
+  .title {
+    width: 80%; 
   }
-} */
+}
 

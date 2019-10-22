@@ -26,7 +26,7 @@ export function InfoCard({ paneInfo, toggleMarker }) {
       </div>
       
       <div className={ toggleMarker ? "bg-img-div effect" : "bg-img-div" }>
-        <img alt="open mic comedy venue promo" className="bg-img" src={ !paneInfo.img ? 'https://cdn.xl.thumbs.canstockphoto.com/microphone-icon-vector-illustration-drawing_csp46244294.jpg' : paneInfo.img } />
+        <img alt="comedy venue promotions" className="bg-img" src={ !paneInfo.img ? 'https://cdn.xl.thumbs.canstockphoto.com/microphone-icon-vector-illustration-drawing_csp46244294.jpg' : paneInfo.img } />
       </div>
     </animated.div>
   )

@@ -97,7 +97,7 @@ class NewsStoryPage extends React.Component {
               <img
                 className="tpr__image"
                 src={this.props.content.results[0].data['news-image'].url}
-                alt="news for open mic comedy"
+                alt={this.props.content.results[0].data['news-headline1'][0].text}
               />
               <RichText
                 render={this.props.content.results[0].data['news-body']}

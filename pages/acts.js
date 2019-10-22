@@ -108,7 +108,7 @@ class ActsPage extends Component {
     return Router.push('/me');
   };
 
-  processTagline = (str) => {
+  processTagline = str => {
     let res = '';
     if (str.length > 45) {
       res = str.slice(0, 45) + '...';
@@ -116,13 +116,15 @@ class ActsPage extends Component {
       res = str;
     }
     return res;
-  }
+  };
   render() {
     const { downVoteSwitchedOn } = this.state;
-    // console.log('this props foo ', this.props);
+
     return (
       <div id="page-container" className="page__actspage">
         <NextSeo
+          title="The Panda Riot | ACTS"
+          description="Find acts and watch their sets on London's favourite Open Mic Comedy web-app"
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',
@@ -185,7 +187,6 @@ class ActsPage extends Component {
 
                       <Link href={`/acts/${each.uid}`}>
                         <a>
-                          
                           <ProfilePic srcProp={each.profilePicture} />
 
                           <div className="each-act-name">

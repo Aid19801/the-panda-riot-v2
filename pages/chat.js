@@ -30,16 +30,16 @@ class ChatPage extends Component {
     };
   }
 
-  componentWillMount(){
-    this.props.showProgressBar(true)
+  componentWillMount() {
+    this.props.showProgressBar(true);
   }
 
   componentDidMount() {
     this.getUsersNameFromCache();
     // analyticsPage('v2-chat-page');
     setTimeout(() => {
-      this.props.showProgressBar(false)
-    }, 300)
+      this.props.showProgressBar(false);
+    }, 300);
   }
   handleKeyUp = evt => {
     if (evt.keyCode === 13) {
@@ -48,7 +48,7 @@ class ChatPage extends Component {
     }
   };
 
-  getUsersNameFromCache = async() => {
+  getUsersNameFromCache = async () => {
     let userName = '';
     try {
       const json = await getFromCache('user-profile-object');
@@ -57,10 +57,10 @@ class ChatPage extends Component {
       userName = userProfile.username;
     } catch (error) {
       console.log('getUsersNameFromCache | error: ', error);
-      this.setState({ user: 'unverified' })
+      this.setState({ user: 'unverified' });
     }
     this.setState({ user: userName });
-  }
+  };
 
   render() {
     const { user } = this.state;
@@ -68,6 +68,8 @@ class ChatPage extends Component {
     return (
       <div id="page-container" className="page__chatpage flex-center">
         <NextSeo
+          title="The Panda Riot | CHAT"
+          description="Chat with other acts and promoters on London's favourite Open Mic Comedy web-app"
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com/chat',
@@ -96,10 +98,7 @@ class ChatPage extends Component {
         <FunkyTitle text="chat" />
         <div className="container">
           <div className="row">
-            <ChatContainer
-              handleKeyUp={this.handleKeyUp}
-              user={user}
-            />
+            <ChatContainer handleKeyUp={this.handleKeyUp} user={user} />
           </div>
         </div>
       </div>

@@ -563,7 +563,9 @@ ul li a {
   .tpr__container {
     display: flex;
     justify-content: center;
+    padding-bottom: 50px;
   }
+  
   .tpr__image {
     max-width: 90% !important;
     padding: 5px;

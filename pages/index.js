@@ -48,10 +48,12 @@ class LandingPage extends React.Component {
     return (
       <div id="page-container" className="landing__page">
         <NextSeo
+          title="The Panda Riot | Open Mic Comedy in London"
+          description="London's electric Open Mic Comedy Circuit - all in one handy web-app!"
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',
-            title: 'The Panda Riot.',
+            title: 'The Panda Riot',
             description:
               "The go-to web-app for London's electric open mic comedy circuit.",
             images: [
@@ -91,6 +93,7 @@ class LandingPage extends React.Component {
                         Open Mic comedy circuit!
                       </p>
                       <img
+                        alt="comedy masks"
                         className="landing__promo-box-icon"
                         src="/static/masks.svg"
                       />
@@ -107,6 +110,7 @@ class LandingPage extends React.Component {
                         On The Filterable Gig Map!
                       </p>
                       <img
+                      alt="comedy show locations"
                         className="landing__promo-box-icon"
                         src="/static/location.svg"
                       />
@@ -123,6 +127,7 @@ class LandingPage extends React.Component {
                         5-spots!
                       </p>
                       <img
+                      alt="fottage of comedy sets"
                         className="landing__promo-box-icon"
                         src="/static/video-camera.svg"
                       />
@@ -154,15 +159,16 @@ class LandingPage extends React.Component {
                 <div className="jumbotron w-100 landing__jumbotron rounded-corners tpr__border orange-gradient">
                   <div className="flex-col">
                     <Fade>
-                      <h1 className="landing__jumbo-title flex-center grey">
+                      <h2 className="landing__jumbo-title flex-center white">
                         Totally Free
-                      </h1>
+                      </h2>
                     </Fade>
 
                     <div className="landing__screens-container">
                       <Fade>
                         <div className="landing__screen-container skew-right">
                           <img
+                          alt="map of comedy venues"
                             src="/static/screen_map.png"
                             height={400}
                             width={500}
@@ -171,6 +177,7 @@ class LandingPage extends React.Component {
                       </Fade>
                       <div className="landing__screen-container skew-left">
                         <img
+                        alt="mobile screen of acts"
                           src="/static/screen_acts.png"
                           height={500}
                           width={250}
@@ -187,6 +194,7 @@ class LandingPage extends React.Component {
                     <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
                       <h3 className="white center black skew-right">NEWS</h3>
                       <img
+                      alt="screen of open mic comedy news"
                         className="landing__promo-box-icon"
                         src="/static/screen_news.png"
                       />
@@ -201,13 +209,13 @@ class LandingPage extends React.Component {
                         FIND SPOTS!
                       </h3>
                       <img
+                      alt="screen of comedy venue locations"
                         className="landing__promo-box-icon"
                         src="/static/screen_mapp.png"
                       />
                     </div>
                   </div>
                 </Fade>
-                
               </div>
             </div>
           </a>

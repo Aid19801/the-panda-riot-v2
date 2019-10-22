@@ -157,7 +157,7 @@ class HomePage extends React.Component {
       stories,
       tpr_stories,
       updateStateFetchPrismicStories,
-      updateStatefetchGigsTonight,
+      updateStatefetchGigsTonight
     } = this.props;
     pageLoading();
     if (!stories) {
@@ -181,7 +181,7 @@ class HomePage extends React.Component {
 
     setTimeout(() => {
       this.props.showProgressBar(false);
-    }, 400)
+    }, 400);
   }
 
   signOut = () => {
@@ -205,7 +205,7 @@ class HomePage extends React.Component {
 
   handleClick = () => {
     return Router.push('/gigs');
-  }
+  };
 
   render() {
     if (process.browser) {
@@ -214,11 +214,14 @@ class HomePage extends React.Component {
     return (
       <div id="page-container" className="page__homepage flex-center">
         <NextSeo
+          title="The Panda Riot | HOME"
+          description="Homepage for London's favourite Open Mic Comedy web-app"
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com/home',
             title: `${this.props.gigs[0].name}`,
-            description: 'News, gig-map and act profiles from London\'s electric open mic comedy scene.',
+            description:
+              "News, gig-map and act profiles from London's electric open mic comedy scene.",
             images: [
               {
                 url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
@@ -237,8 +240,10 @@ class HomePage extends React.Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
-        {this.props.gigsTonight && <Bulletin stories={this.props.gigsTonight} /> }
-        
+        {this.props.gigsTonight && (
+          <Bulletin stories={this.props.gigsTonight} />
+        )}
+
         <Banner src="/static/mic.jpg" />
 
         <div className="container">
@@ -265,7 +270,7 @@ const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(homePageLoading()),
   updateStatefetchNews: () => dispatch(getAllNews()),
   updateStateFetchPrismicStories: () => dispatch(prismicNewsApiReq()), // get prismic stories
-  updateStatePrismicFailed: (err) => dispatch(prismicNewsApiFail(err)),
+  updateStatePrismicFailed: err => dispatch(prismicNewsApiFail(err)),
   updateStatefetchGigsTonight: () => dispatch(fetchGigsTonight()),
   pageLoaded: () => dispatch(homePageLoaded()),
   pageFailed: () => dispatch(homePageFailed())
