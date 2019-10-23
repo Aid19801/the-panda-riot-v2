@@ -572,6 +572,13 @@ ul li a {
     background: black;
   }
 
+  .tpr__container img {
+    max-width: 90% !important;
+    padding: 7px;
+    background: black;
+  }
+
+
   .each-act-name {
     margin-left: 0;
   }
