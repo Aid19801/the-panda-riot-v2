@@ -86,7 +86,7 @@ class SignInPage extends React.Component {
       })
       .catch(error => {
         console.log('error in state is ', error);
-        this.setState({ error: error.message, submitting: false, });
+        this.setState({ error: error.message, submitting: false });
       });
   };
 
@@ -101,9 +101,11 @@ class SignInPage extends React.Component {
     return (
       <div id="page-container" className="signin__page h-100">
         <NextSeo
+          title="The Panda Riot | Sign in to experience London's Open Mic scene"
+          description="London's electric Open Mic Comedy Circuit - all in one handy, modern web-app!"
           openGraph={{
             type: 'website',
-            url: 'https://www.thePandaRiot.com/gigs',
+            url: 'https://www.thePandaRiot.com/signin',
             title: 'Sign In',
             description: 'Sign in to the panda riot open mic comedy webapp!',
             images: [
@@ -126,7 +128,11 @@ class SignInPage extends React.Component {
         <NavBar />
         <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
 
-        {submitting && <div style={{ marginTop: 100 }}><Spinner /></div>}
+        {submitting && (
+          <div style={{ marginTop: 100 }}>
+            <Spinner />
+          </div>
+        )}
 
         {!submitting && (
           <>
@@ -145,7 +151,7 @@ class SignInPage extends React.Component {
               placeholder="password here"
             />
             <Button text="Submit" onClick={this.onSubmit} color="grey" />
-            { error && <p className="flex-center white">{error}</p> }
+            {error && <p className="flex-center white">{error}</p>}
             <Link href="/signup">
               <a className="btn btn-warning">Sign up?</a>
             </Link>

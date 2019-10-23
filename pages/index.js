@@ -49,7 +49,7 @@ class LandingPage extends React.Component {
       <div id="page-container" className="landing__page">
         <NextSeo
           title="The Panda Riot | Open Mic Comedy in London"
-          description="London's electric Open Mic Comedy Circuit - all in one handy web-app!"
+          description="London's electric Open Mic Comedy Circuit - all in one handy, modern web-app!"
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',

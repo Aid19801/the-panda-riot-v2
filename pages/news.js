@@ -55,7 +55,7 @@ class NewsPage extends React.Component {
     // analyticsPage('v2-newspage')
   }
 
-  handleClick = (id) => {
+  handleClick = id => {
     console.log('handleClick fired: ', id);
     return Router.pushRoute(`/news/${id}`);
   };
@@ -67,6 +67,8 @@ class NewsPage extends React.Component {
     return (
       <div id="page-container container">
         <NextSeo
+          title="The Panda Riot | Open Mic Comedy News"
+          description="The latest exclusive content from The Panda Riot. Scandals, blogs, reviews and more - from London's electric open mic comedy circuit."
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com',
@@ -99,7 +101,11 @@ class NewsPage extends React.Component {
           {this.props.docs &&
             this.props.docs.map((each, i) => {
               return (
-                <div onClick={() => this.handleClick(each.id)} className="news__card-container col-sm-4" key={i}>
+                <div
+                  onClick={() => this.handleClick(each.id)}
+                  className="news__card-container col-sm-4"
+                  key={i}
+                >
                   <RichText render={each.data['news-headline1']} />
                   <img
                     className="news__card-img"

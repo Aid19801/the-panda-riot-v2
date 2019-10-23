@@ -60,27 +60,45 @@ class NewsStoryPage extends React.Component {
     return (
       <div id="page-container">
         <NextSeo
+          title={`${content.results[0].data['news-headline1'][0].text}`}
+          description={`${content.results[0].data['news-body'][0].text}`}
           openGraph={{
-            type: 'website',
+            type: 'article',
             url: `https://www.thePandaRiot.com/news/${content.results[0].id}`,
             title: `${content.results[0].data['news-headline1'][0].text}`,
             description: `${content.results[0].data['news-body'][0].text}`,
+            article: {
+              publishedTime: `${content.results[0].first_publication_date}`,
+              modifiedTime: `${content.results[0].last_publication_date}`,
+              // expirationTime: '2022-12-21T22:04:11Z',
+              section: 'Comedy',
+              authors: [
+                'https://www.example.com/authors/@firstnameA-lastnameA',
+                'https://www.example.com/authors/@firstnameB-lastnameB'
+              ],
+              tags: ['Comedy', 'Open Mic', 'London', 'Standup', 'Stand-Up']
+            },
             images: [
               {
                 url: `${content.results[0].data['news-image'].url}`,
                 width: 800,
                 height: 600,
-                alt: 'Og Image Alt'
+                alt: 'Open Mic Comedy Audience'
               },
               {
                 url:
                   'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',
                 width: 800,
                 height: 600,
-                alt: 'Og Image Alt 2'
+                alt: 'Open Mic Comedy Opportunities'
               }
             ],
-            site_name: '#ThePandaRiot',
+            site_name: '#ThePandaRiot'
+          }}
+          twitter={{
+            handle: '@aidThompsin',
+            site: '@thePandaRiot',
+            cardType: 'summary_large_image',
           }}
         />
         <NavBar firebase={this.props.firebase} />
@@ -97,7 +115,9 @@ class NewsStoryPage extends React.Component {
               <img
                 className="tpr__image"
                 src={this.props.content.results[0].data['news-image'].url}
-                alt={this.props.content.results[0].data['news-headline1'][0].text}
+                alt={
+                  this.props.content.results[0].data['news-headline1'][0].text
+                }
               />
               <RichText
                 render={this.props.content.results[0].data['news-body']}

@@ -294,7 +294,7 @@ ul li a {
   max-width: 65%;
   /* box-shadow: 7px 12px 18px lightgrey; */
   padding: 20px;
-  
+  background: black; 
   height: auto;
   margin: 20px;
 }
