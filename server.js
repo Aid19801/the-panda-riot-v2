@@ -63,4 +63,3 @@ app
     process.exit(1);
   });
 
-// console.log('Foo Bar: ', process.env.NODE_ENV)
