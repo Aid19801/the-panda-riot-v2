@@ -4,18 +4,26 @@ import * as icons from './icons';
 
 import './styles.css';
 
-export default function MoreInfoCard({ paneInfo }) {
+export default function MoreInfoCard({ paneInfo, isGigs, isAttendees }) {
   return (
     <div className="gigs__more-info-container tpr__border flex-center padding-on margin-off">
       <div className="gigs__flex-row">
-        <div className="moreinfo__each-row skew-left orange">
-          <icons.BringerIcon />
-          <h4>{paneInfo.bringer ? 'Bringer!' : 'Not A Bringer!'}</h4>
-        </div>
-        <div className="moreinfo__each-row skew-right orange">
-          <icons.WalkinsIcon />
-          <h4>{paneInfo.walkins ? 'They Do Walk-Ins!' : 'No Walk-ins'}</h4>
-        </div>
+
+        { isGigs ? (
+        <>  
+          <div className="moreinfo__each-row skew-left orange">
+            <icons.BringerIcon />
+            <h4>{paneInfo.bringer ? 'Bringer!' : 'Not A Bringer!'}</h4>
+          </div>
+          <div className="moreinfo__each-row skew-right orange">
+            <icons.WalkinsIcon />
+            <h4>{paneInfo.walkins ? 'They Do Walk-Ins!' : 'No Walk-ins'}</h4>
+          </div>
+        </>
+        ) : (
+          <div />
+        )}
+
       </div>
 
       <div className="gigs__flex-row">

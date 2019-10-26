@@ -637,9 +637,21 @@ ul li a {
       color: white;
   }
   .signin__page .input__input-container {
-    /* border: 1px solid red; */
-    /* width: 80%; */
+    width: 80%;
   }
+
+  .signin__page .input__input-container input {
+    width: 100%;
+  }
+
+  .signin__page h1.funky-title {
+    width: 90%;
+  }
+  .signup__page .input__input-container {
+    width: 80%;
+  }
+
+
   .signup__page .input__input-container input {
     width: 100%;
   }
@@ -652,9 +664,18 @@ ul li a {
     width: 100%;
   }
 
+  .signup__page .input__input-container select {
+    width: 100%;
+  }
+
   .signup__page {
     max-height: 100vh !important;
   }
+
+  .signup__page h1.funky-title {
+    width: 90%;
+  }
+
 }
 
 
