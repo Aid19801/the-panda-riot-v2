@@ -12,6 +12,14 @@ export const gotDevice = res => {
   return { type: actionTypes.GOT_DEVICE, isMobile: res };
 };
 
+export const updateStateAppLoading = () => ({
+  type: actionTypes.SHOW_SPINNER,
+});
+
+export const updateStateAppLoaded = () => ({
+  type: actionTypes.HIDE_SPINNER,
+})
+
 // PAGE | Auth / Sign In
 export const signInPageLoading = () => {
   return { type: actionTypes.SIGNIN_PAGE_LOADING };

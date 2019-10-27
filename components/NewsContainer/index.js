@@ -31,7 +31,7 @@ class NewsContainer extends Component {
 
         { this.props.tpr_stories && this.props.tpr_stories.map((each, i) => {
           return (
-
+            <>
             <BoxCard
               id={each.id}
               key={i}
@@ -41,6 +41,7 @@ class NewsContainer extends Component {
               link={`https://www.thepandariot.com/news/${each.id}`}
               src="TPR"
             />
+            </>
           )
         })}
         {this.props.stories &&

@@ -246,13 +246,13 @@ class MePage extends Component {
         <Banner src="/static/audience.jpg" />
 
         <div className="container">
-          <div className="row margin-top flex-center">
+          <div className="row margin-top">
             {showSpinner && <Spinner />}
             {!showSpinner && (
               <>
                 <FunkyTitle text="My Profile" />
 
-                <div className="col-sm-10 flex-center flex-col">
+                <div className="col-sm-12 flex-center flex-col">
                   <ProfilePic editable srcProp={profilePicture} handleEditProfilePicture={this.handleEditProfilePicture} />
                   {!profilePicture ||
                   profilePicture === '/static/no_prof_pic.png' ||
@@ -265,7 +265,7 @@ class MePage extends Component {
                 </div>
 
                 {isEditingProfilePicture && (
-                  <div className="col-sm-10 flex-center">
+                  <div className="col-sm-12 flex-center">
                     <Input
                       title="Profile Picture"
                       name="profilePicture"
@@ -276,7 +276,7 @@ class MePage extends Component {
                   </div>
                 )}
 
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="email"
                     name="email"
@@ -284,7 +284,7 @@ class MePage extends Component {
                     onChange={() => null}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="username"
                     name="username"
@@ -292,7 +292,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="tagline"
                     name="tagline"
@@ -300,7 +300,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     type="select"
                     selectOptions={[
@@ -324,7 +324,7 @@ class MePage extends Component {
                   />
                 </div>
 
-                <div className="col-sm-10 flex-center flex-col">
+                <div className="col-sm-12 flex-center flex-col">
                   <Input
                     title="favourite gig"
                     name="faveGig"
@@ -337,7 +337,7 @@ class MePage extends Component {
                     </p>
                   ) : null}
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My YouTube Video URL"
                     name="youtube"
@@ -345,7 +345,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My Twitter"
                     name="twitter"
@@ -353,7 +353,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My Facebook Page"
                     name="facebook"
@@ -361,7 +361,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My YouTube Channel"
                     name="youtubeChannelURL"
@@ -369,7 +369,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My Website"
                     name="website"

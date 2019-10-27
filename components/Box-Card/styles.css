@@ -176,6 +176,11 @@
 
 @media screen and (max-width: 488px) {
   .box-card {
-    height: 337px;
+    height: 436px;
+  }
+  .box-card .card-p {
+    font-size: 20px;
+    background: black;
+    transform: skewY(-2deg);
   }
 }

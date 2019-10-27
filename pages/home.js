@@ -14,7 +14,8 @@ import {
   newsApiSuccess,
   prismicNewsApiReq,
   prismicNewsApiSuccess,
-  prismicNewsApiFail
+  prismicNewsApiFail,
+  updateStateAppLoaded
 } from '../redux/actions';
 import * as cache from '../lib/cache';
 
@@ -149,6 +150,7 @@ class HomePage extends React.Component {
   }
 
   async componentDidMount() {
+    this.props.updateStateAppLoaded()
     const {
       pageLoading,
       updateStatefetchNews,
@@ -272,6 +274,7 @@ const mapDispatchToProps = dispatch => ({
   updateStateFetchPrismicStories: () => dispatch(prismicNewsApiReq()), // get prismic stories
   updateStatePrismicFailed: err => dispatch(prismicNewsApiFail(err)),
   updateStatefetchGigsTonight: () => dispatch(fetchGigsTonight()),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
   pageLoaded: () => dispatch(homePageLoaded()),
   pageFailed: () => dispatch(homePageFailed())
 });

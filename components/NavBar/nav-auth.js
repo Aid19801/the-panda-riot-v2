@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
@@ -7,6 +8,7 @@ import Link from 'next/link';
 import * as cache from '../../lib/cache';
 
 import './styles.css';
+import { updateStateAppLoading } from '../../redux/actions';
 
 class NavigationAuth extends Component {
   constructor() {
@@ -62,6 +64,11 @@ class NavigationAuth extends Component {
     this.setState({ popOut: !this.state.popOut });
   };
 
+  updateStateLoading = () => {
+    console.log('===================+YEAH+ =================')
+    this.props.updateStateAppLoading();
+  }
+
   render() {
     const { uid } = this.state;
     const { popOut, profilePic } = this.state;
@@ -77,19 +84,19 @@ class NavigationAuth extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <div className="div__flex-row">
-              <div className="nav-option-wrapper">
+              <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
                 <Link href="/home"><a>Home</a></Link>
               </div>
 
-              <div className="nav-option-wrapper">
+              <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
                 <Link href="/gigs"><a>Gigs</a></Link>
               </div>
 
-              <div className="nav-option-wrapper">
+              <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
                 <Link href="/acts"><a>Acts</a></Link>
               </div>
 
-              <div className="nav-option-wrapper">
+              <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
                 <Link href="/chat"><a>Chat</a></Link>
               </div>
             </div>
@@ -106,8 +113,18 @@ class NavigationAuth extends Component {
               </div>
               {popOut && (
                 <div className="nav__my-acc__popout" onClick={this.handleClick}>
-                  <Link href="/me"><a>My Account</a></Link>
-                  <Link href={`/acts/${uid}`}><a>My Profile</a></Link>
+                  <Link href="/me">
+                    <a>
+                      <div onClick={() => this.updateStateLoading()}>My Account</div>
+                    </a>    
+                  </Link>
+                  <Link href={`/acts/${uid}`}>
+                    <a>
+                      <div onClick={() => this.updateStateLoading()}>    
+                        My Profile
+                      </div>
+                    </a>
+                  </Link>
                   {this.props.isAdmin && (
                     <div className="nav__admin-option">
                       <Link href="https://des-lynham.prismic.io/documents/working~l=en-gb/">
@@ -128,4 +145,7 @@ class NavigationAuth extends Component {
   }
 }
 
-export default NavigationAuth;
+const mapDispatchToProps = dispatch => ({
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
+})
+export default connect(null, mapDispatchToProps)(NavigationAuth);
