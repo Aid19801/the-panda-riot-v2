@@ -1,6 +1,10 @@
 {
   "name": "the-panda-riot-v2",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.15.1",
+    "npm": "6.11.3"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
