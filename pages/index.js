@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
 import { connect } from 'react-redux';
-import { startApp } from '../redux/actions';
+import { startApp, updateStateAppLoaded } from '../redux/actions';
 import Fade from 'react-reveal/Fade';
 import { NavBar, FunkyTitle, Banner, ProfilePic } from '../components';
 import withAnalytics from '../HOCs/with-ga';
@@ -18,10 +18,10 @@ class LandingPage extends React.Component {
   }
 
   componentDidMount() {
-    const { updateStateStartApp } = this.props;
+    const { updateStateStartApp, updateStateAppLoaded } = this.props;
     updateStateStartApp();
     this.handleGigsArray();
-    // analyticsPage('v2-landing-page');
+    updateStateAppLoaded()
   }
 
   handleGigsArray = () => {
@@ -226,7 +226,8 @@ class LandingPage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  updateStateStartApp: () => dispatch(startApp())
+  updateStateStartApp: () => dispatch(startApp()),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
 export default compose(

@@ -52,7 +52,7 @@ class NewsPage extends React.Component {
     const { pageLoading, pageLoaded } = this.props;
     pageLoading();
     pageLoaded();
-    // analyticsPage('v2-newspage')
+    this.props.updateStateAppLoaded();
   }
 
   handleClick = id => {

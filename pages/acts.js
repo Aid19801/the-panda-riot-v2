@@ -3,17 +3,20 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
-import { actsPageLoading, actsPageLoaded } from '../redux/actions';
+import {
+  actsPageLoading,
+  actsPageLoaded,
+  updateStateAppLoaded
+} from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
 import { tooSoon } from '../lib/utils';
-import { NavBar, FunkyTitle, Banner, ProfilePic } from '../components';
+import { NavBar, FunkyTitle, Banner, ProfilePic, Spinner } from '../components';
 import ClapIcon from '../components/Icons/clap-icon';
 import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
-
-import '../lib/index.css';
 import withProgressBar from '../HOCs/with-progress';
+import '../lib/index.css';
 
 class ActsPage extends Component {
   constructor() {
@@ -98,8 +101,9 @@ class ActsPage extends Component {
   componentDidMount() {
     this.props.pageLoaded();
     setTimeout(() => {
-      this.props.showProgressBar(true);
+      this.props.showProgressBar(false);
     }, 300);
+    this.props.updateStateAppLoaded();
   }
 
   bounceToActsProfile = uid => {};
@@ -148,7 +152,9 @@ class ActsPage extends Component {
           }}
         />
         <NavBar firebase={this.props.firebase} />
+
         <Banner src="/static/mugshots.jpg" />
+
         <div className="container acts__container">
           <div className="row flex-center margin-top">
             <FunkyTitle text="Acts" />
@@ -157,7 +163,7 @@ class ActsPage extends Component {
           <div className="row flex-center">
             <div className="col-sm-10 flex-center flex-col">
               {this.state.acts.map((each, i) => {
-                console.log('each is ', each.username);
+                // console.log('each is ', each.username);
                 return (
                   <div
                     key={i}
@@ -208,12 +214,14 @@ class ActsPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  loading: state.acts.loading
+  loading: state.acts.loading,
+  spinner: state.appState.spinner
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(actsPageLoading()),
-  pageLoaded: () => dispatch(actsPageLoaded())
+  pageLoaded: () => dispatch(actsPageLoaded()),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded())
 });
 
 export default compose(

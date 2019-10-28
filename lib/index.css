@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Raleway|Rubik');
 
+/* .fooooo {
+  position: absolute;
+  z-index: 100;
+  border: 5px solid red;
+} */
+
 html {
   background: grey repeat-y;
   min-width: 100%;
@@ -598,6 +604,10 @@ ul li a {
 }
 
 @media screen and (max-width: 488px) {
+  .landing__screens-container img {
+    width: 100%;
+    height: auto;
+  }
   .each-act-name {
     margin-left: 0;
   }

@@ -18,7 +18,8 @@ import {
   actPageLoaded,
   actPageFailed,
   fetchActProfile,
-  gotActProfile
+  gotActProfile,
+  updateStateAppLoaded,
 } from '../redux/actions';
 // import { analyticsPage } from '../lib/utils';
 
@@ -126,7 +127,7 @@ class UserProfilePage extends Component {
 
   componentDidMount() {
     this.props.pageLoaded();
-    // analyticsPage('v2-view-act-profile');
+    this.props.updateStateAppLoaded();
   }
 
   handleClick = () => {
@@ -226,7 +227,8 @@ const mapDispatchToProps = dispatch => ({
   pageLoaded: obj => dispatch(actPageLoaded(obj)),
   pageFailed: () => dispatch(actPageFailed()),
   updateStateFetchActProfile: uid => dispatch(fetchActProfile(uid)),
-  updateStateGotActProfile: actProfile => dispatch(gotActProfile(actProfile))
+  updateStateGotActProfile: actProfile => dispatch(gotActProfile(actProfile)),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
 export default compose(

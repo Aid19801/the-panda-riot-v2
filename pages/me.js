@@ -21,7 +21,8 @@ import {
   mePageLoaded,
   mePageFailed,
   fetchActProfile,
-  gotActProfile
+  gotActProfile,
+  updateStateAppLoaded
 } from '../redux/actions';
 // import { analyticsEvent } from '../lib/utils';
 
@@ -146,7 +147,7 @@ class MePage extends Component {
 
   componentDidMount() {
     this.props.pageLoaded();
-    // analyticsPage('v2-my-account');
+    this.props.updateStateAppLoaded();
   }
 
   onSubmit = event => {
@@ -400,6 +401,7 @@ const mapDispatchToProps = dispatch => ({
   pageLoaded: obj => dispatch(mePageLoaded(obj)),
   pageFailed: () => dispatch(mePageFailed()),
   updateStateFetchActProfile: uid => dispatch(fetchActProfile(uid)),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
   updateStateGotActProfile: actProfile => dispatch(gotActProfile(actProfile))
 });
 

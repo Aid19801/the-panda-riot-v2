@@ -6,7 +6,8 @@ import {
   gigsPageLoading,
   gigsPageLoaded,
   fetchGigsFromGist,
-  gotGigsFromGist
+  gotGigsFromGist,
+  updateStateAppLoaded
   // getDevice
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
@@ -79,7 +80,7 @@ class GigsPage extends Component {
     if (!this.props.gigs) {
       this.fetchGigs();
     }
-    // analyticsPage('v2-gigs-page');
+    this.props.updateStateAppLoaded();
   }
 
   fetchGigs = async () => {
@@ -221,8 +222,8 @@ const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(gigsPageLoading()),
   pageLoaded: () => dispatch(gigsPageLoaded()),
   fetchGigs: () => dispatch(fetchGigsFromGist()),
-  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr))
-  // updateStateGettingDevice: () => dispatch(getDevice()),
+  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr)),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
 export default compose(

@@ -10,7 +10,8 @@ import {
   signInPageLoaded,
   signInPageFailed,
   saveAuthUser,
-  saveAuthenticatedUID
+  saveAuthenticatedUID,
+  updateStateAppLoaded,
 } from '../redux/actions';
 import { Banner, Button, Input, NavBar, Spinner } from '../components';
 import { withFirebase } from '../HOCs';
@@ -31,9 +32,10 @@ class SignInPage extends React.Component {
   }
 
   componentDidMount() {
-    const { pageLoading, pageLoaded } = this.props;
+    const { pageLoading, pageLoaded, updateStateAppLoaded } = this.props;
     pageLoading();
     pageLoaded();
+    updateStateAppLoaded();
     // analyticsPage('v2-signin-page');
   }
 
@@ -174,7 +176,8 @@ const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(signInPageLoading()),
   pageLoaded: () => dispatch(signInPageLoaded()),
   pageFailed: () => dispatch(signInPageFailed()),
-  updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id))
+  updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id)),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
 export default compose(

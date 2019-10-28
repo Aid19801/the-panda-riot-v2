@@ -10,7 +10,7 @@ import {
   signUpPageLoaded,
   signUpPageFailed,
   saveAuthenticatedUID,
-  // fetchGigsFromGist
+  updateStateAppLoaded,
 } from '../redux/actions';
 import { Banner, Button, Input, NavBar } from '../components';
 import { withFirebase } from '../HOCs';
@@ -48,10 +48,10 @@ class SignUpPage extends React.Component {
   }
 
   componentDidMount() {
-    const { pageLoading, pageLoaded } = this.props;
+    const { pageLoading, pageLoaded, updateStateAppLoaded } = this.props;
     pageLoading();
     pageLoaded();
-    // analyticsPage('v2-signup-page');
+    updateStateAppLoaded()
   }
 
   onSubmit = () => {
@@ -288,7 +288,8 @@ const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(signUpPageLoading()),
   pageLoaded: () => dispatch(signUpPageLoaded()),
   pageFailed: () => dispatch(signUpPageFailed()),
-  updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id))
+  updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id)),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
 export default compose(

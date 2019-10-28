@@ -29,11 +29,9 @@ class NewsStoryPage extends React.Component {
   }
 
   static async fetchContent(uid) {
-    // console.log('======= fetching content for this: ', uid);
     const client = Prismic.client(prismicEndpoint);
     try {
       const res = await client.query(Prismic.Predicates.at('document.id', uid));
-      // console.log('Story Retrieved: ', res);
       return res;
     } catch (error) {
       console.log('try catch error getting solo article: ', error);
@@ -49,14 +47,12 @@ class NewsStoryPage extends React.Component {
     setTimeout(() => {
       this.props.showProgressBar(false);
     }, 500);
+    this.props.updateStateAppLoaded();
   };
 
   render() {
-    // console.log('TPR News Story Props: ', this.props.content);
     const { content } = this.props;
-    // const { results } = content;
-
-    console.log('content yo ', content);
+    // console.log('content yo ', content);
     return (
       <div id="page-container">
         <NextSeo
@@ -132,7 +128,8 @@ class NewsStoryPage extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   updateStateFetchArticle: () => dispatch(actions.fetchTPRStory()),
-  updateStateGotArticle: res => dispatch(actions.fetchTPRSuccess(res))
+  updateStateGotArticle: res => dispatch(actions.fetchTPRSuccess(res)),
+  updateStateAppLoaded: () => dispatch(actions.updateStateAppLoaded()),
 });
 
 const mapStateToProps = state => ({

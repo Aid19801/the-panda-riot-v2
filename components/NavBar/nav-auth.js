@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Router from 'next/router';
 
 import { ProfilePic, SignOutButton } from '../index';
 import Link from 'next/link';
 import * as cache from '../../lib/cache';
+import { updateStateAppLoading } from '../../redux/actions';
 
 import './styles.css';
-import { updateStateAppLoading } from '../../redux/actions';
 
 class NavigationAuth extends Component {
   constructor() {
@@ -26,57 +27,74 @@ class NavigationAuth extends Component {
 
     setTimeout(async () => {
       const obj = JSON.parse(stringJson);
-  
+
       // if theres a profile pic in cache, lock into cachedPic const
       let cachedPic = '';
-  
-  
+
       if (!obj) {
-        return cachedPic = null;
+        return (cachedPic = null);
       }
-      
-      if (obj && obj !== null && obj.profilePicture && obj.profilePicture !== '') {
+
+      if (
+        obj &&
+        obj !== null &&
+        obj.profilePicture &&
+        obj.profilePicture !== ''
+      ) {
         cachedPic = obj.profilePicture;
       }
-      if (obj && obj !== null && !obj.profilePicture || obj.profilePicture === '') {
+      if (
+        (obj && obj !== null && !obj.profilePicture) ||
+        obj.profilePicture === ''
+      ) {
         cachedPic = null;
       }
-      
+
       const cacheUID = await cache.getFromCache('uid');
-      
+
       // if cachedPic exists, pop in state to render out in Navbar
       if (cachedPic) {
         this.setState({ profilePic: cachedPic });
       }
-      
+
       // if there's no pic in cached, set the state/nav to the placeholder image
       if (!cachedPic) {
         // const newPic = this.fetchProfilePicFromFirebase();
         this.setState({ profilePic: '/static/no_prof_pic.png' });
       }
       // lock uid into local state too
-      this.setState({ uid: cacheUID })
-    }, 2000)
-   
+      this.setState({ uid: cacheUID });
+    }, 2000);
+
+    // find current location, store in state
+    this.findLocationAdjustNavOptions();
   };
 
+  findLocationAdjustNavOptions = () => {
+    const location = Router.pathname.replace('/', '');
+    const allOptions = ['Home', 'Acts', 'Chat', 'Gigs'];
+    const options = allOptions.filter(each => each.toLocaleLowerCase() !== location);
+    this.setState({ options });
+  }
+  
   handleClick = () => {
     this.setState({ popOut: !this.state.popOut });
   };
 
   updateStateLoading = () => {
-    console.log('===================+YEAH+ =================')
     this.props.updateStateAppLoading();
-  }
+  };
 
   render() {
-    const { uid } = this.state;
+    const { uid, options } = this.state;
     const { popOut, profilePic } = this.state;
 
     return (
       <Navbar bg="dark" expand="lg">
         <Navbar.Brand>
-          <Link href="/"><a>The Panda Riot</a></Link>
+          <Link href="/">
+            <a>The Panda Riot</a>
+          </Link>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -84,43 +102,38 @@ class NavigationAuth extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <div className="div__flex-row">
-              <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
-                <Link href="/home"><a>Home</a></Link>
-              </div>
-
-              <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
-                <Link href="/gigs"><a>Gigs</a></Link>
-              </div>
-
-              <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
-                <Link href="/acts"><a>Acts</a></Link>
-              </div>
-
-              <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
-                <Link href="/chat"><a>Chat</a></Link>
-              </div>
+              {options &&
+                options.map((each, i) => (
+                  <div
+                    key={i}
+                    className="nav-option-wrapper"
+                    onClick={() => this.updateStateLoading()}
+                  >
+                    <Link href={`/${each.toLowerCase()}`}>
+                      <a>{each}</a>
+                    </Link>
+                  </div>
+                ))}
             </div>
 
             <div className="nav-option-wrapper nav__prof-pic-container">
               <div className="nav__prof-pic" onClick={this.handleClick}>
                 <ProfilePic
-                  srcProp={
-                    profilePic && profilePic !== ''
-                      ? profilePic
-                      : ''
-                  }
+                  srcProp={profilePic && profilePic !== '' ? profilePic : ''}
                 />
               </div>
               {popOut && (
                 <div className="nav__my-acc__popout" onClick={this.handleClick}>
                   <Link href="/me">
                     <a>
-                      <div onClick={() => this.updateStateLoading()}>My Account</div>
-                    </a>    
+                      <div onClick={() => this.updateStateLoading()}>
+                        My Account
+                      </div>
+                    </a>
                   </Link>
                   <Link href={`/acts/${uid}`}>
                     <a>
-                      <div onClick={() => this.updateStateLoading()}>    
+                      <div onClick={() => this.updateStateLoading()}>
                         My Profile
                       </div>
                     </a>
@@ -146,6 +159,9 @@ class NavigationAuth extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
-})
-export default connect(null, mapDispatchToProps)(NavigationAuth);
+  updateStateAppLoading: () => dispatch(updateStateAppLoading())
+});
+export default connect(
+  null,
+  mapDispatchToProps
+)(NavigationAuth);
