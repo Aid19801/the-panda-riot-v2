@@ -18,6 +18,7 @@ import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 import withProgressBar from '../HOCs/with-progress';
 import '../lib/index.css';
+import { Fade } from 'react-reveal';
 
 class ActsPage extends Component {
   constructor() {
@@ -176,50 +177,55 @@ class ActsPage extends Component {
               {this.state.acts.map((each, i) => {
                 // console.log('each is ', each.username);
                 return (
-                  <div
-                    key={i}
-                    className="each-act-container"
-                    onClick={() => this.bounceToActsProfile(each)}
-                  >
-                    <div className="each-act-row">
-                      <div className="each-act-rating-container">
-                        <div
-                          className="up-svg-container"
-                          onClick={() => this.voteAct('up', each)}
-                        >
-                          <ClapIcon />
-                        </div>
-
-                        <h2 className="each-act-rating">{each.rating}</h2>
-
-                        {downVoteSwitchedOn && (
-                          <div
-                            className="down-svg-container"
-                            onClick={() => this.voteAct('down', each)}
-                          >
-                            <DownArrow />
-                          </div>
-                        )}
-                      </div>
-
+                  <>
+                    <Fade>
                       <div
-                        onClick={() => this.updateStateLoading()}
+                        key={i}
+                        className="each-act-container"
+                        onClick={() => this.bounceToActsProfile(each)}
                       >
-                        <Link href={`/acts/${each.uid}`}>
-                          <a>
-                            <ProfilePic srcProp={each.profilePicture} />
-
-                            <div className="each-act-name">
-                              <h4>{each.username}</h4>
-                              <p>{this.processTagline(each.tagline)}</p>
+                        <div className="each-act-row">
+                          <div className="each-act-rating-container">
+                            <div
+                              className="up-svg-container"
+                              onClick={() => this.voteAct('up', each)}
+                            >
+                              <ClapIcon />
                             </div>
-                          </a>
-                        </Link>
+
+                            <h2 className="each-act-rating">{each.rating}</h2>
+
+                            {downVoteSwitchedOn && (
+                              <div
+                                className="down-svg-container"
+                                onClick={() => this.voteAct('down', each)}
+                              >
+                                <DownArrow />
+                              </div>
+                            )}
+                          </div>
+
+                          <div
+                            onClick={() => this.updateStateLoading()}
+                          >
+                            <Link href={`/acts/${each.uid}`}>
+                              <a>
+                                <ProfilePic srcProp={each.profilePicture} />
+
+                                <div className="each-act-name">
+                                  <h4>{each.username}</h4>
+                                  <p>{this.processTagline(each.tagline)}</p>
+                                </div>
+                              </a>
+                            </Link>
+                          </div>
+
+
+                        </div>
                       </div>
 
-
-                    </div>
-                  </div>
+                    </Fade>
+                  </>
                 );
               })}
             </div>

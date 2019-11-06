@@ -12,6 +12,7 @@ import {
   saveAuthUser,
   saveAuthenticatedUID,
   updateStateAppLoaded,
+  updateStateAppLoading
 } from '../redux/actions';
 import { Banner, Button, Input, NavBar, Spinner } from '../components';
 import { withFirebase } from '../HOCs';
@@ -102,7 +103,7 @@ class SignInPage extends React.Component {
     
     const { spinner } = this.props;
 
-    if (spinner) {
+    if (spinner || submitting) {
       return <Spinner />
     }
 
@@ -184,6 +185,7 @@ const mapDispatchToProps = dispatch => ({
   pageLoaded: () => dispatch(signInPageLoaded()),
   pageFailed: () => dispatch(signInPageFailed()),
   updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id)),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
   updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
