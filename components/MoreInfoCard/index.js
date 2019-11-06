@@ -3,6 +3,7 @@ import Link from 'next/link';
 import * as icons from './icons';
 
 import './styles.css';
+import CircleImage from '../CircleImage';
 
 export default function MoreInfoCard({ paneInfo, isGigs, isAttendees }) {
   return (
@@ -11,8 +12,14 @@ export default function MoreInfoCard({ paneInfo, isGigs, isAttendees }) {
 
         { isGigs ? (
         <>  
-          <div className="moreinfo__each-row skew-left orange">
-            <icons.BringerIcon />
+          <div className="moreinfo__each-row skew-right orange">
+            
+            { paneInfo.bringer ? (
+              <div className="rounded-corners flex-col">
+                <icons.BringerIcon />
+              </div>
+            ) : null
+          }
             <h4>{paneInfo.bringer ? 'Bringer!' : 'Not A Bringer!'}</h4>
           </div>
           <div className="moreinfo__each-row skew-right orange">

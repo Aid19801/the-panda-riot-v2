@@ -99,7 +99,9 @@ export function* workerGigsSaga({ filters }) {
   }
 
   if (process.env.NODE_ENV === 'development') {
-    gigs = mockGigs.gigs;
+    gigs = mockGigs;
+    // console.log('AT | gigs are ', gigs);
+    // console.log('AT | mockGigs are ', mockGigs);
   }
 
   let activeFilterTwo = {};
@@ -206,7 +208,7 @@ export function* workerGigsSaga({ filters }) {
     activeFilterTwo === 'All' ||
     activeFilterThree === 'All'
   ) {
-    // console.log('re-setting to show ALL gigs')
+    console.log('re-setting to show ALL gigs');
     updatedGigs = gigs;
   }
 

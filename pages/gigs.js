@@ -7,7 +7,8 @@ import {
   gigsPageLoaded,
   fetchGigsFromGist,
   gotGigsFromGist,
-  updateStateAppLoaded
+  updateStateAppLoaded,
+  updateStateAppLoading
   // getDevice
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
@@ -20,7 +21,7 @@ import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
-import { NavBar, FunkyTitle, Banner, HaveIPlayedHere, Spinner } from '../components';
+import { NavBar, FunkyTitle, Banner, HaveIPlayedHere, Spinner, Button } from '../components';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 
 // 1. load GIGS and FILTERS into local state
@@ -138,9 +139,14 @@ class GigsPage extends Component {
     }
   };
 
+  showAll = () => {
+    this.props.updateStateAppLoading();
+    window.location.reload();
+  }
+
   render() {
     const { selectedGig, spinner } = this.props;
-    
+
     if (spinner) {
       return <Spinner />
     }
@@ -179,6 +185,9 @@ class GigsPage extends Component {
             <FunkyTitle text="Gigs" />
             <Filters results={this.props.gigs} />
           </div>
+          <div className="flex-center fade-in">
+            <Button text="Show All" color="grey" onClick={this.showAll} />
+          </div>
 
           {this.state.loading && <p>loading...</p>}
 
@@ -200,7 +209,7 @@ class GigsPage extends Component {
                     toggleMarker={selectedGig ? true : false}
                   />
 
-                  <MoreInfoCard paneInfo={selectedGig} />
+                  <MoreInfoCard paneInfo={selectedGig} isGigs />
                   <HaveIPlayedHere gig={selectedGig} />
                 </div>
               </>
@@ -229,6 +238,7 @@ const mapDispatchToProps = dispatch => ({
   pageLoaded: () => dispatch(gigsPageLoaded()),
   fetchGigs: () => dispatch(fetchGigsFromGist()),
   updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr)),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
   updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
