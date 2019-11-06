@@ -51,8 +51,12 @@ class NewsStoryPage extends React.Component {
   };
 
   render() {
-    const { content } = this.props;
-    // console.log('content yo ', content);
+    const { content, spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
+    
     return (
       <div id="page-container">
         <NextSeo
@@ -133,7 +137,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  content: state.prismic.content
+  content: state.prismic.content,
+  spinner: state.appState.spinner,
 });
 export default compose(
   withProgressBar,

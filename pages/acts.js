@@ -6,7 +6,8 @@ import Link from 'next/link';
 import {
   actsPageLoading,
   actsPageLoaded,
-  updateStateAppLoaded
+  updateStateAppLoaded,
+  updateStateAppLoading
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
@@ -106,7 +107,9 @@ class ActsPage extends Component {
     this.props.updateStateAppLoaded();
   }
 
-  bounceToActsProfile = uid => {};
+  bounceToActsProfile = uid => {
+    console.log('is this firing?')
+  };
 
   reRouteToMePage = () => {
     return Router.push('/me');
@@ -121,8 +124,16 @@ class ActsPage extends Component {
     }
     return res;
   };
+
+  updateStateLoading = () => this.props.updateStateAppLoading();
+
   render() {
     const { downVoteSwitchedOn } = this.state;
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
 
     return (
       <div id="page-container" className="page__actspage">
@@ -191,16 +202,22 @@ class ActsPage extends Component {
                         )}
                       </div>
 
-                      <Link href={`/acts/${each.uid}`}>
-                        <a>
-                          <ProfilePic srcProp={each.profilePicture} />
+                      <div
+                        onClick={() => this.updateStateLoading()}
+                      >
+                        <Link href={`/acts/${each.uid}`}>
+                          <a>
+                            <ProfilePic srcProp={each.profilePicture} />
 
-                          <div className="each-act-name">
-                            <h4>{each.username}</h4>
-                            <p>{this.processTagline(each.tagline)}</p>
-                          </div>
-                        </a>
-                      </Link>
+                            <div className="each-act-name">
+                              <h4>{each.username}</h4>
+                              <p>{this.processTagline(each.tagline)}</p>
+                            </div>
+                          </a>
+                        </Link>
+                      </div>
+
+
                     </div>
                   </div>
                 );
@@ -215,13 +232,14 @@ class ActsPage extends Component {
 
 const mapStateToProps = state => ({
   loading: state.acts.loading,
-  spinner: state.appState.spinner
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(actsPageLoading()),
   pageLoaded: () => dispatch(actsPageLoaded()),
-  updateStateAppLoaded: () => dispatch(updateStateAppLoaded())
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
 });
 
 export default compose(

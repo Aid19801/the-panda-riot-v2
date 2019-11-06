@@ -2,7 +2,6 @@ import React from 'react';
 // import fetch from 'isomorphic-unfetch';
 import { NextSeo } from 'next-seo';
 import { compose } from 'redux';
-import fetch from 'isomorphic-unfetch';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import {
@@ -10,16 +9,15 @@ import {
   signUpPageLoaded,
   signUpPageFailed,
   saveAuthenticatedUID,
+  updateStateAppLoading,
   updateStateAppLoaded,
 } from '../redux/actions';
-import { Banner, Button, Input, NavBar } from '../components';
+import { Banner, Button, Input, NavBar, Spinner } from '../components';
 import { withFirebase } from '../HOCs';
 import * as cache from '../lib/cache';
-
-import '../lib/index.css';
-// import { analyticsPage, analyticsEvent } from '../lib/utils';
-// import WithGigs from '../HOCs/with-gigs';
 import withAnalytics from '../HOCs/with-ga';
+import '../lib/index.css';
+
 class SignUpPage extends React.Component {
 
   constructor() {
@@ -47,6 +45,10 @@ class SignUpPage extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.props.updateStateAppLoading();
+  }
+
   componentDidMount() {
     const { pageLoading, pageLoaded, updateStateAppLoaded } = this.props;
     pageLoading();
@@ -70,7 +72,10 @@ class SignUpPage extends React.Component {
       twitter,
       website
     } = this.state;
-    const { updateStateAuthenticatedUID } = this.props;
+    const { updateStateAuthenticatedUID, updateStateAppLoading } = this.props;
+    
+    updateStateAppLoading();
+    // ^^ fires off spinner
 
     this.setState({
       submitting: true
@@ -123,9 +128,13 @@ class SignUpPage extends React.Component {
     }
   };
   render() {
-    //     const { submitting, error } = this.state;
-    // console.log('this state ', this.state);
-    // console.log('this props ', this.props);
+    
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
+
     return (
       <div id="page-container" className="signup__page" >
         <NextSeo
@@ -281,7 +290,8 @@ class SignUpPage extends React.Component {
 
 const mapStateToProps = state => ({
   loading: state.signUp.loading,
-  error: state.signUp.error
+  error: state.signUp.error,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -289,6 +299,7 @@ const mapDispatchToProps = dispatch => ({
   pageLoaded: () => dispatch(signUpPageLoaded()),
   pageFailed: () => dispatch(signUpPageFailed()),
   updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id)),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
   updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 

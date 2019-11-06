@@ -10,12 +10,14 @@ import {
   NavBar,
   Banner,
   Chat,
-  ChatContainer
+  ChatContainer,
+  Spinner,
 } from '../components';
 import {
   chatPageLoading,
   chatPageLoaded,
-  chatPageFailed
+  chatPageFailed,
+  updateStateAppLoaded
 } from '../redux/actions';
 import { getFromCache } from '../lib/cache';
 import '../lib/index.css';
@@ -37,9 +39,11 @@ class ChatPage extends Component {
   componentDidMount() {
     this.getUsersNameFromCache();
     // analyticsPage('v2-chat-page');
+    this.props.appLoaded();
     setTimeout(() => {
       this.props.showProgressBar(false);
     }, 300);
+    
   }
   handleKeyUp = evt => {
     if (evt.keyCode === 13) {
@@ -53,7 +57,7 @@ class ChatPage extends Component {
     try {
       const json = await getFromCache('user-profile-object');
       const userProfile = JSON.parse(json);
-      console.log('user profile is ', userProfile.username);
+      // console.log('user profile is ', userProfile.username);
       userName = userProfile.username;
     } catch (error) {
       console.log('getUsersNameFromCache | error: ', error);
@@ -64,6 +68,11 @@ class ChatPage extends Component {
 
   render() {
     const { user } = this.state;
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
 
     return (
       <div id="page-container" className="page__chatpage flex-center">
@@ -106,13 +115,15 @@ class ChatPage extends Component {
   }
 }
 
-const mapStateToProps = ({ chat }) => ({
-  isLoading: chat.isLoading
+const mapStateToProps = ({ chat, appState }) => ({
+  isLoading: chat.isLoading,
+  spinner: appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(chatPageLoading()),
   pageLoaded: () => dispatch(chatPageLoaded()),
+  appLoaded: () => dispatch(updateStateAppLoaded()),
   pageFailed: () => dispatch(chatPageFailed())
 });
 
