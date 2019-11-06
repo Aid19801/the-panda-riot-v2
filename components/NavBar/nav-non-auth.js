@@ -28,7 +28,19 @@ class NavigationNonAuth extends Component {
     const { nextLocation } = this.state;
     return (
       <Navbar bg="dark" expand="lg">
-        <Navbar.Brand href="/">The Panda Riot</Navbar.Brand>
+
+        <Navbar.Brand>
+
+          <div
+            onClick={() => this.updateStateLoading()}
+          >
+            <Link href="/">
+              <a>The Panda Riot</a>
+            </Link>
+          </div>
+
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -41,7 +53,7 @@ class NavigationNonAuth extends Component {
               </Link>
             </div>
 
-            
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>

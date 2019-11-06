@@ -76,7 +76,7 @@ class NavigationAuth extends Component {
     const options = allOptions.filter(each => each.toLocaleLowerCase() !== location);
     this.setState({ options });
   }
-  
+
   handleClick = () => {
     this.setState({ popOut: !this.state.popOut });
   };
@@ -92,9 +92,15 @@ class NavigationAuth extends Component {
     return (
       <Navbar bg="dark" expand="lg">
         <Navbar.Brand>
-          <Link href="/">
-            <a>The Panda Riot</a>
-          </Link>
+
+          <div
+            onClick={() => this.updateStateLoading()}
+          >
+            <Link href="/">
+              <a>The Panda Riot</a>
+            </Link>
+          </div>
+
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -240,7 +240,12 @@ class MePage extends Component {
       isEditingProfilePicture
     } = this.state;
 
-    // console.log('this.state ', this.state.profilePicture);
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
+    
     return (
       <div id="page-container" className="page__actpage flex-center">
         <NavBar firebase={this.props.firebase} />
@@ -393,7 +398,8 @@ class MePage extends Component {
 // TO-DO tidy up spinner ^^
 
 const mapStateToProps = state => ({
-  actProfile: state.act.actProfile
+  actProfile: state.act.actProfile,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -20,7 +20,7 @@ import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
-import { NavBar, FunkyTitle, Banner, HaveIPlayedHere } from '../components';
+import { NavBar, FunkyTitle, Banner, HaveIPlayedHere, Spinner } from '../components';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 
 // 1. load GIGS and FILTERS into local state
@@ -58,7 +58,7 @@ class GigsPage extends Component {
       const rawUrl = json.files.gigs.raw_url;
       const req = await fetch(rawUrl);
       const reqJson = await req.json();
-      console.log('REQ JSON ===>> ', reqJson);
+      // console.log('REQ JSON ===>> ', reqJson);
       sortedGigs = reqJson.sort((a, b) => {
         var textA = a.name;
         var textB = b.name;
@@ -139,7 +139,12 @@ class GigsPage extends Component {
   };
 
   render() {
-    const { selectedGig } = this.props;
+    const { selectedGig, spinner } = this.props;
+    
+    if (spinner) {
+      return <Spinner />
+    }
+
     return (
       <div id="page-container" className="page__gigspage">
         <NextSeo
@@ -215,7 +220,8 @@ const mapStateToProps = state => ({
   gigs: state.gigs.data,
   filters: state.filters.filters,
   selectedGig: state.gigs.selectedGig,
-  isMobile: state.responsive.isMobile
+  isMobile: state.responsive.isMobile,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({

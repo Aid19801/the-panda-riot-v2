@@ -34,6 +34,7 @@ class AboutPage extends React.Component {
     if (process.browser) {
         console.log(' about props ==> ', this.props);
     }
+    
     return (
       <div id="page-container">
         <h1 className="funky-title">About</h1>

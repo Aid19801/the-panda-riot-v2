@@ -99,7 +99,13 @@ class SignInPage extends React.Component {
 
   render() {
     const { submitting, error } = this.state;
-    // console.log('this state ', this.state);
+    
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
+
     return (
       <div id="page-container" className="signin__page h-100">
         <NextSeo
@@ -169,7 +175,8 @@ class SignInPage extends React.Component {
 
 const mapStateToProps = state => ({
   loading: state.signIn.loading,
-  error: state.signIn.error
+  error: state.signIn.error,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({

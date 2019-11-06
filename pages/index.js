@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 import { connect } from 'react-redux';
 import { startApp, updateStateAppLoaded } from '../redux/actions';
 import Fade from 'react-reveal/Fade';
-import { NavBar, FunkyTitle, Banner, ProfilePic } from '../components';
+import { NavBar, FunkyTitle, Banner, ProfilePic, Spinner } from '../components';
 import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
 // import { analyticsPage } from '../lib/utils';
@@ -44,6 +44,12 @@ class LandingPage extends React.Component {
 
   render() {
     const { gigs } = this.state;
+
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
 
     return (
       <div id="page-container" className="landing__page">
@@ -225,6 +231,10 @@ class LandingPage extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  spinner: state.appState.spinner,
+});
+
 const mapDispatchToProps = dispatch => ({
   updateStateStartApp: () => dispatch(startApp()),
   updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
@@ -233,7 +243,7 @@ const mapDispatchToProps = dispatch => ({
 export default compose(
   withAnalytics,
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )
 )(LandingPage);

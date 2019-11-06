@@ -34,7 +34,8 @@ import {
   SignOutButton,
   NewsContainer,
   FunkyTitle,
-  Bulletin
+  Bulletin,
+  Spinner,
 } from '../components';
 
 import { Router } from 'next/router';
@@ -210,9 +211,16 @@ class HomePage extends React.Component {
   };
 
   render() {
+    const { spinner } = this.props;
+    
     if (process.browser) {
       // console.log('homepage props ==> ', mockNews.articles);
     }
+
+    if (spinner) {
+      return <Spinner />
+    }
+
     return (
       <div id="page-container" className="page__homepage flex-center">
         <NextSeo
@@ -265,7 +273,8 @@ const mapStateToProps = state => ({
   reduxUserAuth: state.signIn.userAuth,
   gigsTonight: state.gigs.gigsTonight,
   stories: state.newsApi.stories,
-  tpr_stories: state.prismic.tpr_stories
+  tpr_stories: state.prismic.tpr_stories,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
