@@ -16,7 +16,6 @@ import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
 import * as cache from '../lib/cache';
 
-import '../lib/index.css';
 import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';

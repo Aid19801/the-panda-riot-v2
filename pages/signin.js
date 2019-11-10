@@ -25,8 +25,8 @@ class SignInPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: 'cultureslutlondon@gmail.com',
-      password: 'London01',
+      email: '',
+      password: '',
       submitting: false,
       error: null
     };
@@ -49,6 +49,13 @@ class SignInPage extends React.Component {
     this.setState({
       submitting: true
     });
+
+    if (!this.state.email || !this.state.password) {
+      console.log('no email or password put in');
+      this.setState({ submitting: false });
+      return;
+    }
+
     this.props.firebase
       .doSignInWithEmailAndPassword(email, password)
       .then(res => {
@@ -100,7 +107,7 @@ class SignInPage extends React.Component {
 
   render() {
     const { submitting, error } = this.state;
-    
+
     const { spinner } = this.props;
 
     if (spinner || submitting) {
@@ -159,14 +166,16 @@ class SignInPage extends React.Component {
               onChange={this.onChange}
               placeholder="password here"
             />
-            <Button text="Submit" onClick={this.onSubmit} color="grey" />
-            {error && <p className="flex-center white">{error}</p>}
-            <Link href="/signup">
-              <a className="btn btn-warning">Sign up?</a>
-            </Link>
-            {error && (
-              <p className="black white flex-center">{error.message}</p>
-            )}
+
+            <div className="btns-container margin-top">
+
+              <Button text="Submit" onClick={this.onSubmit} color="grey" />
+              
+
+              <Button text="Sign Up?" onClick={() => null} color="orange" />
+
+            </div>
+            {error && <h4 className="flex-center white">{error}</h4>}
           </>
         )}
       </div>
