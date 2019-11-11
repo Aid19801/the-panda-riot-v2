@@ -75,7 +75,7 @@ class ChatPage extends Component {
     }
 
     return (
-      <div>
+      <>
         <NextSeo
           title="The Panda Riot | CHAT"
           description="Chat with other acts and promoters on London's favourite Open Mic Comedy web-app"
@@ -102,12 +102,12 @@ class ChatPage extends Component {
             ]
           }}
         />
-        <div className="container border-on">
-          <div className="row">
-            <ChatContainer handleKeyUp={this.handleKeyUp} user={user} />
+        <div className="container">
+          <div className="row flex-center margin-top">
+            <ChatContainer user={user} />
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

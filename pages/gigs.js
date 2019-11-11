@@ -27,6 +27,7 @@ import WithResponsivityHOC from '../HOCs/with-responsivity';
 // 2. gigs: render whatever is in local state out
 
 import '../lib/index.css';
+import withPage from '../HOCs/with-page';
 // import { analyticsPage } from '../lib/utils';
 
 class GigsPage extends Component {
@@ -151,7 +152,7 @@ class GigsPage extends Component {
     }
 
     return (
-      <div id="page-container" className="page__gigspage">
+      <div id="page-container" className="page__gigspage flex-center">
         <NextSeo
           title="The Panda Riot | GIGS"
           description="Find gigs using London's favourite Open Mic Comedy web-app"
@@ -177,11 +178,9 @@ class GigsPage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/location.jpg" />
+
         <div className="container">
-          <div className="row full-width flex-center margin-top">
-            <FunkyTitle text="Gigs" />
+          <div className="row margin-top">
             <Filters results={this.props.gigs} />
           </div>
           <div className="flex-center fade-in">
@@ -242,6 +241,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   WithResponsivityHOC,
   withAuth,

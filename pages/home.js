@@ -41,6 +41,7 @@ import {
 import { Router } from 'next/router';
 import '../lib/index.css';
 import withProgressBar from '../HOCs/with-progress';
+import withPage from '../HOCs/with-page';
 // import { analyticsPage } from '../lib/utils';
 
 class HomePage extends React.Component {
@@ -156,21 +157,21 @@ class HomePage extends React.Component {
       pageLoading,
       updateStatefetchNews,
       pageLoaded,
-      gigsTonight,
+      // gigsTonight,
       stories,
       tpr_stories,
       updateStateFetchPrismicStories,
-      updateStatefetchGigsTonight
+      // updateStatefetchGigsTonight
     } = this.props;
     pageLoading();
     if (!stories) {
       console.log('client / there are no stories so fetching them...');
       updateStatefetchNews();
     }
-    if (!gigsTonight) {
-      console.log('client / there are no gigs so fetching them...');
-      updateStatefetchGigsTonight();
-    }
+    // if (!gigsTonight) {
+    //   console.log('client / there are no gigs so fetching them...');
+    //   updateStatefetchGigsTonight();
+    // }
     if (!tpr_stories) {
       console.log('client / there are no prismic stories so fetching them...');
       const res = await this.fetchPrismic();
@@ -249,16 +250,15 @@ class HomePage extends React.Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        {this.props.gigsTonight && (
+        
+        {/* {this.props.gigsTonight && (
           <Bulletin stories={this.props.gigsTonight} />
-        )}
+        )} */}
 
-        <Banner src="/static/mic.jpg" />
+        
 
         <div className="container">
           <div className="row margin-top">
-            <FunkyTitle text="Home" />
             <NewsContainer />
           </div>
         </div>
@@ -271,7 +271,7 @@ const mapStateToProps = state => ({
   loading: state.signIn.loading,
   error: state.signIn.error,
   reduxUserAuth: state.signIn.userAuth,
-  gigsTonight: state.gigs.gigsTonight,
+  // gigsTonight: state.gigs.gigsTonight,
   stories: state.newsApi.stories,
   tpr_stories: state.prismic.tpr_stories,
   spinner: state.appState.spinner,
@@ -282,13 +282,14 @@ const mapDispatchToProps = dispatch => ({
   updateStatefetchNews: () => dispatch(getAllNews()),
   updateStateFetchPrismicStories: () => dispatch(prismicNewsApiReq()), // get prismic stories
   updateStatePrismicFailed: err => dispatch(prismicNewsApiFail(err)),
-  updateStatefetchGigsTonight: () => dispatch(fetchGigsTonight()),
+  // updateStatefetchGigsTonight: () => dispatch(fetchGigsTonight()),
   updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
   pageLoaded: () => dispatch(homePageLoaded()),
   pageFailed: () => dispatch(homePageFailed())
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   withAuth,
   withProgressBar,
