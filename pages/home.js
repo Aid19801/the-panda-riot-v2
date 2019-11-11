@@ -230,7 +230,7 @@ class HomePage extends React.Component {
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com/home',
-            title: `${this.props.gigs[0].name}`,
+            title: "The Panda Riot | HOME",
             description:
               "News, gig-map and act profiles from London's electric open mic comedy scene.",
             images: [
@@ -250,12 +250,6 @@ class HomePage extends React.Component {
             ]
           }}
         />
-        
-        {/* {this.props.gigsTonight && (
-          <Bulletin stories={this.props.gigsTonight} />
-        )} */}
-
-        
 
         <div className="container">
           <div className="row margin-top">

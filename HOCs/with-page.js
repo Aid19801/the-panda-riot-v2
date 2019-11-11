@@ -13,15 +13,24 @@ export default (Wrapped) => {
       return wrapped;
     }
 
+    getPageNameRenderTitle() {
+      if (process.browser) {
+        let pageName = '';
+        const { location: { href } } = window;
+        pageName = href.slice(22, href.length);
+        return <FunkyTitle text={pageName} />
+      }
+    }
+
     render() {
 
       const { gigsTonight } = this.props;
-      console.log('AT | gigs ', this.props);
+
       return (
         <div className="wrapped">
 
           <Banner src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
-            <FunkyTitle text="Home" />
+            {this.getPageNameRenderTitle()}
           </Banner>
 
           <NavBar firebase={this.props.firebase} />

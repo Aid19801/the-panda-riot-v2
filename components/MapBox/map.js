@@ -155,6 +155,8 @@ class Map extends Component {
             onStyleLoad={this.onStyleLoad}
             onMove={this.onMove}
           >
+
+            { this.state.gigs && (
             <Cluster ClusterMarkerFactory={this.clusterMarker}>
               {this.state.gigs &&
                 this.state.gigs.map((each, key) => (
@@ -166,6 +168,7 @@ class Map extends Component {
                   />
                 ))}
             </Cluster>
+            )}
           </MapBoxMap>
         </div>
       );

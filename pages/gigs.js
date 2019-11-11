@@ -26,8 +26,8 @@ import WithResponsivityHOC from '../HOCs/with-responsivity';
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
 
-import '../lib/index.css';
 import withPage from '../HOCs/with-page';
+import '../lib/index.css';
 // import { analyticsPage } from '../lib/utils';
 
 class GigsPage extends Component {
@@ -78,23 +78,28 @@ class GigsPage extends Component {
   }
 
   async componentDidMount() {
+    console.log('AT | 1 CDM');
     if (!this.props.gigs) {
+      console.log('AT | 2 CDM no gigs so firing fetch gigs');
       this.fetchGigs();
     }
     this.props.updateStateAppLoaded();
   }
 
   fetchGigs = async () => {
+    console.log('AT | 3 fetchGigs fired');
     if (process.env.NODE_ENV !== 'production') {
+      console.log('AT | 4 firing updateStateLoadInNewGigs with mocks');
       return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
     } else {
       try {
+        console.log('AT | 5 getting from gist');
         const res = await fetch(
           `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
         );
         const json = await res.json();
         const rawUrl = json.files.gigs.raw_url;
-
+        console.log('AT | 6 rawUrl ', rawUrl);
         const req = await fetch(rawUrl);
         const reqJson = await req.json();
 
@@ -105,6 +110,7 @@ class GigsPage extends Component {
         });
 
         cache.saveToCache('gigs', sortedGigs);
+        console.log('AT | 7 sortedGigs ', sortedGigs);
         return this.props.updateStateLoadInNewGigs(sortedGigs);
       } catch (error) {
         console.log('getInitialProps err: ', error);
@@ -152,7 +158,7 @@ class GigsPage extends Component {
     }
 
     return (
-      <div id="page-container" className="page__gigspage flex-center">
+      <div id="page-container" className="flex-center">
         <NextSeo
           title="The Panda Riot | GIGS"
           description="Find gigs using London's favourite Open Mic Comedy web-app"
