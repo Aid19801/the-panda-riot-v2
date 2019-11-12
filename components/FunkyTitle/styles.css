@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 12;
   position: absolute;
-  top: 25%;
+  top: 21%;
 }
 
 .title__container h1 {
@@ -30,6 +30,10 @@
 
 
 @media screen and (max-width: 500px) {
+
+  .title__container {
+    top: 41%;
+  }
 
   .title {
     width: 80% !important;

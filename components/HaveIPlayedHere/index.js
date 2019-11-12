@@ -56,7 +56,7 @@ function HaveIPlayedHere({ gig, updateStateAddUserToGig}) {
         <div style={{ position: 'relative' }}>
           <h4 className="margin-off">Have You Recently Performed Here?</h4>
         </div>
-        <div className="flex-row">
+        <div className="flex-row space-evenly">
           <Button
             text="Yes"
             color={haveIPerformed ? 'green' : 'grey'}

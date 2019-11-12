@@ -158,7 +158,7 @@ class GigsPage extends Component {
     }
 
     return (
-      <div id="page-container" className="flex-center">
+      <>
         <NextSeo
           title="The Panda Riot | GIGS"
           description="Find gigs using London's favourite Open Mic Comedy web-app"
@@ -186,16 +186,16 @@ class GigsPage extends Component {
         />
 
         <div className="container">
-          <div className="row margin-top">
+          <div className="row margin-top flex-center">
             <Filters results={this.props.gigs} />
           </div>
           <div className="flex-center fade-in">
-            <Button text="Show All" color="grey" onClick={this.showAll} />
+            <Button text="Show All" color="lightgrey" onClick={this.showAll} />
           </div>
 
           {this.state.loading && <p>loading...</p>}
 
-          <div className="row full-width">
+          <div className="row">
             {!selectedGig && (
               <div className="col-sm-12 flex-center">
                 <MapBox />
@@ -224,7 +224,7 @@ class GigsPage extends Component {
             <div className="col-sm-4"></div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

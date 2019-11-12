@@ -2,8 +2,11 @@
     width: 100%;
     contain: content;
     background: black;
-    z-index: 11;
-    /* border: 1px solid red; */
+    z-index: -1;
+    position: absolute;
+    border: 1px solid yellow;
+    animation: glowingBorder 0.7s infinite ease-in;
+
 }
 
 .bulletin__row {
@@ -27,5 +30,14 @@
     }
     to {
         margin-left: -200vw;
+    }
+}
+
+@keyframes glowingBorder {
+    from {
+        border: 1px solid orange;
+    }
+    to {
+        border: 1px solid yellow;
     }
 }

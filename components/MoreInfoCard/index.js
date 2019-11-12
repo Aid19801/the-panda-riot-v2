@@ -7,7 +7,7 @@ import CircleImage from '../CircleImage';
 
 export default function MoreInfoCard({ paneInfo, isGigs, isAttendees }) {
   return (
-    <div className="gigs__more-info-container tpr__border flex-center padding-on margin-off">
+    <div className="gigs__more-info-container tpr__border flex-center padding-on">
       <div className="gigs__flex-row">
 
         { isGigs ? (

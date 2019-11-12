@@ -9,6 +9,7 @@ import mockGigs from '../lib/mock-gigs.json';
 // import { analyticsPage } from '../lib/utils';
 import { compose } from 'redux';
 import Link from 'next/link';
+import withPage from '../HOCs/with-page';
 class LandingPage extends React.Component {
   constructor() {
     super();
@@ -52,7 +53,7 @@ class LandingPage extends React.Component {
     }
 
     return (
-      <div id="page-container" className="landing__page">
+      <>
         <NextSeo
           title="The Panda Riot | Open Mic Comedy in London"
           description="London's electric Open Mic Comedy Circuit - all in one handy, modern web-app!"
@@ -80,16 +81,14 @@ class LandingPage extends React.Component {
           }}
         />
 
-        <NavBar />
-        <Banner src="/static/banner-ldn.jpg" />
         <Link href="/signin">
           <a className="landing__clicker">
-            <div className="container">
-              <div className="row margin-top">
-                <FunkyTitle text="Open Mic Starts Here!" />
-              </div>
 
-              <div className="row margin-top margin-bottom">
+
+            <div className="container">
+              <div className="row flex-center mt-100">
+
+
                 <Fade>
                   <div className="col-md-4 margin-top margin-bottom">
                     <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
@@ -116,7 +115,7 @@ class LandingPage extends React.Component {
                         On The Filterable Gig Map!
                       </p>
                       <img
-                      alt="comedy show locations"
+                        alt="comedy show locations"
                         className="landing__promo-box-icon"
                         src="/static/location.svg"
                       />
@@ -133,7 +132,7 @@ class LandingPage extends React.Component {
                         5-spots!
                       </p>
                       <img
-                      alt="fottage of comedy sets"
+                        alt="fottage of comedy sets"
                         className="landing__promo-box-icon"
                         src="/static/video-camera.svg"
                       />
@@ -174,7 +173,7 @@ class LandingPage extends React.Component {
                       <Fade>
                         <div className="landing__screen-container skew-right">
                           <img
-                          alt="map of comedy venues"
+                            alt="map of comedy venues"
                             src="/static/screen_map.png"
                             height={400}
                             width={500}
@@ -183,7 +182,7 @@ class LandingPage extends React.Component {
                       </Fade>
                       <div className="landing__screen-container skew-left">
                         <img
-                        alt="mobile screen of acts"
+                          alt="mobile screen of acts"
                           src="/static/screen_acts.png"
                           height={500}
                           width={250}
@@ -200,7 +199,7 @@ class LandingPage extends React.Component {
                     <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
                       <h3 className="white center black skew-right">NEWS</h3>
                       <img
-                      alt="screen of open mic comedy news"
+                        alt="screen of open mic comedy news"
                         className="landing__promo-box-icon"
                         src="/static/screen_news.png"
                       />
@@ -215,7 +214,7 @@ class LandingPage extends React.Component {
                         FIND SPOTS!
                       </h3>
                       <img
-                      alt="screen of comedy venue locations"
+                        alt="screen of comedy venue locations"
                         className="landing__promo-box-icon"
                         src="/static/screen_mapp.png"
                       />
@@ -226,7 +225,7 @@ class LandingPage extends React.Component {
             </div>
           </a>
         </Link>
-      </div>
+      </>
     );
   }
 }
@@ -241,6 +240,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   connect(
     mapStateToProps,

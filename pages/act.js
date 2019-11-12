@@ -21,6 +21,7 @@ import {
   gotActProfile,
   updateStateAppLoaded,
 } from '../redux/actions';
+import withPage from '../HOCs/with-page';
 // import { analyticsPage } from '../lib/utils';
 
 class UserProfilePage extends Component {
@@ -160,7 +161,7 @@ class UserProfilePage extends Component {
     }
 
     return (
-      <div id="page-container" className="page__actpage flex-center">
+      <>
         <NextSeo
           openGraph={{
             type: 'website',
@@ -185,15 +186,15 @@ class UserProfilePage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/audience.jpg" />
 
         <div className="container">
           <div className="row margin-top">
             {showSpinner && <Spinner />}
             {!showSpinner && (
               <>
-              <FunkyTitle text={this.state.username} isActName />
+              <div className="col-sm-12 flex-center">
+                <h1 className="act-name">{username}</h1>
+              </div>
                 <div className="col-sm-6">
                   <UserCard
                     profilePicture={profilePicture}
@@ -218,7 +219,7 @@ class UserProfilePage extends Component {
             }
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
@@ -239,6 +240,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   withAuth,
   connect(

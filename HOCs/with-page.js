@@ -7,36 +7,53 @@ export default (Wrapped) => {
 
   class HOC extends React.Component {
 
+    constructor() {
+      super();
+      this.state = {
+        page: '',
+      }
+    }
+
     static async getInitialProps(...args) {
       const wrappedInitial = Wrapped.getInitialProps
       const wrapped = wrappedInitial ? await wrappedInitial(...args) : {}
       return wrapped;
     }
 
+    componentDidMount() {
+      this.getPageNameRenderTitle();
+    }
+
     getPageNameRenderTitle() {
       if (process.browser) {
-        let pageName = '';
         const { location: { href } } = window;
-        pageName = href.slice(22, href.length);
-        return <FunkyTitle text={pageName} />
+        let page = href.slice(22, href.length);
+        if (page === "") {
+          let rootPageTitle = "Comedy Starts Here!";
+          return this.setState({ page: rootPageTitle });
+        }
+        if (page.includes('acts/') === true || page.includes('news/') === true) {
+          return this.setState({ page: null });
+        }
+
+        return this.setState({ page })
       }
     }
 
+    
     render() {
 
-      const { gigsTonight } = this.props;
+      const { page } = this.state;
 
       return (
         <div className="wrapped">
 
-          <Banner src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
-            {this.getPageNameRenderTitle()}
+          <Banner src="/static/banner-ldn.jpg">
+            { page && <FunkyTitle text={page} />}
           </Banner>
 
           <NavBar firebase={this.props.firebase} />
-          {gigsTonight && gigsTonight.length > 0 && (
-            <Bulletin stories={this.props.gigsTonight} />
-          )}
+
           <div className="page-main-content">
             <Wrapped {...this.props} />
           </div>

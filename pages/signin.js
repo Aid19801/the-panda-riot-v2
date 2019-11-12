@@ -20,6 +20,7 @@ import withAnalytics from '../HOCs/with-ga';
 import * as cache from '../lib/cache';
 
 import '../lib/index.css';
+import withPage from '../HOCs/with-page';
 
 class SignInPage extends React.Component {
   constructor() {
@@ -141,9 +142,7 @@ class SignInPage extends React.Component {
             ]
           }}
         />
-        <NavBar />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
-
+        
         {submitting && (
           <div style={{ marginTop: 100 }}>
             <Spinner />
@@ -152,7 +151,6 @@ class SignInPage extends React.Component {
 
         {!submitting && (
           <>
-            <h1 className="funky-title">Sign In: </h1>
             <Input
               name="email"
               title="email"
@@ -199,6 +197,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   withFirebase,
   connect(
