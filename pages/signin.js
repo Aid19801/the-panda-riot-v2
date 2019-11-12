@@ -116,7 +116,7 @@ class SignInPage extends React.Component {
     }
 
     return (
-      <div id="page-container" className="signin__page h-100">
+      <div className="signin__page h-100 w-100 flex-center flex-col">
         <NextSeo
           title="The Panda Riot | Sign in to experience London's Open Mic scene"
           description="London's electric Open Mic Comedy Circuit - all in one handy, modern web-app!"
@@ -165,9 +165,9 @@ class SignInPage extends React.Component {
               placeholder="password here"
             />
 
-            <div className="btns-container margin-top">
+            <div className="btns-container margin-top space-evenly">
 
-              <Button text="Submit" onClick={this.onSubmit} color="grey" />
+              <Button text="Submit" onClick={this.onSubmit} color="lightgrey" />
               
 
               <Button text="Sign Up?" onClick={() => null} color="orange" />
