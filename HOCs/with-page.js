@@ -32,7 +32,7 @@ export default (Wrapped) => {
           let rootPageTitle = "Comedy Starts Here!";
           return this.setState({ page: rootPageTitle });
         }
-        if (page.includes('acts/') === true || page.includes('news/') === true) {
+        if ( (page.includes('acts/') === true) || (page.includes('news/') === true) || (href.includes('/me') === true) ) {
           return this.setState({ page: null });
         }
 

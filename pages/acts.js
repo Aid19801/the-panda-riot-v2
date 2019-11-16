@@ -168,7 +168,7 @@ class ActsPage extends Component {
       <div className="container">
           <div className="row flex-center margin-top">
             
-            <div className="col-sm-10 flex-center flex-col">
+            <div className="col-sm-10 flex-center flex-col margin-top">
               {this.state.acts.map((each, i) => {
                 // console.log('each is ', each.username);
                 return (

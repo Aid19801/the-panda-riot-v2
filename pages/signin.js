@@ -106,6 +106,11 @@ class SignInPage extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  bounceToSignUp = () => {
+    this.props.updateStateAppLoading();
+    return Router.push('/signup');
+  }
+
   render() {
     const { submitting, error } = this.state;
 
@@ -168,9 +173,11 @@ class SignInPage extends React.Component {
             <div className="btns-container margin-top space-evenly">
 
               <Button text="Submit" onClick={this.onSubmit} color="lightgrey" />
-              
 
-              <Button text="Sign Up?" onClick={() => null} color="orange" />
+              <div className="button__button-container white" onClick={this.bounceToSignUp}>
+                Sign up?
+              </div>
+
 
             </div>
             {error && <h4 className="flex-center white">{error}</h4>}
