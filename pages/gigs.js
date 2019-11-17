@@ -6,7 +6,9 @@ import {
   gigsPageLoading,
   gigsPageLoaded,
   fetchGigsFromGist,
-  gotGigsFromGist
+  gotGigsFromGist,
+  updateStateAppLoaded,
+  updateStateAppLoading
   // getDevice
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
@@ -14,17 +16,17 @@ import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
 import * as cache from '../lib/cache';
 
-import '../lib/index.css';
 import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
-import { NavBar, FunkyTitle, Banner, HaveIPlayedHere } from '../components';
+import { NavBar, FunkyTitle, Banner, HaveIPlayedHere, Spinner, Button } from '../components';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
 
+import withPage from '../HOCs/with-page';
 import '../lib/index.css';
 // import { analyticsPage } from '../lib/utils';
 
@@ -57,7 +59,7 @@ class GigsPage extends Component {
       const rawUrl = json.files.gigs.raw_url;
       const req = await fetch(rawUrl);
       const reqJson = await req.json();
-      console.log('REQ JSON ===>> ', reqJson);
+      // console.log('REQ JSON ===>> ', reqJson);
       sortedGigs = reqJson.sort((a, b) => {
         var textA = a.name;
         var textB = b.name;
@@ -76,23 +78,28 @@ class GigsPage extends Component {
   }
 
   async componentDidMount() {
+    console.log('AT | 1 CDM');
     if (!this.props.gigs) {
+      console.log('AT | 2 CDM no gigs so firing fetch gigs');
       this.fetchGigs();
     }
-    // analyticsPage('v2-gigs-page');
+    this.props.updateStateAppLoaded();
   }
 
   fetchGigs = async () => {
+    console.log('AT | 3 fetchGigs fired');
     if (process.env.NODE_ENV !== 'production') {
+      console.log('AT | 4 firing updateStateLoadInNewGigs with mocks');
       return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
     } else {
       try {
+        console.log('AT | 5 getting from gist');
         const res = await fetch(
           `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
         );
         const json = await res.json();
         const rawUrl = json.files.gigs.raw_url;
-
+        console.log('AT | 6 rawUrl ', rawUrl);
         const req = await fetch(rawUrl);
         const reqJson = await req.json();
 
@@ -103,6 +110,7 @@ class GigsPage extends Component {
         });
 
         cache.saveToCache('gigs', sortedGigs);
+        console.log('AT | 7 sortedGigs ', sortedGigs);
         return this.props.updateStateLoadInNewGigs(sortedGigs);
       } catch (error) {
         console.log('getInitialProps err: ', error);
@@ -137,10 +145,20 @@ class GigsPage extends Component {
     }
   };
 
+  showAll = () => {
+    this.props.updateStateAppLoading();
+    window.location.reload();
+  }
+
   render() {
-    const { selectedGig } = this.props;
+    const { selectedGig, spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
+
     return (
-      <div id="page-container" className="page__gigspage">
+      <>
         <NextSeo
           title="The Panda Riot | GIGS"
           description="Find gigs using London's favourite Open Mic Comedy web-app"
@@ -166,17 +184,18 @@ class GigsPage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/location.jpg" />
+
         <div className="container">
-          <div className="row full-width flex-center margin-top">
-            <FunkyTitle text="Gigs" />
+          <div className="row margin-top flex-center">
             <Filters results={this.props.gigs} />
+          </div>
+          <div className="flex-center fade-in">
+            <Button text="Show All" color="lightgrey" onClick={this.showAll} />
           </div>
 
           {this.state.loading && <p>loading...</p>}
 
-          <div className="row full-width">
+          <div className="row">
             {!selectedGig && (
               <div className="col-sm-12 flex-center">
                 <MapBox />
@@ -194,7 +213,7 @@ class GigsPage extends Component {
                     toggleMarker={selectedGig ? true : false}
                   />
 
-                  <MoreInfoCard paneInfo={selectedGig} />
+                  <MoreInfoCard paneInfo={selectedGig} isGigs />
                   <HaveIPlayedHere gig={selectedGig} />
                 </div>
               </>
@@ -205,7 +224,7 @@ class GigsPage extends Component {
             <div className="col-sm-4"></div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
@@ -214,18 +233,21 @@ const mapStateToProps = state => ({
   gigs: state.gigs.data,
   filters: state.filters.filters,
   selectedGig: state.gigs.selectedGig,
-  isMobile: state.responsive.isMobile
+  isMobile: state.responsive.isMobile,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(gigsPageLoading()),
   pageLoaded: () => dispatch(gigsPageLoaded()),
   fetchGigs: () => dispatch(fetchGigsFromGist()),
-  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr))
-  // updateStateGettingDevice: () => dispatch(getDevice()),
+  updateStateLoadInNewGigs: arr => dispatch(gotGigsFromGist(arr)),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   WithResponsivityHOC,
   withAuth,

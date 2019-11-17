@@ -7,11 +7,6 @@ import { Provider } from 'react-redux';
 import Firebase, { FirebaseContext } from '../HOCs';
 import '../lib/index.css';
 
-// redux
-// firebase
-// mapbox
-// git gist
-
 class MyApp extends App {
   render() {
     const { Component, pageProps, reduxStore } = this.props;

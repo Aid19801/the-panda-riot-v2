@@ -3,17 +3,23 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
-import { actsPageLoading, actsPageLoaded } from '../redux/actions';
+import {
+  actsPageLoading,
+  actsPageLoaded,
+  updateStateAppLoaded,
+  updateStateAppLoading
+} from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
 import { tooSoon } from '../lib/utils';
-import { NavBar, FunkyTitle, Banner, ProfilePic } from '../components';
+import { NavBar, FunkyTitle, Banner, ProfilePic, Spinner } from '../components';
 import ClapIcon from '../components/Icons/clap-icon';
 import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
-
-import '../lib/index.css';
 import withProgressBar from '../HOCs/with-progress';
+import '../lib/index.css';
+import { Fade } from 'react-reveal';
+import withPage from '../HOCs/with-page';
 
 class ActsPage extends Component {
   constructor() {
@@ -98,11 +104,14 @@ class ActsPage extends Component {
   componentDidMount() {
     this.props.pageLoaded();
     setTimeout(() => {
-      this.props.showProgressBar(true);
+      this.props.showProgressBar(false);
     }, 300);
+    this.props.updateStateAppLoaded();
   }
 
-  bounceToActsProfile = uid => {};
+  bounceToActsProfile = uid => {
+    console.log('is this firing?')
+  };
 
   reRouteToMePage = () => {
     return Router.push('/me');
@@ -117,11 +126,19 @@ class ActsPage extends Component {
     }
     return res;
   };
+
+  updateStateLoading = () => this.props.updateStateAppLoading();
+
   render() {
     const { downVoteSwitchedOn } = this.state;
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
 
     return (
-      <div id="page-container" className="page__actspage">
+      <>
         <NextSeo
           title="The Panda Riot | ACTS"
           description="Find acts and watch their sets on London's favourite Open Mic Comedy web-app"
@@ -147,76 +164,87 @@ class ActsPage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/mugshots.jpg" />
-        <div className="container acts__container">
+      
+      <div className="container">
           <div className="row flex-center margin-top">
-            <FunkyTitle text="Acts" />
-          </div>
-
-          <div className="row flex-center">
-            <div className="col-sm-10 flex-center flex-col">
+            
+            <div className="col-sm-10 flex-center flex-col margin-top">
               {this.state.acts.map((each, i) => {
-                console.log('each is ', each.username);
+                // console.log('each is ', each.username);
                 return (
-                  <div
-                    key={i}
-                    className="each-act-container"
-                    onClick={() => this.bounceToActsProfile(each)}
-                  >
-                    <div className="each-act-row">
-                      <div className="each-act-rating-container">
-                        <div
-                          className="up-svg-container"
-                          onClick={() => this.voteAct('up', each)}
-                        >
-                          <ClapIcon />
-                        </div>
+                  <>
+                    <Fade>
+                      <div
+                        key={i}
+                        className="each-act-container"
+                        onClick={() => this.bounceToActsProfile(each)}
+                      >
+                        <div className="each-act-row">
+                          <div className="each-act-rating-container">
+                            <div
+                              className="up-svg-container"
+                              onClick={() => this.voteAct('up', each)}
+                            >
+                              <ClapIcon />
+                            </div>
 
-                        <h2 className="each-act-rating">{each.rating}</h2>
+                            <h2 className="each-act-rating">{each.rating}</h2>
 
-                        {downVoteSwitchedOn && (
-                          <div
-                            className="down-svg-container"
-                            onClick={() => this.voteAct('down', each)}
-                          >
-                            <DownArrow />
+                            {downVoteSwitchedOn && (
+                              <div
+                                className="down-svg-container"
+                                onClick={() => this.voteAct('down', each)}
+                              >
+                                <DownArrow />
+                              </div>
+                            )}
                           </div>
-                        )}
+
+                          <div
+                            onClick={() => this.updateStateLoading()}
+                          >
+                            <Link href={`/acts/${each.uid}`}>
+                              <a>
+                                <ProfilePic srcProp={each.profilePicture} />
+
+                                <div className="each-act-name">
+                                  <h4>{each.username}</h4>
+                                  <p>{this.processTagline(each.tagline)}</p>
+                                </div>
+                              </a>
+                            </Link>
+                          </div>
+
+
+                        </div>
                       </div>
 
-                      <Link href={`/acts/${each.uid}`}>
-                        <a>
-                          <ProfilePic srcProp={each.profilePicture} />
-
-                          <div className="each-act-name">
-                            <h4>{each.username}</h4>
-                            <p>{this.processTagline(each.tagline)}</p>
-                          </div>
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
+                    </Fade>
+                  </>
                 );
               })}
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  loading: state.acts.loading
+  loading: state.acts.loading,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(actsPageLoading()),
-  pageLoaded: () => dispatch(actsPageLoaded())
+  pageLoaded: () => dispatch(actsPageLoaded()),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   WithResponsivityHOC,
   withAuth,

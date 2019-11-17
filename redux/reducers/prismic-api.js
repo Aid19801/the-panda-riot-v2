@@ -18,7 +18,7 @@ const prismicApiReducer = (state = initialState, action) => {
       break;
 
     case actions.PRISMIC_API_SUCCESS:
-      console.log('reducer heard PRISMIC_API_SUCCESS ', action);
+      console.log('reducer heard PRISMIC_API_SUCCESS');
       return {
         ...state,
         loading: false,

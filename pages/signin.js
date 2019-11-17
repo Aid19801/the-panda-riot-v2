@@ -10,7 +10,9 @@ import {
   signInPageLoaded,
   signInPageFailed,
   saveAuthUser,
-  saveAuthenticatedUID
+  saveAuthenticatedUID,
+  updateStateAppLoaded,
+  updateStateAppLoading
 } from '../redux/actions';
 import { Banner, Button, Input, NavBar, Spinner } from '../components';
 import { withFirebase } from '../HOCs';
@@ -18,22 +20,24 @@ import withAnalytics from '../HOCs/with-ga';
 import * as cache from '../lib/cache';
 
 import '../lib/index.css';
+import withPage from '../HOCs/with-page';
 
 class SignInPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: 'cultureslutlondon@gmail.com',
-      password: 'London01',
+      email: '',
+      password: '',
       submitting: false,
       error: null
     };
   }
 
   componentDidMount() {
-    const { pageLoading, pageLoaded } = this.props;
+    const { pageLoading, pageLoaded, updateStateAppLoaded } = this.props;
     pageLoading();
     pageLoaded();
+    updateStateAppLoaded();
     // analyticsPage('v2-signin-page');
   }
 
@@ -46,6 +50,13 @@ class SignInPage extends React.Component {
     this.setState({
       submitting: true
     });
+
+    if (!this.state.email || !this.state.password) {
+      console.log('no email or password put in');
+      this.setState({ submitting: false });
+      return;
+    }
+
     this.props.firebase
       .doSignInWithEmailAndPassword(email, password)
       .then(res => {
@@ -95,11 +106,22 @@ class SignInPage extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  bounceToSignUp = () => {
+    this.props.updateStateAppLoading();
+    return Router.push('/signup');
+  }
+
   render() {
     const { submitting, error } = this.state;
-    // console.log('this state ', this.state);
+
+    const { spinner } = this.props;
+
+    if (spinner || submitting) {
+      return <Spinner />
+    }
+
     return (
-      <div id="page-container" className="signin__page h-100">
+      <div className="signin__page h-100 w-100 flex-center flex-col">
         <NextSeo
           title="The Panda Riot | Sign in to experience London's Open Mic scene"
           description="London's electric Open Mic Comedy Circuit - all in one handy, modern web-app!"
@@ -125,9 +147,7 @@ class SignInPage extends React.Component {
             ]
           }}
         />
-        <NavBar />
-        <Banner src="https://www.king-apparel.com/media/wysiwyg/our-story-king-apparel-banner.jpg" />
-
+        
         {submitting && (
           <div style={{ marginTop: 100 }}>
             <Spinner />
@@ -136,7 +156,6 @@ class SignInPage extends React.Component {
 
         {!submitting && (
           <>
-            <h1 className="funky-title">Sign In: </h1>
             <Input
               name="email"
               title="email"
@@ -150,14 +169,18 @@ class SignInPage extends React.Component {
               onChange={this.onChange}
               placeholder="password here"
             />
-            <Button text="Submit" onClick={this.onSubmit} color="grey" />
-            {error && <p className="flex-center white">{error}</p>}
-            <Link href="/signup">
-              <a className="btn btn-warning">Sign up?</a>
-            </Link>
-            {error && (
-              <p className="black white flex-center">{error.message}</p>
-            )}
+
+            <div className="btns-container margin-top space-evenly">
+
+              <Button text="Submit" onClick={this.onSubmit} color="lightgrey" />
+
+              <div className="button__button-container white" onClick={this.bounceToSignUp}>
+                Sign up?
+              </div>
+
+
+            </div>
+            {error && <h4 className="flex-center white">{error}</h4>}
           </>
         )}
       </div>
@@ -167,17 +190,21 @@ class SignInPage extends React.Component {
 
 const mapStateToProps = state => ({
   loading: state.signIn.loading,
-  error: state.signIn.error
+  error: state.signIn.error,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(signInPageLoading()),
   pageLoaded: () => dispatch(signInPageLoaded()),
   pageFailed: () => dispatch(signInPageFailed()),
-  updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id))
+  updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id)),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   withFirebase,
   connect(

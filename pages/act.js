@@ -18,8 +18,10 @@ import {
   actPageLoaded,
   actPageFailed,
   fetchActProfile,
-  gotActProfile
+  gotActProfile,
+  updateStateAppLoaded,
 } from '../redux/actions';
+import withPage from '../HOCs/with-page';
 // import { analyticsPage } from '../lib/utils';
 
 class UserProfilePage extends Component {
@@ -79,7 +81,7 @@ class UserProfilePage extends Component {
       let website = '';
 
       const user = snapshot.val();
-      console.log('user is ', user);
+      // console.log('user is ', user);
       const {
         username,
         tagline,
@@ -126,7 +128,7 @@ class UserProfilePage extends Component {
 
   componentDidMount() {
     this.props.pageLoaded();
-    // analyticsPage('v2-view-act-profile');
+    this.props.updateStateAppLoaded();
   }
 
   handleClick = () => {
@@ -134,7 +136,7 @@ class UserProfilePage extends Component {
   };
 
   render() {
-    console.log('this props ', this.props);
+    // console.log('this props ', this.props);
     // console.log('this state ', this.state);
 
     const {
@@ -152,8 +154,14 @@ class UserProfilePage extends Component {
       showSpinner
     } = this.state;
 
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
+
     return (
-      <div id="page-container" className="page__actpage flex-center">
+      <>
         <NextSeo
           openGraph={{
             type: 'website',
@@ -178,15 +186,15 @@ class UserProfilePage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/audience.jpg" />
 
         <div className="container">
           <div className="row margin-top">
             {showSpinner && <Spinner />}
             {!showSpinner && (
               <>
-              <FunkyTitle text={this.state.username} isActName />
+              <div className="col-sm-12 flex-center">
+                <h1 className="act-name">{username}</h1>
+              </div>
                 <div className="col-sm-6">
                   <UserCard
                     profilePicture={profilePicture}
@@ -211,14 +219,15 @@ class UserProfilePage extends Component {
             }
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
 // TO-DO tidy up spinner ^^
 
 const mapStateToProps = state => ({
-  actProfile: state.act.actProfile
+  actProfile: state.act.actProfile,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -226,10 +235,12 @@ const mapDispatchToProps = dispatch => ({
   pageLoaded: obj => dispatch(actPageLoaded(obj)),
   pageFailed: () => dispatch(actPageFailed()),
   updateStateFetchActProfile: uid => dispatch(fetchActProfile(uid)),
-  updateStateGotActProfile: actProfile => dispatch(gotActProfile(actProfile))
+  updateStateGotActProfile: actProfile => dispatch(gotActProfile(actProfile)),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   withAuth,
   connect(

@@ -6,7 +6,7 @@ import { compose } from 'redux';
 import { NextSeo } from 'next-seo';
 import Prismic from 'prismic-javascript';
 
-import { NavBar, FunkyTitle, Banner } from '../components';
+import { NavBar, FunkyTitle, Banner, Spinner } from '../components';
 
 import * as actions from '../redux/actions';
 
@@ -15,6 +15,7 @@ import withAuth from '../HOCs/with-auth';
 // import { analyticsPage } from '../lib/utils';
 import withAnalytics from '../HOCs/with-ga';
 import withProgressBar from '../HOCs/with-progress';
+import withPage from '../HOCs/with-page';
 
 class NewsStoryPage extends React.Component {
   static async getInitialProps({ reduxStore, req, query }) {
@@ -29,11 +30,9 @@ class NewsStoryPage extends React.Component {
   }
 
   static async fetchContent(uid) {
-    // console.log('======= fetching content for this: ', uid);
     const client = Prismic.client(prismicEndpoint);
     try {
       const res = await client.query(Prismic.Predicates.at('document.id', uid));
-      // console.log('Story Retrieved: ', res);
       return res;
     } catch (error) {
       console.log('try catch error getting solo article: ', error);
@@ -49,16 +48,18 @@ class NewsStoryPage extends React.Component {
     setTimeout(() => {
       this.props.showProgressBar(false);
     }, 500);
+    this.props.updateStateAppLoaded();
   };
 
   render() {
-    // console.log('TPR News Story Props: ', this.props.content);
-    const { content } = this.props;
-    // const { results } = content;
+    const { content, spinner } = this.props;
 
-    console.log('content yo ', content);
+    if (spinner) {
+      return <Spinner />
+    }
+    
     return (
-      <div id="page-container">
+      <>
         <NextSeo
           title={`${content.results[0].data['news-headline1'][0].text}`}
           description={`${content.results[0].data['news-body'][0].text}`}
@@ -101,16 +102,12 @@ class NewsStoryPage extends React.Component {
             cardType: 'summary',
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner />
 
         <div className="container tpr__container">
           <div className="row flex-center">
-            <FunkyTitle
-              text={
-                this.props.content.results[0].data['news-headline1'][0].text
-              }
-            />
+            
+            <h1 className="act-name mt-100">{this.props.content.results[0].data['news-headline1'][0].text}</h1>
+
             <div className="col-sm-12">
               <img
                 className="tpr__image"
@@ -125,20 +122,24 @@ class NewsStoryPage extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   updateStateFetchArticle: () => dispatch(actions.fetchTPRStory()),
-  updateStateGotArticle: res => dispatch(actions.fetchTPRSuccess(res))
+  updateStateGotArticle: res => dispatch(actions.fetchTPRSuccess(res)),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
+  updateStateAppLoaded: () => dispatch(actions.updateStateAppLoaded()),
 });
 
 const mapStateToProps = state => ({
-  content: state.prismic.content
+  content: state.prismic.content,
+  spinner: state.appState.spinner,
 });
 export default compose(
+  withPage,
   withProgressBar,
   withAnalytics,
   withAuth,

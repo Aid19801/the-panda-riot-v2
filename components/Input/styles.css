@@ -27,3 +27,9 @@
     color: white;
     border: 0px solid;
 }
+
+@media screen and (max-width: 500px) {
+    .input__input {
+        width: 300px;
+    }
+}

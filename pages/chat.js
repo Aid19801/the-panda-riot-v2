@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { NextSeo } from 'next-seo';
-import withAuth from '../HOCs/with-auth';
+import withPageLayout from '../HOCs/with-page';
 import withAnalytics from '../HOCs/with-ga';
 import {
   FunkyTitle,
@@ -10,12 +10,14 @@ import {
   NavBar,
   Banner,
   Chat,
-  ChatContainer
+  ChatContainer,
+  Spinner,
 } from '../components';
 import {
   chatPageLoading,
   chatPageLoaded,
-  chatPageFailed
+  chatPageFailed,
+  updateStateAppLoaded
 } from '../redux/actions';
 import { getFromCache } from '../lib/cache';
 import '../lib/index.css';
@@ -37,9 +39,11 @@ class ChatPage extends Component {
   componentDidMount() {
     this.getUsersNameFromCache();
     // analyticsPage('v2-chat-page');
+    this.props.appLoaded();
     setTimeout(() => {
       this.props.showProgressBar(false);
     }, 300);
+    
   }
   handleKeyUp = evt => {
     if (evt.keyCode === 13) {
@@ -53,7 +57,7 @@ class ChatPage extends Component {
     try {
       const json = await getFromCache('user-profile-object');
       const userProfile = JSON.parse(json);
-      console.log('user profile is ', userProfile.username);
+      // console.log('user profile is ', userProfile.username);
       userName = userProfile.username;
     } catch (error) {
       console.log('getUsersNameFromCache | error: ', error);
@@ -64,9 +68,14 @@ class ChatPage extends Component {
 
   render() {
     const { user } = this.state;
+    const { spinner } = this.props;
+
+    if (spinner) {
+      return <Spinner />
+    }
 
     return (
-      <div id="page-container" className="page__chatpage flex-center">
+      <>
         <NextSeo
           title="The Panda Riot | CHAT"
           description="Chat with other acts and promoters on London's favourite Open Mic Comedy web-app"
@@ -93,33 +102,32 @@ class ChatPage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/chat.jpg" />
-        <FunkyTitle text="chat" />
         <div className="container">
-          <div className="row">
-            <ChatContainer handleKeyUp={this.handleKeyUp} user={user} />
+          <div className="row flex-center margin-top">
+            <ChatContainer user={user} />
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
 
-const mapStateToProps = ({ chat }) => ({
-  isLoading: chat.isLoading
+const mapStateToProps = ({ chat, appState }) => ({
+  isLoading: chat.isLoading,
+  spinner: appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
   pageLoading: () => dispatch(chatPageLoading()),
   pageLoaded: () => dispatch(chatPageLoaded()),
+  appLoaded: () => dispatch(updateStateAppLoaded()),
   pageFailed: () => dispatch(chatPageFailed())
 });
 
 export default compose(
   withProgressBar,
   withAnalytics,
-  withAuth,
+  withPageLayout,
   connect(
     mapStateToProps,
     mapDispatchToProps

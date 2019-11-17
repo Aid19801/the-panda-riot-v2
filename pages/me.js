@@ -21,8 +21,11 @@ import {
   mePageLoaded,
   mePageFailed,
   fetchActProfile,
-  gotActProfile
+  gotActProfile,
+  updateStateAppLoaded,
+  updateStateAppLoading
 } from '../redux/actions';
+import withPage from '../HOCs/with-page';
 // import { analyticsEvent } from '../lib/utils';
 
 class MePage extends Component {
@@ -146,7 +149,7 @@ class MePage extends Component {
 
   componentDidMount() {
     this.props.pageLoaded();
-    // analyticsPage('v2-my-account');
+    this.props.updateStateAppLoaded();
   }
 
   onSubmit = event => {
@@ -239,20 +242,23 @@ class MePage extends Component {
       isEditingProfilePicture
     } = this.state;
 
-    // console.log('this.state ', this.state.profilePicture);
-    return (
-      <div id="page-container" className="page__actpage flex-center">
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/audience.jpg" />
+    const { spinner } = this.props;
 
-        <div className="container">
-          <div className="row margin-top flex-center">
+    if (spinner) {
+      return <Spinner />
+    }
+
+
+    
+    
+    return (
+      <>
+        <div className="container mt-50">
+          <div className="row">
             {showSpinner && <Spinner />}
             {!showSpinner && (
               <>
-                <FunkyTitle text="My Profile" />
-
-                <div className="col-sm-10 flex-center flex-col">
+                <div className="col-sm-12 flex-center flex-col">
                   <ProfilePic editable srcProp={profilePicture} handleEditProfilePicture={this.handleEditProfilePicture} />
                   {!profilePicture ||
                   profilePicture === '/static/no_prof_pic.png' ||
@@ -265,7 +271,7 @@ class MePage extends Component {
                 </div>
 
                 {isEditingProfilePicture && (
-                  <div className="col-sm-10 flex-center">
+                  <div className="col-sm-12 flex-center">
                     <Input
                       title="Profile Picture"
                       name="profilePicture"
@@ -276,7 +282,7 @@ class MePage extends Component {
                   </div>
                 )}
 
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="email"
                     name="email"
@@ -284,7 +290,7 @@ class MePage extends Component {
                     onChange={() => null}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="username"
                     name="username"
@@ -292,7 +298,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="tagline"
                     name="tagline"
@@ -300,7 +306,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     type="select"
                     selectOptions={[
@@ -324,7 +330,7 @@ class MePage extends Component {
                   />
                 </div>
 
-                <div className="col-sm-10 flex-center flex-col">
+                <div className="col-sm-12 flex-center flex-col">
                   <Input
                     title="favourite gig"
                     name="faveGig"
@@ -337,7 +343,7 @@ class MePage extends Component {
                     </p>
                   ) : null}
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My YouTube Video URL"
                     name="youtube"
@@ -345,7 +351,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My Twitter"
                     name="twitter"
@@ -353,7 +359,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My Facebook Page"
                     name="facebook"
@@ -361,7 +367,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My YouTube Channel"
                     name="youtubeChannelURL"
@@ -369,7 +375,7 @@ class MePage extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="col-sm-10 flex-center">
+                <div className="col-sm-12 flex-center">
                   <Input
                     title="My Website"
                     name="website"
@@ -385,14 +391,15 @@ class MePage extends Component {
             )}
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
 // TO-DO tidy up spinner ^^
 
 const mapStateToProps = state => ({
-  actProfile: state.act.actProfile
+  actProfile: state.act.actProfile,
+  spinner: state.appState.spinner,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -400,10 +407,13 @@ const mapDispatchToProps = dispatch => ({
   pageLoaded: obj => dispatch(mePageLoaded(obj)),
   pageFailed: () => dispatch(mePageFailed()),
   updateStateFetchActProfile: uid => dispatch(fetchActProfile(uid)),
+  updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
   updateStateGotActProfile: actProfile => dispatch(gotActProfile(actProfile))
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   withAuth,
   connect(

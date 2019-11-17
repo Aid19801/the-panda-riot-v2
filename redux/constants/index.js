@@ -2,6 +2,8 @@
 export const APP_LOADING = 'APP_LOADING';
 export const APP_LOADED = 'APP_LOADED';
 export const APP_FAILED = 'APP_FAILED';
+export const SHOW_SPINNER = 'SHOW_SPINNER';
+export const HIDE_SPINNER = 'HIDE_SPINNER';
 
 // responsive
 export const GET_DEVICE = 'GET_DEVICE';
