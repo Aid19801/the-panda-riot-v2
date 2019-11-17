@@ -14,18 +14,22 @@ const Input = ({
 }) => {
   if (type && type === 'select') {
     return (
-      <div className="input__input-container margin-top white">
-        <h4>{title}</h4>
-        <select name="genre" className="input__input" onChange={onChange}>
-          {selectOptions.map((each, i) => {
-            return (
-              <option className="input__option" key={i}>
-                {each}
-              </option>
-            );
-          })}
-        </select>
-      </div>
+      <>
+        <Fade>
+          <div className="input__input-container margin-top white">
+            <h4>{title}</h4>
+            <select name="genre" className="input__input" onChange={onChange}>
+              {selectOptions.map((each, i) => {
+                return (
+                  <option className="input__option" key={i}>
+                    {each}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+        </Fade>
+      </>
     );
   }
 

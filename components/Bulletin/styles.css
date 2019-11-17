@@ -2,14 +2,17 @@
     width: 100%;
     contain: content;
     background: black;
-    z-index: 11;
-    /* border: 1px solid red; */
+    z-index: -1;
+    /* border: 1px solid yellow; */
+    animation: glowingBorder 1s infinite ease-in;
+
 }
 
 .bulletin__row {
     display: flex;
     flex-direction: row;
     max-height: 70px;
+    max-width: 100vw !important;
     align-items: center;
     animation: leftRight 18s infinite;
     animation-timing-function: linear;
@@ -27,5 +30,14 @@
     }
     to {
         margin-left: -200vw;
+    }
+}
+
+@keyframes glowingBorder {
+    from {
+        border: 1px solid orange;
+    }
+    to {
+        border: 1px solid yellow;
     }
 }

@@ -16,7 +16,6 @@ import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
 import * as cache from '../lib/cache';
 
-import '../lib/index.css';
 import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
@@ -27,6 +26,7 @@ import WithResponsivityHOC from '../HOCs/with-responsivity';
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
 
+import withPage from '../HOCs/with-page';
 import '../lib/index.css';
 // import { analyticsPage } from '../lib/utils';
 
@@ -78,23 +78,28 @@ class GigsPage extends Component {
   }
 
   async componentDidMount() {
+    console.log('AT | 1 CDM');
     if (!this.props.gigs) {
+      console.log('AT | 2 CDM no gigs so firing fetch gigs');
       this.fetchGigs();
     }
     this.props.updateStateAppLoaded();
   }
 
   fetchGigs = async () => {
+    console.log('AT | 3 fetchGigs fired');
     if (process.env.NODE_ENV !== 'production') {
+      console.log('AT | 4 firing updateStateLoadInNewGigs with mocks');
       return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
     } else {
       try {
+        console.log('AT | 5 getting from gist');
         const res = await fetch(
           `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
         );
         const json = await res.json();
         const rawUrl = json.files.gigs.raw_url;
-
+        console.log('AT | 6 rawUrl ', rawUrl);
         const req = await fetch(rawUrl);
         const reqJson = await req.json();
 
@@ -105,6 +110,7 @@ class GigsPage extends Component {
         });
 
         cache.saveToCache('gigs', sortedGigs);
+        console.log('AT | 7 sortedGigs ', sortedGigs);
         return this.props.updateStateLoadInNewGigs(sortedGigs);
       } catch (error) {
         console.log('getInitialProps err: ', error);
@@ -152,7 +158,7 @@ class GigsPage extends Component {
     }
 
     return (
-      <div id="page-container" className="page__gigspage">
+      <>
         <NextSeo
           title="The Panda Riot | GIGS"
           description="Find gigs using London's favourite Open Mic Comedy web-app"
@@ -178,20 +184,18 @@ class GigsPage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/location.jpg" />
+
         <div className="container">
-          <div className="row full-width flex-center margin-top">
-            <FunkyTitle text="Gigs" />
+          <div className="row margin-top flex-center">
             <Filters results={this.props.gigs} />
           </div>
           <div className="flex-center fade-in">
-            <Button text="Show All" color="grey" onClick={this.showAll} />
+            <Button text="Show All" color="lightgrey" onClick={this.showAll} />
           </div>
 
           {this.state.loading && <p>loading...</p>}
 
-          <div className="row full-width">
+          <div className="row">
             {!selectedGig && (
               <div className="col-sm-12 flex-center">
                 <MapBox />
@@ -220,7 +224,7 @@ class GigsPage extends Component {
             <div className="col-sm-4"></div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
@@ -243,6 +247,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   WithResponsivityHOC,
   withAuth,

@@ -22,8 +22,10 @@ import {
   mePageFailed,
   fetchActProfile,
   gotActProfile,
-  updateStateAppLoaded
+  updateStateAppLoaded,
+  updateStateAppLoading
 } from '../redux/actions';
+import withPage from '../HOCs/with-page';
 // import { analyticsEvent } from '../lib/utils';
 
 class MePage extends Component {
@@ -245,19 +247,17 @@ class MePage extends Component {
     if (spinner) {
       return <Spinner />
     }
+
+
+    
     
     return (
-      <div id="page-container" className="page__actpage flex-center">
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/audience.jpg" />
-
-        <div className="container">
-          <div className="row margin-top">
+      <>
+        <div className="container mt-50">
+          <div className="row">
             {showSpinner && <Spinner />}
             {!showSpinner && (
               <>
-                <FunkyTitle text="My Profile" />
-
                 <div className="col-sm-12 flex-center flex-col">
                   <ProfilePic editable srcProp={profilePicture} handleEditProfilePicture={this.handleEditProfilePicture} />
                   {!profilePicture ||
@@ -391,7 +391,7 @@ class MePage extends Component {
             )}
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
@@ -408,10 +408,12 @@ const mapDispatchToProps = dispatch => ({
   pageFailed: () => dispatch(mePageFailed()),
   updateStateFetchActProfile: uid => dispatch(fetchActProfile(uid)),
   updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
+  updateStateAppLoading: () => dispatch(updateStateAppLoading()),
   updateStateGotActProfile: actProfile => dispatch(gotActProfile(actProfile))
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   withAuth,
   connect(

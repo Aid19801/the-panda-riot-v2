@@ -17,6 +17,7 @@ import { withFirebase } from '../HOCs';
 import * as cache from '../lib/cache';
 import withAnalytics from '../HOCs/with-ga';
 import '../lib/index.css';
+import withPage from '../HOCs/with-page';
 
 class SignUpPage extends React.Component {
 
@@ -31,10 +32,12 @@ class SignUpPage extends React.Component {
       username: '',
       email: '',
       password: '',
+
       profilePicture: '',
       tagline: '',
       genre: '',
       faveGig: '',
+
       includeInActRater: true,
       youtube: '',
       youtubeChannelURL: '',
@@ -185,7 +188,11 @@ class SignUpPage extends React.Component {
               placeholder="password here"
               type="password"
             />
-            <Button text="Next =>" onClick={this.moveForward} color="grey" />
+            <Button
+              disabled={this.state.email === '' || this.state.password === '' || this.state.username === ''}
+              text="Next =>"
+              onClick={this.moveForward} color="grey"
+            />
           </>
         )}
 
@@ -226,7 +233,11 @@ class SignUpPage extends React.Component {
                 'Political'
               ]}
             />
-            <Button text="Next =>" onClick={this.moveForward} color="grey" />
+            <Button
+              text="Next =>"
+              onClick={this.moveForward} color="grey"
+              disabled={this.state.profilePicture === '' || this.state.tagline === '' || this.state.genre === ''}
+              />
           </>
         )}
 
@@ -234,7 +245,7 @@ class SignUpPage extends React.Component {
           <>
             <Input
               name="faveGig"
-              title="My Favourite Gig? *"
+              title="Fave Open Mic Gig? *"
               onChange={this.onChange}
             />
             <Input
@@ -304,6 +315,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  // withPage,
   withAnalytics,
   withFirebase,
   //   WithGigs,

@@ -1,9 +1,9 @@
 .nav-container {
   background: rgba(0, 0, 0, 0.6);
-  z-index: 12;
-  /* position: absolute; */
-
+  z-index: 14;
+  position: absolute;
   width: 100%;
+  top: 1px;
 }
 
 .nav-ul {
@@ -110,16 +110,18 @@ a.navbar-brand {
 
 .nav__my-acc__popout {
   position: absolute;
-  right: 1px;
-  margin-top: 47px;
-  border: 5px solid white;
-  display: flex;
-  align-items: flex-start;
-  width: 190px;
-  padding: 10px;
-  flex-direction: column;
-  background: grey;
-  animation: fadeInNavPopOut 0.3s ease-in;
+    z-index: 10000000;
+    right: -34px;
+    top: 67px;
+    margin-top: 47px;
+    border: 5px solid white;
+    display: flex;
+    align-items: flex-start;
+    width: 190px;
+    padding: 10px;
+    flex-direction: column;
+    background: grey;
+    animation: fadeInNavPopOut 0.3s ease-in;
 }
 
 .nav__my-acc__popout a {
@@ -177,8 +179,24 @@ a.navbar-brand {
   .nav__my-acc__popout {
     width: 230px;
     margin-top: 60px;
-    bottom: 59px;
+    /* bottom: 59px; */
+
+    position: absolute;
+    z-index: 10000000;
+
+    /* right: -34px; */
+    /* top: 37px; */
+    margin-top: 47px;
+    border: 5px solid white;
+    display: flex;
+    align-items: flex-start;
+    /* width: 190px; */
+    padding: 10px;
+    flex-direction: column;
+    background: grey;
+    animation: fadeInNavPopOut 0.3s ease-in;
   }
+
   .nav__my-acc__popout a {
     font-size: 40px;
   }

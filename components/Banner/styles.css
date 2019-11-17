@@ -1,23 +1,20 @@
 .banner__container {
-    opacity: 0.4;
     width: 100%;
-    max-width: 100%;
-    max-height: 500px;
-    height: 500px;
-    /* border: 3px solid red; */
-    overflow: hidden;
     position: absolute;
-    background-position: center;
-    top: 1px;
-
-    
+    height: 500px;
+    /* border: 1px solid red; */
 }
 
 .banner__container .banner__img {
     width: 100%;
-    height: calc(100% / 0.7);
-    /* background-position: center; */
-    /* border: 3px solid blue; */
+    height: 100%;
+    contain: content;
+    opacity: 0.4;
+    /* height: 500px; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .banner__no-img {
@@ -29,13 +26,13 @@
 
 @media screen and (max-width: 992px) {
     .banner__container {
-        opacity: 0.4;
+        /* opacity: 0.4; */
         width: 100%;
         max-width: 100%;
         max-height: 500px;
         height: 300px;
         /* border: 3px solid purple; */
-        position: absolute;
+        /* position: absolute; */
         top: 1px;
     }
 }

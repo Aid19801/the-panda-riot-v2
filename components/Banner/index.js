@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-const Banner = ({ src }) => {
+const Banner = ({ src, children }) => {
   if (!src) {
     return (
       <div className="banner__container">
@@ -13,6 +13,7 @@ const Banner = ({ src }) => {
     return (
       <div className="banner__container">
         <img className="banner__img" src={src} alt="open mic comedy bringer" />
+        {children}
       </div>
     );
   }

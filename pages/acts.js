@@ -19,6 +19,7 @@ import WithResponsivityHOC from '../HOCs/with-responsivity';
 import withProgressBar from '../HOCs/with-progress';
 import '../lib/index.css';
 import { Fade } from 'react-reveal';
+import withPage from '../HOCs/with-page';
 
 class ActsPage extends Component {
   constructor() {
@@ -137,7 +138,7 @@ class ActsPage extends Component {
     }
 
     return (
-      <div id="page-container" className="page__actspage">
+      <>
         <NextSeo
           title="The Panda Riot | ACTS"
           description="Find acts and watch their sets on London's favourite Open Mic Comedy web-app"
@@ -163,17 +164,11 @@ class ActsPage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-
-        <Banner src="/static/mugshots.jpg" />
-
-        <div className="container acts__container">
+      
+      <div className="container">
           <div className="row flex-center margin-top">
-            <FunkyTitle text="Acts" />
-          </div>
-
-          <div className="row flex-center">
-            <div className="col-sm-10 flex-center flex-col">
+            
+            <div className="col-sm-10 flex-center flex-col margin-top">
               {this.state.acts.map((each, i) => {
                 // console.log('each is ', each.username);
                 return (
@@ -231,7 +226,7 @@ class ActsPage extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
@@ -249,6 +244,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  withPage,
   withAnalytics,
   WithResponsivityHOC,
   withAuth,

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { NextSeo } from 'next-seo';
-import withAuth from '../HOCs/with-auth';
+import withPageLayout from '../HOCs/with-page';
 import withAnalytics from '../HOCs/with-ga';
 import {
   FunkyTitle,
@@ -75,7 +75,7 @@ class ChatPage extends Component {
     }
 
     return (
-      <div id="page-container" className="page__chatpage flex-center">
+      <>
         <NextSeo
           title="The Panda Riot | CHAT"
           description="Chat with other acts and promoters on London's favourite Open Mic Comedy web-app"
@@ -102,15 +102,12 @@ class ChatPage extends Component {
             ]
           }}
         />
-        <NavBar firebase={this.props.firebase} />
-        <Banner src="/static/chat.jpg" />
-        <FunkyTitle text="chat" />
         <div className="container">
-          <div className="row">
-            <ChatContainer handleKeyUp={this.handleKeyUp} user={user} />
+          <div className="row flex-center margin-top">
+            <ChatContainer user={user} />
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
@@ -130,7 +127,7 @@ const mapDispatchToProps = dispatch => ({
 export default compose(
   withProgressBar,
   withAnalytics,
-  withAuth,
+  withPageLayout,
   connect(
     mapStateToProps,
     mapDispatchToProps
