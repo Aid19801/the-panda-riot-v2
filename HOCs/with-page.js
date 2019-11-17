@@ -36,7 +36,7 @@ export default (Wrapped) => {
           return this.setState({ page: null });
         }
 
-        return this.setState({ page })
+        return this.setState({ page: "#tpr" })
       }
     }
 
