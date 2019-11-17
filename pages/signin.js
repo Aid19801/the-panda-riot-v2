@@ -171,14 +171,8 @@ class SignInPage extends React.Component {
             />
 
             <div className="btns-container margin-top space-evenly">
-
-              <Button text="Submit" onClick={this.onSubmit} color="lightgrey" />
-
-              <div className="button__button-container white" onClick={this.bounceToSignUp}>
-                Sign up?
-              </div>
-
-
+              <Button text="Submit" onClick={this.onSubmit} color="orange" />
+              <Button text="Sign Up?" onClick={this.bounceToSignUp} color="grey" />
             </div>
             {error && <h4 className="flex-center white">{error}</h4>}
           </>

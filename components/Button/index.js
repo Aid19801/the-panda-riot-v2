@@ -3,12 +3,12 @@ import './styles.css';
 
 function Button({ text, color, onClick, disabled }) {
     return (
-        <div
-            className={`button__button-container ${color}`}
+        <button
+            type="button"
+            className={ color === 'orange' ? `btn btn-warning max-height-50` : `btn btn-secondary w-100 max-height-50`}
             onClick={!disabled ? onClick : null}
-            >
-            <h4>{text}</h4>
-        </div>
+        >{text}
+        </button>
     )
 }
 

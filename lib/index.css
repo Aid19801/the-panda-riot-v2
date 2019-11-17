@@ -55,6 +55,16 @@ p {
   height: 69px;
 }
 
+.max-height-50 {
+  max-height: 50px;
+}
+
+.btn {
+  height: 50px;
+  width: 190px !important;
+  margin: 20px !important;
+}
+
 .faux-nav div {
   align-items: center;
   align-content: center;
