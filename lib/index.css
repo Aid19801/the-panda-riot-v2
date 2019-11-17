@@ -62,7 +62,7 @@ p {
   justify-content: space-evenly;
 }
 
-.faux-nav a {
+.faux-nav p {
   text-decoration: none;
   color: white;
   font-family: monospace;
@@ -103,7 +103,7 @@ p {
   font-size: 36px;
 }
 
-.parallax-text img {
+.hns9_footer_img {
   height: 50px;
   width: 50px;
   border-radius: 50%;
