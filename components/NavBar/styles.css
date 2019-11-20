@@ -106,6 +106,8 @@ a.navbar-brand {
 }
 
 .nav-option-wrapper .btn__signout {
+  margin: 0 !important;
+  width: 110px !important;
 }
 
 .nav__my-acc__popout {

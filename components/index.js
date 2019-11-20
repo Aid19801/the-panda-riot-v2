@@ -6,6 +6,7 @@ import ChatContainer from './ChatContainer';
 import CircleImage from './CircleImage';
 import Chat from './Chat';
 import FunkyTitle from './FunkyTitle';
+import Footer from './Footer';
 import HaveIPlayedHere from './HaveIPlayedHere';
 import Input from './Input';
 import NavBar from './NavBar';
@@ -27,6 +28,7 @@ export {
   ChatContainer,
   CircleImage,
   Chat,
+  Footer,
   FunkyTitle,
   HaveIPlayedHere,
   Input,

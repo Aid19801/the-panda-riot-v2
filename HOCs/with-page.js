@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Banner, FunkyTitle } from '../components';
+import { NavBar, Banner, FunkyTitle, Footer } from '../components';
 import withAuth from './with-auth';
 
 
@@ -57,6 +57,8 @@ export default (Wrapped) => {
           <div className="page-main-content">
             <Wrapped {...this.props} />
           </div>
+
+          <Footer />
         </div>
       )
     }

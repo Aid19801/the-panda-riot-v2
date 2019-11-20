@@ -2,10 +2,37 @@ import React from 'react'
 import './styles.css';
 
 function Button({ text, color, onClick, disabled }) {
+
+    const handleColor = () => {
+        if (color === 'orange') {
+            return 'btn btn-warning max-height-50';
+        }
+        if (color === 'grey') {
+            return 'btn btn-secondary max-height-50'
+        }
+        if (color === 'red') {
+            return 'btn btn-danger max-height-50'
+        }
+        if (color === 'lightgrey') {
+            return 'btn btn-light max-height-50'
+        }
+        if (color === 'darkgrey') {
+            return 'btn btn-dark max-height-50'
+        }
+        if (color === 'turqoise') {
+            return 'btn btn-info max-height-50'
+        }
+        if (color === 'green') {
+            return 'btn btn-success max-height-50'
+        }
+        return 'btn btn-warning max-height-50'
+    }
+
+
     return (
         <button
             type="button"
-            className={ color === 'orange' ? `btn btn-warning max-height-50` : `btn btn-secondary w-100 max-height-50`}
+            className={ handleColor() }
             onClick={!disabled ? onClick : null}
         >{text}
         </button>

@@ -7,6 +7,10 @@
   border: 5px solid red;
 } */
 
+:root {
+  --animation-time: 1s;
+}
+
 html {
   background: grey repeat-y;
   min-width: 100%;
@@ -39,6 +43,7 @@ p {
   justify-content: center;
   align-items: center;
   align-content: center;
+  margin-bottom: 50px;
 }
 
 .mt-100 {
@@ -118,6 +123,12 @@ p {
   width: 50px;
   border-radius: 50%;
   border: 4px solid white;
+  background: white;
+  /* animation: flicker var(--animation-time) ease alternate infinite; */
+  /* animation: randomiseAppearance calc() timing-function delay iteration-count direction fill-mode; */
+  /* animation: fadeIn var(--animation-time) ease; */
+  animation-name: fadeIn;
+  animation-timing-function: ease;
 }
 
 .orange-gradient {
@@ -772,6 +783,7 @@ ul li a {
   .signin__page h1.funky-title {
     width: 90%;
   }
+
   .signup__page .input__input-container {
     width: 80%;
   }
@@ -798,6 +810,7 @@ ul li a {
 
   .signup__page h1.funky-title {
     width: 90%;
+    margin-top: 180px !important;
   }
 
   .tpr__container h3 {
