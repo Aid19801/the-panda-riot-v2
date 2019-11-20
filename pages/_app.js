@@ -15,12 +15,33 @@ class MyApp extends App {
         <FirebaseContext.Provider value={new Firebase()}>
           <div className="app__page-wrapper">
             <Head>
-              <title>The Panda Riot</title>
+
+              <meta charset="utf-8" />
+              <meta http-equiv="X-UA-Compatible" content="IE=edge" />
               <meta
                 name="viewport"
-                content="initial-scale=1.0, width=device-width"
+                content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
               />
+              <meta name="description" content="London's premier open mic comedy web-app" />
+              <meta name="keywords" content="Open Mic Comedy in London" />
+              <title>The Panda Riot</title>
+
               <link rel="icon" sizes="192x192" href="/static/panda.png" />
+
+              <link rel="apple-touch-icon" href="/static/panda.png" />
+              <meta
+                name="apple-mobile-web-app-title"
+                content="The Panda Riot"
+              />
+              <meta
+                name="apple-mobile-web-app-status-bar-style"
+                content="default"
+              />
+              <meta name="apple-mobile-web-app-capable" content="yes" />
+              <meta name="mobile-web-app-capable" content="yes" />
+
+              <meta name="theme-color" content="red" />
+              <meta name="mobile-web-app-capable" content="yes" />
             </Head>
             <Component {...pageProps} />
           </div>

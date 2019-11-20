@@ -13,6 +13,18 @@
     background: black;
     color: white;
 }
+
+.gigs__have-i-played-here-container > div {
+    /* border: 1px solid red; */
+    z-index: 70;
+    opacity: 1;
+}
+
+.gigs__have-i-played-here-container button.btn {
+    /* border: 1px solid red; */
+    z-index: 70;
+}
+
 .gigs__have-i-bg {
     width: 100%;
     max-width: 100%;
@@ -29,4 +41,10 @@
 
 .__no {
     border: 3px solid orange;
+}
+
+@media screen and (max-width: 500px) {
+    .gigs__have-i-played-here-container {
+        margin-bottom: 50px;
+    }
 }

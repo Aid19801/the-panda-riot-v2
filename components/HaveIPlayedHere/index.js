@@ -70,7 +70,7 @@ function HaveIPlayedHere({ gig, updateStateAddUserToGig}) {
     return (
       <div className="gigs__have-i-played-here-container __no fadeOut">
         <img src="/static/audience.jpg" className="gigs__have-i-bg" alt="alternative comedy audience" />
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: 'relative', zIndex: '70' }}>
           <h4 className="margin-off">Have You Recently Performed Here?</h4>
         </div>
 
