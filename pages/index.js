@@ -66,14 +66,14 @@ class LandingPage extends React.Component {
               "The go-to web-app for London's electric open mic comedy circuit.",
             images: [
               {
-                url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
+                url: 'http://www.wollemipine.com/images/Wollemi_Wallpaper5_800_600.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt'
               },
               {
                 url:
-                  'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',
+                  'http://www.wollemipine.com/images/Wollemi_Wallpaper5_800_600.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt 2'
