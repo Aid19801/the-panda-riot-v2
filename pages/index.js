@@ -80,6 +80,11 @@ class LandingPage extends React.Component {
               }
             ]
           }}
+          twitter={{
+            handle: '@aidThompsin',
+            site: '@thePandaRiot',
+            cardType: 'summary_large_image',
+          }}
         />
 
         <Link href="/signin">
