@@ -3,6 +3,8 @@ import { Link } from '../routes';
 import { RichText } from 'prismic-reactjs';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import Head from 'next/head';
+
 import { NextSeo } from 'next-seo';
 import Prismic from 'prismic-javascript';
 
@@ -68,17 +70,6 @@ class NewsStoryPage extends React.Component {
             url: `https://www.thePandaRiot.com/news/${content.results[0].id}`,
             title: `${content.results[0].data['news-headline1'][0].text}`,
             description: `${content.results[0].data['news-body'][0].text}`,
-            // article: {
-            //   publishedTime: `${content.results[0].first_publication_date}`,
-            //   modifiedTime: `${content.results[0].last_publication_date}`,
-            //   // expirationTime: '2022-12-21T22:04:11Z',
-            //   section: 'Comedy',
-            //   authors: [
-            //     'https://www.example.com/authors/@firstnameA-lastnameA',
-            //     'https://www.example.com/authors/@firstnameB-lastnameB'
-            //   ],
-            //   tags: ['Comedy', 'Open Mic', 'London', 'Standup', 'Stand-Up']
-            // },
             images: [
               {
                 url: `${content.results[0].data['news-image'].url}`,
@@ -96,12 +87,13 @@ class NewsStoryPage extends React.Component {
             ],
             site_name: '#ThePandaRiot'
           }}
-          twitter={{
-            handle: '@aidThompsin',
-            site: '@thePandaRiot',
-            cardType: 'summary',
-          }}
         />
+
+      <Head>
+        <meta name="twitter:image" content="http://iipix.com/wallpaper/pics/katasunsethor800.jpg" />
+        <meta name="twitter:creator" content="@aidThompsin" />
+        <meta name="twitter:site" content="@thePandaRiot" />
+      </Head>
 
         <div className="container tpr__container">
           <div className="row flex-center">

@@ -27,6 +27,7 @@ class MyApp extends App {
               <title>The Panda Riot</title>
 
               <link rel="icon" sizes="192x192" href="/static/panda.png" />
+              <meta name="twitter:image" content="https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg" />
 
               <link rel="apple-touch-icon" href="/static/panda.png" />
               <meta
