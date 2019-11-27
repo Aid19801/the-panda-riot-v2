@@ -90,6 +90,7 @@ class NewsStoryPage extends React.Component {
         />
 
       <Head>
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={content.results[0].data['twitter-image'].url} />
         <meta name="twitter:creator" content="@aidThompsin" />
         <meta name="twitter:site" content="@thePandaRiot" />
