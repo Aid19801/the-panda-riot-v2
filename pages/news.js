@@ -76,7 +76,7 @@ class NewsPage extends React.Component {
             description: 'This is a news page for the panda riot',
             images: [
               {
-                url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
+                // url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt'
