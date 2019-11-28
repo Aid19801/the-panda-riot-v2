@@ -72,7 +72,7 @@ class NewsStoryPage extends React.Component {
             description: `${content.results[0].data['news-body'][0].text}`,
             images: [
               {
-                url: `${content.results[0].data['news-image'].url}`,
+                url: `${content.results[0].data['twitter-image'].url}`,
                 width: 800,
                 height: 600,
                 alt: 'Open Mic Comedy Audience'
