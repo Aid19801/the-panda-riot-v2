@@ -23,7 +23,7 @@ const Navigation = ({ gigsTonight, updateStatefetchGigsTonight, isAdmin, isSigne
   const pagesToShowBulletin = ['http://localhost:3000/', 'http://localhost:3000/home', 'http://localhost:3000/signin'];
 
   useEffect(() => {
-    console.log('AT | location has changed: ', location);
+    // console.log('AT | location has changed: ', location);
     const bool = pagesToShowBulletin.includes(location);
     setHasBulletin(bool);
   }, [location]);
