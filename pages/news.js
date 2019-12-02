@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { NextSeo } from 'next-seo';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-
+import Prismic from 'prismic-javascript';
 import {
   newsPageLoading,
   newsPageLoaded,
@@ -17,17 +17,10 @@ import {
   updateStateAppLoaded
 } from '../redux/actions';
 
-import * as cache from '../lib/cache';
-
-import { prismicEndpoint } from '../lib/prismic'; // prismic yo
-import Prismic from 'prismic-javascript'; // prismic yo
-
-import withAnalytics from '../HOCs/with-ga';
+import { prismicEndpoint } from '../lib/prismic';
 import mockNews from '../lib/mock-news.json';
-import mockTpr_stories from '../lib/mock-tpr_stories.json';
 
 import {
-  NewsContainer,
   Spinner,
   BoxCard,
   MediumBoxCard,
@@ -37,7 +30,9 @@ import {
 
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
+import withAuth from '../HOCs/with-auth';
 
+import * as cache from '../lib/cache';
 import '../lib/index.css';
 
 
@@ -51,11 +46,13 @@ class NewsPage extends React.Component {
   }
 
   static async getInitialProps({ reduxStore, req }) {
+    console.log('NODE ENV =====>>> ', process.env.NODE_ENV);
     let retrievedArticles = [];
     let retrievedPrismicStories = [];
 
     // GET ALL NEWS IN SSR (PROD)
     if (process.env.NODE_ENV === 'production') {
+      console.log('========== We Are In Production ==========');
       try {
         const res = await fetch(
           'https://api.github.com/gists/424b043765bf5ad54cb686032f141b34'
@@ -65,7 +62,8 @@ class NewsPage extends React.Component {
         const req = await fetch(rawUrl);
         const reqJson = await req.json();
 
-        retrievedArticles = reqJson.articles.slice(0, 12);
+        retrievedArticles = reqJson.articles.slice(0, 15);
+        console.log('retrieved articles length ======= >> ', retrievedArticles.length);
         reduxStore.dispatch(newsApiSuccess(retrievedArticles));
       } catch (error) {
         console.log('NEWS getInitialProps err: ', error);
@@ -73,6 +71,7 @@ class NewsPage extends React.Component {
     }
 
     if (process.env.NODE_ENV !== 'production') {
+      console.log('========== We Are NOT In Production ==========')
       // GET ALL NEWS IN SSR (DEV)
       try {
         reduxStore.dispatch(newsApiSuccess(mockNews.articles));
@@ -118,6 +117,7 @@ class NewsPage extends React.Component {
 
   async componentDidMount() {
     this.props.updateStateAppLoaded();
+    console.log('')
 
     const {
       updateStatefetchNews,
@@ -519,7 +519,6 @@ class NewsPage extends React.Component {
             )
             }
 
-
           </div>
         </div>
       </>
@@ -548,7 +547,7 @@ const mapDispatchToProps = dispatch => ({
 
 export default compose(
   withPage,
-  // withAnalytics,
+  withAuth,
   withProgressBar,
   connect(
     mapStateToProps,
