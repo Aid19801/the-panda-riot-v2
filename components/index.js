@@ -9,6 +9,9 @@ import FunkyTitle from './FunkyTitle';
 import Footer from './Footer';
 import HaveIPlayedHere from './HaveIPlayedHere';
 import Input from './Input';
+import LargeBoxCard from './LargeBoxCard';
+import MediumBoxCard from './MediumBoxCard';
+
 import NavBar from './NavBar';
 import NewsContainer from './NewsContainer';
 import ProfilePic from './ProfilePic';
@@ -33,6 +36,8 @@ export {
   HaveIPlayedHere,
   Input,
   // PrismicTypes,
+  LargeBoxCard,
+  MediumBoxCard,
   ProfilePic,
   NavBar,
   NewsContainer,
