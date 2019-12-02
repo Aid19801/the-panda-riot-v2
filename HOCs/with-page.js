@@ -36,6 +36,10 @@ export default (Wrapped) => {
           return this.setState({ page: null });
         }
 
+        if (page.includes('news')) {
+          return this.setState({ page: 'news' });
+        }
+
         return this.setState({ page: "#tpr" })
       }
     }
