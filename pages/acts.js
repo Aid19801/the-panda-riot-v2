@@ -12,7 +12,7 @@ import {
 import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
 import { tooSoon } from '../lib/utils';
-import { NavBar, FunkyTitle, Banner, ProfilePic, Spinner } from '../components';
+import { ProfilePic, Spinner } from '../components';
 import ClapIcon from '../components/Icons/clap-icon';
 import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';

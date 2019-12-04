@@ -36,18 +36,21 @@ import {
   FunkyTitle,
   Bulletin,
   Spinner,
+  RowOfCircles,
 } from '../components';
 
 import { Router } from 'next/router';
-import '../lib/index.css';
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
-// import { analyticsPage } from '../lib/utils';
+import WithResponsivityHOC from '../HOCs/with-responsivity';
+import '../lib/index.css';
 
 class HomePage extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      acts: null,
+    };
   }
 
   static async getInitialProps({ reduxStore, req }) {
@@ -152,37 +155,34 @@ class HomePage extends React.Component {
   }
 
   async componentDidMount() {
-    this.props.updateStateAppLoaded()
     const {
       pageLoading,
       updateStatefetchNews,
       pageLoaded,
-      // gigsTonight,
       stories,
       tpr_stories,
       updateStateFetchPrismicStories,
-      // updateStatefetchGigsTonight
+      updateStateAppLoaded,
     } = this.props;
+    updateStateAppLoaded();
+    this.renderActs();
     pageLoading();
     if (!stories) {
       console.log('client / there are no stories so fetching them...');
       updateStatefetchNews();
     }
-    // if (!gigsTonight) {
-    //   console.log('client / there are no gigs so fetching them...');
-    //   updateStatefetchGigsTonight();
-    // }
+
     if (!tpr_stories) {
       console.log('client / there are no prismic stories so fetching them...');
       const res = await this.fetchPrismic();
       updateStateFetchPrismicStories(res);
     }
 
-    pageLoaded();
     if (process.browser) {
       this.saveNewsAndGigsToCache();
     }
 
+    pageLoaded();
     setTimeout(() => {
       this.props.showProgressBar(false);
     }, 400);
@@ -211,9 +211,30 @@ class HomePage extends React.Component {
     return Router.push('/gigs');
   };
 
+  renderActs = () => {
+    this.props.firebase.users().on('value', snapshot => {
+      const usersObject = snapshot.val();
+
+      const usersList = Object.keys(usersObject).map(key => ({
+        ...usersObject[key],
+        uid: key
+      }));
+
+      const filteredOutNonVotingUsers = usersList.filter(
+        each => each.includeInActRater
+      );
+      let sortedActs = filteredOutNonVotingUsers
+        .sort((a, b) => a.rating - b.rating)
+        .reverse();
+      this.setState({ acts: sortedActs.slice(0, 4) });
+    });
+  };
+
+
   render() {
     const { spinner } = this.props;
-    
+    const { acts } = this.state;
+
     if (process.browser) {
       // console.log('homepage props ==> ', mockNews.articles);
     }
@@ -253,9 +274,19 @@ class HomePage extends React.Component {
 
         <div className="container">
           <div className="row margin-top">
-            <NewsContainer />
+            {acts && <RowOfCircles acts={acts} text="Acts with Profiles" />}
+            {!acts && <Spinner /> }
+          </div>
+
+        </div>
+
+        <div className="container">
+          <div className="row margin-top">
+            <NewsContainer isHome isMobile />
           </div>
         </div>
+
+
       </div>
     );
   }
@@ -265,10 +296,10 @@ const mapStateToProps = state => ({
   loading: state.signIn.loading,
   error: state.signIn.error,
   reduxUserAuth: state.signIn.userAuth,
-  // gigsTonight: state.gigs.gigsTonight,
   stories: state.newsApi.stories,
   tpr_stories: state.prismic.tpr_stories,
   spinner: state.appState.spinner,
+  isMobile: state.responsive.isMobile,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -287,6 +318,7 @@ export default compose(
   withAnalytics,
   withAuth,
   withProgressBar,
+  WithResponsivityHOC,
   connect(
     mapStateToProps,
     mapDispatchToProps

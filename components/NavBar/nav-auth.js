@@ -72,7 +72,7 @@ class NavigationAuth extends Component {
 
   findLocationAdjustNavOptions = () => {
     const location = Router.pathname.replace('/', '');
-    const allOptions = ['Home', 'Acts', 'Chat', 'Gigs'];
+    const allOptions = ['Home', 'News', 'Acts', 'Chat', 'Gigs'];
     const options = allOptions.filter(each => each.toLocaleLowerCase() !== location);
     this.setState({ options });
   }

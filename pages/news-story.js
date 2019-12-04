@@ -96,7 +96,7 @@ class NewsStoryPage extends React.Component {
         <meta name="twitter:site" content="@thePandaRiot" />
       </Head>
 
-        <div className="container tpr__container">
+        <div className="container tpr__container margin-bottom">
           <div className="row flex-center">
             
             <h1 className="act-name mt-100">{this.props.content.results[0].data['news-headline1'][0].text}</h1>

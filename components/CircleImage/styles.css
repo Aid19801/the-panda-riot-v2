@@ -1,4 +1,47 @@
-.circle__container {
-    border-radius: 12px;
-    border: 1px solid white;
+.stack-photos {
+    display: flex;
+    flex-direction: row;
 }
+
+
+
+.circle__container {
+    margin: 12px;
+}
+
+.circle__container .circle__img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    border: 3px solid orange;
+}
+
+@media screen and (max-width: 855px) {
+
+    .circle__container {
+        margin: 7px;
+    }
+
+    .stack-photos {
+        display: flex;
+        flex-direction: column;
+    }      
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .circle__container .circle__img {
+        height: 140px;
+        width: 140px;
+    }     
+}
+
+@keyframes glitchIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}   

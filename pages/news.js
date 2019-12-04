@@ -34,6 +34,7 @@ import withAuth from '../HOCs/with-auth';
 
 import * as cache from '../lib/cache';
 import '../lib/index.css';
+import Link from 'next/link';
 
 
 class NewsPage extends React.Component {
@@ -307,11 +308,13 @@ class NewsPage extends React.Component {
             )
             }
 
-            <div className="news__cta col-sm-12 flex-center">
-              <p className="flex-center orange skew-left half-width">
-                Want to write for #ThePandaRiot?
+            <Link href="mailto:thePandaRiot@gmail.com">
+              <a className="news__cta col-sm-12 flex-center">
+                <p className="flex-center orange skew-left half-width">
+                  Want to write for #ThePandaRiot?
               </p>
-            </div>
+              </a>
+            </Link>
 
             {thirdThree && (
               <>

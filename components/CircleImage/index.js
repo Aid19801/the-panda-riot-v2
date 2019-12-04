@@ -1,16 +1,22 @@
 import React from 'react';
+import './styles.css';
+import { Fade } from 'react-reveal';
 
-const CircleImage = ({src}) => {
+const CircleImage = ({ src }) => {
   return (
-    <div className="col-sm-1">
-      <div className="cicle__container">
-        <img
-          className="circle__img"
-          src={src}
-          alt="comedian profile picture"
+    <>
+      <Fade>
+        <div className="circle__container">
+          <img
+            className="circle__img"
+            src={src}
+            alt="comedian profile picture"
           />
-      </div>
-    </div>
+        </div>
+
+      </Fade>
+
+    </>
   );
 };
 
