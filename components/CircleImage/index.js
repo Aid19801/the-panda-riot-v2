@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles.css';
 import { Fade } from 'react-reveal';
+import './styles.css';
 
 const CircleImage = ({ src }) => {
   return (

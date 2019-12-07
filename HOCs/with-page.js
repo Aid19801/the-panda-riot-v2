@@ -53,7 +53,7 @@ export default (Wrapped) => {
         <div className="wrapped">
 
           <Banner src="/static/banner-ldn.jpg">
-            { page && <FunkyTitle text={page} />}
+            {/* { page && <FunkyTitle text={page} />} */}
           </Banner>
 
           <NavBar firebase={this.props.firebase} />

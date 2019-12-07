@@ -274,6 +274,8 @@ class HomePage extends React.Component {
 
         <div className="container">
           <div className="row margin-top">
+
+            
             {acts && <RowOfCircles acts={acts} text="Acts with Profiles" />}
             {!acts && <Spinner /> }
           </div>

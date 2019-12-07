@@ -9,12 +9,15 @@
     margin: 12px;
 }
 
-.circle__container .circle__img {
+.circle__img {
+    position: relative;
     border-radius: 50%;
     height: 200px;
     width: 200px;
     border: 3px solid orange;
 }
+
+
 
 @media screen and (max-width: 855px) {
 
