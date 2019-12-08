@@ -190,5 +190,6 @@
       font-size: 20px;
       background: black;
       transform: skewY(-2deg);
+      padding: 13px;
     }
   }
