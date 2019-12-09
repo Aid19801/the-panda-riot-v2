@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '..';
 import { addUserToGig } from '../../redux/actions';
-import { getFromCache } from '../../lib/cache';
+import { getFromCache, clearFromCache } from '../../lib/cache';
 import './styles.css';
 
 
 function HaveIPlayedHere({ gig, updateStateAddUserToGig}) {
+
   const [showElement, toggleShowElement] = useState(true);
   const [haveIPerformed, setHaveIPerformed] = useState(false);
   const uid = getFromCache('uid');
@@ -15,6 +16,7 @@ function HaveIPlayedHere({ gig, updateStateAddUserToGig}) {
     setHaveIPerformed(false);
     if (!showElement) toggleShowElement(true);
     const arr = gig.attended;
+
     if (arr) {
       arr.map((each) => {
         if (each.uid === uid) {
@@ -26,14 +28,16 @@ function HaveIPlayedHere({ gig, updateStateAddUserToGig}) {
     }
   }, [gig])
 
-
   const handleYes = () => {
     // pass uid, name, pic to redux => saga => update gist.
     const json = getFromCache('user-profile-object');
     const user = JSON.parse(json);
-    // pass both user, uid & gig to saga for gist.
+    // pass both user's acc info {},
+    // uid
+    // and the gig we're updating => to saga for gist.
     updateStateAddUserToGig(user, uid, gig);
     setHaveIPerformed(!haveIPerformed);
+    clearFromCache('gigs');
   };
 
   const handleNo = () => toggleShowElement(false);
