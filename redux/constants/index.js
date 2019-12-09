@@ -84,7 +84,7 @@ export const LOAD_FILTERS = 'LOAD_FILTERS';
 export const LOADED_FILTERS = 'LOADED_FILTERS';
 export const FILTERS_CHANGED = 'FILTERS_CHANGED';
 
-// blog
+// news page
 export const NEWS_PAGE_LOADING = 'NEWS_PAGE_LOADING';
 export const NEWS_PAGE_LOADED = 'NEWS_PAGE_LOADED';
 export const NEWS_PAGE_FAILED = 'NEWS_PAGE_FAILED';
@@ -94,3 +94,5 @@ export const FETCH_NEWS_RES = 'FETCH_NEWS_RES';
 export const ADDDING_USER_TO_GIG = 'ADDDING_USER_TO_GIG';
 export const ADDDING_USER_TO_GIG_REQ = 'ADDDING_USER_TO_GIG_REQ';
 export const ADDDING_USER_TO_GIG_RES = 'ADDDING_USER_TO_GIG_RES';
+
+//

@@ -3,16 +3,6 @@ import './styles.css';
 
 function Footer() {
 
-    // var time = Math.random();
-    // console.log('time is ', time);
-
-    // const randomiseFadeInSeconds = () => {
-    //     const time = Math.floor(Math.random() * 2) + 1;
-    //     const decimals = "0" + Math.floor(Math.random() * 9) + 1;
-    //     const str = time + '.' + decimals;
-    //     return parseFloat(str);
-    // }
-
     return (
         <div className="footer__container">
             <img

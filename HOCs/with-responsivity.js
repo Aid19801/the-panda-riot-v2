@@ -13,10 +13,8 @@ const WithResponsivityHOC = PlatformSpecificComponent => {
 
     componentDidMount = () => {
         if (process.browser) {
-            // console.log('AT | yeah')
             this.props.updateStateGettingDevice();
             let isMobile = (window.innerWidth < 576);
-            // console.log('AT | ismobile is back ', isMobile);
             return this.props.updateStateGotDevice(isMobile);
         }
     }

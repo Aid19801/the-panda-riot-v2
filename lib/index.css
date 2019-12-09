@@ -26,6 +26,14 @@ p {
   flex-direction: row;
 }
 
+.tpr__link {
+  background: orange;
+  color: white;
+  transform: skewY(-2deg);
+  width: auto;
+  text-decoration: none;
+}
+
 .app__page-wrapper {
   background: linear-gradient(45deg, black, grey);
   /* height: 150vh !important; */
@@ -35,7 +43,7 @@ p {
   height: auto;
   /* border: 5px solid yellow; */
   position: absolute;
-  top: 30%;
+  top: 15%;
   z-index: 12;
   width: 100%;
 
@@ -152,6 +160,32 @@ p {
   height: 100vh !important;
 }
 
+.news__socials p {
+  font-family: 'Raleway';
+  background: black;
+  color: orange !important;
+  font-weight: 700;
+  font-size: 7vh;
+  padding: 20px;
+  transform: skewY(-2deg);
+  text-align: center;
+  /* width: 50%; */
+}
+
+.news__socials img {
+  margin-left: 5px;
+}
+
+.news__socials .flex-row {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.news__container .news__cta p {
+  font-size: 40px;
+  width: 50%;
+}
+
 .landing__page .landing__clicker {
   width: 100%;
 }
@@ -210,6 +244,13 @@ p {
   box-shadow: 9px 12px 17px 24px black;
 }
 
+.box-shadow {
+  box-shadow: -38px 19px 112px 113px black;
+}
+
+.bg-black {
+  background: black;
+}
 @media screen and (max-width: 1200px) {
   .landing__screens-container {
     flex-direction: column;
@@ -336,6 +377,10 @@ ul li a {
   width: 100%;
 }
 
+.half-width {
+  width: 50%;
+}
+
 .white {
   color: white;
 }
@@ -399,7 +444,8 @@ ul li a {
 }
 
 .tpr__container {
-  position: absolute;
+  /* position: absolute; */
+  margin-top: 25px;
   top: 50px;
   z-index: 1;
 }
@@ -484,7 +530,7 @@ ul li a {
 }
 
 .act-name {
-  margin-top: -76px;
+  margin-top: -6px;
   width: 70%;
 }
 
@@ -660,6 +706,7 @@ ul li a {
     width: 100%;
     max-width: 800px;
   }
+  
 }
 
 @media screen and (max-width: 767px) {
@@ -673,6 +720,9 @@ ul li a {
   }
   .landing__promo-box-icon {
     width: 50%;
+  }
+  .news__container .news__cta p {
+    width: 100%;
   }
 }
 
@@ -709,7 +759,7 @@ ul li a {
   }
 
   .act-name {
-    margin-top: -76px;
+    margin-top: -6px;
     width: 100%;
   }
 

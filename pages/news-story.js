@@ -3,6 +3,8 @@ import { Link } from '../routes';
 import { RichText } from 'prismic-reactjs';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import Head from 'next/head';
+
 import { NextSeo } from 'next-seo';
 import Prismic from 'prismic-javascript';
 
@@ -68,20 +70,9 @@ class NewsStoryPage extends React.Component {
             url: `https://www.thePandaRiot.com/news/${content.results[0].id}`,
             title: `${content.results[0].data['news-headline1'][0].text}`,
             description: `${content.results[0].data['news-body'][0].text}`,
-            // article: {
-            //   publishedTime: `${content.results[0].first_publication_date}`,
-            //   modifiedTime: `${content.results[0].last_publication_date}`,
-            //   // expirationTime: '2022-12-21T22:04:11Z',
-            //   section: 'Comedy',
-            //   authors: [
-            //     'https://www.example.com/authors/@firstnameA-lastnameA',
-            //     'https://www.example.com/authors/@firstnameB-lastnameB'
-            //   ],
-            //   tags: ['Comedy', 'Open Mic', 'London', 'Standup', 'Stand-Up']
-            // },
             images: [
               {
-                url: `${content.results[0].data['news-image'].url}`,
+                url: `${content.results[0].data['twitter-image'].url}`,
                 width: 800,
                 height: 600,
                 alt: 'Open Mic Comedy Audience'
@@ -96,14 +87,16 @@ class NewsStoryPage extends React.Component {
             ],
             site_name: '#ThePandaRiot'
           }}
-          twitter={{
-            handle: '@aidThompsin',
-            site: '@thePandaRiot',
-            cardType: 'summary',
-          }}
         />
 
-        <div className="container tpr__container">
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={content.results[0].data['twitter-image'].url} />
+        <meta name="twitter:creator" content="@aidThompsin" />
+        <meta name="twitter:site" content="@thePandaRiot" />
+      </Head>
+
+        <div className="container tpr__container margin-bottom">
           <div className="row flex-center">
             
             <h1 className="act-name mt-100">{this.props.content.results[0].data['news-headline1'][0].text}</h1>

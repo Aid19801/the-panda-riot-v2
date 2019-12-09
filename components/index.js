@@ -9,9 +9,13 @@ import FunkyTitle from './FunkyTitle';
 import Footer from './Footer';
 import HaveIPlayedHere from './HaveIPlayedHere';
 import Input from './Input';
+import LargeBoxCard from './LargeBoxCard';
+import MediumBoxCard from './MediumBoxCard';
+
 import NavBar from './NavBar';
 import NewsContainer from './NewsContainer';
 import ProfilePic from './ProfilePic';
+import RowOfCircles from './RowOfCircles';
 import SignOutButton from './SignOut';
 import SocialIcons from './SocialIcons';
 import Spinner from './Spinner';
@@ -33,9 +37,12 @@ export {
   HaveIPlayedHere,
   Input,
   // PrismicTypes,
+  LargeBoxCard,
+  MediumBoxCard,
   ProfilePic,
   NavBar,
   NewsContainer,
+  RowOfCircles,
   SignOutButton,
   SocialIcons,
   Spinner,

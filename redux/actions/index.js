@@ -193,27 +193,6 @@ export const newsApiSuccess = res => {
   return { type: actionTypes.NEWS_API_SUCCESS, stories: res };
 };
 
-// PAGE | Blog
-export const newsPageLoading = () => {
-  return { type: actionTypes.NEWS_PAGE_LOADING };
-};
-
-export const newsPageLoaded = () => {
-  return { type: actionTypes.NEWS_PAGE_LOADED };
-};
-
-export const newsPageFailed = () => {
-  return { type: actionTypes.NEWS_PAGE_FAILED };
-};
-
-export const fetchNewsPageReq = () => {
-  return { type: actionTypes.FETCH_NEWS_REQ };
-};
-
-export const fetchNewsPageRes = content => {
-  return { type: actionTypes.FETCH_NEWS_RES, content };
-};
-
 // PAGE | CHat
 
 export const chatPageLoading = () => {
@@ -268,4 +247,27 @@ export const fetchActProfile = uid => {
 
 export const gotActProfile = actProfile => {
   return { type: actionTypes.GOT_ACT_PROFILE, actProfile };
+};
+
+
+// PAGE | News
+
+export const newsPageLoading = () => {
+  return { type: actionTypes.NEWS_PAGE_LOADING };
+};
+
+export const newsPageLoaded = () => {
+  return { type: actionTypes.NEWS_PAGE_LOADED };
+};
+
+export const newsPageFailed = () => {
+  return { type: actionTypes.NEWS_PAGE_FAILED };
+};
+
+export const fetchNewsPageReq = () => {
+  return { type: actionTypes.FETCH_NEWS_REQ };
+};
+
+export const fetchNewsPageRes = content => {
+  return { type: actionTypes.FETCH_NEWS_RES, content };
 };

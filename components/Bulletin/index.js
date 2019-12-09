@@ -1,5 +1,5 @@
 import { trimStringSpecifically } from '../../lib/utils';
-import { Router, Link } from '../../routes';
+import { Router } from '../../routes';
 import './styles.css';
 
 const Bulletin = ({ stories }) => {

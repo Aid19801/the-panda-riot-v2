@@ -8,6 +8,7 @@ import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
 import { compose } from 'redux';
 import Link from 'next/link';
+import Head from 'next/head';
 
 import '../lib/index.css';
 
@@ -80,12 +81,14 @@ class LandingPage extends React.Component {
               }
             ]
           }}
-          twitter={{
-            handle: '@aidThompsin',
-            site: '@thePandaRiot',
-            cardType: 'summary_large_image',
-          }}
         />
+
+        <Head>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg" />
+          <meta name="twitter:creator" content="@aidThompsin" />
+          <meta name="twitter:site" content="@thePandaRiot" />
+        </Head>
 
         <Link href="/signin">
           <a>

@@ -52,6 +52,7 @@ class GigsPage extends Component {
     // }
 
     try {
+      console.log('AT | SSR getting gigs')
       const res = await fetch(
         `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
       );
@@ -79,19 +80,25 @@ class GigsPage extends Component {
 
   async componentDidMount() {
     console.log('AT | 1 CDM');
+    // if SSR hasnt got gigs yet, get them
     if (!this.props.gigs) {
       console.log('AT | 2 CDM no gigs so firing fetch gigs');
       this.fetchGigs();
+    }
+    // if SSR *has* got gigs, save to cache to stop repeating calls
+    if (this.props.gigs) {
+      console.log('AT | 2 CDM *are* gigs so saving to cache');
+      cache.saveToCache('gigs', this.props.gigs);
     }
     this.props.updateStateAppLoaded();
   }
 
   fetchGigs = async () => {
     console.log('AT | 3 fetchGigs fired');
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('AT | 4 firing updateStateLoadInNewGigs with mocks');
-      return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
-    } else {
+    // if (process.env.NODE_ENV !== 'production') {
+    //   console.log('AT | 4 firing updateStateLoadInNewGigs with mocks');
+    //   return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
+    // } else {
       try {
         console.log('AT | 5 getting from gist');
         const res = await fetch(
@@ -115,7 +122,7 @@ class GigsPage extends Component {
       } catch (error) {
         console.log('getInitialProps err: ', error);
       }
-    }
+    // }
   };
 
   componentWillReceiveProps = newProps => {
