@@ -217,7 +217,6 @@ class MePage extends Component {
     });
   };
 
-
   handleEditProfilePicture = () => {
     this.setState({ isEditingProfilePicture: !this.state.isEditingProfilePicture });
   }
@@ -253,7 +252,7 @@ class MePage extends Component {
     
     return (
       <>
-        <div className="container">
+        <div className="container mt-70">
           <div className="row">
             {showSpinner && <Spinner />}
             {!showSpinner && (

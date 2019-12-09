@@ -81,7 +81,7 @@ a.navbar-brand {
 .nav-option-wrapper:nth-child(5) {
   margin-left: 20px;
   margin-right: 20px;
-  transform: rotate(0deg) !important;
+  transform: rotate(-10deg) !important;
   margin-top: 10px;
 }
 
