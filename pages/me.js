@@ -253,7 +253,7 @@ class MePage extends Component {
     
     return (
       <>
-        <div className="container mt-50">
+        <div className="container">
           <div className="row">
             {showSpinner && <Spinner />}
             {!showSpinner && (
