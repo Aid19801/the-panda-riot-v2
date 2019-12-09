@@ -19,6 +19,12 @@ function* workerAddPeopleToGigs({ user, uid, gig }) {
   let rawUrl = '';
 
   if (process.env.NODE_ENV === 'production') {
+
+    console.log('AT | SAGA workerAddPeopleToGigs user: ', user);
+    console.log('AT | SAGA workerAddPeopleToGigs uid: ', user);
+    console.log('AT | SAGA workerAddPeopleToGigs gig: ', user);
+    console.log('AT | SAGA workerAddPeopleToGigs env: ', process.env.REACT_APP_GIG_GIST);
+
   yield fetch(`https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`)
     .then(res => res.json())
     .then(json => {
@@ -33,6 +39,7 @@ function* workerAddPeopleToGigs({ user, uid, gig }) {
   yield fetch(rawUrl)
     .then(res => res.json())
     .then(json => {
+      console.log('AT | SAGA fetched rawUrl and json is ', json);
       return gigs = json;
     })
     .catch(err => console.log('err ', err));
@@ -69,10 +76,14 @@ function* workerAddPeopleToGigs({ user, uid, gig }) {
     github
       .patch(`/gists/${process.env.REACT_APP_GIG_GIST}`, options)
       .then(res => {
-        console.log('res ', res.body);
+        console.log('AT | SAGA res is back: ', res.body);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log('AT | process.env.REACT_APP_GIG_GIST ', process.env.REACT_APP_GIG_GIST);
+        return console.log('AT | SAGA error patching to Git Gist: ', err)
+      }
+      );
   } else {
-    console.log('dev env so havent updated.')
+    console.log('dev env so havent updated gist')
   }
 }
