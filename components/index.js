@@ -14,6 +14,7 @@ import MediumBoxCard from './MediumBoxCard';
 
 import NavBar from './NavBar';
 import NewsContainer from './NewsContainer';
+import PeopleWhoPlayedHere from './PeopleWhoPlayedHere';
 import ProfilePic from './ProfilePic';
 import RowOfCircles from './RowOfCircles';
 import SignOutButton from './SignOut';
@@ -39,9 +40,10 @@ export {
   // PrismicTypes,
   LargeBoxCard,
   MediumBoxCard,
-  ProfilePic,
   NavBar,
   NewsContainer,
+  ProfilePic,
+  PeopleWhoPlayedHere,
   RowOfCircles,
   SignOutButton,
   SocialIcons,

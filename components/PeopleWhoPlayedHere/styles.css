@@ -1,0 +1,12 @@
+.selectedGig__ppl-played-here {
+    /* height: 30px !important; */
+    /* width: 30px !important; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.selectedGig__ppl-played-here img {
+    width: 30px !important;
+    height: 30px !important;
+}

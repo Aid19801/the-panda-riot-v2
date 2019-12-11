@@ -106,6 +106,7 @@ class Map extends Component {
   };
 
   handleSelectMarker = data => {
+    console.log('handleSeclt datas, ', data);
     let newPaneInfo = {
       id: data.id,
       isSelected: true,

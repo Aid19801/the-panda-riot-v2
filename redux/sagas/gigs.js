@@ -50,6 +50,7 @@ export function* workerGigsTonightSaga(actionObj) {
   }
   // DEV | GET MOCKS, ASSIGN TO `gigs`
   if (process.env.NODE_ENV === 'development') {
+    console.log('====== IN DEV NOT PROD =====');
     gigs = mockGigs;
   }
 

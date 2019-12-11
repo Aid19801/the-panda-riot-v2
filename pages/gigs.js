@@ -20,7 +20,7 @@ import Filters from '../components/Filters';
 import { InfoCard } from '../components/InfoCard';
 import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
-import { NavBar, FunkyTitle, Banner, HaveIPlayedHere, Spinner, Button } from '../components';
+import { PeopleWhoPlayedHere, HaveIPlayedHere, Spinner, Button } from '../components';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 
 // 1. load GIGS and FILTERS into local state
@@ -79,15 +79,15 @@ class GigsPage extends Component {
   }
 
   async componentDidMount() {
-    console.log('AT | 1 CDM');
+    // console.log('AT | 1 CDM');
     // if SSR hasnt got gigs yet, get them
     if (!this.props.gigs) {
-      console.log('AT | 2 CDM no gigs so firing fetch gigs');
+      // console.log('AT | 2 CDM no gigs so firing fetch gigs');
       this.fetchGigs();
     }
     // if SSR *has* got gigs, save to cache to stop repeating calls
     if (this.props.gigs) {
-      console.log('AT | 2 CDM *are* gigs so saving to cache');
+      // console.log('AT | 2 CDM *are* gigs so saving to cache');
       cache.saveToCache('gigs', this.props.gigs);
     }
     this.props.updateStateAppLoaded();
@@ -209,7 +209,7 @@ class GigsPage extends Component {
               </div>
             )}
 
-            {selectedGig && (
+            { selectedGig && (
               <>
                 <div className="col-sm-6">
                   <MapBox />
@@ -219,8 +219,10 @@ class GigsPage extends Component {
                     paneInfo={selectedGig}
                     toggleMarker={selectedGig ? true : false}
                   />
-
                   <MoreInfoCard paneInfo={selectedGig} isGigs />
+                  
+                  { selectedGig.attended && selectedGig.attended.length !== 0 && <PeopleWhoPlayedHere people={selectedGig.attended} /> }
+
                   <HaveIPlayedHere gig={selectedGig} />
                 </div>
               </>
