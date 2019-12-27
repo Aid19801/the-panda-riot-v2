@@ -854,6 +854,10 @@ ul li a {
     display: none;
   }
 
+  .signin__page .funky-title {
+    margin-top: 60px !important;
+  }
+
   .signup__page .input__input-container input {
     width: 100%;
   }
