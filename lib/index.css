@@ -76,6 +76,11 @@ p {
   max-height: 50px;
 }
 
+.signup__page .funky-title {
+  margin-top: 60px !important;
+  /* border: 1px solid red; */
+}
+
 .btn {
   height: 50px;
   width: 190px !important;
@@ -850,6 +855,12 @@ ul li a {
     width: 80%;
   }
 
+
+
+  .signup__page .nav-container .bulletin__container {
+    display: none;
+  }
+
   .signup__page .input__input-container input {
     width: 100%;
   }
@@ -872,7 +883,7 @@ ul li a {
 
   .signup__page h1.funky-title {
     width: 90%;
-    margin-top: 180px !important;
+    margin-top: 100px !important;
   }
 
   .tpr__container h3 {

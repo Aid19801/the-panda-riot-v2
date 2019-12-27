@@ -8,6 +8,10 @@
 
 }
 
+.signup__page .nav-container .bulletin__container {
+    display: none;
+}
+
 .bulletin__row {
     display: flex;
     flex-direction: row;
