@@ -65,22 +65,30 @@ class ActsPage extends Component {
       // set their record to be the same but with
       // rating incremented by +1
 
-      const {
-        username,
-        email,
-        tagline,
-        profilePicture,
-        rating,
-        includeInActRater
-      } = chosenUser;
+      let yt = chosenUser && chosenUser.youtube ? chosenUser.youtube : '';
+      let att = chosenUser && chosenUser.attended ? chosenUser.attended : [];
+      let fg = chosenUser && chosenUser.faveGig ? chosenUser.faveGig : '';
+      let gen = chosenUser && chosenUser.genre ? chosenUser.genre : '';
+      let ws = chosenUser && chosenUser.website ? chosenUser.website : '';
+      let tw = chosenUser && chosenUser.twitter ? chosenUser.twitter : '';
+      let fb = chosenUser && chosenUser.facebook ? chosenUser.facebook : '';
+      let ytCh = chosenUser && chosenUser.youtubeChannelURL ? chosenUser.youtubeChannelURL : '';
 
       // 2. SET THE ACT WITH ITS NEW RATING IN DB
-      this.props.firebase.user(actObject.uid).set({
+      firebase.user(actObject.uid).set({
         username,
         email,
         tagline,
         profilePicture,
         includeInActRater,
+        attended: att,
+        faveGig: fg,
+        youtube: yt,
+        genre: gen,
+        website: ws,
+        twitter: tw,
+        facebook: fb,
+        youtubeChannelURL: ytCh,
         rating: upOrDownString === 'up' ? rating + 1 : rating - 1
       });
 
@@ -108,14 +116,6 @@ class ActsPage extends Component {
     }, 300);
     this.props.updateStateAppLoaded();
   }
-
-  bounceToActsProfile = uid => {
-    console.log('is this firing?')
-  };
-
-  reRouteToMePage = () => {
-    return Router.push('/me');
-  };
 
   processTagline = str => {
     let res = '';

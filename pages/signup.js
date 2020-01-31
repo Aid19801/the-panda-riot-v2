@@ -16,8 +16,8 @@ import { Banner, Button, Input, NavBar, Spinner } from '../components';
 import { withFirebase } from '../HOCs';
 import * as cache from '../lib/cache';
 import withAnalytics from '../HOCs/with-ga';
-import '../lib/index.css';
 import withPage from '../HOCs/with-page';
+import '../lib/index.css';
 
 class SignUpPage extends React.Component {
 
@@ -117,7 +117,7 @@ class SignUpPage extends React.Component {
   };
 
   onChange = event => {
-    console.log('onChange Fired : ', event.target);
+    // console.log('onChange Fired : ', event.target);
     // analyticsEvent(`v2-signup-${event.target.name}`);
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -139,7 +139,7 @@ class SignUpPage extends React.Component {
     }
 
     return (
-      <div id="page-container" className="signup__page" >
+      <div id="page-container" className="signup__page">
         <NextSeo
           openGraph={{
             type: 'website',
