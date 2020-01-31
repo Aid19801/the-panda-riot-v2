@@ -34,6 +34,7 @@ function Button({ text, color, onClick, disabled }) {
             type="button"
             className={ handleColor() }
             onClick={!disabled ? onClick : null}
+            disabled={disabled}
         >{text}
         </button>
     )

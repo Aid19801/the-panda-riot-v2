@@ -72,6 +72,7 @@ export function* workerGigsSaga({ filters }) {
   let rawUrl = '';
   let error = null;
 
+  // GET GIGS
   if (process.env.NODE_ENV === 'production') {
     if (cachedGigs) {
       gigs = JSON.parse(localStorage.getItem('gigs'));
@@ -99,6 +100,7 @@ export function* workerGigsSaga({ filters }) {
     }
   }
 
+  // GET GIGS 
   if (process.env.NODE_ENV === 'development') {
     gigs = mockGigs;
     // console.log('AT | gigs are ', gigs);

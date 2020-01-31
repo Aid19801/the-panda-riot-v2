@@ -174,6 +174,7 @@ class SignInPage extends React.Component {
               <Button text="Submit" onClick={this.onSubmit} color="orange" />
               <Button text="Sign Up?" onClick={this.bounceToSignUp} color="grey" />
             </div>
+            <h4 onClick={() => this.state.email ? this.props.firebase.doPasswordReset(this.state.email) : alert('enter email first please!')} className="white">Reset Password</h4>
             {error && <h4 className="flex-center white">{error}</h4>}
           </>
         )}

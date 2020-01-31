@@ -17,6 +17,10 @@ html {
   background-size: contain;
 }
 
+.hidden {
+  display: none;
+}
+
 p {
   margin: 0;
 }

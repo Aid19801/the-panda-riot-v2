@@ -23,6 +23,7 @@ import { prismicEndpoint } from '../lib/prismic'; // prismic yo
 import Prismic from 'prismic-javascript'; // prismic yo
 // import { RichText } from 'prismic-reactjs';
 
+import withGigs from '../HOCs/foo';
 import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
 import mockGigs from '../lib/mock-gigs.json';
@@ -316,6 +317,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
+  // withGigs,
   withPage,
   withAnalytics,
   withAuth,
