@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Button } from '..';
-import { addUserToGig, addGigToUser } from '../../redux/actions';
+import { addUserToGig } from '../../redux/actions';
 import { getFromCache, clearFromCache } from '../../lib/cache';
 import './styles.css';
 import { withFirebase } from '../../HOCs';
@@ -175,7 +175,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   updateStateAddUserToGig: (user, uid, gig) => dispatch(addUserToGig(user, uid, gig)),
-  updateStateAddGigToUser: (uid, gigId) => dispatch(addGigToUser(uid, gigId)),
+  // updateStateAddGigToUser: (uid, gigId) => dispatch(addGigToUser(uid, gigId)),
 });
 
 export default compose(
