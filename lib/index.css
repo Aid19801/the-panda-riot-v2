@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Raleway|Rubik');
-
-/* .fooooo {
-  position: absolute;
-  z-index: 100;
-  border: 5px solid red;
-} */
-
 :root {
   --animation-time: 1s;
 }
@@ -30,6 +23,23 @@ p {
   flex-direction: row;
 }
 
+.app__advert {
+  position: absolute;
+  top: 0px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+  font-weight: 700;
+  transform: skewY(-1deg);
+  font-family: monospace;
+  background: orange;
+  padding: 5px;
+}
+
 .tpr__link {
   background: orange;
   color: white;
@@ -43,6 +53,7 @@ p {
   /* height: 150vh !important; */
   /* padding-bottom: 40px; */
 }
+
 .page-main-content {
   height: auto;
   /* border: 5px solid yellow; */
@@ -50,7 +61,6 @@ p {
   top: 15%;
   z-index: 12;
   width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +73,7 @@ p {
 }
 
 .mt-70 {
-  margin-top: 70px; 
+  margin-top: 70px;
 }
 
 .mt-50 {
@@ -107,15 +117,13 @@ p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-
 }
+
 .parallax {
   /* The image used */
   background-image: url("https://cdn.pixabay.com/photo/2016/07/08/20/07/microphone-1505182_960_720.jpg");
-
   /* Set a specific height */
-  min-height: 500px; 
-
+  min-height: 500px;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -127,6 +135,7 @@ p {
   display: flex;
   justify-content: center;
 }
+
 .parallax h1 {
   width: 100%;
   margin-top: 30px;
@@ -203,10 +212,12 @@ p {
   min-height: 310px;
   border: 3px solid black;
 }
+
 .landing__promo-box {
   width: 100% !important;
   /* border: 1px solid red !important; */
 }
+
 .landing__promo-box-icon {
   width: 90%;
   height: auto;
@@ -260,6 +271,7 @@ p {
 .bg-black {
   background: black;
 }
+
 @media screen and (max-width: 1200px) {
   .landing__screens-container {
     flex-direction: column;
@@ -290,6 +302,7 @@ p {
   align-items: center;
   flex-direction: column;
 }
+
 #page-container a {
   text-decoration: none;
   /* color: white !important; */
@@ -299,10 +312,12 @@ p {
   height: 150vh;
   /* border: 1px solid red; */
 }
+
 .orange {
   background: orange;
   color: white;
 }
+
 .green {
   background: green;
   border: 2px solid lightgreen;
@@ -335,11 +350,7 @@ button {
   transform: skewY(3deg);
 }
 
-h1,
-h2,
-h3,
-h4,
-p {
+h1, h2, h3, h4, p {
   font-family: 'Rubik', 'Raleway', 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -454,6 +465,7 @@ ul li a {
 .tpr__border-grey:hover {
   border: 7px solid lightgrey;
 }
+
 .circular-image {
   /* border-radius: 30px; */
   border-radius: 68px;
@@ -480,8 +492,7 @@ ul li a {
   box-shadow: -38px 19px 96px 106px black;
 }
 
-.tpr__container h3,
-.tpr__container p {
+.tpr__container h3, .tpr__container p {
   text-align: start;
   margin-left: 20px;
 }
@@ -538,6 +549,7 @@ ul li a {
   color: orange;
   font-weight: 700;
 }
+
 .padding-on {
   padding: 20px;
 }
@@ -559,9 +571,11 @@ ul li a {
   align-content: center;
   text-align: center;
 }
+
 .space-evenly {
   justify-content: space-evenly;
 }
+
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -688,6 +702,7 @@ ul li a {
   flex-direction: column;
   padding: 5px;
 }
+
 .each-act-name h2 {
   color: orange;
   margin-bottom: 0;
@@ -698,6 +713,7 @@ ul li a {
   text-shadow: 0 0 0 !important;
   border: 1px solid blue;
 }
+
 .each-act-name p {
   padding-bottom: 10px;
   color: orange;
@@ -723,7 +739,6 @@ ul li a {
     width: 100%;
     max-width: 800px;
   }
-  
 }
 
 @media screen and (max-width: 767px) {
@@ -749,37 +764,30 @@ ul li a {
     justify-content: center;
     padding-bottom: 50px;
   }
-
   .tpr__image {
     max-width: 90% !important;
     padding: 5px;
     background: black;
   }
-
   .tpr__container img {
     max-width: 90% !important;
     padding: 7px;
     background: black;
   }
-
   .tpr__container ul li {
     max-width: 90%;
     margin-top: 6px;
   }
-
   .tpr__container p {
     font-size: 25px;
   }
-
   .each-act-name {
     margin-left: 0;
   }
-
   .act-name {
     margin-top: -6px;
     width: 100%;
   }
-
   .each-act-row {
     height: 100px;
   }
@@ -787,7 +795,6 @@ ul li a {
     width: 80px;
     height: 80px;
   }
-
   .each-act-img {
     width: 100px;
     height: 85px;
@@ -829,7 +836,6 @@ ul li a {
     width: 80px;
     height: 80px;
   }
-
   .each-act-img {
     width: 100px;
     height: 85px;
@@ -846,29 +852,21 @@ ul li a {
   .signin__page .input__input-container {
     width: 80%;
   }
-
   .signin__page .input__input-container input {
     width: 100%;
   }
-
   .signin__page h1.funky-title {
     width: 90%;
   }
-
   .signup__page .input__input-container {
     width: 80%;
   }
-
-
-
   .signup__page .nav-container .bulletin__container {
     display: none;
   }
-
   .signup__page .input__input-container input {
     width: 100%;
   }
-
   .signup__page .input__input-container {
     /* border: 1px solid red; */
     width: 80%;
@@ -876,40 +874,32 @@ ul li a {
   .signup__page .input__input-container input {
     width: 100%;
   }
-
   .signup__page .input__input-container select {
     width: 100%;
   }
-
   .signup__page {
     max-height: 100vh !important;
   }
-
   .signup__page h1.funky-title {
     width: 90%;
     margin-top: 100px !important;
   }
-
   .tpr__container h3 {
     margin-left: 0 !important;
   }
-
   .tpr__container p {
     margin-left: 0 !important;
   }
   .landing__page .title {
     width: 98% !important;
   }
-
   .page__actpage {
     height: 100% !important;
   }
-
   .page__actpage input {
     width: 101%;
     /* border: 1px solid red; */
   }
-
   .page__actpage select {
     width: 101%;
     /* border: 1px solid red; */
@@ -918,7 +908,6 @@ ul li a {
     width: 100% !important;
     /* border: 1px solid red; */
   }
-
   .page__actpage .input__input-container {
     width: 85%;
   }

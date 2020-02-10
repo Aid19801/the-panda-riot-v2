@@ -2,7 +2,7 @@ const cors = require('cors');
 const next = require('next');
 const Pusher = require('pusher');
 const express = require('express');
-
+const path = require('path');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config();
 const Sentiment = require('sentiment');
@@ -33,6 +33,13 @@ app
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: true }));
     // server.use(handler);
+
+    server.get('/downloads/mac', (req, res, next) => {
+      console.log('========  matched the url downloads/mac ======== ');
+      res.download(path.join(__dirname, '1.dmg'), (err)=>{
+        console.log(err);
+      });
+    });
 
     server.get('*', (req, res) => {
       return handler(req, res);
