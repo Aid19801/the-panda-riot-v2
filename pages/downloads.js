@@ -8,6 +8,7 @@ import Link from 'next/link';
 
 
 function Downloads(props) {
+    console.log('AT | FE downloads page matched and rendering!, ', props);
 
     return (
         <React.Fragment>

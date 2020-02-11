@@ -35,7 +35,7 @@ app
     // server.use(handler);
 
     server.get('/downloads/mac', (req, res, next) => {
-      console.log('========  matched the url downloads/mac ======== ');
+      console.log('========  BE matched the url downloads/mac ======== ');
       res.download(path.join(__dirname, '1.dmg'), (err)=>{
         console.log(err);
       });

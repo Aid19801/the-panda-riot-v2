@@ -9,7 +9,7 @@ import withPage from '../HOCs/with-page';
 
 function Download(props) {
 
-    console.log('AT | props :', props);
+    console.log('AT | FE download props :', props);
     
     return (
         <React.Fragment>

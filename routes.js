@@ -14,7 +14,7 @@ module.exports = routes()
     .add('Chat', '/messages')
     .add('ChatMessage', '/message')
     
-    .add('Downloads', '/downloads')
+    .add('downloads', '/downloads')
     .add('download', '/downloads/:uid')
 
     .add('notfound', '/*')
