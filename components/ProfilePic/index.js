@@ -13,6 +13,9 @@ const ProfilePic = ({ srcProp, editable, handleEditProfilePicture }) => {
     updateNewSrc(srcProp);
   }, [srcProp]);
 
+  const onErrorLoadPlaceholderImage = () => {
+    updateNewSrc('/static/no_prof_pic.png');
+  }
 
   if (editable) {
     return (
@@ -35,7 +38,8 @@ const ProfilePic = ({ srcProp, editable, handleEditProfilePicture }) => {
   return (
     <div className="circular-img">
       <img
-      alt="open mic comedian not editable"
+        alt="open mic comedian not editable"
+        onError={onErrorLoadPlaceholderImage}
         className="contained-height-width circular-image"
         src={newSrc ? newSrc : '/static/no_prof_pic.png'}
         />
