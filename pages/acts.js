@@ -65,6 +65,11 @@ class ActsPage extends Component {
       // set their record to be the same but with
       // rating incremented by +1
 
+      let un = chosenUser && chosenUser.username ? chosenUser.username : '';
+      let em = chosenUser && chosenUser.email ? chosenUser.email : '';
+      let tl = chosenUser && chosenUser.tagline ? chosenUser.tagline : 'I dont have a tagline!';
+      let pp = chosenUser && chosenUser.profilePicture ? chosenUser.profilePicture : '';
+      let rating = chosenUser && chosenUser.rating ? chosenUser.rating : 0;
       let yt = chosenUser && chosenUser.youtube ? chosenUser.youtube : '';
       let att = chosenUser && chosenUser.attended ? chosenUser.attended : [];
       let fg = chosenUser && chosenUser.faveGig ? chosenUser.faveGig : '';
@@ -75,12 +80,12 @@ class ActsPage extends Component {
       let ytCh = chosenUser && chosenUser.youtubeChannelURL ? chosenUser.youtubeChannelURL : '';
 
       // 2. SET THE ACT WITH ITS NEW RATING IN DB
-      firebase.user(actObject.uid).set({
-        username,
-        email,
-        tagline,
-        profilePicture,
-        includeInActRater,
+      this.props.firebase.user(actObject.uid).set({
+        username: un,
+        email: em,
+        tagline: tl,
+        profilePicture: pp,
+        includeInActRater: true,
         attended: att,
         faveGig: fg,
         youtube: yt,
@@ -91,6 +96,7 @@ class ActsPage extends Component {
         youtubeChannelURL: ytCh,
         rating: upOrDownString === 'up' ? rating + 1 : rating - 1
       });
+      debugger;
 
       // 3. SAVE LOCALSTORAGE TO STOP PERSISTENT VOTING
       localStorage.setItem('timevoted', Date.now());
@@ -177,7 +183,7 @@ class ActsPage extends Component {
                       <div
                         key={i}
                         className="each-act-container"
-                        onClick={() => this.bounceToActsProfile(each)}
+                        onClick={() => null}
                       >
                         <div className="each-act-row">
                           <div className="each-act-rating-container">
