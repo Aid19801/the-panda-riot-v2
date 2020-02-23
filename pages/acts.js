@@ -183,7 +183,6 @@ class ActsPage extends Component {
                       <div
                         key={i}
                         className="each-act-container"
-                        onClick={() => null}
                       >
                         <div className="each-act-row">
                           <div className="each-act-rating-container">

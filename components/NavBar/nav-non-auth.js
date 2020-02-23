@@ -43,12 +43,19 @@ class NavigationNonAuth extends Component {
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="w-100 flex-start">
 
             <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
               <Link href={`/${nextLocation}`}>
                 <a>
                   <div>{nextLocation}</div>
+                </a>
+              </Link>
+            </div>
+            <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
+              <Link href={`/downloads`}>
+                <a>
+                  <div>Downloads</div>
                 </a>
               </Link>
             </div>

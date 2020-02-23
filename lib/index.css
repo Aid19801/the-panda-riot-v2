@@ -40,6 +40,41 @@ p {
   padding: 5px;
 }
 
+.downloads__container p {
+  background: orange;
+  color: white;
+  font-size: 30px;
+  padding: 15px;
+  transform: skewX(-2deg);
+  font-family: monospace sans-serif Arial;
+  border: 4px solid white;
+  margin: 5px;
+}
+.landing__downloads__promo {
+  display: flex;
+  justify-content: space-evenly;
+  background: black;
+  flex-direction: row;
+}
+
+.landing__downloads__promo p {
+  font-size: 35px;
+}
+
+.downloads__container p:hover {
+  border: 4px solid darkgrey;
+} 
+
+.bold {
+  font-weight: bold;
+}
+.greyed-out {
+  opacity: 0.5;
+}
+.greyed-out p {
+  opacity: 1;
+}
+
 .tpr__link {
   background: orange;
   color: white;
@@ -288,6 +323,13 @@ p {
 @media screen and (max-width: 765px) {
   .landing__screen-container:nth-child(1) {
     contain: content;
+  }
+  .landing__downloads__promo {
+    flex-direction: column;
+  }
+  .landing__downloads__promo p {
+    font-size: 20px;
+    text-align: center;
   }
 }
 
