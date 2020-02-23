@@ -36,7 +36,7 @@ app
 
     server.get('/downloads/mac', (req, res, next) => {
       console.log('========  BE matched the url downloads/mac ======== ');
-      res.download(path.join(__dirname, 'thePandaRiot.zip'), (err)=>{
+      res.download(path.join(__dirname, 'The Panda Riot-1.0.1.dmg'), (err)=>{
         console.log(err);
       });
     });
