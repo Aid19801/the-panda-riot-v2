@@ -44,11 +44,12 @@ export default function withAuth(PlatformSpecificComponent) {
       // check if it's a news article. If it is, fine, if not, boot back to sign in.
       if (process.browser) {
         let isNews = window.location.href.includes('/news/');
-        console.log('isNews: ', isNews);
-        if (isNews) {
+        let isDownloads = window.location.href.includes('/downloads');
+        console.log('📰 News Article, no login required');
+        if (isNews || isDownloads) {
           return;
         }
-        if (!isNews) {
+        if (!isNews && !isDownloads) {
           return this.routeToSignIn();
         }
       }

@@ -37,6 +37,7 @@ a {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .nav__admin-option {
@@ -84,10 +85,10 @@ a.navbar-brand {
   transform: rotate(-2deg) !important;
   /* margin-top: 10px; */
 }
-
+/* 
 .nav-option-wrapper:nth-child(5) a {
   padding-top: 0 !important;
-}
+} */
 
 .nav__prof-pic {
   width: 40px;

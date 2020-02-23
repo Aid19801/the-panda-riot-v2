@@ -40,6 +40,28 @@ p {
   padding: 5px;
 }
 
+.downloads__container p {
+  background: orange;
+  color: white;
+  font-size: 35px;
+  padding: 15px;
+  transform: skewX(-2deg);
+  font-family: monospace sans-serif Arial;
+  border: 4px solid white;
+  margin: 5px;
+}
+
+.downloads__container p:hover {
+  border: 4px solid darkgrey;
+} 
+
+.greyed-out {
+  opacity: 0.5;
+}
+.greyed-out p {
+  opacity: 1;
+}
+
 .tpr__link {
   background: orange;
   color: white;
