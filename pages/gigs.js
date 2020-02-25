@@ -13,7 +13,7 @@ import {
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
-import mockGigs from '../lib/mock-gigs.json';
+// import mockGigs from '../lib/mock-gigs.json';
 import * as cache from '../lib/cache';
 
 import Filters from '../components/Filters';
@@ -22,6 +22,7 @@ import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
 import { PeopleWhoPlayedHere, HaveIPlayedHere, Spinner, Button } from '../components';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
+import withSideBanner from '../HOCs/with-sidebanner';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
@@ -258,6 +259,7 @@ const mapDispatchToProps = dispatch => ({
 export default compose(
   withPage,
   withAnalytics,
+  withSideBanner,
   WithResponsivityHOC,
   withAuth,
   connect(

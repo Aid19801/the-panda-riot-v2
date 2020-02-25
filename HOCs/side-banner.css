@@ -1,0 +1,35 @@
+.side-banner {
+    background: none;
+    position: fixed;
+    z-index: 10000000000000;
+    left: 0;
+    top: 13%;
+    height: 100vh;
+    padding: 10px;
+}
+
+.side-banner > .flex-col {
+    height: 65%;
+    border-radius: 15px;
+    border: 4px solid white;
+    background: black;
+    margin-top: 20px;
+    padding: 5px;
+
+}
+.side-banner p {
+    color: white;
+    font-family: monospace;
+}
+#isMob {
+    border: 2px solid red;
+}
+
+@media screen and (max-width: 900px) {
+    .side-banner {
+        height: auto;
+        padding: 20px;
+        top: 10;
+        max-width: 90%;
+    }
+}
