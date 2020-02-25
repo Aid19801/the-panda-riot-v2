@@ -106,7 +106,7 @@ class NewsStoryPage extends React.Component {
 
                         <div className="col-sm-3">
 
-                            <Link href="/downloads/mac">
+                            <Link href="/downloads/pc">
                                 <a>
                                     <p>Windows</p>
                                     <div className="icon__clap">
