@@ -13,7 +13,7 @@ import {
 } from '../redux/actions';
 import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
-import mockGigs from '../lib/mock-gigs.json';
+// import mockGigs from '../lib/mock-gigs.json';
 import * as cache from '../lib/cache';
 
 import Filters from '../components/Filters';
@@ -22,6 +22,7 @@ import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
 import { PeopleWhoPlayedHere, HaveIPlayedHere, Spinner, Button } from '../components';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
+// import withFunding from '../HOCs/with-funding';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
@@ -94,19 +95,19 @@ class GigsPage extends Component {
   }
 
   fetchGigs = async () => {
-    console.log('AT | 3 fetchGigs fired');
+    // console.log('AT | 3 fetchGigs fired');
     // if (process.env.NODE_ENV !== 'production') {
     //   console.log('AT | 4 firing updateStateLoadInNewGigs with mocks');
     //   return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
     // } else {
       try {
-        console.log('AT | 5 getting from gist');
+        // console.log('AT | 5 getting from gist');
         const res = await fetch(
           `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
         );
         const json = await res.json();
         const rawUrl = json.files.gigs.raw_url;
-        console.log('AT | 6 rawUrl ', rawUrl);
+        // console.log('AT | 6 rawUrl ', rawUrl);
         const req = await fetch(rawUrl);
         const reqJson = await req.json();
 
@@ -117,7 +118,7 @@ class GigsPage extends Component {
         });
 
         cache.saveToCache('gigs', sortedGigs);
-        console.log('AT | 7 sortedGigs ', sortedGigs);
+        // console.log('AT | 7 sortedGigs ', sortedGigs);
         return this.props.updateStateLoadInNewGigs(sortedGigs);
       } catch (error) {
         console.log('getInitialProps err: ', error);
@@ -258,6 +259,7 @@ const mapDispatchToProps = dispatch => ({
 export default compose(
   withPage,
   withAnalytics,
+  // withFunding,
   WithResponsivityHOC,
   withAuth,
   connect(

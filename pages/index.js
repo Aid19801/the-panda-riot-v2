@@ -5,6 +5,7 @@ import { startApp, updateStateAppLoaded, updateStateAppLoading } from '../redux/
 import Fade from 'react-reveal/Fade';
 import { ProfilePic, Spinner } from '../components';
 import withAnalytics from '../HOCs/with-ga';
+import withFunding from '../HOCs/with-funding';
 import mockGigs from '../lib/mock-gigs.json';
 import { compose } from 'redux';
 import Link from 'next/link';
@@ -91,10 +92,7 @@ class LandingPage extends React.Component {
         </Head>
 
         <div className="faux-nav">
-          <div
-            style={{ height: '100%' }}
-            onClick={() => this.props.updateStateAppLoading()}
-          >
+          <div style={{ height: '100%' }}>
             <p>The Panda Riot</p>
           </div>
         </div>
@@ -103,14 +101,10 @@ class LandingPage extends React.Component {
 
           <Link href="/downloads">
             <a>
-              <p className="orange center black bold">👨🏻‍💻 Download the (Mac) Desktop app? 👨🏻‍💻</p>
+              <p className="orange center black bold">👨🏻‍💻 Download the Desktop app? 👨🏻‍💻</p>
             </a>
           </Link>
-
-          <Link href="https://www.patreon.com/thePandaRiot?fan_landing=true">
-            <a target="_blank"><p className="orange center black bold">🍺 Buy Me A Beer? 🍺</p></a>
-          </Link>
-
+            <a href="https://www.patreon.com/thePandaRiot?fan_landing=true" target="_blank"><p className="orange center black bold">🍺 Buy Me A Beer? 🍺</p></a>
         </div>
 
         <Link href="/signin">
@@ -141,7 +135,7 @@ class LandingPage extends React.Component {
               <Fade>
                 <div className="col-md-4 margin-top margin-bottom">
                   <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="orange center black">FIND GIGS!</h3>
+                    <h3 className="orange center black">SIGN IN!</h3>
                     <p className="white center">
                       Check out where the latest Bringers & Non Bringers Are
                       On The Filterable Gig Map!
@@ -221,10 +215,7 @@ class LandingPage extends React.Component {
 
         </div>
 
-
-
-
-      </div >
+      </div>
     );
   }
 }
@@ -240,7 +231,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
-  // withPage,
   withAnalytics,
   connect(
     mapStateToProps,

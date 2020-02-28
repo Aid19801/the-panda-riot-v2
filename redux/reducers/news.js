@@ -18,7 +18,7 @@ const newsReducer = (state = initialState, action) => {
       break;
 
     case actions.NEWS_PAGE_LOADED:
-      console.log('reducer heard NEWS_PAGE_LOADED ', action);
+      // console.log('reducer heard NEWS_PAGE_LOADED ', action);
       return {
         ...state,
         loading: false,
@@ -26,7 +26,7 @@ const newsReducer = (state = initialState, action) => {
       break;
 
     case actions.NEWS_PAGE_FAILED:
-      console.log('reducer heard NEWS_PAGE_FAILED', action);
+      // console.log('reducer heard NEWS_PAGE_FAILED', action);
       return {
         ...state,
         loading: false,
@@ -35,7 +35,7 @@ const newsReducer = (state = initialState, action) => {
       break;
 
     case actions.FETCH_NEWS_REQ:
-      console.log('reducer heard FETCH_NEWS_REQ ', action);
+      // console.log('reducer heard FETCH_NEWS_REQ ', action);
       return {
         ...state,
         loading: true,
@@ -43,7 +43,7 @@ const newsReducer = (state = initialState, action) => {
       break;
 
     case actions.FETCH_NEWS_RES:
-      console.log('reducer heard FETCH_NEWS_RES', action);
+      // console.log('reducer heard FETCH_NEWS_RES', action);
       return {
         ...state,
         loading: false,

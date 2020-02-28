@@ -682,6 +682,43 @@ ul li a {
   margin: 20px;
 }
 
+.daysUntil__container {
+  opacity: 1;
+  position: absolute;
+  top: -9px;
+  left: -150px;
+  transform: skewY(-2deg);
+  padding: 7px;
+  color: white;
+  animation-name: fadeInDaysUntil;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in;
+}
+
+.lessThanTen {
+background: red;
+border: white;
+border-radius: 12px;
+box-shadow: 5px 12px 17px 25px red;
+}
+
+.moreThanTen {
+background: orange;
+border: white;
+border-radius: 17px;
+box-shadow: 5px 12px 17px 25px orange;
+}
+
+@keyframes fadeInDaysUntil {
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+}
+
+
 .page__actpage {
   height: 100% !important;
 }
@@ -783,6 +820,16 @@ ul li a {
   }
 }
 
+@media screen and (max-width: 1135px) {
+  .daysUntil__container {
+    top: -3vh;
+    left: -11vw;
+  }
+  .daysUntil__container > h4 {
+    font-size: 8px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .page__homepage .container {
     width: 100% !important;
@@ -861,6 +908,16 @@ ul li a {
   .act-rows {
     width: 100%;
   }
+}
+
+@media screen and (max-width: 576px) {
+  .daysUntil__container {
+    top: -4vh;
+    left: 2vw;
+  }
+  /* .daysUntil__container > h4 {
+    font-size: 8px;
+  } */
 }
 
 @media screen and (max-width: 488px) {

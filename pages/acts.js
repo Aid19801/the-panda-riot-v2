@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import {
@@ -20,14 +21,16 @@ import withProgressBar from '../HOCs/with-progress';
 import '../lib/index.css';
 import { Fade } from 'react-reveal';
 import withPage from '../HOCs/with-page';
-
+// import withFunding from '../HOCs/with-funding';
 class ActsPage extends Component {
   constructor() {
     super();
     this.state = {
       acts: [],
       showModal: false,
-      downVoteSwitchedOn: false
+      downVoteSwitchedOn: false,
+      color: '',
+      daysUntil: '',
     };
   }
 
@@ -113,6 +116,7 @@ class ActsPage extends Component {
     this.props.showProgressBar(true);
     this.renderActs();
     this.props.pageLoading();
+    this.calculateDaysUntil();
   }
 
   componentDidMount() {
@@ -121,6 +125,15 @@ class ActsPage extends Component {
       this.props.showProgressBar(false);
     }, 300);
     this.props.updateStateAppLoaded();
+  }
+
+  calculateDaysUntil = () => {
+    var a = moment().endOf('month');
+    var b = moment();
+    const diff = a.diff(b, 'days');
+
+    const color = diff < 10 ? 'lessThanTen' : 'moreThanTen';
+    this.setState({ color: color, daysUntil: a.diff(b, 'days') });
   }
 
   processTagline = str => {
@@ -136,7 +149,7 @@ class ActsPage extends Component {
   updateStateLoading = () => this.props.updateStateAppLoading();
 
   render() {
-    const { downVoteSwitchedOn } = this.state;
+    const { downVoteSwitchedOn, color, daysUntil } = this.state;
     const { spinner } = this.props;
 
     if (spinner) {
@@ -175,6 +188,9 @@ class ActsPage extends Component {
           <div className="row flex-center margin-top">
             
             <div className="col-sm-10 flex-center flex-col margin-top">
+
+            <div className={`daysUntil__container ${color}`}><h4>Days until Winner Announced:</h4><p>{daysUntil}</p></div>
+
               {this.state.acts.map((each, i) => {
                 // console.log('each is ', each.username);
                 return (
@@ -254,6 +270,7 @@ export default compose(
   WithResponsivityHOC,
   withAuth,
   withProgressBar,
+  // withFunding,
   connect(
     mapStateToProps,
     mapDispatchToProps

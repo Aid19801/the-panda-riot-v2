@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavBar, Banner, FunkyTitle, Footer } from '../components';
 import withAuth from './with-auth';
+import withFunding from './with-funding';
 
 
 export default (Wrapped) => {
@@ -67,5 +68,5 @@ export default (Wrapped) => {
       )
     }
   }
-  return withAuth(HOC);
+  return withFunding(withAuth(HOC));
 }

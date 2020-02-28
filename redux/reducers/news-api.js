@@ -20,7 +20,7 @@ const newsApiReducer = (state = initialState, action) => {
       };
       break;
     case actions.NEWS_API_REQ:
-      console.log('reducer heard NEWS_API_REQ...');
+      // console.log('reducer heard NEWS_API_REQ...');
       return {
         ...state,
         loading: true
@@ -28,7 +28,7 @@ const newsApiReducer = (state = initialState, action) => {
       break;
 
     case actions.NEWS_API_SUCCESS:
-      console.log('reducer heard NEWS_API_SUCCESS ');
+      // console.log('reducer heard NEWS_API_SUCCESS ');
       return {
         ...state,
         loading: false,
@@ -37,7 +37,7 @@ const newsApiReducer = (state = initialState, action) => {
       break;
 
     case actions.NEWS_API_FAIL:
-      console.log('reducer heard NEWS_API_FAIL', action.error);
+      // console.log('reducer heard NEWS_API_FAIL', action.error);
       return {
         ...state,
         loading: false,

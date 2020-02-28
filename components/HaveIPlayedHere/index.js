@@ -45,7 +45,7 @@ function HaveIPlayedHere({ firebase, gig, updateStateAddUserToGig}) {
   };
 
   const localAddGigToUser = () => {
-    console.log('foo');
+    // console.log('foo');
     firebase.user("seVFOFwaXJh8z20Mx6vdmut7SuI2").on('value', snapshot => {
       let faveGig = '';
       let em = '';
@@ -92,7 +92,7 @@ function HaveIPlayedHere({ firebase, gig, updateStateAddUserToGig}) {
       let includeInActRaterStatus = includeInActRater || false;
       let persistRatingFromDb = rating !== 0 && rating ? rating : 0;
 
-      console.log('user')
+      // console.log('user')
       firebase.user("seVFOFwaXJh8z20Mx6vdmut7SuI2").set({
         username,
         email: em,
