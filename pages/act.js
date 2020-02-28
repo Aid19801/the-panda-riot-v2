@@ -26,7 +26,7 @@ import withPage from '../HOCs/with-page';
 
 class UserProfilePage extends Component {
   async getInitialProps(ctx) {
-    console.log('foobar', ctx);
+    // console.log('foobar', ctx);
     return {
       foo: 'bar'
     };

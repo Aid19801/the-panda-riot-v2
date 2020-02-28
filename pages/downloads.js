@@ -16,27 +16,7 @@ import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
 // import withFunding from '../HOCs/with-funding';
 
-class NewsStoryPage extends React.Component {
-    static async getInitialProps({ reduxStore, req, query }) {
-        // console.log('getInitialProps fired LOOKING FOR ID ========>>> ', query.uid);
-        const receivedContent = await this.fetchContent(query.uid);
-        console.log('receivedContent back');
-        // analyticsPage(`v2-tpr-news-story`);
-        reduxStore.dispatch(actions.fetchTPRSuccess(receivedContent));
-        return {
-            content: receivedContent
-        };
-    }
-
-    static async fetchContent(uid) {
-        const client = Prismic.client(prismicEndpoint);
-        try {
-            const res = await client.query(Prismic.Predicates.at('document.id', uid));
-            return res;
-        } catch (error) {
-            console.log('try catch error getting solo article: ', error);
-        }
-    }
+class DownloadsPage extends React.Component {
 
     componentWillMount() {
         this.props.showProgressBar(true);
@@ -66,7 +46,7 @@ class NewsStoryPage extends React.Component {
                         type: 'website',
                         url: 'https://www.thePandaRiot.com',
                         title: `Downloads | The Panda Riot`,
-                        description: 'The macOS desktop app is here and ready for you to download you cheeky tinkers...',
+                        description: 'MacOS & PC desktop apps are here and ready for you to download you cheeky tinkers...',
                         images: [
                             {
                                 url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
@@ -89,7 +69,7 @@ class NewsStoryPage extends React.Component {
                     <div className="row margin-top flex-center">
 
                         <div className="col-sm-12 flex-center margin-bottom">
-                            <h1>Get The App!</h1>
+                            <h1>Desktop App</h1>
                         </div>
 
                         <div className="col-sm-3">
@@ -125,14 +105,13 @@ class NewsStoryPage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    updateStateFetchArticle: () => dispatch(actions.fetchTPRStory()),
-    updateStateGotArticle: res => dispatch(actions.fetchTPRSuccess(res)),
+    // updateStateFetchArticle: () => dispatch(actions.fetchTPRStory()),
+    // updateStateGotArticle: res => dispatch(actions.fetchTPRSuccess(res)),
     updateStateAppLoading: () => dispatch(updateStateAppLoading()),
     updateStateAppLoaded: () => dispatch(actions.updateStateAppLoaded()),
 });
 
 const mapStateToProps = state => ({
-    content: state.prismic.content,
     spinner: state.appState.spinner,
 });
 export default compose(
@@ -145,4 +124,4 @@ export default compose(
         mapStateToProps,
         mapDispatchToProps
     )
-)(NewsStoryPage);
+)(DownloadsPage);

@@ -95,19 +95,19 @@ class GigsPage extends Component {
   }
 
   fetchGigs = async () => {
-    console.log('AT | 3 fetchGigs fired');
+    // console.log('AT | 3 fetchGigs fired');
     // if (process.env.NODE_ENV !== 'production') {
     //   console.log('AT | 4 firing updateStateLoadInNewGigs with mocks');
     //   return this.props.updateStateLoadInNewGigs(mockGigs.gigs);
     // } else {
       try {
-        console.log('AT | 5 getting from gist');
+        // console.log('AT | 5 getting from gist');
         const res = await fetch(
           `https://api.github.com/gists/${process.env.REACT_APP_GIG_GIST}`
         );
         const json = await res.json();
         const rawUrl = json.files.gigs.raw_url;
-        console.log('AT | 6 rawUrl ', rawUrl);
+        // console.log('AT | 6 rawUrl ', rawUrl);
         const req = await fetch(rawUrl);
         const reqJson = await req.json();
 
@@ -118,7 +118,7 @@ class GigsPage extends Component {
         });
 
         cache.saveToCache('gigs', sortedGigs);
-        console.log('AT | 7 sortedGigs ', sortedGigs);
+        // console.log('AT | 7 sortedGigs ', sortedGigs);
         return this.props.updateStateLoadInNewGigs(sortedGigs);
       } catch (error) {
         console.log('getInitialProps err: ', error);
