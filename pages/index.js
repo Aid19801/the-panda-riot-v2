@@ -5,7 +5,7 @@ import { startApp, updateStateAppLoaded, updateStateAppLoading } from '../redux/
 import Fade from 'react-reveal/Fade';
 import { ProfilePic, Spinner } from '../components';
 import withAnalytics from '../HOCs/with-ga';
-import withSideBanner from '../HOCs/with-sidebanner';
+import withFunding from '../HOCs/with-funding';
 import mockGigs from '../lib/mock-gigs.json';
 import { compose } from 'redux';
 import Link from 'next/link';
@@ -135,7 +135,7 @@ class LandingPage extends React.Component {
               <Fade>
                 <div className="col-md-4 margin-top margin-bottom">
                   <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="orange center black">FIND GIGS!</h3>
+                    <h3 className="orange center black">SIGN IN!</h3>
                     <p className="white center">
                       Check out where the latest Bringers & Non Bringers Are
                       On The Filterable Gig Map!
@@ -215,10 +215,7 @@ class LandingPage extends React.Component {
 
         </div>
 
-
-
-
-      </div >
+      </div>
     );
   }
 }
@@ -234,7 +231,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default compose(
-  withSideBanner,
   withAnalytics,
   connect(
     mapStateToProps,

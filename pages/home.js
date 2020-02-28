@@ -43,6 +43,7 @@ import { Router } from 'next/router';
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
+// import withFunding from '../HOCs/with-funding';
 import '../lib/index.css';
 
 class HomePage extends React.Component {
@@ -211,6 +212,25 @@ class HomePage extends React.Component {
     return Router.push('/gigs');
   };
 
+  shuffle = (array) => {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+
   renderActs = () => {
     this.props.firebase.users().on('value', snapshot => {
       const usersObject = snapshot.val();
@@ -220,13 +240,31 @@ class HomePage extends React.Component {
         uid: key
       }));
 
-      const filteredOutNonVotingUsers = usersList.filter(
+      
+
+      const filteroutDrudge = usersList
+      .filter(
         each => each.includeInActRater
-      );
-      let sortedActs = filteredOutNonVotingUsers
-        .sort((a, b) => a.rating - b.rating)
-        .reverse();
-      this.setState({ acts: sortedActs.slice(0, 4) });
+      ).filter(
+        each => each.youtube &&
+        each.youtube !== "unknown"
+      ).filter(
+        each => 
+        each.profilePicture && 
+        each.profilePicture !== "/static/no_prof_pic.png" && 
+        each.profilePicture !== "https://image.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1153673752.jpg" &&
+        each.profilePicture.length > 10
+      )
+
+      console.log('AT | filteroutDrudge:', filteroutDrudge );
+
+      const shuffled = this.shuffle(filteroutDrudge)
+
+      // let sortedActs = shuffled
+      //   .sort((a, b) => a.rating - b.rating)
+      //   .reverse();
+
+      this.setState({ acts: shuffled.slice(0, 4) });
     });
   };
 
@@ -321,6 +359,7 @@ export default compose(
   withAuth,
   withProgressBar,
   WithResponsivityHOC,
+  // withFunding,
   connect(
     mapStateToProps,
     mapDispatchToProps

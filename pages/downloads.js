@@ -14,7 +14,7 @@ import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
-import withSideBanner from '../HOCs/with-sidebanner';
+// import withFunding from '../HOCs/with-funding';
 
 class NewsStoryPage extends React.Component {
     static async getInitialProps({ reduxStore, req, query }) {
@@ -136,7 +136,7 @@ const mapStateToProps = state => ({
     spinner: state.appState.spinner,
 });
 export default compose(
-    withSideBanner,
+    // withFunding,
     withPage,
     withProgressBar,
     withAnalytics,

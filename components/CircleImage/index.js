@@ -7,7 +7,7 @@ const CircleImage = ({ src }) => {
   const [ dynamicSrc, setDynamicSrc ] = useState(src);
 
   const handleError = () => {
-    setDynamicSrc('/static/no_prof_pic.png');
+    setDynamicSrc('/static/panda.png');
   }
 
   return (

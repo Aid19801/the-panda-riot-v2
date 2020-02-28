@@ -22,7 +22,7 @@ import MapBox from '../components/MapBox';
 import MoreInfoCard from '../components/MoreInfoCard';
 import { PeopleWhoPlayedHere, HaveIPlayedHere, Spinner, Button } from '../components';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
-import withSideBanner from '../HOCs/with-sidebanner';
+// import withFunding from '../HOCs/with-funding';
 
 // 1. load GIGS and FILTERS into local state
 // 2. gigs: render whatever is in local state out
@@ -259,7 +259,7 @@ const mapDispatchToProps = dispatch => ({
 export default compose(
   withPage,
   withAnalytics,
-  withSideBanner,
+  // withFunding,
   WithResponsivityHOC,
   withAuth,
   connect(

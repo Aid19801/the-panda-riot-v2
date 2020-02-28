@@ -20,7 +20,7 @@ import withProgressBar from '../HOCs/with-progress';
 import '../lib/index.css';
 import { Fade } from 'react-reveal';
 import withPage from '../HOCs/with-page';
-
+// import withFunding from '../HOCs/with-funding';
 class ActsPage extends Component {
   constructor() {
     super();
@@ -254,6 +254,7 @@ export default compose(
   WithResponsivityHOC,
   withAuth,
   withProgressBar,
+  // withFunding,
   connect(
     mapStateToProps,
     mapDispatchToProps

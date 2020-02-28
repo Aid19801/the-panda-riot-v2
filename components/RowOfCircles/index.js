@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CircleImage from '../CircleImage';
 import Link from 'next/link';
 import './styles.css';
 
-function RowOfCircles({ acts, text }) {
-    return (
+const RowOfCircles = ({ acts, text }) => (
         <React.Fragment>
             <div className="col-sm-12">
                 <Link href="/acts">
@@ -39,6 +38,5 @@ function RowOfCircles({ acts, text }) {
             </div>
         </React.Fragment>
     )
-}
 
 export default RowOfCircles;
