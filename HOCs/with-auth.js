@@ -78,7 +78,7 @@ export default function withAuth(PlatformSpecificComponent) {
       }
       // if theres no uid in cache, save one.
       if (!cacheUID) {
-        console.log('no uid in cache');
+        // console.log('no uid in cache');
         cache.saveToCache('uid', userObj.uid);
       }
 
