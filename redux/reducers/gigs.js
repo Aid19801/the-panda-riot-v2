@@ -26,7 +26,7 @@ const gigsReducer = (state = initialState, action) => {
       break;
 
     case actions.GIGS_PAGE_LOADING:
-      console.log('reducer heard GIGS_PAGE_LOADED', action);
+      console.log('reducer heard GIGS_PAGE_LOADED');
       return {
         ...state,
         loading: true
@@ -34,7 +34,7 @@ const gigsReducer = (state = initialState, action) => {
       break;
 
     case actions.GIGS_PAGE_LOADED:
-      console.log('reducer heard GIGS_PAGE_LOADED', action);
+      console.log('reducer heard GIGS_PAGE_LOADED');
       return {
         ...state,
         loading: false
@@ -42,7 +42,7 @@ const gigsReducer = (state = initialState, action) => {
       break;
 
     case actions.GIGS_FILTERED:
-      console.log('reducer heard GIGS_FILTERED: ', action);
+      console.log('reducer heard GIGS_FILTERED: ');
       return {
         ...state,
         data: action.data
@@ -50,7 +50,7 @@ const gigsReducer = (state = initialState, action) => {
       break;
 
     case actions.SELECTED_GIG:
-      console.log('reducer heard SELECTED_GIG: ', action);
+      console.log('reducer heard SELECTED_GIG: ');
       return {
         ...state,
         selectedGig: action.selectedGig
@@ -75,7 +75,7 @@ const gigsReducer = (state = initialState, action) => {
           break;
 
     case actions.GIGS_PAGE_FAILED:
-      console.log('reducer heard GIGS_PAGE_FAILED', action);
+      console.log('reducer heard GIGS_PAGE_FAILED');
       return {
         ...state,
         loading: false,
