@@ -43,7 +43,7 @@ p {
 .downloads__container p {
   background: orange;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   padding: 15px;
   transform: skewX(-2deg);
   font-family: monospace sans-serif Arial;

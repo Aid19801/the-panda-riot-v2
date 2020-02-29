@@ -88,7 +88,7 @@ class DownloadsPage extends React.Component {
                             <a href="https://github.com/Aid19801/tpr-electron-/releases/download/1.0.2/The.Panda.Riot.Setup.1.0.2.exe">
                                 <p>Windows</p>
                                 <div className="icon__clap">
-                                    <img src="/static/windows.png" height={150} width={150} alt="orange Windows logo" />
+                                    <img src="/static/windows.png" height={150} width={170} alt="orange Windows logo" />
                                 </div>
                             </a>
 

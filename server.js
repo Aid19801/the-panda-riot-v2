@@ -34,18 +34,18 @@ app
     server.use(bodyParser.urlencoded({ extended: true }));
     // server.use(handler);
 
-    server.get('/downloads/mac', (req, res, next) => {
-      console.log('downloading mac desktop app...');
-      res.download(path.join(__dirname, 'The Panda Riot-1.0.1.dmg'), (err)=>{
-        console.log(err);
-      });
-    });
-    server.get('/downloads/pc', (req, res, next) => {
-      console.log('downloading PC desktop app...');
-      res.download(path.join(__dirname, 'The Panda Riot-1.0.1.exe'), (err)=>{
-        console.log(err);
-      });
-    });
+    // server.get('/downloads/mac', (req, res, next) => {
+    //   console.log('downloading mac desktop app...');
+    //   res.download(path.join(__dirname, 'The Panda Riot-1.0.1.dmg'), (err)=>{
+    //     console.log(err);
+    //   });
+    // });
+    // server.get('/downloads/pc', (req, res, next) => {
+    //   console.log('downloading PC desktop app...');
+    //   res.download(path.join(__dirname, 'The Panda Riot-1.0.1.exe'), (err)=>{
+    //     console.log(err);
+    //   });
+    // });
 
     server.get('*', (req, res) => {
       return handler(req, res);
