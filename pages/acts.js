@@ -18,10 +18,9 @@ import ClapIcon from '../components/Icons/clap-icon';
 import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 import withProgressBar from '../HOCs/with-progress';
-import '../lib/index.css';
 import { Fade } from 'react-reveal';
 import withPage from '../HOCs/with-page';
-// import withFunding from '../HOCs/with-funding';
+import '../lib/index.css';
 class ActsPage extends Component {
   constructor() {
     super();
@@ -43,10 +42,17 @@ class ActsPage extends Component {
         uid: key
       }));
 
-      const filteredOutNonVotingUsers = usersList.filter(
+      const filteredOutDrudge = usersList
+      .filter(
         each => each.includeInActRater
-      );
-      let sortedActs = filteredOutNonVotingUsers
+      )
+      .filter(
+        each => each.profilePicture && each.profilePicture !== "/static/no_prof_pic.png" && each.profilePicture.length > 10
+      )
+      
+
+
+      let sortedActs = filteredOutDrudge
         .sort((a, b) => a.rating - b.rating)
         .reverse();
       this.setState({ acts: sortedActs });
@@ -199,6 +205,7 @@ class ActsPage extends Component {
                       <div
                         key={i}
                         className="each-act-container"
+                        onClick={() => this.bounceToActsProfile(each)}
                       >
                         <div className="each-act-row">
                           <div className="each-act-rating-container">
