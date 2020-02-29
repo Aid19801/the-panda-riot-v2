@@ -232,6 +232,7 @@ const mapDispatchToProps = dispatch => ({
 
 export default compose(
   withAnalytics,
+  withFunding,
   connect(
     mapStateToProps,
     mapDispatchToProps

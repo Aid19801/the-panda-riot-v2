@@ -1,15 +1,12 @@
-import { Link } from '../routes';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
 import { NextSeo } from 'next-seo';
-import Prismic from 'prismic-javascript';
 
 import { Spinner } from '../components';
 
 import * as actions from '../redux/actions';
 
-import { prismicEndpoint } from '../lib/prismic';
 import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
 import withProgressBar from '../HOCs/with-progress';
