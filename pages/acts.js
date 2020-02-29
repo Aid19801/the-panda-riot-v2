@@ -19,6 +19,7 @@ import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 import withProgressBar from '../HOCs/with-progress';
 import { Fade } from 'react-reveal';
+import withPage from '../HOCs/with-page';
 import '../lib/index.css';
 class ActsPage extends Component {
   constructor() {
@@ -41,10 +42,17 @@ class ActsPage extends Component {
         uid: key
       }));
 
-      const filteredOutNonVotingUsers = usersList.filter(
+      const filteredOutDrudge = usersList
+      .filter(
         each => each.includeInActRater
-      );
-      let sortedActs = filteredOutNonVotingUsers
+      )
+      .filter(
+        each => each.profilePicture && each.profilePicture !== "/static/no_prof_pic.png" && each.profilePicture.length > 10
+      )
+      
+
+
+      let sortedActs = filteredOutDrudge
         .sort((a, b) => a.rating - b.rating)
         .reverse();
       this.setState({ acts: sortedActs });
@@ -197,10 +205,7 @@ class ActsPage extends Component {
                       <div
                         key={i}
                         className="each-act-container"
-<<<<<<< Updated upstream
-=======
                         onClick={() => this.bounceToActsProfile(each)}
->>>>>>> Stashed changes
                       >
                         <div className="each-act-row">
                           <div className="each-act-rating-container">
@@ -210,15 +215,9 @@ class ActsPage extends Component {
                             >
                               <ClapIcon />
                             </div>
-<<<<<<< Updated upstream
 
                             <h2 className="each-act-rating">{each.rating}</h2>
 
-=======
-
-                            <h2 className="each-act-rating">{each.rating}</h2>
-
->>>>>>> Stashed changes
                             {downVoteSwitchedOn && (
                               <div
                                 className="down-svg-container"

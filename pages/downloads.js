@@ -73,27 +73,25 @@ class DownloadsPage extends React.Component {
                         </div>
 
                         <div className="col-sm-3">
-                            <Link href="/downloads/mac">
-                                <a>
-                                    <p>Mac</p>
-                                    <div className="icon__clap">
-                                        <img src="/static/applelogo.png" height={150} width={150} alt="orange apple logo" />
-                                    </div>
+                            <a href="https://github.com/Aid19801/tpr-electron-/releases/download/1.0.2/The.Panda.Riot-1.0.2.dmg">
 
-                                </a>
-                            </Link>
+                                <p>Mac</p>
+                                <div className="icon__clap">
+                                    <img src="/static/applelogo.png" height={150} width={150} alt="orange apple logo" />
+                                </div>
+
+                            </a>
                         </div>
 
                         <div className="col-sm-3">
 
-                            <Link href="/downloads/pc">
-                                <a>
-                                    <p>Windows</p>
-                                    <div className="icon__clap">
-                                        <img src="/static/windows.png" height={150} width={150} alt="orange Windows logo" />
-                                    </div>
-                                </a>
-                            </Link>
+                            <a href="https://github.com/Aid19801/tpr-electron-/releases/download/1.0.2/The.Panda.Riot.Setup.1.0.2.exe">
+                                <p>Windows</p>
+                                <div className="icon__clap">
+                                    <img src="/static/windows.png" height={150} width={150} alt="orange Windows logo" />
+                                </div>
+                            </a>
+
 
                         </div>
 
