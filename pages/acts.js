@@ -192,7 +192,7 @@ class ActsPage extends Component {
           }}
         />
       
-      <div className="container">
+      <div className="container acts__page">
           <div className="row flex-center margin-top">
             
             <div className="col-sm-10 flex-center flex-col margin-top">

@@ -14,7 +14,7 @@ import * as actions from '../redux/actions';
 
 import { prismicEndpoint } from '../lib/prismic';
 import withAuth from '../HOCs/with-auth';
-import { analyticsEvent } from '../lib/utils';
+import { analyticsEvent, analyticsPage } from '../lib/utils';
 import withAnalytics from '../HOCs/with-ga';
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
@@ -24,7 +24,7 @@ class NewsStoryPage extends React.Component {
     // console.log('getInitialProps fired LOOKING FOR ID ========>>> ', query.uid);
     const receivedContent = await this.fetchContent(query.uid);
     // console.log('receivedContent back');
-    // analyticsPage(`v2-tpr-news-story`);
+    analyticsPage(`v2-tpr-news-story`);
     reduxStore.dispatch(actions.fetchTPRSuccess(receivedContent));
     return {
       content: receivedContent
@@ -46,12 +46,13 @@ class NewsStoryPage extends React.Component {
   }
   componentDidMount = async () => {
     // TO-DO - put the client side fetching in here, if routing from home page.
-    // analyticsPage(`v2-tpr-news-story`);
+    analyticsPage(`v2-tpr-news-story`);
+    analyticsEvent(`viewing-news-story`);
     setTimeout(() => {
       this.props.showProgressBar(false);
+      analyticsEvent(`viewing-news-story`);
     }, 500);
     this.props.updateStateAppLoaded();
-    analyticsEvent(`viewing-${this.props.content.results[0].data['news-headline1'][0].text}`);
   };
 
   render() {

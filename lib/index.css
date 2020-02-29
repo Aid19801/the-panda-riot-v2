@@ -912,12 +912,12 @@ to {
 
 @media screen and (max-width: 576px) {
   .daysUntil__container {
-    top: -4vh;
+    top: -9vh;
     left: 2vw;
   }
-  /* .daysUntil__container > h4 {
-    font-size: 8px;
-  } */
+ .downloads__container h1 {
+   width: 90%;
+ }
 }
 
 @media screen and (max-width: 488px) {
@@ -963,6 +963,11 @@ to {
   .signup__page .nav-container .bulletin__container {
     display: none;
   }
+
+.bulletin__container {
+    display: none;
+  }
+
   .signup__page .input__input-container input {
     width: 100%;
   }
