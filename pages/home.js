@@ -169,12 +169,12 @@ class HomePage extends React.Component {
     this.renderActs();
     pageLoading();
     if (!stories) {
-      console.log('client / there are no stories so fetching them...');
+      // console.log('client / there are no stories so fetching them...');
       updateStatefetchNews();
     }
 
     if (!tpr_stories) {
-      console.log('client / there are no prismic stories so fetching them...');
+      // console.log('client / there are no prismic stories so fetching them...');
       const res = await this.fetchPrismic();
       updateStateFetchPrismicStories(res);
     }
@@ -205,7 +205,7 @@ class HomePage extends React.Component {
   };
 
   componentDidUpdate = newProps => {
-    console.log('nextProps: ', newProps.stories !== this.props.stories);
+    // console.log('nextProps: ', newProps.stories !== this.props.stories);
   };
 
   handleClick = () => {
@@ -256,7 +256,7 @@ class HomePage extends React.Component {
         each.profilePicture.length > 10
       )
 
-      console.log('AT | filteroutDrudge:', filteroutDrudge );
+      // console.log('AT | filteroutDrudge:', filteroutDrudge );
 
       const shuffled = this.shuffle(filteroutDrudge)
 

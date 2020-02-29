@@ -15,10 +15,10 @@ class AboutPage extends React.Component {
       return 'doo foo';
   }
   static async getInitialProps() {
-    console.log('==== ABOUT get initial props =====');
+    // console.log('==== ABOUT get initial props =====');
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const json = await res.json();
-    console.log('==== json =====', json.length);
+    // console.log('==== json =====', json.length);
     return {
       users: json
     };
@@ -27,12 +27,12 @@ class AboutPage extends React.Component {
   async componentDidMount() {}
 
   componentDidUpdate = nextProps => {
-    console.log('nextProps: ', nextProps);
+    // console.log('nextProps: ', nextProps);
   };
 
   render() {
     if (process.browser) {
-        console.log(' about props ==> ', this.props);
+        // console.log(' about props ==> ', this.props);
     }
     
     return (

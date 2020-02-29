@@ -23,7 +23,7 @@ class NewsStoryPage extends React.Component {
   static async getInitialProps({ reduxStore, req, query }) {
     // console.log('getInitialProps fired LOOKING FOR ID ========>>> ', query.uid);
     const receivedContent = await this.fetchContent(query.uid);
-    console.log('receivedContent back');
+    // console.log('receivedContent back');
     // analyticsPage(`v2-tpr-news-story`);
     reduxStore.dispatch(actions.fetchTPRSuccess(receivedContent));
     return {

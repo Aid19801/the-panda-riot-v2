@@ -45,7 +45,7 @@ export default function withAuth(PlatformSpecificComponent) {
       if (process.browser) {
         let isNews = window.location.href.includes('/news/');
         let isDownloads = window.location.href.includes('/downloads');
-        console.log('📰 News Article, no login required');
+        // console.log('📰 News Article, no login required');
         if (isNews || isDownloads) {
           return;
         }
@@ -78,7 +78,7 @@ export default function withAuth(PlatformSpecificComponent) {
       }
       // if theres no uid in cache, save one.
       if (!cacheUID) {
-        console.log('no uid in cache');
+        // console.log('no uid in cache');
         cache.saveToCache('uid', userObj.uid);
       }
 
@@ -101,9 +101,9 @@ export default function withAuth(PlatformSpecificComponent) {
       if (!hasProfile) {
         // console.log('user prof status is false =>' , userProfileStatus, typeof userProfileStatus)
         this.props.firebase.user(userObj.uid).on('value', snapshot => {
-          console.log('on value fired');
+          // console.log('on value fired');
           let fbuserProfile = snapshot.val();
-          console.log('user has firebase profile: ', fbuserProfile);
+          // console.log('user has firebase profile: ', fbuserProfile);
           // get FB profile, check if faveGig exists
           if (
             (fbuserProfile && fbuserProfile.faveGig === '') ||

@@ -11,7 +11,7 @@ const initialState = {
 const addUserToGigReducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.ADDDING_USER_TO_GIG:
-      console.log('reducer heard ADDDING_USER_TO_GIG', action);
+      // console.log('reducer heard ADDDING_USER_TO_GIG', action);
       return {
         ...state,
         loading: true,

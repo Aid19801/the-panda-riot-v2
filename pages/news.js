@@ -118,7 +118,6 @@ class NewsPage extends React.Component {
 
   async componentDidMount() {
     this.props.updateStateAppLoaded();
-    console.log('')
 
     const {
       updateStatefetchNews,
