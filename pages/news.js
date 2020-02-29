@@ -19,6 +19,7 @@ import {
 
 import { prismicEndpoint } from '../lib/prismic';
 import mockNews from '../lib/mock-news.json';
+import { analyticsEvent } from '../lib/utils';
 
 import {
   Spinner,
@@ -31,7 +32,7 @@ import {
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
 import withAuth from '../HOCs/with-auth';
-
+import withAnalytics from '../HOCs/with-ga';
 import * as cache from '../lib/cache';
 import '../lib/index.css';
 import Link from 'next/link';
@@ -118,6 +119,7 @@ class NewsPage extends React.Component {
 
   async componentDidMount() {
     this.props.updateStateAppLoaded();
+    analyticsEvent('viewing-news-page');
 
     const {
       updateStatefetchNews,
@@ -550,6 +552,7 @@ const mapDispatchToProps = dispatch => ({
 export default compose(
   withPage,
   withAuth,
+  withAnalytics,
   withProgressBar,
   connect(
     mapStateToProps,

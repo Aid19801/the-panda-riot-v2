@@ -20,6 +20,7 @@ import WithResponsivityHOC from '../HOCs/with-responsivity';
 import withProgressBar from '../HOCs/with-progress';
 import { Fade } from 'react-reveal';
 import withPage from '../HOCs/with-page';
+import { analyticsEvent } from '../lib/utils';
 import '../lib/index.css';
 class ActsPage extends Component {
   constructor() {
@@ -131,6 +132,7 @@ class ActsPage extends Component {
       this.props.showProgressBar(false);
     }, 300);
     this.props.updateStateAppLoaded();
+    analyticsEvent('viewing-acts-page');
   }
 
   calculateDaysUntil = () => {

@@ -14,7 +14,7 @@ import * as actions from '../redux/actions';
 
 import { prismicEndpoint } from '../lib/prismic';
 import withAuth from '../HOCs/with-auth';
-// import { analyticsPage } from '../lib/utils';
+import { analyticsEvent } from '../lib/utils';
 import withAnalytics from '../HOCs/with-ga';
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
@@ -51,6 +51,7 @@ class NewsStoryPage extends React.Component {
       this.props.showProgressBar(false);
     }, 500);
     this.props.updateStateAppLoaded();
+    analyticsEvent(`viewing-${this.props.content.results[0].data['news-headline1'][0].text}`);
   };
 
   render() {

@@ -14,6 +14,7 @@ import withAuth from '../HOCs/with-auth';
 import withAnalytics from '../HOCs/with-ga';
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
+import { analyticsEvent } from '../lib/utils';
 // import withFunding from '../HOCs/with-funding';
 
 class DownloadsPage extends React.Component {
@@ -28,6 +29,7 @@ class DownloadsPage extends React.Component {
             this.props.showProgressBar(false);
         }, 500);
         this.props.updateStateAppLoaded();
+        analyticsEvent('viewing-downloads-page');
     };
 
     render() {
