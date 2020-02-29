@@ -17,10 +17,8 @@ import ClapIcon from '../components/Icons/clap-icon';
 import DownArrow from '../components/Icons/down-arrow';
 import WithResponsivityHOC from '../HOCs/with-responsivity';
 import withProgressBar from '../HOCs/with-progress';
-import '../lib/index.css';
 import { Fade } from 'react-reveal';
-import withPage from '../HOCs/with-page';
-// import withFunding from '../HOCs/with-funding';
+import '../lib/index.css';
 class ActsPage extends Component {
   constructor() {
     super();
@@ -183,6 +181,10 @@ class ActsPage extends Component {
                       <div
                         key={i}
                         className="each-act-container"
+<<<<<<< Updated upstream
+=======
+                        onClick={() => this.bounceToActsProfile(each)}
+>>>>>>> Stashed changes
                       >
                         <div className="each-act-row">
                           <div className="each-act-rating-container">
@@ -192,9 +194,15 @@ class ActsPage extends Component {
                             >
                               <ClapIcon />
                             </div>
+<<<<<<< Updated upstream
 
                             <h2 className="each-act-rating">{each.rating}</h2>
 
+=======
+
+                            <h2 className="each-act-rating">{each.rating}</h2>
+
+>>>>>>> Stashed changes
                             {downVoteSwitchedOn && (
                               <div
                                 className="down-svg-container"
