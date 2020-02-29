@@ -84,6 +84,7 @@ class SignUpPage extends React.Component {
       submitting: true
     });
 
+
     // create user auth entry
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, password)
@@ -275,7 +276,7 @@ class SignUpPage extends React.Component {
             />
             <Input
               name="twitter"
-              title="Link To My Twitter"
+              title="My Twitter username [dont include @]"
               onChange={this.onChange}
             />
             <Input

@@ -105,7 +105,7 @@ class ActsPage extends Component {
         youtubeChannelURL: ytCh,
         rating: upOrDownString === 'up' ? rating + 1 : rating - 1
       });
-      debugger;
+      // debugger;
 
       // 3. SAVE LOCALSTORAGE TO STOP PERSISTENT VOTING
       localStorage.setItem('timevoted', Date.now());
@@ -205,7 +205,6 @@ class ActsPage extends Component {
                       <div
                         key={i}
                         className="each-act-container"
-                        onClick={() => this.bounceToActsProfile(each)}
                       >
                         <div className="each-act-row">
                           <div className="each-act-rating-container">

@@ -39,6 +39,10 @@ class SignInPage extends React.Component {
     pageLoaded();
     updateStateAppLoaded();
     // analyticsPage('v2-signin-page');
+    this.props.firebase.doSignOut();
+    localStorage.setItem('user-profile-object', null);
+    localStorage.setItem('uid', null);
+    localStorage.setItem('userProfile', null);
   }
 
   onSubmit = () => {
@@ -67,7 +71,7 @@ class SignInPage extends React.Component {
         // console.log('user prof status is false =>' , userProfileStatus, typeof userProfileStatus)
         this.props.firebase.user(res.user.uid).on('value', snapshot => {
           let fbuserProfile = snapshot.val();
-          console.log('SIGNIN | user has firebase profile: ', fbuserProfile);
+          // console.log('SIGNIN | user has firebase profile: ', fbuserProfile);
           // get FB profile, check if faveGig exists
           if (
             (fbuserProfile && fbuserProfile.faveGig === '') ||
@@ -88,7 +92,7 @@ class SignInPage extends React.Component {
             );
             return cache.saveToCache('userProfile', 'true');
           }
-          console.log('SIGNIN | submitting this', fbuserProfile);
+          // console.log('SIGNIN | submitting this', fbuserProfile);
         });
         setTimeout(() => {
           console.log('12947');

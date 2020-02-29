@@ -29,7 +29,12 @@ const SocialIcons = ({ facebook, twitter, youtube, website }) => {
 
             { twitter !== 'unknown' && (
                 <img
-                    onClick={() => window.open(repairUrl(twitter), '_newtab')}
+                    onClick={() => {
+                            return twitter && twitter.includes('twitter.com') ?
+                            window.open(`${twitter}`, '_newtab') : 
+                            window.open(`https://www.twitter.com/${twitter}`, '_newtab');
+                        }
+                    }
                     className="div__user-info-card-medium-socials-pic"
                     src="https://seeklogo.com/images/T/twitter-icon-circle-black-logo-35827D553B-seeklogo.com.png"
                     alt="open mic comedian twitter logo"

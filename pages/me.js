@@ -352,7 +352,7 @@ class MePage extends Component {
                 </div>
                 <div className="col-sm-12 flex-center">
                   <Input
-                    title="My Twitter"
+                    title="My Twitter [dont include '@' symbol]"
                     name="twitter"
                     placeholder={twitter}
                     onChange={this.handleChange}

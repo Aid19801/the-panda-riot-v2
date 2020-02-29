@@ -55,7 +55,7 @@ class NavigationNonAuth extends Component {
             <div className="nav-option-wrapper" onClick={() => this.updateStateLoading()}>
               <Link href={`/downloads`}>
                 <a>
-                  <div>Downloads</div>
+                  <div>downloads</div>
                 </a>
               </Link>
             </div>
