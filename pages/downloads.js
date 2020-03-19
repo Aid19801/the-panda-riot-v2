@@ -72,7 +72,7 @@ class DownloadsPage extends React.Component {
                         </div>
 
                         <div className="col-sm-3">
-                            <a href="https://github.com/Aid19801/tpr-electron-/releases/download/1.0.2/The.Panda.Riot-1.0.2.dmg">
+                            <a href="https://github.com/Aid19801/tpr-electron-/releases/download/103/The.Panda.Riot-1.0.3.dmg">
 
                                 <p>Mac</p>
                                 <div className="icon__clap">
@@ -84,7 +84,7 @@ class DownloadsPage extends React.Component {
 
                         <div className="col-sm-3">
 
-                            <a href="https://github.com/Aid19801/tpr-electron-/releases/download/1.0.2/The.Panda.Riot.Setup.1.0.2.exe">
+                            <a href="https://github.com/Aid19801/tpr-electron-/releases/download/103/The.Panda.Riot.Setup.1.0.3.exe">
                                 <p>Windows</p>
                                 <div className="icon__clap">
                                     <img src="/static/windows.png" height={150} width={170} alt="orange Windows logo" />
