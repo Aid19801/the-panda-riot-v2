@@ -4,6 +4,8 @@ import Banner from './Banner';
 import BoxCard from './Box-Card';
 import ChatContainer from './ChatContainer';
 import CircleImage from './CircleImage';
+import DynamicImage from './DynamicImage';
+import Comments from './Comments';
 import Chat from './Chat';
 import FunkyTitle from './FunkyTitle';
 import Footer from './Footer';
@@ -33,6 +35,8 @@ export {
   ChatContainer,
   CircleImage,
   Chat,
+  Comments,
+  DynamicImage,
   Footer,
   FunkyTitle,
   HaveIPlayedHere,

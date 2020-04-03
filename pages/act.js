@@ -10,6 +10,7 @@ import {
   Banner,
   NavBar,
   FunkyTitle,
+  Comments,
   Spinner
 } from '../components';
 import '../lib/index.css';
@@ -79,15 +80,17 @@ class UserProfilePage extends Component {
       let facebook = '';
       let youtubeChannelURL = '';
       let website = '';
+      let actsComments = [];
 
       const user = snapshot.val();
-      // console.log('user is ', user);
+      console.log('user is ', user);
       const {
         username,
         tagline,
         profilePicture,
         rating,
-        includeInActRater
+        includeInActRater,
+        comments,
       } = user;
 
       user && !user.faveGig ? (faveGig = 'n/a') : (faveGig = user.faveGig);
@@ -102,10 +105,13 @@ class UserProfilePage extends Component {
         : (youtubeChannelURL = user.youtubeChannelURL);
       user && !user.website ? (website = 'unknown') : (website = user.website);
 
+      user && user.comments && user.comments.length ? actsComments = user.comments : actsComments = [];
+
       let includeInActRaterStatus = includeInActRater || false;
       let persistRatingFromDb = rating !== 0 && rating ? rating : 0;
 
       this.setState({
+        usersProfile: user,
         username,
         tagline,
         profilePicture,
@@ -118,6 +124,7 @@ class UserProfilePage extends Component {
         facebook,
         youtubeChannelURL,
         website,
+        comments: actsComments,
         showSpinner: false
       });
 
@@ -142,6 +149,7 @@ class UserProfilePage extends Component {
     const {
       profilePicture,
       username,
+      usersProfile,
       tagline,
       faveGig,
       genre,
@@ -151,10 +159,11 @@ class UserProfilePage extends Component {
       facebook,
       youtubeChannelURL,
       website,
+      comments,
       showSpinner
     } = this.state;
 
-    const { spinner } = this.props;
+    const { spinner, firebase } = this.props;
 
     if (spinner) {
       return <Spinner />
@@ -214,6 +223,13 @@ class UserProfilePage extends Component {
                     website={website}
                   />
                 </div>
+
+                <Comments
+                  firebase={firebase}
+                  comments={comments && comments.filter(each => each.pageId.includes('act')) || []}
+                  refetchData={() => this.fetchUser()}
+                />
+
               </>
             )
             }
