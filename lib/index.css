@@ -74,6 +74,10 @@ p {
 .greyed-out p {
   opacity: 1;
 }
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
 
 .tpr__link {
   background: orange;
@@ -307,6 +311,39 @@ p {
   background: black;
 }
 
+.discussions__row {
+  background: orange;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+}
+
+.discussions__row .heading {
+  color: white;
+  font-weight: bold;
+}
+
+.discussions__row .discussions__blurb {
+  color: white;
+  background: black;
+  transform: skewY(-2deg);
+  padding: 5px;
+  font-size: 14px;
+}
+
+.discussions__timepost {
+  border-radius: 24px;
+  background: white;
+  color: black;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.discussions__row .circ-img__container__small {
+  border: 5px solid black;
+}
+
 @media screen and (max-width: 1200px) {
   .landing__screens-container {
     flex-direction: column;
@@ -318,6 +355,7 @@ p {
     display: flex;
     justify-content: space-around;
   }
+  
 }
 
 @media screen and (max-width: 765px) {
@@ -848,6 +886,7 @@ to {
 }
 
 @media screen and (max-width: 650px) {
+
   .tpr__container {
     display: flex;
     justify-content: center;
@@ -1015,6 +1054,7 @@ to {
   .page__actpage .input__input-container {
     width: 85%;
   }
+ 
 }
 
 @keyframes bounceIn {
