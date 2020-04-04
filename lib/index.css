@@ -330,6 +330,7 @@ p {
   transform: skewY(-2deg);
   padding: 5px;
   font-size: 14px;
+  max-width: 368px;
 }
 
 .discussions__timepost {
