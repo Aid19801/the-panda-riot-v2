@@ -63,7 +63,7 @@ class NewsStoryPage extends React.Component {
     }
     
     return (
-      <>
+      <React.Fragment>
         <NextSeo
           title={`${content.results[0].data['news-headline1'][0].text}`}
           description={`${content.results[0].data['news-body'][0].text}`}
@@ -117,7 +117,7 @@ class NewsStoryPage extends React.Component {
             </div>
           </div>
         </div>
-      </>
+      </React.Fragment>
     );
   }
 }

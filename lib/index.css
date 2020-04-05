@@ -345,6 +345,73 @@ p {
   border: 5px solid black;
 }
 
+.discussions__posts_number {
+  margin-top: 10px;
+}
+
+.discussion__title {
+  width: 82%;
+}
+.discussion__subtitle {
+  font-family: Raleway;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.discussion__comment__container {
+  background: orange;
+  border-radius: 12px;
+  height: auto;
+  padding: 5px;
+  width: auto;
+  margin-bottom: 5px;
+}
+
+#my_own_comment {
+  border: 7px solid white;
+}
+
+.discussion__comment__container .circ-img__container__small {
+  height: 50px;
+  width: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.discussion__comment__container .username {
+  font-family: 'Raleway';
+  padding: 4px;
+}
+.discussion__comment__container .comment {
+  font-family: 'Raleway';
+  font-size: 20px;
+  text-align: start;
+}
+
+.discussion__comment__container .timestamp {
+  font-family: 'Raleway';
+  transform: skewY(2deg);
+  color: grey;
+  font-weight: 700;
+  display: flex;
+  justify-content: center !important;
+  align-content: center;
+  align-items: center;
+}
+
+.discussion__page .discussion__allcomments__container .circ-img__container__small {
+  border: 5px solid black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
 @media screen and (max-width: 1200px) {
   .landing__screens-container {
     flex-direction: column;
@@ -655,6 +722,10 @@ ul li a {
 
 .space-evenly {
   justify-content: space-evenly;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .flex-col {

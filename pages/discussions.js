@@ -18,6 +18,7 @@ import { analyticsEvent, analyticsPage, trimStringSpecifically } from '../lib/ut
 import withAnalytics from '../HOCs/with-ga';
 import withProgressBar from '../HOCs/with-progress';
 import withPage from '../HOCs/with-page';
+import Router from 'next/router';
 
 class DiscussionsPage extends React.Component {
 
@@ -53,6 +54,11 @@ class DiscussionsPage extends React.Component {
             this.setState({ error: e });
         }
     };
+
+    routeToDiscussion = id => {
+        return Router.push(`/discussion/${id}`);
+    }
+
 
     render() {
         const { discussions } = this.state;
@@ -103,7 +109,7 @@ class DiscussionsPage extends React.Component {
 
                         {discussions && discussions.map((each, i) => {
                             return (
-                                <div onClick={() => routeToDiscussion(each.id)} className="col-sm-10 discussions__row flex-row space-around" key={i}>
+                                <div onClick={() => this.routeToDiscussion(each.id)} className="col-sm-10 discussions__row flex-row space-around" key={i}>
                                     <div className="cell-small flex-col">
                                         <DynamicImage src={each.startedBy.profilePicture} small />
                                         <p className="bold white">{each.startedBy.username}</p>
@@ -116,7 +122,7 @@ class DiscussionsPage extends React.Component {
 
                                     <div className="flex-col">
                                         <div className="cell-small discussions__timepost">{moment(each.timestamp).format('DD/MM/YYYY')}</div>
-                                        <div className="cell-small">posts: {each.comments.length}</div>
+                                        <div className="cell-small discussions__posts_number">posts: {each.comments.length}</div>
                                     </div>
                                 </div>
                             )

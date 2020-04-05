@@ -75,11 +75,13 @@ export default function withAuth(PlatformSpecificComponent) {
       ) {
         // console.log('cacheUID uid iexists, updating signed in ', cacheUID);
         this.props.updateStateUserSignedIn();
+        this.props.updateStateWithUID(cacheUID);
       }
       // if theres no uid in cache, save one.
       if (!cacheUID) {
         // console.log('no uid in cache');
         cache.saveToCache('uid', userObj.uid);
+        this.props.updateStateWithUID(cacheUID);
       }
 
       // if the uid from firebase matches the admin password, update state to isAdmin true

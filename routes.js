@@ -17,5 +17,8 @@ module.exports = routes()
     .add('downloads', '/downloads')
     .add('download', '/downloads/:uid')
 
+    .add('discussions', '/discussions')
+    .add('discussion', '/discussion/:id')
+
     .add('notfound', '/*')
 
