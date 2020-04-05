@@ -5,6 +5,7 @@ const initialState = {
   progressBarStatus: false,
   error: null,
   uid: '',
+  userProfile: {},
   isAdmin: false,
   isSignedIn: false
 };
@@ -38,6 +39,13 @@ const signinPageReducer = (state = initialState, action) => {
       return {
         ...state,
         uid: action.uid
+      };
+      break;
+
+    case actions.SAVE_USER_PROFILE:
+      return {
+        ...state,
+        userProfile: action.userProfile
       };
       break;
 

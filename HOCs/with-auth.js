@@ -7,7 +7,8 @@ import Router from 'next/router';
 import {
   saveAuthenticatedUID,
   userAuthenticatedAsAdmin,
-  userIsSignedIn
+  userIsSignedIn,
+  saveUserProfile
 } from '../redux/actions';
 
 // const myProm = new Promise((resolve, reject) => {});
@@ -114,6 +115,7 @@ export default function withAuth(PlatformSpecificComponent) {
             // if profile exists but faveGig empty, set cache to false (user hasnt completed db profile)
             // console.log('fave gig doesnt exist, userProfile cache should be false');
             cache.saveToCache('userProfile', 'false');
+            this.props.updateStateUserProfile(fbuserProfile);
             return Router.push('/me');
             // if user doesnt have faveGig / userProfile is false, bounce to me page
           }
@@ -121,10 +123,15 @@ export default function withAuth(PlatformSpecificComponent) {
           if (fbuserProfile && fbuserProfile.faveGig) {
             // console.log('fave gig DOES exist, userProfile cache should be true');
             cache.saveToCache('user-profile-object', JSON.stringify(fbuserProfile));
+            this.props.updateStateUserProfile(fbuserProfile);
             return cache.saveToCache('userProfile', 'true');
           }
         });
         return;
+      }
+      if (hasProfile) {
+        const obj = JSON.parse(localStorage.getItem('user-profile-object'));
+        this.props.updateStateUserProfile(obj)
       }
       // return Router.push('/home')
     };
@@ -146,6 +153,7 @@ export default function withAuth(PlatformSpecificComponent) {
 
   const mapDispatchToProps = dispatch => ({
     updateStateWithUID: id => dispatch(saveAuthenticatedUID(id)),
+    updateStateUserProfile: obj => dispatch(saveUserProfile(obj)),
     updateStateIsAdmin: () => dispatch(userAuthenticatedAsAdmin()),
     updateStateUserSignedIn: () => dispatch(userIsSignedIn())
   });

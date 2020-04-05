@@ -38,6 +38,11 @@ export const saveAuthenticatedUID = uid => ({
   uid: uid
 });
 
+export const saveUserProfile = obj => ({
+  type: actionTypes.SAVE_USER_PROFILE,
+  userProfile: obj
+});
+
 export const userAuthenticatedAsAdmin = () => {
   return {
     type: actionTypes.IS_ADMIN

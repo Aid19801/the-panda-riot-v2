@@ -12,7 +12,8 @@ import {
   saveAuthUser,
   saveAuthenticatedUID,
   updateStateAppLoaded,
-  updateStateAppLoading
+  updateStateAppLoading,
+  saveUserProfile
 } from '../redux/actions';
 import { Banner, Button, Input, NavBar, Spinner } from '../components';
 import { withFirebase } from '../HOCs';
@@ -80,6 +81,7 @@ class SignInPage extends React.Component {
             // if profile exists but faveGig empty, set cache to false (user hasnt completed db profile)
             // console.log('fave gig doesnt exist, userProfile cache should be false');
             cache.saveToCache('userProfile', 'false');
+            this.props.updateStateUserProfile(fbuserProfile);
             return Router.push('/me');
             // if user doesnt have faveGig / userProfile is false, bounce to me page
           }
@@ -90,12 +92,13 @@ class SignInPage extends React.Component {
               'user-profile-object',
               JSON.stringify(fbuserProfile)
             );
+            this.props.updateStateUserProfile(fbuserProfile);
             return cache.saveToCache('userProfile', 'true');
           }
           // console.log('SIGNIN | submitting this', fbuserProfile);
         });
         setTimeout(() => {
-          console.log('12947');
+          console.log('reroute to home...');
         }, 3000);
         return Router.push('/home');
       })
@@ -198,6 +201,7 @@ const mapDispatchToProps = dispatch => ({
   pageLoaded: () => dispatch(signInPageLoaded()),
   pageFailed: () => dispatch(signInPageFailed()),
   updateStateAuthenticatedUID: id => dispatch(saveAuthenticatedUID(id)),
+  updateStateUserProfile: obj => dispatch(saveUserProfile(obj)),
   updateStateAppLoading: () => dispatch(updateStateAppLoading()),
   updateStateAppLoaded: () => dispatch(updateStateAppLoaded()),
 });

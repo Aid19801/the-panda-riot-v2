@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css';
 
-function Button({ text, color, onClick, disabled }) {
+function Button({ text, color, onClick, disabled, type }) {
 
     const handleColor = () => {
         if (color === 'orange') {
@@ -31,7 +31,7 @@ function Button({ text, color, onClick, disabled }) {
 
     return (
         <button
-            type="button"
+            type={ type === 'submit' ? 'submit' : 'button'}
             className={ handleColor() }
             onClick={!disabled ? onClick : null}
             disabled={disabled}
