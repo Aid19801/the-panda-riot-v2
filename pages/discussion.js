@@ -143,8 +143,8 @@ class DiscussionPage extends React.Component {
                     openGraph={{
                         type: 'website',
                         url: `https://www.thePandaRiot.com/discussion/${discussion.id}`,
-                        title: `TPR | ${discussion.title}`,
-                        description: `TPR | ${discussion.subtitle}`,
+                        title: `The Panda Riot Discussions | ${discussion.title}`,
+                        description: `${discussion.subtitle}`,
                         images: [
                             {
                                 url: 'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',

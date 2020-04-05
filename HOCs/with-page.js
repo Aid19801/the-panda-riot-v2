@@ -68,5 +68,5 @@ export default (Wrapped) => {
       )
     }
   }
-  return withFunding(withAuth(HOC));
+  return withAuth(HOC);
 }
