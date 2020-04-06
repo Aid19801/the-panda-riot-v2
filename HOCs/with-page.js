@@ -53,7 +53,7 @@ export default (Wrapped) => {
       return (
         <div className="wrapped">
 
-          <Banner src="/static/banner-ldn.jpg">
+          <Banner src="/static/new_bg.jpeg">
             {/* { page && <FunkyTitle text={page} />} */}
           </Banner>
 
