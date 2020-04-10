@@ -20,5 +20,7 @@ module.exports = routes()
     .add('discussions', '/discussions')
     .add('discussion', '/discussion/:id')
 
+    .add('guardian', '/guardian')
+    
     .add('notfound', '/*')
 
