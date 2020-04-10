@@ -172,7 +172,7 @@ class GigsPage extends Component {
           description="Find gigs using London's favourite Open Mic Comedy web-app"
           openGraph={{
             type: 'website',
-            url: 'https://www.thePandaRiot.com',
+            url: 'https://www.thePandaRiot.com/gigs',
             title: `The Panda Riot Gigs Map`,
             description: 'Sign in to the panda riot open mic comedy webapp!',
             images: [

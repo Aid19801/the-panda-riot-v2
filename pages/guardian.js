@@ -39,7 +39,7 @@ class GuardianPage extends Component {
           description="main descr Comedians will be prohibited from talking about or making fun, the Government's response to Covid-19."
           openGraph={{
             type: 'website',
-            url: 'https://www.thePandaRiot.com',
+            url: 'https://www.thePandaRiot.com/guardian',
             title: `open graph title bit`,
             description: 'open graph descriptiopn bit',
             images: [

@@ -62,7 +62,7 @@ class LandingPage extends React.Component {
           description="London's electric Open Mic Comedy Circuit - all in one handy, modern web-app!"
           openGraph={{
             type: 'website',
-            url: 'https://www.thePandaRiot.com',
+            url: 'https://www.thePandaRiot.com/guardian',
             title: 'The Panda Riot',
             description:
               "The go-to web-app for London's electric open mic comedy circuit.",
