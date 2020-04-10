@@ -45,13 +45,13 @@ class GuardianPage extends Component {
             images: [
               {
                 // url: 'https://hosting.photobucket.com/images/mm187/AidThompsin/flop.jpg',
-                url: '/static/flop.jpg',
+                url: 'https://i.guim.co.uk/img/static/sys-images/Arts/Arts_/Pictures/2014/9/5/1409919217507/Taking-it-seriously---Ste-011.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=284f750c05c5d9c849b231acf8235f3a',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt'
               },
               {
-                url: 'https://i.guim.co.uk/img/media/2f5d36ef175f8a4e0ba0b53f5b3cc49de9ce5d49/0_0_2500_1500/master/2500.jpg?width=300&quality=85&auto=format&fit=max&s=db07efedf9e18c91edbc04533b21e022',
+                url: 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/6/22/1434971591335/0d5323f2-0d0f-45ae-93e2-0e0325484f78-2060x1236.jpeg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&s=09664af05d4be788de436f72814661da',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt 2'
