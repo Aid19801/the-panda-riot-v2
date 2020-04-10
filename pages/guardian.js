@@ -40,11 +40,12 @@ class GuardianPage extends Component {
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com/guardian',
-            title: `open graph title bit`,
-            description: 'open graph descriptiopn bit',
+            title: `Comedians Will Not Be Allowed To Discuss Govt Response To Covid-19`,
+            description: `Free speech fears as Home Secretary announces measures to curb artistic licence 'in case it upsets grieving families'`,
             images: [
               {
-                url: 'https://hosting.photobucket.com/images/mm187/AidThompsin/flop.jpg',
+                // url: 'https://hosting.photobucket.com/images/mm187/AidThompsin/flop.jpg',
+                url: '/static/flop.jpg',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt'
