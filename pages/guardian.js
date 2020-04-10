@@ -35,8 +35,8 @@ class GuardianPage extends Component {
     return (
       <React.Fragment>
         <NextSeo
-          title="main title The Guardian | News"
-          description="main descr Comedians will be prohibited from talking about or making fun, the Government's response to Covid-19."
+          title="Comedians Will Not Be Allowed To Discuss Govt Response To Covid-19"
+          description="Free speech fears as Home Secretary announces measures to curb artistic licence 'in case it upsets grieving families'"
           openGraph={{
             type: 'website',
             url: 'https://www.thePandaRiot.com/guardian',
@@ -44,14 +44,14 @@ class GuardianPage extends Component {
             description: 'open graph descriptiopn bit',
             images: [
               {
-                url: 'https://i.ytimg.com/vi/kQBHzHBMlM4/hqdefault.jpg',
+                url: 'https://hosting.photobucket.com/images/mm187/AidThompsin/Screenshot%202020-04-10%20at%2008.35.45.png',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt'
               },
               {
                 url:
-                  'https://pbs.twimg.com/profile_images/498909008292347904/8EkJ3yZ-_400x400.png',
+                  'https://hosting.photobucket.com/images/mm187/AidThompsin/Screenshot%202020-04-10%20at%2008.35.45.png',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt 2'
