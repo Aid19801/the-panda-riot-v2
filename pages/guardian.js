@@ -44,14 +44,13 @@ class GuardianPage extends Component {
             description: 'open graph descriptiopn bit',
             images: [
               {
-                url: 'https://hosting.photobucket.com/images/mm187/AidThompsin/Screenshot%202020-04-10%20at%2008.35.45.png',
+                url: 'https://hosting.photobucket.com/images/mm187/AidThompsin/foo(1).jpg',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt'
               },
               {
-                url:
-                  'https://hosting.photobucket.com/images/mm187/AidThompsin/Screenshot%202020-04-10%20at%2008.35.45.png',
+                url: 'https://hosting.photobucket.com/images/mm187/AidThompsin/foo(1).jpg',
                 width: 800,
                 height: 600,
                 alt: 'Og Image Alt 2'
