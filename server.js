@@ -47,10 +47,15 @@ app
     //   });
     // });
 
+    // server.get('/guardian', (req, res) => {
+    //   res.status(200).sendFile('clap.png', { root:  __dirname + '/static/'} );
+    // })
+
     server.get('*', (req, res) => {
       return handler(req, res);
     });
 
+    
     server.post('/message', (req, res, next) => {
         console.log('hit message ', req.body);
       const { user = null, message = '', timestamp = +new Date() } = req.body;

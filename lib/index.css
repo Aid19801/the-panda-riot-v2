@@ -4,6 +4,207 @@
   --animation-time: 1s;
 }
 
+.guardian_wrapper {
+  font-family: "Guardian Text Egyptian Web", Georgia, serif;
+  background-color: #052962;
+  color: white;
+}
+
+.guardian_nav {
+  height: 150px;
+  width: 100%;
+  border: 1px solid pink;
+  display: flex;
+  align-items: flex-end;
+}
+
+.guardian_nav_ul {
+  border: 1px solid rgba(126, 126, 126, 0.2);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  
+}
+
+.guardian_nav_li:nth-child(1) {
+  margin-left: -8px;
+  border-top: 4px solid #f75e0d;
+}
+
+.guardian_nav_li {
+  border: 1px solid rgba(126, 126, 126, 0.2);
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  height: 2.25rem;
+  line-height: 1;
+  width: 74px;
+  justify-content: center;
+}
+.veggie-burger {
+    background-color: #ffe500;
+    height: 2.625rem;
+    width: 2.625rem;
+    position: absolute;
+    border-radius: 50%;
+    outline: none;
+    top: 101px;
+    right: 11px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.veggie-burger__icon {
+  display: flex;
+  position: relative;
+  height: 58%;
+  width: 95%;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.veggie-burger__three-lines {
+  width: 50%;
+  height: 2px;
+  background-color: black;
+}
+.veggie-burger__three-lines:nth-child(1) {
+  /* margin-top: 0; */
+}
+
+.guard_logo {
+  /* position: absolute; */
+  width: 350px;
+  right: 8px;
+  color: white;
+}
+
+.guardian_subnav_li {
+  background: white;
+  color: black;
+  margin-right: 8px;
+  font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 15px;
+}
+
+.guardian_subnav_li:nth-child(1) {
+  margin-left: 8px;
+}
+.guardian_subnav_li:nth-child(6) {
+  color: grey;
+}
+
+.guard-sections-lines-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.guard-section-lines {
+  width: 100%;
+  background: grey;
+  height: 1px;
+  margin-top: 5px;
+  opacity: 0.4;
+}
+
+.guard-main-article-image {
+  width: 100%;
+  height: auto;
+}
+
+.guard-label__link-wrapper {
+  color: #c70000;
+  font-weight: 900;
+}
+
+.guard-padding-left {
+  padding-left: 10px;
+}
+
+.guard-headline {
+  font-family: "Guardian Egyptian Web",Georgia,serif;
+  color: black !important;
+  background: none;
+  border-bottom: 1px solid rgba(210, 172, 209, 0.7);
+
+  font-size: 30px !important;
+  text-align: left;
+  width: 100% !important;
+  transform: none;
+  margin-top: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-right: 5px;
+  display: inline;
+  padding-bottom: 0;
+  font-weight: normal;
+}
+
+.guard-byline {
+  font-family: "Guardian Egyptian Web",Georgia,serif;
+  color: black !important;
+  background: white;
+  
+  text-align: left;
+  width: 100% !important;
+  padding-left: 0;
+  padding-right: 5px;
+  font-weight: normal;
+}
+
+.guard-date-time {
+  color: grey;
+  font-size: 13px;
+}
+
+.guard-twitter-fill {
+  /* fill: #767676; */
+  fill: #767676;
+}
+
+.guard-paragraph {
+  color: black;
+  font-family: "Guardian Egyptian Web",Georgia,serif;
+}
+
+.guard-main-article p {
+  color: black;
+  font-family: "Guardian Egyptian Web",Georgia,serif;
+}
+
+.guard-socials-container {
+  width: 116px;
+  height: 37px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.guard-social {
+  border: 1px solid #dcdcdc;
+  border-radius: 50%;
+  vertical-align: middle;
+  height: 100%;
+  max-width: 37px;
+  min-width: 37px;
+  min-height: 37px;
+  max-height: 37px;
+  width: auto;
+}
+
+.guard-twitter-fill-red {
+  fill: #c70000;
+}
+
+
+
 html {
   background: grey repeat-y;
   min-width: 100%;
@@ -50,6 +251,7 @@ p {
   border: 4px solid white;
   margin: 5px;
 }
+
 .landing__downloads__promo {
   display: flex;
   justify-content: space-evenly;
@@ -63,17 +265,24 @@ p {
 
 .downloads__container p:hover {
   border: 4px solid darkgrey;
-} 
+}
 
 .bold {
   font-weight: bold;
 }
+
+.not-bold {
+  font-weight: normal;
+}
+
 .greyed-out {
   opacity: 0.5;
 }
+
 .greyed-out p {
   opacity: 1;
 }
+
 .space-around {
   display: flex;
   justify-content: space-around;
@@ -352,6 +561,7 @@ p {
 .discussion__title {
   width: 82%;
 }
+
 .discussion__subtitle {
   font-family: Raleway;
   font-weight: bold;
@@ -366,7 +576,6 @@ p {
   width: auto;
   margin-bottom: 5px;
 }
-
 
 #my_own_comment {
   border: 7px solid white;
@@ -385,6 +594,7 @@ p {
   font-family: 'Raleway';
   padding: 4px;
 }
+
 .discussion__comment__container .comment {
   font-family: 'Raleway';
   font-size: 20px;
@@ -437,14 +647,11 @@ p {
   width: 100%;
 }
 
-
 .discussion__modal__container form textarea {
   width: 91%;
   height: 90%;
   border-radius: 17px;
 }
-
-
 
 @media screen and (max-width: 1200px) {
   .landing__screens-container {
@@ -457,7 +664,6 @@ p {
     display: flex;
     justify-content: space-around;
   }
-  
 }
 
 @media screen and (max-width: 765px) {
@@ -740,6 +946,10 @@ ul li a {
   padding: 0;
 }
 
+.padding-top {
+  padding-top: 20px;
+}
+
 .act-name {
   margin-top: -6px;
   width: 70%;
@@ -840,28 +1050,27 @@ ul li a {
 }
 
 .lessThanTen {
-background: red;
-border: white;
-border-radius: 12px;
-box-shadow: 5px 12px 17px 25px red;
+  background: red;
+  border: white;
+  border-radius: 12px;
+  box-shadow: 5px 12px 17px 25px red;
 }
 
 .moreThanTen {
-background: orange;
-border: white;
-border-radius: 17px;
-box-shadow: 5px 12px 17px 25px orange;
+  background: orange;
+  border: white;
+  border-radius: 17px;
+  box-shadow: 5px 12px 17px 25px orange;
 }
 
 @keyframes fadeInDaysUntil {
-from {
-  opacity: 0;
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-to {
-  opacity: 1;
-}
-}
-
 
 .page__actpage {
   height: 100% !important;
@@ -969,7 +1178,7 @@ to {
     top: -3vh;
     left: -11vw;
   }
-  .daysUntil__container > h4 {
+  .daysUntil__container>h4 {
     font-size: 8px;
   }
 }
@@ -992,7 +1201,6 @@ to {
 }
 
 @media screen and (max-width: 650px) {
-
   .tpr__container {
     display: flex;
     justify-content: center;
@@ -1060,10 +1268,9 @@ to {
     top: -9vh;
     left: 2vw;
   }
- .downloads__container h1 {
-   width: 90%;
- }
-
+  .downloads__container h1 {
+    width: 90%;
+  }
   .discussion__modal__container {
     position: relative;
     width: 96vw;
@@ -1074,12 +1281,10 @@ to {
     z-index: 23;
     left: -1%;
   }
-
-  .discussion__modal__container > .flex-col > .flex-row {
+  .discussion__modal__container>.flex-col>.flex-row {
     /* border: 1px solid red; */
     align-items: start;
   }
-
   .discussion__modal__container .circ-img__container__small {
     width: 50px;
     height: 50px;
@@ -1090,11 +1295,9 @@ to {
     margin-right: 10px;
     transition: 0.3s;
   }
-
   .discussion__modal__container form {
     width: 80%;
   }
-
   .discussion__modal__container textarea {
     overflow: auto;
     resize: vertical;
@@ -1148,11 +1351,9 @@ to {
   .signup__page .nav-container .bulletin__container {
     display: none;
   }
-
-.bulletin__container {
+  .bulletin__container {
     display: none;
   }
-
   .signup__page .input__input-container input {
     width: 100%;
   }
@@ -1200,7 +1401,6 @@ to {
   .page__actpage .input__input-container {
     width: 85%;
   }
- 
 }
 
 @keyframes bounceIn {

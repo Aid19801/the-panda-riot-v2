@@ -1,5 +1,4 @@
 import { Link } from '../routes';
-// import { Client, linkResolver } from '../components/prismic';
 import { RichText } from 'prismic-reactjs';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -8,7 +7,7 @@ import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 import Prismic from 'prismic-javascript';
 
-import { NavBar, FunkyTitle, Banner, Spinner } from '../components';
+import { Spinner } from '../components';
 
 import * as actions from '../redux/actions';
 
