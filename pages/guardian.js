@@ -21,7 +21,7 @@ class GuardianPage extends Component {
       loading: false
     };
   }
-  
+
   static async getInitialProps({ reduxStore, req, query }) {
     // console.log('getInitialProps fired LOOKING FOR ID ========>>> ', query.uid);
     const receivedContent = await this.fetchContent("guardian-news-trans-fringe");
@@ -79,6 +79,15 @@ class GuardianPage extends Component {
             ]
           }}
         />
+
+        <Head>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="/static/guard_logo.png" />
+          <meta name="twitter:creator" content="@theGuardian" />
+          <meta name="twitter:site" content="@theGuardian" />
+        </Head>
+
+
 
         <div className="guardian_wrapper" style={{ position: 'absolute', width: '100vw', height: '100vh', backgroundColor: '#052962' }}>
 
@@ -215,8 +224,8 @@ class GuardianPage extends Component {
 
               <div className="col-sm-12 padding-off bg-white">
                 <div className="flex-row margin-bottom guard-padding-left space-between">
-                  
-                <div className="guard-socials-container flex-row">
+
+                  <div className="guard-socials-container flex-row">
                     <span className="guard-social">
                       <svg viewBox="-2 -2 32 32" className="guard-twitter-fill-red rounded-icon__svg centered-icon__svg social-icon__svg social-icon--facebook__svg inline-share-facebook__svg inline-icon__svg">
                         <path d="M17.9 14h-3v8H12v-8h-2v-2.9h2V8.7C12 6.8 13.1 5 16 5c1.2 0 2 .1 2 .1v3h-1.8c-1 0-1.2.5-1.2 1.3v1.8h3l-.1 2.8z"></path>
@@ -242,7 +251,7 @@ class GuardianPage extends Component {
                         </path>
                       </svg>
                     </span>
-                      <p className="guard-paragraph">73</p>
+                    <p className="guard-paragraph">73</p>
                   </div>
                 </div>
               </div>
