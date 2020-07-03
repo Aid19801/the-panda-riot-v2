@@ -203,7 +203,11 @@
   fill: #c70000;
 }
 
-
+@media screen and (min-width: 800px) {
+  .guard-main-article-image {
+    width: 55%;
+  }
+}
 
 html {
   background: grey repeat-y;
