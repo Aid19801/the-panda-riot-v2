@@ -214,20 +214,20 @@ class HomePage extends React.Component {
 
   shuffle = (array) => {
     var currentIndex = array.length, temporaryValue, randomIndex;
-  
+
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-  
+
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
-  
+
       // And swap it with the current element.
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-  
+
     return array;
   }
 
@@ -240,21 +240,21 @@ class HomePage extends React.Component {
         uid: key
       }));
 
-      
+
 
       const filteroutDrudge = usersList
-      .filter(
-        each => each.includeInActRater
-      ).filter(
-        each => each.youtube &&
-        each.youtube !== "unknown"
-      ).filter(
-        each => 
-        each.profilePicture && 
-        each.profilePicture !== "/static/no_prof_pic.png" && 
-        each.profilePicture !== "https://image.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1153673752.jpg" &&
-        each.profilePicture.length > 10
-      )
+        .filter(
+          each => each.includeInActRater
+        ).filter(
+          each => each.youtube &&
+            each.youtube !== "unknown"
+        ).filter(
+          each =>
+            each.profilePicture &&
+            each.profilePicture !== "/static/no_prof_pic.png" &&
+            each.profilePicture !== "https://image.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1153673752.jpg" &&
+            each.profilePicture.length > 10
+        )
 
       // console.log('AT | filteroutDrudge:', filteroutDrudge );
 
@@ -313,9 +313,9 @@ class HomePage extends React.Component {
         <div className="container">
           <div className="row margin-top">
 
-            
+
             {acts && <RowOfCircles acts={acts} text="Acts with Profiles" />}
-            {!acts && <Spinner /> }
+            {!acts && <Spinner />}
           </div>
 
         </div>
@@ -326,6 +326,10 @@ class HomePage extends React.Component {
           </div>
         </div>
 
+        <div className="flex-col padding-on">
+          <p style={{ color: 'white', fontSize: 25, textAlign: 'center' }}>This website was developed by Aid Thompsin via </p>
+          <a style={{ color: 'white' }} href="https://funk27.com">Funk-27</a>
+        </div>
 
       </div>
     );

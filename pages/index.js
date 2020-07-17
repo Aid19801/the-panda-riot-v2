@@ -104,89 +104,89 @@ class LandingPage extends React.Component {
               <p className="orange center black bold">👨🏻‍💻 Download the Desktop app? 👨🏻‍💻</p>
             </a>
           </Link>
-            <a href="https://www.patreon.com/thePandaRiot?fan_landing=true" target="_blank"><p className="orange center black bold">🍺 Buy Me A Beer? 🍺</p></a>
+          <a href="https://www.patreon.com/thePandaRiot?fan_landing=true" target="_blank"><p className="orange center black bold">🍺 Buy Me A Beer? 🍺</p></a>
         </div>
 
         <Link href="/signin">
           <a>
-        <div className="parallax">
-          <div className="hns9">
-            <h1>Open Mic Starts Here!</h1>
-          </div>
+            <div className="parallax">
+              <div className="hns9">
+                <h1>Open Mic Starts Here!</h1>
+              </div>
 
-          <div className="container">
-            <div className="row flex-center">
-              <Fade>
-                <div className="col-md-4 margin-top margin-bottom">
-                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="orange center black">WTF IS THIS!?!</h3>
-                    <p className="white center">
-                      Everything you need to enjoy & endure London's electric
-                      Open Mic comedy circuit!
+              <div className="container">
+                <div className="row flex-center">
+                  <Fade>
+                    <div className="col-md-4 margin-top margin-bottom">
+                      <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                        <h3 className="orange center black">WTF IS THIS!?!</h3>
+                        <p className="white center">
+                          Everything you need to enjoy & endure London's electric
+                          Open Mic comedy circuit!
                         </p>
-                    <img
-                      alt="comedy masks"
-                      className="landing__promo-box-icon"
-                      src="/static/masks.svg"
-                    />
-                  </div>
-                </div>
-              </Fade>
-              <Fade>
-                <div className="col-md-4 margin-top margin-bottom">
-                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="orange center black">SIGN IN!</h3>
-                    <p className="white center">
-                      Check out where the latest Bringers & Non Bringers Are
-                      On The Filterable Gig Map!
+                        <img
+                          alt="comedy masks"
+                          className="landing__promo-box-icon"
+                          src="/static/masks.svg"
+                        />
+                      </div>
+                    </div>
+                  </Fade>
+                  <Fade>
+                    <div className="col-md-4 margin-top margin-bottom">
+                      <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                        <h3 className="orange center black">SIGN IN!</h3>
+                        <p className="white center">
+                          Check out where the latest Bringers & Non Bringers Are
+                          On The Filterable Gig Map!
                         </p>
-                    <img
-                      alt="comedy show locations"
-                      className="landing__promo-box-icon"
-                      src="/static/location.svg"
-                    />
-                  </div>
-                </div>
-              </Fade>
-              <Fade>
-                <div className="col-md-4 margin-top margin-bottom">
-                  <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
-                    <h3 className="orange center black">WATCH SETS!</h3>
-                    <p className="white center">
-                      Catch up on your friends' latest sets, watching their
-                      5-spots!
+                        <img
+                          alt="comedy show locations"
+                          className="landing__promo-box-icon"
+                          src="/static/location.svg"
+                        />
+                      </div>
+                    </div>
+                  </Fade>
+                  <Fade>
+                    <div className="col-md-4 margin-top margin-bottom">
+                      <div className="landing__promo-box tpr__border flex-center flex-col padding-on black-gradient">
+                        <h3 className="orange center black">WATCH SETS!</h3>
+                        <p className="white center">
+                          Catch up on your friends' latest sets, watching their
+                          5-spots!
                         </p>
-                    <img
-                      alt="fottage of comedy sets"
-                      className="landing__promo-box-icon"
-                      src="/static/video-camera.svg"
-                    />
-                  </div>
+                        <img
+                          alt="fottage of comedy sets"
+                          className="landing__promo-box-icon"
+                          src="/static/video-camera.svg"
+                        />
+                      </div>
+                    </div>
+                  </Fade>
                 </div>
-              </Fade>
-            </div>
-          </div>
+              </div>
 
 
-          <div className="container-fluid">
-            <div className="row w-1oo flex-center black box-shadow margin-off">
-              {gigs &&
-                gigs.map((each, i) => {
-                  if (each.img) {
-                    return (
-                      <>
-                        <Fade>
-                          <ProfilePic key={i} srcProp={each.img} />;
+              <div className="container-fluid">
+                <div className="row w-1oo flex-center black box-shadow margin-off">
+                  {gigs &&
+                    gigs.map((each, i) => {
+                      if (each.img) {
+                        return (
+                          <>
+                            <Fade>
+                              <ProfilePic key={i} srcProp={each.img} />;
                               </Fade>
-                      </>
-                    );
-                  }
-                })}
+                          </>
+                        );
+                      }
+                    })}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-         </a>
+          </a>
         </Link>
 
         <div
@@ -214,6 +214,12 @@ class LandingPage extends React.Component {
           />
 
         </div>
+
+        <div className="flex-col flex-center padding-on">
+          <p style={{ color: 'white', fontSize: 25, textAlign: 'center' }}>This website was developed by Aid Thompsin via </p>
+          <a style={{ color: 'white' }} href="https://funk27.com">Funk-27</a>
+        </div>
+
 
       </div>
     );
