@@ -865,7 +865,7 @@ ul li a {
 }
 
 .tpr__container {
-  /* position: absolute; */
+  background-color: rgba(0, 0, 0, 0.6);
   margin-top: 25px;
   top: 50px;
   z-index: 1;
