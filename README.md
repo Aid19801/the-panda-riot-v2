@@ -1,62 +1,38 @@
-## HOCs vs getInitialProps
+## The Panda Riot
 
-example: HOCs/with-auth.js
+#thePandaRiot is a nextJS web-app for the open mic comedy community in London.
 
-1. Hoist the static method from passed-in <PageComponent />
-   `hoistNonReactStatic(innerHOCclass, PlatformSpecificComponent)`
+It boasts more than 550 users. Like literally a couple more than 550 users. And runs on the love, blood, sweat and tears of one tired, exhausted developer.
 
-2. Check if theres a getInitialProps method, if there is, fire it off:
-   ```
-   if (withAuthenticationClass.getInitialProps) {
-       withAuthenticationClass.getInitialProps()
-   }
-   ```
-3. `hoist...` and `if(..` go _before_ the innerHOCclass is returned:-
+## Stack
 
-```
-    hoistNonReactStatic(innerHOCclass, PlatformSpecificComponent)
+NextJS
 
-    if (withAuthenticationClass.getInitialProps) {
-        withAuthenticationClass.getInitialProps()
-    }
+React
 
-    // returning the innerHOCclass:
-    return compose(
-        withFirebase,
-        connect(
-        null,
-        mapDispatchToProps
-        )
-    )(withAuthenticationClass);
-    };
+Redux
 
-```
-4. Now when with-auth is used, the HOC will fire getInitialProps which is basically the Page.getInitialProps method.
+CSS
 
-# Explanation from Stack Overflow:
+NodeJS
 
-`getInitialProps` will be invoked on *any* component exported from the `/pages` directory. The HomePage component in `pages/` is NOT exported directly. It is wrapped with `withAuthentication()` so it's actually the `PlatformSpecificComponent` that is exported. Therefore, the server will call `getInitialProps` on the PlatformSpecificComponent, which then passes all {...this.props} to the wrapped component, HomePage.
+Mapbox
+
+Firebases
 
 
-## Gigs (the data map)
+Features:
 
-nextJS SSR requests gigs from gist
+# Home (news and gigs)
 
-serves them to mapBox via redux/props
+# Gigs (the data map)
 
-when you click on a gig => redux hears SELECTED_GIG, that conditionally renders the 2x info panes.
+# Discussions
 
-NOTE: the MapBox instance takes a `center={` prop. That is assigned to local state. To hack the map to get it to re-center on the selectedGig, I had to pop a setTimeout in ComponentDidUpdate. So once the props.selectedGig.lat & lng come down, they update in state half a second later. Not ideal UX, but it at least centers on the gig that the user selected.
+# Blogs
+
+# Vote for your favourite Acts
+
+# Watch your friends' 5-spots on the Act Profiles sections.
 
 
-## Home (news and gigs)
-
-nextJS `getInitialProps` SSR requests gigs
-
-## Chat
-
-SocketIO and GraphQL (Apollo / GraphCOOL) instances replaced with Pusher.
-
-This was in response to issues with websockets, apollo-ws versus Server Side Rendering. Could _not_ get it to ****ing work.
-
-Check it out here [https://codeburst.io/build-a-chat-app-with-sentiment-analysis-using-next-js-c43ebf3ea643]
