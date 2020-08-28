@@ -18,21 +18,21 @@ NodeJS
 
 Mapbox
 
-Firebases
+Firebase
 
 
-Features:
+# Features:
 
-# Home (news and gigs)
+Home (news and gigs)
 
-# Gigs (the data map)
+Gigs (the data map)
 
-# Discussions
+Discussions
 
-# Blogs
+Blogs
 
-# Vote for your favourite Acts
+Vote for your favourite Acts
 
-# Watch your friends' 5-spots on the Act Profiles sections.
+Watch your friends' 5-spots on the Act Profiles sections.
 
 
